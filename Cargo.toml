@@ -1,0 +1,31 @@
+[package]
+name = "rust-all-in-one"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+
+members = [    
+  
+
+    "workspace/shared",
+
+    "workspace/documentation/knoldus/knoldus_bin",
+    "workspace/documentation/knoldus/knoldus_lib",
+
+    "workspace/feature/doc-rust/mod_draw_bin",
+    "workspace/feature/doc-rust/mod_draw_lib",
+
+    "workspace/projects/fuzzme/fuzz_bin",
+    "workspace/projects/fuzzme/fuzz_lib"
+
+
+
+]
+
+
+
+[build]
+target = "stable-x86_64-unknown-linux-gnu"
