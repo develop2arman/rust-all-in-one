@@ -12,8 +12,6 @@ members = [
 
     "workspace/shared",
 
-    "workspace/documentation/highlighting",
-
     "workspace/documentation/knoldus/knoldus_bin",
     "workspace/documentation/knoldus/knoldus_lib",
 

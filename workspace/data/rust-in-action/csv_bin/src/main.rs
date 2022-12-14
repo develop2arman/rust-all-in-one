@@ -1,6 +1,10 @@
 #![allow(dead_code, unused_variables)]
 #![allow(dead_code, unused_variables)]
 
+/// # Commands
+///
+/// ```cargo run -p csv_bin_bin -q```
+/// 
 /// # Concepts
 ///
 /// * `Higher-order programming`

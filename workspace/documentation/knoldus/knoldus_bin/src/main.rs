@@ -10,7 +10,11 @@ use knoldus_lib::core::square::calculate_square_of_integer;
 // Example from the futures-rs library
 
 /// ### How does it run?
-/// cargo doc  --workspace --message-format short --no-deps --open --color always
+/// ```cargo doc  --workspace --message-format short --no-deps --open --color always```
+///
+/// ### Commands
+/// 
+/// ```cargo run -p knoldus_bin -q```
 /// ### What it does
 /// Checks for ... (describe what the lint matches).
 ///
