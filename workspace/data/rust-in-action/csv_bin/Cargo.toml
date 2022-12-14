@@ -3,6 +3,3 @@ name = "csv_bin"
 version = "0.1.0"
 edition = "2021"
 
-
-[build]
-target = "stable-x86_64-unknown-linux-gnu"

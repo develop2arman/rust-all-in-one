@@ -16,6 +16,8 @@ Functions can both accept and return functions. includes a [[CLOSURE]], also kno
  ## Conditional compilation
 
 Not included in release builds of the program.
+[[conditional_compilation]]
+#cfg
 
  ### Examples
 

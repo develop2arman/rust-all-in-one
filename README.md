@@ -1,7 +1,7 @@
-# Rust-All-In-One
+## Rust-All-In-One
 ### Included All Toturials(Important Sections)
 
-# How to Contribute
+## How to Contribute
 
 Contributions are always welcome! Please use the following guidelines when contributing to `rust-all-in-one`
 

@@ -1,6 +1,9 @@
 #![allow(dead_code, unused_variables)]
 #![allow(dead_code, unused_variables)]
 
+//! CSV BIN
+///
+/// # Main
 /// # Commands
 ///
 /// ```cargo run -p csv_bin -q```

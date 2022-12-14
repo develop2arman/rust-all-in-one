@@ -10,5 +10,3 @@ knoldus_lib = { path = "../knoldus_lib",  optional = false , default-features = 
 
 
 
-[build]
-target = "stable-x86_64-unknown-linux-gnu"

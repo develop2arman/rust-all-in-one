@@ -4,3 +4,7 @@ release/
 rls/
 *.o
 .vscode/
+
+.github/workflows/ci.yml
+.github/workflows/.travis.yml
+.github/workflows/coverage.yml
