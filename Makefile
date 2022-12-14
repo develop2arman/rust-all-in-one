@@ -47,6 +47,10 @@ run-all-tests :
 	@cargo test --test integrations brokers::amqp
 	@cargo test --test integrations brokers::redis
 
+.PHONY : test-docs
+build-docs :
+	cargo test --doc  --workspace
+
 .PHONY : build-docs
 build-docs :
-	cargo doc --all-features --workspace --no-deps
+	cargo doc --test --workspace --message-format short --no-deps --open --color always

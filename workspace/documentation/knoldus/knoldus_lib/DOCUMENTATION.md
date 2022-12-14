@@ -1,57 +1,122 @@
    
-   #![doc(html_logo_url = "https://www.rust-lang.org/logos/rust-logo-128x128-blk-v2.png",
-       html_favicon_url = "https://www.rust-lang.org/favicon.ico",
-       html_root_url = "https://doc.rust-lang.org/")]
-
-   % The title
-
-   This is the example documentation.
-
-   ///! you can add lines that start with #, and they will be hidden from the output, but will be used when compiling your code
-
-    First, we set `x` to five:
-
-    ```rust
-    let x = 5;
-    # let y = 6;
-    # println!("{}", x + y);
-    ```
-
-    Next, we set `y` to six:
-
-    ```rust
-    # let x = 5;
-    let y = 6;
-    # println!("{}", x + y);
-    ```
-
-    Finally, we print the sum of `x` and `y`:
-
-    ```rust
-    # let x = 5;
-    # let y = 6;
-    println!("{}", x + y);
-    ```
-
-    /// should_panic tells rustdoc that the code should compile correctly, but not actually pass as a test.
-    ```rust,should_panic
-    assert!(false);
-    ```
-
-    ``` rust,should_fail
-    // This code block is expected to generate a failure
-    ```
-    pub fn should_fail_func(){}
+   
 
 
-    /// The no_run attribute will compile your code, but not run it
-    /// loop {
-    ///     println!("Hello, world");
-    /// }
-    /// ```
+# Markdown Cheat Sheet
 
-    #[allow(missing_docs)]
-    struct Undocumented;
+This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for [basic syntax]
+## Basic Syntax
 
-    <script>alert(document.cookie)</script>
+These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.
+
+### Heading
+
+# H1
+## H2
+### H3
+
+### Bold
+
+**bold text**
+
+### Italic
+
+*italicized text*
+
+### Blockquote
+
+> blockquote
+
+### Ordered List
+
+1. First item
+2. Second item
+3. Third item
+
+### Unordered List
+
+- First item
+- Second item
+- Third item
+
+### Code
+
+`code`
+
+### Horizontal Rule
+
+---
+
+### Link
+
+[DOCUMENTATION](../../documentation/knoldus/knoldus_lib/DOCUMENTATION.md)
+
+
+### Image
+
+![alt text](https://www.markdownguide.org/assets/images/tux.png)
+
+## Extended Syntax
+
+These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.
+
+### Table
+
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
+
+### Fenced Code Block
+
+```
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+```
+
+### Footnote
+
+Here's a sentence with a footnote. [^1]
+
+[^1]: This is the footnote.
+
+### Heading ID
+
+### My Great Heading {#custom-id}
+
+### Definition List
+
+term
+: definition
+
+### Strikethrough
+
+~~The world is flat.~~
+
+### Task List
+
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
+
+### Emoji
+
+That is so funny! :joy:
+
+(See also [Copying and Pasting Emoji](https://www.markdownguide.org/extended-syntax/#copying-and-pasting-emoji))
+
+### Highlight
+
+I need to highlight these ==very important words==
+
+### Subscript
+
+H~2~O
+
+### Superscript
+
+X^2^
 
