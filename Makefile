@@ -53,4 +53,4 @@ build-docs :
 
 .PHONY : build-docs
 build-docs :
-	cargo doc --test --workspace --message-format short --no-deps --open --color always
+	cargo doc --workspace --message-format short --no-deps --color always
