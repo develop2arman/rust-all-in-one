@@ -49,7 +49,7 @@ These are the elements outlined in John Gruber’s original design document. All
 
 ### Link
 
-[DOCUMENTATION](../../documentation/knoldus/knoldus_lib/DOCUMENTATION.md)
+[DOCUMENTATION](https://github.com/armanriazi/rust-all-in-one/blob/main/README.md)
 
 
 ### Image
@@ -119,4 +119,3 @@ H~2~O
 ### Superscript
 
 X^2^
-

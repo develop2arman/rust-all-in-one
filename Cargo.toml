@@ -7,10 +7,12 @@ edition = "2021"
 
 [workspace]
 
-members = [    
-  
+members = [
+
 
     "workspace/shared",
+
+    "workspace/documentation/highlighting",
 
     "workspace/documentation/knoldus/knoldus_bin",
     "workspace/documentation/knoldus/knoldus_lib",
@@ -19,7 +21,9 @@ members = [
     "workspace/feature/doc-rust/mod_draw_lib",
 
     "workspace/projects/fuzzme/fuzz_bin",
-    "workspace/projects/fuzzme/fuzz_lib"
+    "workspace/projects/fuzzme/fuzz_lib",
+
+    "workspace/data/rust-in-action/csv_bin",
 
 
 

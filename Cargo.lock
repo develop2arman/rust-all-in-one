@@ -36,6 +36,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "csv_bin"
+version = "0.1.0"
+
+[[package]]
 name = "derive_arbitrary"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -67,6 +71,10 @@ version = "0.1.0"
 dependencies = [
  "regex",
 ]
+
+[[package]]
+name = "highlighting_bin"
+version = "0.1.0"
 
 [[package]]
 name = "jobserver"
