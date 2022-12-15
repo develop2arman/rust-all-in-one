@@ -39,7 +39,7 @@ pub use foo::Foo;
 
 /// bar docs
 mod foo {
-    /// the docs for Bar
+    /// the docs for Foo
     pub struct Foo;
 }
 
@@ -52,6 +52,6 @@ mod poo {
     pub struct Poo;
 }
 
-#[doc(alias = "x")]
+
 #[doc(alias = "big")]
 pub struct BigX;

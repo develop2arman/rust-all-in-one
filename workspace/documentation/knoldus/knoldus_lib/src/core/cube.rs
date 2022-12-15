@@ -13,6 +13,23 @@ pub fn calculate_cube_of_integer(operand1: u32) -> u32 {
     return result;
 }
 
+/// Only runs on the 2018 edition.
+///
+/// ```edition2018,compile_fail
+/// let result: Result<i32, ParseIntError> = try {
+///     "1".parse::<i32>()?
+///         + "2".parse::<i32>()?
+///         + "3".parse::<i32>()?
+/// };
+/// ```
+///
+
+/// ```compile_fail
+/// let x = my_crate::MyStruct(-5);
+/// ```
+#[cfg(doctest)]
+pub struct MyStructOnlyTakesUsize;
+
 /// Example 1:
 ///
 /// ```

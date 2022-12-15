@@ -27,3 +27,5 @@ README.md
 rustfmt.toml
 shell.nix
 tarpaulin.toml
+requirements.txt
+dev-requirements.txt

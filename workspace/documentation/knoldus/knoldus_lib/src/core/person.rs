@@ -23,7 +23,7 @@ impl Person {
     /// the two lines of below will expose error
     /// use doc::Person;
     /// let person = Person::new("name");
-    /// ```    
+    /// ```
     pub fn new(name: &str) -> Person {
         Person {
             /// name of person
@@ -50,3 +50,15 @@ struct Hidden;
 
 #[allow(missing_docs)]
 struct Undocumented;
+
+#[allow(unused)]
+pub fn m() {
+/// We have a struct here. Remember it doesn't accept negative numbers!
+pub struct MyStruct(pub usize);
+
+/// ```compile_fail
+/// let x = my_crate::MyStruct(-5);
+/// ```
+#[cfg(doctest)]
+pub struct MyStructOnlyTakesUsize;
+}

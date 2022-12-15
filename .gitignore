@@ -5,6 +5,7 @@ rls/
 *.o
 .vscode/
 
+.github/workflows/*
 .github/workflows/ci.yml
 .github/workflows/.travis.yml
 .github/workflows/coverage.yml

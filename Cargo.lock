@@ -190,6 +190,22 @@ name = "rust-all-in-one"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-dangle_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-egg-dangle_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-in-action-dangle_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-in-action-race_bin"
+version = "0.1.0"
+
+[[package]]
 name = "serde"
 version = "1.0.149"
 source = "registry+https://github.com/rust-lang/crates.io-index"

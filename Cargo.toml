@@ -23,6 +23,12 @@ members = [
 
     "workspace/data/rust-in-action/csv_bin",
 
+    "workspace/lifetime/dangling/rust-doc",
+    "workspace/lifetime/dangling/rust-egg",
+    "workspace/lifetime/dangling/rust-in-action",
+
+    "workspace/thread/race/rust-in-action",
+
 
 
 ]

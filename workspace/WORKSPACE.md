@@ -1,3 +1,5 @@
+[[RUST]]
+
 [[FEATURE]]
 
 [[DATA]]
