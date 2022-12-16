@@ -1,10 +1,5 @@
 
-[submodule "data/rust-in-action"]
-	path = data/rust-in-action
-	url = https://github.com/armanriazi/rust-all-in-one/tree/main/workspace/data/rust-in-action
-	shallow = true
-
-[submodule "dangling/rust-egg"]
-	path = dangling/rust-egg
-	url = https://github.com/armanriazi/rust-all-in-one/tree/main/workspace/lifetime/dangling/rust-egg
+[submodule "armanriazi/rust-all-in-one-2022-archived"]
+	path = armanriazi/rust-all-in-one-2022-archived
+	url = https://github.com/armanriazi/rust-all-in-one-2022-archived.git
 	shallow = true
