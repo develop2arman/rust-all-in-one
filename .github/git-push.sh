@@ -10,6 +10,8 @@ git commit -m "${message}"
 # echo "IT IS CLEAN"
 #else
 #
+ git status
+ 
  echo "Pushing data to remote server!!!"
  git push -u origin "${branch}"
 #fi
