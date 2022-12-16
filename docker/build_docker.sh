@@ -1,24 +1,24 @@
 #!/bin/bash
 
 ### This script creates a docker image (based on the Dockerfile )
-### that is capable of building and running Theseus.
+### that is capable of building and running rust-all-in-one.
 ### To run the docker image as a container on your local machine,
 ### use the `./docker/run_docker.sh` script.
 
 set -e
 
-DOCKER_TAG="theseus:Dockerfile"
+DOCKER_TAG="rust-all-in-one:Dockerfile"
 
 # DOCKER_DIR is the directory containing this docker script and the Dockerfile
 DOCKER_DIR=$(dirname $(readlink -f ${BASH_SOURCE}))
-### THESEUS_BASE_DIR is the base directory of the Theseus repository.
-THESEUS_BASE_DIR=$(readlink -f ${DOCKER_DIR}/.. )
+### rust-all-in-one_BASE_DIR is the base directory of the rust-all-in-one repository.
+rust-all-in-one_BASE_DIR=$(readlink -f ${DOCKER_DIR}/.. )
 
 ### Always run this script with the `docker` directory as the working directory.
 cd ${DOCKER_DIR}
 
 ### Get the current required version of Rust from our rust-toolchain file
-RUSTC_VERSION=$(cat ${THESEUS_BASE_DIR}/rust-toolchain)
+RUSTC_VERSION=$(cat ${rust-all-in-one_BASE_DIR}/rust-toolchain)
 
 ### Build the docker image
 docker build \

@@ -1,12 +1,30 @@
 #![allow(dead_code, unused_variables)]
-#![allow(dead_code, unused_variables)]
-
-//! CSV BIN
+/// Main
 ///
-/// # Main
-/// # Commands
+/// ## Commands
 ///
-/// ```cargo run -p csv_bin -q```
+/// ```cargo run -q -p rust-in-action-data-csv_bin --bin rust-in-action-data-csv-main```
+///
+/// ```cargo doc  --package rust-in-action-data-csv_bin  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package rust-in-action-data-csv_bin ```
+///
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `TODO`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
+///
+/// # Return
+/// `nothing`
+///
+/// ## Example
+///  `TODO`
+///
 ///
 fn main() {
     let penguin_data = "\

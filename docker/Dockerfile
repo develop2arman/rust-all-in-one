@@ -1,5 +1,5 @@
 ### This dockerfile sets up an Ubuntu 18.04 environment from scratch
-### that is sufficient to build Theseus and run it using QEMU.
+### that is sufficient to build rust-all-in-one and run it using QEMU.
 
 
 FROM ubuntu:18.04
@@ -32,7 +32,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y --no-ins
 # Install essential Ubuntu packages
 RUN apt-get install -y build-essential curl git
 
-# Install Theseus's build dependencies
+# Install rust-all-in-one's build dependencies
 RUN apt-get install -y make nasm pkg-config grub-pc-bin mtools xorriso
 # Install QEMU and KVM, based on <https://help.ubuntu.com/community/KVM/Installation>
 RUN apt-get install -y qemu qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
@@ -61,5 +61,5 @@ RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 # To enable us to use Rust, add its binaries to our path.
 ENV PATH="$HOME/.cargo/bin:${PATH}"
 
-# Install the specific version of the Rust toolchain currently required by Theseus.
+# Install the specific version of the Rust toolchain currently required by rust-all-in-one.
 RUN rustup toolchain install ${RUSTC_VERSION} && rustup component add rust-src
