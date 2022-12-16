@@ -1,3 +1,4 @@
+git status
 echo "Enter your message"
 read message
  echo 'Enter the name of the branch:'
@@ -10,8 +11,7 @@ git commit -m "${message}"
 # echo "IT IS CLEAN"
 #else
 #
- git status
- 
+
  echo "Pushing data to remote server!!!"
  git push -u origin "${branch}"
 #fi
