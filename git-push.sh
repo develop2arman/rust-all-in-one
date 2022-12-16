@@ -12,9 +12,10 @@ git commit -m "${message}"
 #else
 #
 
- echo "Pushing data to remote server!!!"
- if [[ -n ${branch} ]] ; then
- git push -u origin "${branch}"
+ echo "Pushing data to remote server!!!";
+
+ if [[ "${branch}"=="" ]] ; then
+    git push -u origin main
  else
- git push -u origin main
+    git push -u origin "${branch}"
  fi
