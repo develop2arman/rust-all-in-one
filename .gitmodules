@@ -1,25 +1,10 @@
 
-[submodule "libs/dfqueue"]
-	path = libs/dfqueue
-	url = https://github.com/theseus-os/DFQueue
+[submodule "data/rust-in-action"]
+	path = data/rust-in-action
+	url = https://github.com/armanriazi/rust-all-in-one/tree/main/workspace/data/rust-in-action
 	shallow = true
-[submodule "ports/wasmtime"]
-	path = ports/wasmtime
-	url = https://github.com/theseus-os/wasmtime.git
-	shallow = true
-[submodule "libs/indexmap"]
-	path = libs/indexmap
-	url = https://github.com/theseus-os/indexmap
-	shallow = true
-[submodule "ports/region"]
-	path = ports/region
-	url = https://github.com/theseus-os/region-rs
-	shallow = true
-[submodule "ports/backtrace"]
-	path = ports/backtrace
-	url = https://github.com/theseus-os/backtrace-rs.git
-	shallow = true
-[submodule "libs/core2"]
-	path = libs/core2
-	url = https://github.com/theseus-os/core2.git
+
+[submodule "dangling/rust-egg"]
+	path = dangling/rust-egg
+	url = https://github.com/armanriazi/rust-all-in-one/tree/main/workspace/lifetime/dangling/rust-egg
 	shallow = true
