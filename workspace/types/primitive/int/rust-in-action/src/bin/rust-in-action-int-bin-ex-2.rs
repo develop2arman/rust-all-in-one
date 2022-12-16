@@ -1,6 +1,6 @@
 #![allow(dead_code, unused_variables)]
 
-/// rust-in-action-int-bin-ex-1
+/// rust-in-action-int-bin-ex-2
 ///
 /// ## Commands
 ///

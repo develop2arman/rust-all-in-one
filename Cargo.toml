@@ -39,6 +39,8 @@ members = [
     "workspace/types/primitive/tuple/rust-egg",
     "workspace/types/primitive/int/code-like-a-pro",
     "workspace/types/primitive/int/rust-in-action",
+    "workspace/types/primitive/int/num/rust-in-action",
+    "workspace/types/primitive/operator/rust-in-action",
     "workspace/types/primitive/radix/rust-in-action",
     "workspace/types/complex/rust-in-action",
 

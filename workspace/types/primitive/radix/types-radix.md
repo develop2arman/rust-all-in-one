@@ -1,1 +1,1 @@
-tags #hex #octal #binary
+tags #hex #octal #binary #mem #transmute

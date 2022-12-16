@@ -331,7 +331,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust-in-action-types-int-num_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
+
+[[package]]
 name = "rust-in-action-types-int_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
+
+[[package]]
+name = "rust-in-action-types-operator_bin"
 version = "0.1.0"
 dependencies = [
  "num",
