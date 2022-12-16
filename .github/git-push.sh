@@ -12,4 +12,4 @@ git commit -m "${message}"
 #
  echo "Pushing data to remote server!!!"
  git push -u origin "${branch}"
-fi
+#fi
