@@ -5,7 +5,7 @@ read message
  read branch
 git add .
 git commit -m "${message}"
-#
+
 #if [ -n "$(git status - porcelain)" ];
 #then
 # echo "IT IS CLEAN"
