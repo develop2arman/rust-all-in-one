@@ -4,12 +4,12 @@ read message
  read branch
 git add .
 git commit -m "${message}"
-/*
-if [ -n "$(git status - porcelain)" ];
-then
- echo "IT IS CLEAN"
-else
-*/
+#
+#if [ -n "$(git status - porcelain)" ];
+#then
+# echo "IT IS CLEAN"
+#else
+#
  echo "Pushing data to remote server!!!"
  git push -u origin "${branch}"
 fi
