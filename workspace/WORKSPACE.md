@@ -3,3 +3,7 @@
 [[FEATURE]]
 
 [[DATA]]
+
+[[THREAD]]
+
+[[LIFETIME]]

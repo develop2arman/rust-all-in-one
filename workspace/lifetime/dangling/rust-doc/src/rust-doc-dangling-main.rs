@@ -18,10 +18,11 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the integer number to verb the struc-name
+/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
 ///
 /// # Return
-/// `nothing`
+/// `The longest string is long string is long`
+/// `The longest string is long string is long`
 ///
 /// ## Example
 /// In this example, we’ve specified a lifetime parameter 'a for the parameter x and the return type, but not for the parameter y, because the lifetime of y does not have any relationship with the lifetime of x or the return value.
@@ -57,24 +58,20 @@
 /// ```
 
 fn main() {
+    let string1 = String::from("long string is long");
 
-  let string1 = String::from("long string is long");
-
-  {
-      let string2 = String::from("xyz");
-      let result = longest(string1.as_str(), string2.as_str());
-      println!("The longest string is {}", result);
-  }
-  println!("The longest string is {}", string1);
-
+    {
+        let string2 = String::from("xyz");
+        let result = longest(string1.as_str(), string2.as_str());
+        println!("The longest string is {}", result);
+    }
+    println!("The longest string is {}", string1);
 }
 
-
-
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
-  if x.len() > y.len() {
-      x
-  } else {
-      y
-  }
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
 }

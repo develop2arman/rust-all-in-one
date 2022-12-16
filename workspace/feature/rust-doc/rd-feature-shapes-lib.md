@@ -1,6 +1,9 @@
 
 ## Conditional compilation
 
+[[conditional_compilation]]
+
+
 ### Example
 
 ```
@@ -18,3 +21,5 @@ default = ["shapes"]
 color = ["dep:rgb"]
 shapes = ["color", "dep:serde", "rgb?/serde"]
 ```
+
+tags  #cfg

@@ -1,3 +1,3 @@
 
 
-[[data-csv-bin]]
+[[ria-data-csv-bin]]

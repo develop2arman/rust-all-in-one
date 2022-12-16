@@ -5,6 +5,9 @@
 ///
 /// ```cargo run -q -p rust-in-action-dangling_bin --bin rust-in-action-dangling-main```
 ///
+/// ```cargo doc  --package rust-in-action-dangling_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package rust-in-action-dangling_bin```
 /// ## What
 /// `TODO`
 ///
@@ -13,7 +16,7 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the integer number to verb the struc-name
+/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
 ///
 /// # Return
 /// `nothing`
@@ -27,13 +30,17 @@
 /// println!("{:?}", grains); //^^^^^^ value borrowed here after move
 /// ```
 
- fn main() {
-     let mut grains: Vec<Cereal> = vec![];
-     grains.push(Cereal::Rye);
-     drop(grains);
- }
- #[derive(Debug)]
- enum Cereal {
-     Barley, Millet, Rice,
-     Rye, Spelt, Wheat,
- }
+fn main() {
+    let mut grains: Vec<Cereal> = vec![];
+    grains.push(Cereal::Rye);
+    drop(grains);
+}
+#[derive(Debug)]
+enum Cereal {
+    Barley,
+    Millet,
+    Rice,
+    Rye,
+    Spelt,
+    Wheat,
+}

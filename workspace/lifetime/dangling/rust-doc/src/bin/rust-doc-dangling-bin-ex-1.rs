@@ -11,13 +11,13 @@
 ///
 /// ## How
 /// `TODO`
-/// 
+///
 /// # Arguments
 ///
-/// * `Arg1` - This is the integer number to verb the struc-name
+/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
 ///
 /// # Return
-/// `nothing`
+/// `unimplemented`
 ///
 /// ## Example
 /// ```rust,no_run,compile_fail,ignore
@@ -33,8 +33,5 @@
 /// ```
 
 fn main() {
-
- println!("Printed:{:?}","Hi");
-
-
+    unimplemented!()
 }

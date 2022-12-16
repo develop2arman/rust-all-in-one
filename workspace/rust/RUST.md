@@ -1,12 +1,21 @@
-## Rust
-#### Version
-Internally, Cargo uses the semver crate[4] for parsing the versions
+# Rust
 
-### Usecases
-Hostile environments
-Concurrent 
+## Commands
+
+`time cargo run`
+
+`cargo doc  --workspace --message-format short --no-deps --open --color always`
+
+`cargo test --doc --workspace`
+
+## Use-cases
+
+Hostile environments: In situations where **safety** is of utmost concern, Rust’s guarantees are a perfect fit.
+Concurrent
 Safe programming
 Processing
+Replacing legacy C or C++
+> npm chose Rust to handle CPU-bound bottlenecks.
 
 ## Safety
 
@@ -18,10 +27,36 @@ Processing
 
 > Rust programs are free from:
 
-1. **Dangling pointers**— <u>*Live references*</u> to data that has become invalid over the course of the program (see [[rust-in-action-dangling]])
-2. **Data races**—The inability to determine how a program will behave from <u>*run to run*</u> because external factors change (see [[rust-in-action-race]])
-3. **Buffer overflow**—An attempt to access the 12th element of an <u>*array*</u> with only 6 elements (see listing 1.5)
-4. **Iterator invalidation**—An issue caused by something that is iterated over after being <u>*altered midway* through</u>  (see listing 1.6)
+1. **Dangling pointers**— <u>_Live references_</u> to data that has become invalid over the course of the program (see [[ria-data-csv-bin]])
+2. **Data races**—The inability to determine how a program will behave from <u>_run to run_</u> because external factors change (see [[ria-race]])
+3. **Buffer overflow**—An attempt to access the 12th element of an <u>_array_</u> with only 6 elements (see listing 1.5)
+4. **Iterator invalidation**—An issue caused by something that is iterated over after being <u>_altered midway_ through</u> (see listing 1.6)
 
-### Memory model
-RAII, Explicit
+## Memory model
+
+### RAII
+
+Rust uses RAII (resource acquisition is initialization) to keep track of when variables and all their references are in and out of scope. Once they are out of scope, memory can be released. The borrow checker will not allow references to out of scope variables, and it only allows one mutable reference or multiple immutable references, but never both.
+
+### Explicit
+
+## Numerous community tools for improving code quality and productivity:
+
+rust-clippy, an advanced linter and style tool
+rustfmt, an opinionated code formatter
+**sccache**, a compiler cache for rustc
+rust-analyzer, full-featured IDE integration for the Rust language
+
+---
+
+### std:prelude
+
+To understand what is included in local scope by default(like try_into()), you should investigate the std::prelude module. Its documentation is available online at [prelude](https://doc.rust-lang.org/std/prelude/index.html)
+
+### Float Type
+
+[[ria-types-float]]
+
+### Version
+
+Internally, Cargo uses the **semver** crate for parsing the versions

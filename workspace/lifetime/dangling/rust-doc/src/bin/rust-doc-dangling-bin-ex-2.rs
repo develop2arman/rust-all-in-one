@@ -1,4 +1,3 @@
-
 #![allow(dead_code, unused_variables)]
 
 /// rust-doc-dangling-bin-ex-2
@@ -15,16 +14,17 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the integer number to verb the struc-name
+/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
 ///
 /// # Return
-/// `nothing`
+/// `unimplemented`
 ///
 /// ## Example
 /// ```rust,no_run,compile_fail,ignore
 ///```
 ///
-fn main()  {
+fn main() {
+    unimplemented!()
     // let r;//This code won’t compile because the value r is referring to has gone out of scope before we try to use it
 
     // {

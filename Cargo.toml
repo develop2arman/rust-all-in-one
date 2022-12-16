@@ -15,8 +15,10 @@ members = [
     "workspace/documentation/knoldus/knoldus_bin",
     "workspace/documentation/knoldus/knoldus_lib",
 
-    "workspace/feature/doc-rust/mod_draw_bin",
-    "workspace/feature/doc-rust/mod_draw_lib",
+    "workspace/feature/rust-doc/mod_draw_bin",
+    "workspace/feature/rust-doc/mod_draw_lib",
+    "workspace/feature/code-like-pro/dryoc_bin",
+
 
     "workspace/projects/fuzzme/fuzz_bin",
     "workspace/projects/fuzzme/fuzz_lib",
@@ -28,6 +30,17 @@ members = [
     "workspace/lifetime/dangling/rust-in-action",
 
     "workspace/thread/race/rust-in-action",
+
+    "workspace/data/convert/try_into/rust-in-action",
+
+    "workspace/types/primitive/float/rust-in-action",
+    "workspace/types/primitive/char/rust-egg",
+    "workspace/types/primitive/array/rust-egg",
+    "workspace/types/primitive/tuple/rust-egg",
+    "workspace/types/primitive/int/code-like-a-pro",
+    "workspace/types/primitive/int/rust-in-action",
+    "workspace/types/primitive/radix/rust-in-action",
+    "workspace/types/complex/rust-in-action",
 
 
 

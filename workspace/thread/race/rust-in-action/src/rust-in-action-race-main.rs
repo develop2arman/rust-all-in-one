@@ -20,7 +20,7 @@ use std::thread;
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the integer number to verb the struc-name
+/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
 ///
 /// # Return
 /// `100`
@@ -39,8 +39,4 @@ use std::thread;
 /// ```
 ///
 
-
-
-fn main() {
-
- }
+fn main() {}

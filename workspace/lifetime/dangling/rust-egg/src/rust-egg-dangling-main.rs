@@ -16,7 +16,7 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the integer number to verb the struc-name
+/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
 ///
 /// # Return
 /// `nothing`
@@ -25,20 +25,20 @@
 ///  `TODO`
 ///
 ///
- fn main() {
-//     //    let reference_to_nothing = dangle();
-//     let reference_to_nothing = no_dangle();
-//     }
-//     fn dangle() -> &String { // dangle returns a reference to a String
+fn main() {
+    //     //    let reference_to_nothing = dangle();
+    //     let reference_to_nothing = no_dangle();
+    //     }
+    //     fn dangle() -> &String { // dangle returns a reference to a String
 
-//         let s = String::from("hello"); // s is a new String
+    //         let s = String::from("hello"); // s is a new String
 
-//         &s // we return a reference to the String, s
-//     } // Here, s goes out of scope, and is dropped. Its memory goes away.
-//       // Danger!
+    //         &s // we return a reference to the String, s
+    //     } // Here, s goes out of scope, and is dropped. Its memory goes away.
+    //       // Danger!
 
-//       fn no_dangle() -> String {
-//         let s = String::from("hello");
+    //       fn no_dangle() -> String {
+    //         let s = String::from("hello");
 
-//         s
-   }
+    //         s
+}
