@@ -13,8 +13,8 @@ git commit -m "${message}"
 #
 
  echo "Pushing data to remote server!!!"
- if [[ -z $branch ]]; then
+ if [[ -z "${branch}" ]]; then
     git push -u origin main
  else
     git push -u origin "${branch}"
- fi;
+ fi
