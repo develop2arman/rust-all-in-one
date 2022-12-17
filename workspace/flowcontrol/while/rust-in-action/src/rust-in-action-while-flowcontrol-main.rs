@@ -1,5 +1,5 @@
 #![allow(dead_code, unused_variables)]
-
+use std::time::{Duration, Instant};
 
 /// Main
 ///
