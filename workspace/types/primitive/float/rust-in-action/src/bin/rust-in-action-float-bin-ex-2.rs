@@ -1,6 +1,5 @@
 #![allow(dead_code, unused_variables)]
 
-
 /// rust-in-action-float-bin-ex-2
 ///
 /// ## Commands
@@ -19,7 +18,7 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
 /// `assert:true`
@@ -57,6 +56,6 @@
 ///
 /// ```
 
-fn main(){
-unimplemented!()
+fn main() {
+    unimplemented!()
 }

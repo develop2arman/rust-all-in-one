@@ -53,6 +53,7 @@ rust-analyzer, full-featured IDE integration for the Rust language
 
 To understand what is included in local scope by default(like try_into()), you should investigate the std::prelude module. Its documentation is available online at [prelude](https://doc.rust-lang.org/std/prelude/index.html)
 
+
 ### Float Type
 
 [[ria-types-float]]

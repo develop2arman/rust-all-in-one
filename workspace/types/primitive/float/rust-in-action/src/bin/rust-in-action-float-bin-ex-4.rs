@@ -14,22 +14,21 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `unimplemented`
+/// `Printed:-0.00009999999999998899`
 ///
 /// ## Example
 /// //```rust,compile_fail,ignore
 
-
-fn main(){
+fn main() {
     let x = 1.2331f64;
-    let y   = 1.2332f64;
+    let y = 1.2332f64;
     let error = 0.00001f64;
-    println!("Printed:{}",x-y);
+    println!("Printed:{}", x - y);
 
-    if(x-y).abs() <error{
+    if (x - y).abs() < error {
         println!("success!");
     }
 }

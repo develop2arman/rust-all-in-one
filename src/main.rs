@@ -1,8 +1,31 @@
-#![allow(dead_code, unused_variables)]
 #![crate_name = "rust_all_in_one"]
+#![allow(dead_code, unused_variables)]
+/// Main
+///
+/// # Commands
+///
+/// ```cargo run -q -p rust-all-in-one```
+///
+/// ```cargo doc  --workspace --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --workspace```
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `TODO`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `nothing`
+///
+/// ## Example
+/// //```rust,compile_fail,ignore
+
 #[cfg(panic = "unwind")]
-
-
 #[cfg(target_family = "unix")]
 fn get_platform() -> String {
     "UNIX".into()
@@ -13,14 +36,13 @@ fn get_platform() -> String {
     "Windows".into()
 }
 
-
 fn greet_world() {
     println!("Hello, world!");
     let southern_germany = "Grüß Gott!";
     let japan = "ハロー・ワールド";
     let regions = [southern_germany, japan];
     for region in regions.iter() {
-            println!("{}", &region);
+        println!("{}", &region);
     }
 }
 
@@ -38,18 +60,17 @@ fn main() {
     }
 
     finish();
-  }
+}
 
-  fn finish()->impl std::process::Termination {
+fn finish() -> impl std::process::Termination {
     let machine_kind = if cfg!(unix) {
-      println!("I was running on a {} machine!", "unix");
-      std::process::ExitCode::SUCCESS
-
+        println!("I was running on a {} machine!", "unix");
+        std::process::ExitCode::SUCCESS
     } else if cfg!(windows) {
         println!("I was running on a {} machine!", "windows");
         std::process::ExitCode::SUCCESS
     } else {
-      println!("I was running on a {} machine!", "unknown");
-      std::process::ExitCode::FAILURE
+        println!("I was running on a {} machine!", "unknown");
+        std::process::ExitCode::FAILURE
     };
-  }
+}

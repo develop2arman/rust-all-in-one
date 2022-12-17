@@ -18,7 +18,7 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
 /// `1 + 2 = 3

@@ -2,7 +2,6 @@
 use std::slice;
 use std::str;
 
-
 /// rust-doc-dangling-bin-ex-2
 ///
 /// ## Commands
@@ -17,7 +16,7 @@ use std::str;
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
 /// `unimplemented`
@@ -26,7 +25,7 @@ use std::str;
 /// ```rust,no_run,compile_fail,ignore
 ///```
 ///
-fn main(){
+fn main() {
     let story = "Once upon a time...";
 
     let ptr = story.as_ptr();

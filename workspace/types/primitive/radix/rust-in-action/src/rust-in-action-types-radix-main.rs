@@ -18,21 +18,30 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `23`
+/// `base 10:  3    30       300
+/// base 2:  11 11110 100101100
+/// base 8:   3  36       454
+/// base 16:  3  1e       12c`
 ///
 /// ## Example
 /// //```rust,compile_fail,ignore
 
 fn main() {
-  let three = 0b11; // <1>
-  let thirty = 0o36; // <2>
-  let three_hundred = 0x12C; // <3>
+    let three = 0b11; // <1>
+    let thirty = 0o36; // <2>
+    let three_hundred = 0x12C; // <3>
 
-  println!("base 10:  {}    {}       {}", three, thirty, three_hundred);
-  println!("base 2:  {:b} {:b} {:b}", three, thirty, three_hundred);
-  println!("base 8:   {:o}  {:o}       {:o}", three, thirty, three_hundred);
-  println!("base 16:  {:x}  {:x}       {:x}", three, thirty, three_hundred);
+    println!("base 10:  {}    {}       {}", three, thirty, three_hundred);
+    println!("base 2:  {:b} {:b} {:b}", three, thirty, three_hundred);
+    println!(
+        "base 8:   {:o}  {:o}       {:o}",
+        three, thirty, three_hundred
+    );
+    println!(
+        "base 16:  {:x}  {:x}       {:x}",
+        three, thirty, three_hundred
+    );
 }

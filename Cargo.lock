@@ -299,6 +299,10 @@ name = "rust-in-action-data-csv_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-in-action-for-flowcontrol_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-in-action-race_bin"
 version = "0.1.0"
 
@@ -364,6 +368,10 @@ version = "0.1.0"
 dependencies = [
  "num",
 ]
+
+[[package]]
+name = "rust-in-action-while-flowcontrol_bin"
+version = "0.1.0"
 
 [[package]]
 name = "serde"

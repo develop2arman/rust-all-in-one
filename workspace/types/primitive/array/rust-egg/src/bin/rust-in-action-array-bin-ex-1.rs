@@ -15,7 +15,7 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
 /// `unimplemented`
@@ -24,9 +24,9 @@
 /// //```rust,compile_fail,ignore
 
 fn main() {
-        let a = [1, 2, 3, 4, 5];
+    let a = [1, 2, 3, 4, 5];
 
-        let nice_slice = &a[1..4];
+    let nice_slice = &a[1..4];
 
-        assert_eq!([2, 3, 4], nice_slice)
+    assert_eq!([2, 3, 4], nice_slice)
 }

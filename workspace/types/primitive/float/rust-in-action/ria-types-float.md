@@ -59,4 +59,4 @@
 ```
 
 
-tags #from_bits #hex
+tags #from_bits #hex #to_bits

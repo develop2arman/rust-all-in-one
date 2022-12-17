@@ -14,7 +14,7 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the [your type] to [verb] the [your struct/func name]
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
 /// `unimplemented`
@@ -28,15 +28,15 @@
 /// }
 /// ```
 
-fn factorial(n:i32) -> i32 {
+fn factorial(n: i32) -> i32 {
     match n {
-      0 => 0,
-      1 => 1,
-      _ => n + factorial(n-1),
+        0 => 0,
+        1 => 1,
+        _ => n + factorial(n - 1),
     }
-  }
+}
 
-  fn main() {
+fn main() {
     let n = 10;
     println!("{}", factorial(n));
-  }
+}

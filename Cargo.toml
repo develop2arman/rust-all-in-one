@@ -42,8 +42,9 @@ members = [
     "workspace/types/primitive/int/num/rust-in-action",
     "workspace/types/primitive/operator/rust-in-action",
     "workspace/types/primitive/radix/rust-in-action",
-    "workspace/types/complex/rust-in-action",
+    "workspace/types/complex/num/rust-in-action",
 
-
+    "workspace/flowcontrol/for/rust-in-action",
+    "workspace/flowcontrol/while/rust-in-action",
 
 ]
