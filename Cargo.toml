@@ -25,14 +25,23 @@ members = [
 
     "workspace/data/rust-in-action/csv_bin",
 
-    "workspace/lifetime/dangling/rust-doc",
-    "workspace/lifetime/dangling/rust-egg",
-    "workspace/lifetime/dangling/rust-in-action",
+    "workspace/borrowchecker/lifetime/elision/rust-doc",
+    "workspace/borrowchecker/lifetime/elision/rust-in-action",
+    "workspace/borrowchecker/lifetime/static/rust-in-action",
+    "workspace/borrowchecker/lifetime/static/pnkfx",
+    "workspace/borrowchecker/lifetime/static/packtpub",
+    "workspace/borrowchecker/lifetime/static/rust-egg",
+    "workspace/borrowchecker/lifetime/static/rust-doc",
+    "workspace/borrowchecker/lifetime/dangling/rust-doc",
+    "workspace/borrowchecker/lifetime/dangling/rust-egg",
+    "workspace/borrowchecker/lifetime/dangling/rust-in-action",
 
     "workspace/thread/race/rust-in-action",
 
     "workspace/data/convert/try_into/rust-in-action",
 
+    "workspace/types/generic/rust-in-action",
+    "workspace/types/generic/rust-doc",
     "workspace/types/primitive/float/rust-in-action",
     "workspace/types/primitive/char/rust-egg",
     "workspace/types/primitive/array/rust-egg",
@@ -41,10 +50,20 @@ members = [
     "workspace/types/primitive/int/rust-in-action",
     "workspace/types/primitive/int/num/rust-in-action",
     "workspace/types/primitive/operator/rust-in-action",
+    "workspace/types/string/rust-doc",
+    "workspace/types/string/rust-egg",
+    "workspace/types/string/packtpub",
+    "workspace/types/string/rust-in-action",
+    "workspace/types/string/code-like-a-pro",
     "workspace/types/primitive/radix/rust-in-action",
     "workspace/types/complex/num/rust-in-action",
 
+    "workspace/flowcontrol/loop/rust-in-action",
+    "workspace/flowcontrol/loop/packtpub",
     "workspace/flowcontrol/for/rust-in-action",
+    "workspace/flowcontrol/match/rust-doc",
+    "workspace/flowcontrol/match/rust-in-action",
     "workspace/flowcontrol/while/rust-in-action",
+    "workspace/flowcontrol/pnfx-flowcontrol",
 
 ]

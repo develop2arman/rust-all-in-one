@@ -54,10 +54,20 @@ rust-analyzer, full-featured IDE integration for the Rust language
 To understand what is included in local scope by default(like try_into()), you should investigate the std::prelude module. Its documentation is available online at [prelude](https://doc.rust-lang.org/std/prelude/index.html)
 
 
+
+
 ### Float Type
 
-[[ria-types-float]]
+[[ria-types-complex]]
 
-### Version
+## Version
 
 Internally, Cargo uses the **semver** crate for parsing the versions
+
+## Glossery
+
+### Ownership
+Ownership has a particular meaning within Rust. An owner is able to make any changes to the data and is responsible for deleting values that it owns when it leaves scope.
+
+### Literal
+"hello" called-> string literal, equal=> &'static str.

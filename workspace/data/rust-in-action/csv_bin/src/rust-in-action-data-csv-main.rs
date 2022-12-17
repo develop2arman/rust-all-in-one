@@ -34,10 +34,18 @@ fn main() {
     Fiordland penguin,60
     Invalid,data
     ";
+    let search_term="eyed";
 
     let records = penguin_data.lines();
 
+    for line in penguin_data.lines() { // <2>
+        if line.contains(search_term) {
+        println!("{}\n", line);
+        }
+    }
+
     for (i, record) in records.enumerate() {
+
         if i == 0 || record.trim().len() == 0 {
             continue;
         }

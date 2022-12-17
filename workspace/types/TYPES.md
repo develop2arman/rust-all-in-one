@@ -1,1 +1,7 @@
 [[PRIMITIVE]]
+
+[[STRING]]
+
+[[NUM]]
+
+[[GENERIC]]

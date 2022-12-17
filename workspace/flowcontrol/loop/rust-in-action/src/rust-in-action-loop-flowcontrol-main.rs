@@ -21,7 +21,7 @@ use std::time::{Duration, Instant};
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `nothing`
+/// `20`
 ///
 /// ## Example
 /// // ```rust,compile_fail,ignore
@@ -32,6 +32,16 @@ use std::time::{Duration, Instant};
 ///}
 ///```
 
-fn main(){
-    unimplemented!()
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {}", result);
 }
