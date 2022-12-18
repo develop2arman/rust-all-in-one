@@ -634,6 +634,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust-in-action-vec-collection_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-in-action-while-flowcontrol_bin"
 version = "0.1.0"
 

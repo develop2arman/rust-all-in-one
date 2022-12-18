@@ -67,4 +67,5 @@ members = [
     "workspace/flowcontrol/while/rust-in-action",
     "workspace/flowcontrol/pnfx-flowcontrol",
 
+    "workspace/collection/vec/rust-in-action",
 ]
