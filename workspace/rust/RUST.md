@@ -64,6 +64,8 @@ To understand what is included in local scope by default(like try_into()), you s
 
 Internally, Cargo uses the **semver** crate for parsing the versions
 
+
+
 ## Glossery
 
 ### Ownership
@@ -71,3 +73,6 @@ Ownership has a particular meaning within Rust. An owner is able to make any cha
 
 ### Literal
 "hello" called-> string literal, equal=> &'static str.
+
+### Notation 
+&str, &[]

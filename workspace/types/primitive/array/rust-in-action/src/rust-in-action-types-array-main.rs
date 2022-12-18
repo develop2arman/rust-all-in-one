@@ -23,8 +23,7 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `Alphabetical!'
-/// `Numerical!`
+/// `Wow, that's a big array!`
 ///
 /// ## Example
 /// //```rust,compile_fail,ignore

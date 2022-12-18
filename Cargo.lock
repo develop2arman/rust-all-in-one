@@ -507,6 +507,13 @@ name = "rust-egg-lifetime-static_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-egg-types-array_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
+
+[[package]]
 name = "rust-egg-types-string_bin"
 version = "0.1.0"
 dependencies = [
