@@ -47,13 +47,16 @@ fn main() {
   // PARAMETERS
   let context_lines = 2; //show 2 line before and after of finding line with 'needle' line
   let needle = "oo";
-  let haystack = "Every face, every shop,
-bedroom window, public-house, and
-dark square is a picture
-feverishly turned--in search of what?
-It is the same with books.
-What do we seek
-through millions of pages?";
+  let haystack = "11111,
+bedroom 22222
+33333
+44444
+55555 books.
+66666
+77777
+88888
+99999
+noon FFFFF";
 
   // INITIALIZATION
   let mut tags: Vec<usize> = Vec::new(); // <1> `tags` holds line numbers where matches occur
@@ -75,15 +78,29 @@ through millions of pages?";
 
   // PASS 2
   for (i, line) in haystack.lines().enumerate() { // <7> For each tag, at every line, check to see if we are nearby a match. When we are, add that line to the relevant `Vec<T>` within `ctx`.
+
+                     if cfg!(debug_assertions) {
+                              eprintln!("--------------i:{}--------------",i)
+                            }
+
     for (j, tag) in tags.iter().enumerate() {
       let lower_bound = tag.saturating_sub(context_lines); // <8> `usize.saturating_sub()` returns 0, rather than underflowing
       let upper_bound = tag + context_lines;
 
-      if (i >= lower_bound) && (i <= upper_bound) {
-          let line_as_string = String::from(line); // <9> Copy `line` into a new `String` and store that locally for each match
-          let local_ctx = (i, line_as_string);
-          ctx[j].push(local_ctx);
-      }
+                    if cfg!(debug_assertions) {
+                        eprintln!("--------------j:{}--------------",j)
+                      }
+
+        if (i >= lower_bound) && (i <= upper_bound) {
+            let line_as_string = String::from(line); // <9> Copy `line` into a new `String` and store that locally for each match
+            let local_ctx = (i, line_as_string);
+
+                      if cfg!(debug_assertions) {
+                        eprintln!("debug: {:?}",ctx[j])
+                      }
+
+            ctx[j].push(local_ctx);
+        }
     }
   }
 

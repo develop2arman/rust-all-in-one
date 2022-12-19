@@ -785,7 +785,7 @@
         "prefix": "ms.cfg.debug",
         "body": [
             "if cfg!(debug_assertions) { ",
-            "   eprintln!($1debug: {:?} -> {:?}",
+            "  eprintln!(\"debug: {:?} -> {:?}\",$1,$2)",
             "}"
         ],
         "description": "When debugging is enabled, include this code block. The exclamation mark (!) indicates a macro invocation. eprintln! prints to standard error. The {:?} syntax requests Rust print out the default debugging representation for the two types."
