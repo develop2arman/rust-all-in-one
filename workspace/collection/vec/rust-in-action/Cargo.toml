@@ -5,5 +5,5 @@ edition = "2021"
 
 [[bin]]
 doc = true
-name = "rust-in-action-vec-collection"
+name = "rust-in-action-vec-collection-main"
 path = "src/rust-in-action-vec-collection-main.rs"

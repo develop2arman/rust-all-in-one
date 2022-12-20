@@ -1,3 +1,3 @@
 
 
-tags #mod #const
+tags #mod #const #module

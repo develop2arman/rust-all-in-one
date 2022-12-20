@@ -7,7 +7,7 @@
 ///
 /// ```cargo doc  --package rust-in-action-vec-collection_bin  --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-in-action-vec-collection_bin ```
+/// ```cargo test --doc  --package rust-in-action-vec-collection_bin```
 ///
 /// ## What
 /// `TODO`
@@ -19,7 +19,7 @@
 ///
 /// * `tag` - This is the [str] to [find] the ['oo']
 ///
-/// # Return
+/// # Example
 /// `1: Every face, every shop,`
 ///
 /// `2: bedroom window, public-house, and`
@@ -38,25 +38,25 @@
 ///
 /// `7: through millions of pages?`
 ///
-/// ## Example
-///  `TODO`
 ///
+/// ## Result
 ///
-///
+/// ## Trace
+/// [rust-in-action-vec-collection-doc-main](../rust_in_action_vec_collection_trace1/index.html)
+
 fn main() {
   // PARAMETERS
   let context_lines = 2; //show 2 line before and after of finding line with 'needle' line
   let needle = "oo";
-  let haystack = "11111,
-bedroom 22222
-33333
-44444
-55555 books.
-66666
-77777
-88888
-99999
-noon FFFFF";
+  let haystack = "1: Every face, every shop,
+2: bedroom window, public-house, and
+3: dark square is a picture
+4: feverishly turned--in search of what?
+3: dark square is a picture
+4: feverishly turned--in search of what?
+5: It is the same with books.
+6: What do we seek
+7: through millions of pages?";
 
   // INITIALIZATION
   let mut tags: Vec<usize> = Vec::new(); // <1> `tags` holds line numbers where matches occur
@@ -72,6 +72,7 @@ noon FFFFF";
     }
   }
 
+
   if tags.len() == 0 { // <6> When there are no matches, exit early
     return;
   }
@@ -79,35 +80,26 @@ noon FFFFF";
   // PASS 2
   for (i, line) in haystack.lines().enumerate() { // <7> For each tag, at every line, check to see if we are nearby a match. When we are, add that line to the relevant `Vec<T>` within `ctx`.
 
-                     if cfg!(debug_assertions) {
-                              eprintln!("--------------i:{}--------------",i)
-                            }
 
     for (j, tag) in tags.iter().enumerate() {
       let lower_bound = tag.saturating_sub(context_lines); // <8> `usize.saturating_sub()` returns 0, rather than underflowing
       let upper_bound = tag + context_lines;
 
-                    if cfg!(debug_assertions) {
-                        eprintln!("--------------j:{}--------------",j)
-                      }
-
         if (i >= lower_bound) && (i <= upper_bound) {
             let line_as_string = String::from(line); // <9> Copy `line` into a new `String` and store that locally for each match
             let local_ctx = (i, line_as_string);
 
-                      if cfg!(debug_assertions) {
-                        eprintln!("debug: {:?}",ctx[j])
-                      }
-
             ctx[j].push(local_ctx);
+
         }
     }
   }
 
   // OUTPUT
   for local_ctx in ctx.iter() {
+
     for &(i, ref line) in local_ctx.iter() { // <10> `ref line` informs the compiler that we wish to borrow this value, rather than move it. These two terms are explained fully later in later chapters.
-      let line_num = i + 1;
+      let line_num = i ;//+ 1;
       println!("{}: {}", line_num, line);
     }
   }

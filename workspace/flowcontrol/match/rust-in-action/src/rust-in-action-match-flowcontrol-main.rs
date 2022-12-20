@@ -5,7 +5,7 @@
 ///
 /// ```cargo run -q -p rust-in-action-match-flowcontrol_bin --bin rust-in-action-match-flowcontrol-main```
 ///
-/// ```cargo doc  --package rust-in-action-match-flowcontrol_bin --message-matchmat short --no-deps --open --color always```
+/// ```cargo doc  --package rust-in-action-match-flowcontrol_bin --message-format short --no-deps --open --color always```
 ///
 /// ```cargo test --doc  --package rust-in-action-match-flowcontrol_bin```
 /// ## What

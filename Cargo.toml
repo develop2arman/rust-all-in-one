@@ -22,8 +22,12 @@ members = [
 
     "workspace/projects/fuzzme/fuzz_bin",
     "workspace/projects/fuzzme/fuzz_lib",
+    "workspace/projects/process_line/process_line_bin",
+    "workspace/projects/process_line/process_line_lib",
 
     "workspace/data/rust-in-action/csv_bin",
+    "workspace/data/regex/rust-in-action",
+    "workspace/data/random/rust-in-action",
 
     "workspace/borrowchecker/lifetime/elision/rust-doc",
     "workspace/borrowchecker/lifetime/elision/rust-in-action",
@@ -39,6 +43,8 @@ members = [
     "workspace/thread/race/rust-in-action",
 
     "workspace/data/convert/try_into/rust-in-action",
+    "workspace/data/io/file/rust-in-action",
+    "workspace/data/io/io/rust-in-action",
 
     "workspace/types/generic/rust-in-action",
     "workspace/types/generic/rust-doc",
@@ -68,4 +74,6 @@ members = [
     "workspace/flowcontrol/pnfx-flowcontrol",
 
     "workspace/collection/vec/rust-in-action",
+
+    "workspace/commandline/rust-in-action",
 ]

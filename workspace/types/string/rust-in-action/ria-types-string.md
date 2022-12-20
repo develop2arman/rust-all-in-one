@@ -42,4 +42,4 @@ Lists of things are incredibly common. The two types that you will work with mos
 
 ---
 
-tags #str
+tags #str #truncate

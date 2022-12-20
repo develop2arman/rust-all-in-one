@@ -8,3 +8,4 @@ autobins = true
 doc = true
 name = "rust-in-action-match-flowcontrol-main"
 path = "src/rust-in-action-match-flowcontrol-main.rs"
+
