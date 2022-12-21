@@ -23,6 +23,8 @@ members = [
     "workspace/projects/file/rust-in-action/file_lib",
     "workspace/projects/fuzzme/rust-in-action/fuzz_bin",
     "workspace/projects/fuzzme/rust-in-action/fuzz_lib",
+    "workspace/projects/satelite_messaging/rust-in-action/satelite_messaging_bin",
+    "workspace/projects/satelite_messaging/rust-in-action/satelite_messaging_lib",
     "workspace/projects/process_line/rust-in-action/process_line_bin",
     "workspace/projects/process_line/rust-in-action/process_line_lib",
 
@@ -30,6 +32,7 @@ members = [
     "workspace/data/regex/rust-in-action",
     "workspace/data/random/rust-in-action",
     "workspace/data/convert/try_into/rust-in-action",
+    "workspace/data/convert/text_to_enum/rust-in-action",
     "workspace/data/io/file/rust-in-action",
     "workspace/data/io/io/rust-in-action",
 
@@ -76,4 +79,6 @@ members = [
     "workspace/collection/vec/rust-in-action",
 
     "workspace/commandline/rust-in-action",
+
+    "workspace/errorhandling/rust-in-action",
 ]

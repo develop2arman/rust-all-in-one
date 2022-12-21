@@ -1,4 +1,5 @@
 #![allow(dead_code, unused_variables)]
+//! Simulating files one step at a time.
 use std::io::prelude::*;
 use std::fmt;  // <2> Bring the `std::fmt` crate into local scope, allowing us to make use of `fmt::Result`
 use std::fmt::{Display};  // <3> Bring `Display` into local scope, avoiding the need for us to prefix it as `fmt::Display` in our code
@@ -79,6 +80,14 @@ impl File {
        data: Vec::new(),
        state: FileState::Closed,
      }
+   }
+    pub fn new_with_data(name: &str,data: &Vec<u8>) -> File {
+
+      let mut f = File::new(name);
+
+      f.data = data.clone();
+
+      f
    }
    /// Returns the file's length in bytes.
    pub fn len(&self) -> usize {

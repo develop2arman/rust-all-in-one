@@ -1,46 +1,54 @@
+on: [push, pull_request]
+
+env:
+  buildDir: ${{ github.workspace }}/build/
+  
 tests:
   name: ${{ matrix.make.name }} (${{ matrix.os }})
   runs-on: ${{ matrix.os }}
   strategy:
     fail-fast: false
         matrix:
-        os: [ubuntu-latest, macos-latest]
+          os: [ubuntu-18.04, ubuntu-20.04, macos-10.15]
         rust: [stable]
         task:
           - name: Lint
             run: make check-clippy
 
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-18.04
+            triplet: x64-linux
             rust: stable
             services: {}
             task:
               name: Format
               run: make check-fmt
 
-          - os: ubuntu-latest
+          - os: ubuntu-20.04
+            triplet: x64-linux
             rust: nightly
             services: {}
             task:
               name: Build docs
               run: make build-docs
-          - os: ubuntu-latest
+          - os: ubuntu-20.04
             services: {}
 
-          - os: macos-latest
+          - os:  macos-10.15
             services: {}
+            triplet: x64-osx
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Prepare environment (ubuntu-latest)
+      - name: Prepare environment (ubuntu-20.04)
         run: |
           echo "SCCACHE_DIR=$HOME/.cache/sccache" >> $GITHUB_ENV
       - name: Prepare environment (macos-latest)
         run: |
           echo "SCCACHE_DIR=$HOME/Library/Caches/Mozilla.sccache" >> $GITHUB_ENV
-      - name: Install sccache (ubuntu-latest)
-        if: matrix.os == 'ubuntu-latest'
+      - name: Install sccache (ubuntu-20.04)
+        if: matrix.os == 'ubuntu-20.04'
         env:
           LINK: https://github.com/mozilla/sccache/releases/download
           SCCACHE_VERSION: v0.2.15
@@ -66,7 +74,7 @@ tests:
           override: true
 
       - name: Install Musl Tools
-        if: ${{ matrix.os == 'ubuntu-latest' }}
+        if: ${{ matrix.os == 'ubuntu-20.04' }}
         run: |
           sudo apt install -y musl-tools
           sudo ln -s /usr/bin/musl-gcc /usr/local/bin/x86_64-linux-musl-gcc
@@ -94,7 +102,7 @@ tests:
 
   test_python_example:
     name: Check python example
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
     - uses: actions/checkout@v2

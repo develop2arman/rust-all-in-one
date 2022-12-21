@@ -28,18 +28,23 @@ use file_lib::*;
 /// ## Example
 /// `nothing`
 ///
-/// // ```compile_fail,ignore
-///
-
-
+/// ```
+///  let text = String::from_utf8_lossy(&buffer); //text: Cow<str>
+/// //Converts Vec<u8> to
+/// //String. Any bytes that
+/// //are not valid UTF-8 are
+/// //replaced with �.
+/// ```
  fn main() {
-  let mut f5 = File::new("file-project.txt");
+
+  let _data: Vec<u8> = vec![114, 117, 115, 116, 33, 49 ];
+  let mut f5 =  File::new_with_data("2.txt", &_data); //File::new("file-project.txt");
 
   let mut buffer: Vec<u8> = vec![];
 
-  if f5.read(&mut buffer).is_err() {
-    println!("Error checking is working");
-  }
+  // if f5.read(&mut buffer).is_err() {
+  //   println!("Error checking is working");
+  // }
 
   f5 = open(f5).unwrap();
   let f5_length = f5.read(&mut buffer).unwrap();

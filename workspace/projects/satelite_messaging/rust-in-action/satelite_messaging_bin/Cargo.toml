@@ -1,0 +1,25 @@
+[package]
+authors = ["Automatically generated"]
+edition = "2021"
+name = "satelite_messaging_bin"
+publish = false
+version = "0.0.0"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+satelite_messaging_lib = { path = "../satelite_messaging_lib"}
+clap="2.0"
+regex="1.7.0"
+
+# Prevent this from interfering with workspaces
+#[workspace]
+#members = ["."]
+
+
+[[bin]]
+doc = false
+name = "satelite_messaging_main_bin"
+path = "src/satelite_messaging_main_bin.rs"
+test = false
