@@ -1,5 +1,7 @@
 #![crate_name = "rust_all_in_one"]
 #![allow(dead_code, unused_variables)]
+
+
 /// Main
 ///
 /// # Commands
@@ -23,7 +25,13 @@
 /// `nothing`
 ///
 /// ## Example
-/// //```rust,compile_fail,ignore
+/// ```rust,compile_fail,ignore
+/// #[allow(dead_code)]
+/// fn m(){
+///     core::panicking::panic!("in crash");
+///     unimplemented!()
+/// }
+/// ```
 
 #[cfg(panic = "unwind")]
 #[cfg(target_family = "unix")]

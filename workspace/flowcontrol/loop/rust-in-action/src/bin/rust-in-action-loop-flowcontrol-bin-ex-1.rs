@@ -22,9 +22,22 @@ use std::time::{Duration, Instant};
 ///
 /// ## Example
 ///
-/// //```rust,compile_fail,no_run
-
-
- fn main() {
-   unimplemented!()
- }
+/// ```rust,compile_fail,no_run
+/// fn main() -> ! {
+///   let j=1;
+///   let i=100;
+///     loop {
+///         if i== j{
+///           break;
+///         }
+///         else
+///         {
+///           j+=1;
+///         }
+///       };
+// }
+/// ```
+///
+fn main(){
+    unimplemented!()
+}

@@ -1,0 +1,23 @@
+[package]
+authors = ["Automatically generated"]
+edition = "2021"
+name = "file_bin"
+publish = false
+version = "0.0.0"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+file_lib = { path = "../file_lib"}
+
+# Prevent this from interfering with workspaces
+#[workspace]
+#members = ["."]
+
+
+[[bin]]
+doc = true
+name = "file_main_bin"
+path = "src/file_main_bin.rs"
+test = false
