@@ -676,6 +676,10 @@ name = "rust-in-action-race_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-in-action-semantic_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-in-action-types-array_bin"
 version = "0.1.0"
 dependencies = [

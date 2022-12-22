@@ -1,6 +1,6 @@
 #![allow(dead_code, unused_variables)]
 
-
+///
 
 
 #[derive(Debug)]
@@ -15,22 +15,25 @@ pub enum StatusMessage {
 
 #[derive(Debug)]
 pub struct Mailbox {
-  messages: Vec<Message>,
+  pub messages: Vec<Message>,
 }
 
 #[derive(Debug)]
 pub struct Message {
-    to: u64,
-    content: String,
+    pub to: u64,
+    pub content: String,
 }
 
 pub struct GroundStation {}
 
+
 impl Mailbox {
-    pub fn post(&mut self, to: &CubeSat, msg: Message) {
+    /// Mailbox.post() requires mutable access to itself and ownership over a Message.
+    pub fn post(&mut self, msg: Message) {
         self.messages.push(msg);
     }
-
+    /// Mailbox.deliver() requires a shared reference to a CubeSat to pull out its id field.
+    /// When we find a message, returns early with the Message wrapped in Some per the Option type
     pub fn deliver(&mut self, recipient: &CubeSat) -> Option<Message> {
         for i in 0..self.messages.len() {
             if self.messages[i].to == recipient.id {
@@ -44,17 +47,17 @@ impl Mailbox {
 }
 
 impl GroundStation {
-    pub fn connect(&self, sat_id: &u64) -> CubeSat {
+    pub fn connect(&self, sat_id: u64) -> CubeSat {
         CubeSat {
-            id: *sat_id,
+            id: sat_id,
         }
     }
-
-    pub fn send(&self, mailbox: &mut Mailbox, to: &CubeSat, msg: Message) {
-        mailbox.post(to, msg);
+/// Calls Mailbox.post() to send messages, yielding ownership of a Message
+    pub fn send(&self, mailbox: &mut Mailbox,msg: Message) {
+         mailbox.post(msg);
     }
 }
-
+/// Calls Mailbox.deliver() to receive messages, gaining ownership of a Messag
 impl CubeSat {
     pub fn recv(&self, mailbox: &mut Mailbox) -> Option<Message> {
         mailbox.deliver(&self)

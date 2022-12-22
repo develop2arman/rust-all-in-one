@@ -1,14 +1,20 @@
 
-[[LIFETIME]]
 
+> It underpins the term **fearless concurrency**
 
-### Let vs Const
+Borrow checking relies on three interrelated concepts—lifetimes, ownership, and borrowing:
 
-> If variables defined with #let are immutable, then why does Rust include a #const keyword?
- 
-The short answer is that data behind let can change. Rust allows types to have an apparently contradictory property of interior mutability.
-At the level of the [[COMPILER]]], let relates more to #alias ing than immutability.
-Aliasing in compiler terminology refers to having multiple references to the same location in memory at the same time. 
-**Read-only references** (borrows) to variables declared with **let** can alias the same data. 
-**Read-write references** (mutable borrows) are guaranteed to **never alias data.**
-Some types such as std:sync::Arc and std:#rc::Rc present an immutable façade, yet change their internal state over time. In the case of those two types, these increment a #reference_count as references to those are made and decrement that count when those references expire.
+> Ownership: the notion of ownership is rather limited. **An owner cleans up when its values’ lifetimes end.**
+For example, <u>when a function returns, the memory holding its local variables needs to be freed</u>. 
+Owners cannot prevent other parts of the program from accessing their values or report data theft to some overarching Rust authority.==the term move means== something very specific within Rust. Nothing physically moves.Movement within Rust code **refers to movement of ownership**, rather than the movement of data. 
+Ownership is a term used within the Rust community to <u>refer to the compile-time process that checks</u> that every use of a value is valid and that every value is destroyed cleanly.
+ownership system provides a route to memory safety without needing a garbage collector. 
+Four general strategies can help with ownership issues:
+     **Use references** where full ownership is not required.
+     **Duplicate** the value.
+     **Refactor** code to reduce the number of long-lived objects.
+     **Wrap** your data in a type designed to assist with movement issues.
+
+> To borrow: ==there is no obligation to return the value to its owner==. Its meaning is used to emphasize that while values can have a **single owner**, it’s possible for many parts of the program to **share access** to those values.
+
+> [[LIFETIME]]
