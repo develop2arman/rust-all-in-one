@@ -1,7 +1,30 @@
 #![allow(dead_code, unused_variables)]
 
+/// # Example
+/// Nexr solution is by using copy trait instead of using move short code(like main code)
+/// ```rust
+/// #[derive(Debug)]
+/// pub struct CubeSat {
+///  id: u64,
+/// }
+/// #[derive(Debug)]
+/// pub enum StatusMessage {
+///  Ok,
+/// }
 ///
-
+/// impl Copy for CubeSat { }
+/// impl Copy for StatusMessage { }
+/// impl Clone for CubeSat {
+/// fn clone(&self) -> Self {
+///     CubeSat { id: self.id }
+/// }
+/// }
+/// impl Clone for StatusMessage {
+/// fn clone(&self) -> Self {
+///     *self
+/// }
+/// }
+/// ```
 
 #[derive(Debug)]
 pub struct CubeSat {
