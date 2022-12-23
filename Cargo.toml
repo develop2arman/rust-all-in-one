@@ -50,6 +50,9 @@ members = [
 
     "workspace/thread/race/rust-in-action",
 
+    "workspace/types/struct/rust-doc",
+    "workspace/types/struct/rust-egg",
+    "workspace/types/return/rust-egg",
     "workspace/types/generic/rust-in-action",
     "workspace/types/generic/rust-doc",
     "workspace/types/primitive/float/rust-in-action",
@@ -85,4 +88,6 @@ members = [
 
     "workspace/duplication/copy-clone/rust-in-action",
     "workspace/duplication/rc/rust-in-action",
+
+    "workspace/borrowchecker/smartpointer/box/rust-in-action",
 ]

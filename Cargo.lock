@@ -559,6 +559,13 @@ name = "rust-doc-match-flowcontrol_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-struct_bin"
+version = "0.1.0"
+dependencies = [
+ "proptest",
+]
+
+[[package]]
 name = "rust-doc-types-generic_bin"
 version = "0.1.0"
 
@@ -576,6 +583,17 @@ version = "0.1.0"
 [[package]]
 name = "rust-egg-lifetime-static_bin"
 version = "0.1.0"
+
+[[package]]
+name = "rust-egg-return_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-egg-struct_bin"
+version = "0.1.0"
+dependencies = [
+ "proptest",
+]
 
 [[package]]
 name = "rust-egg-types-array_bin"
@@ -685,6 +703,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-in-action-semantic_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-in-action-smartpointer-box_bin"
 version = "0.1.0"
 
 [[package]]

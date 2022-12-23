@@ -1,4 +1,4 @@
-
+[[BOX]]
 
 ![Smart-Pointer-1](../../../rust/assets/images/smart-pointer-1.JPG)
 

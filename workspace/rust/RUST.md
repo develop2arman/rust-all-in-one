@@ -10,11 +10,11 @@
 
 ## Use-cases
 
-Hostile environments: In situations where **safety** is of utmost concern, Rust’s guarantees are a perfect fit.
-Concurrent
-Safe programming
-Processing
-Replacing legacy C or C++
+> Hostile environments: In situations where **safety** is of utmost concern, Rust’s guarantees are a perfect fit.
+- Concurrent
+- Safe programming
+- Processing
+- Replacing legacy C or C++
 > npm chose Rust to handle CPU-bound bottlenecks.
 
 ## Safety

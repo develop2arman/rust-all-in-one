@@ -1,11 +1,11 @@
 #![allow(dead_code, unused_variables)]
 
 
-/// rust-in-action-duplication-ex-1
+/// rust-in-action-smartpointer-box-ex-1
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-duplication_bin --bin  rust-in-action-duplication-ex-1```
+/// ```cargo run -q -p rust-in-action-smartpointer-box_bin --bin  rust-in-action-smartpointer-box-ex-1```
 ///
 /// ## What
 /// `TODO`
