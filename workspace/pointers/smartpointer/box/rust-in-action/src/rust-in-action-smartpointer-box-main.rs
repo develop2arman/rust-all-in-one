@@ -33,3 +33,7 @@
 ///  let c = a;
 ///  println!("Printed:{} {} {}", a,b,c);
 ///}
+
+fn main(){
+    unimplemented!()
+}

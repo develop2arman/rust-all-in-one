@@ -53,6 +53,7 @@ members = [
     "workspace/types/struct/rust-doc",
     "workspace/types/struct/rust-egg",
     "workspace/types/return/rust-egg",
+    "workspace/types/return/packpub",
     "workspace/types/generic/rust-in-action",
     "workspace/types/generic/rust-doc",
     "workspace/types/primitive/float/rust-in-action",
@@ -89,5 +90,9 @@ members = [
     "workspace/duplication/copy-clone/rust-in-action",
     "workspace/duplication/rc/rust-in-action",
 
-    "workspace/borrowchecker/smartpointer/box/rust-in-action",
+    "workspace/memory/piston/rust-in-action",
+    "workspace/memory/winapi/rust-in-action",
+
+    "workspace/pointers/smartpointer/box/rust-in-action",
+    "workspace/pointers/rust-in-action",
 ]

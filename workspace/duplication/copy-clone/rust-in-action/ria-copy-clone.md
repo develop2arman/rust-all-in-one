@@ -1,13 +1,13 @@
 
 ## Shallow copy VS Deep copy
 
-> Concept of copying the pointer, length, and capacity without copying the data probably sounds like making a shallow copy. If a type implements the Copy trait, a variable is still valid after assignment to another variable.
+> Concept of copying the pointer, length, and capacity without copying the data probably sounds like making a shallow [[copy]] . If a type implements the Copy trait, a variable is still valid after assignment to another variable.
 
 > If we do want to deeply copy the heap data of the String, not just the stack data, we can use a common method called clone.
 
 ## Clone Vs Copy
 
-> **Without Copy, Rust applies move semantics to a type’s access**. When using Clone, copying data is explicit.Until a type implements either Copy or Clone, its internal data cannot be copied.
+> **Without Copy, Rust applies move semantics to a type’s access**. When using [[Clone]], copying data is explicit.Until a type implements either Copy or Clone, its internal data cannot be copied.
 
 > Types can opt into two modes of duplication: cloning and copying.
 
@@ -23,7 +23,7 @@ May differ from original. Crate authors define what cloning means for their type
 - All the floating point types, such as f64.
 - The character type, char.
 - Tuples, if they only contain types that also implement Copy.
-- For example,** (i32, i32)** implements Copy(because all of primitive types are fix size so they **store on stack**), but (i32, String) does not.
+- For example,** (i32, i32)** implements Copy(because all of [[primitive]] types are fix size so they **store on stack**), but (i32, String) does not.
 
 ```
 Copying (std::marker::Copy)
@@ -53,6 +53,3 @@ Copies are bit-for-bit duplicates of the original value.
 - using shared references
 - using a different data structure
 - moving values to different structs or scopes.It depends on the situation.
-
-
-
