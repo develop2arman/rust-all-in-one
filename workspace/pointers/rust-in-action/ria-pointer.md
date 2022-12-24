@@ -15,8 +15,39 @@
 - The difference between a *mut T and a *const T is minimal. These can be freely [[cast]] between one another and tend to be used interchangeably, acting as in-source documentation.
 
 - Rust references (&mut T and &T) compile down to raw pointers. That means that it’s possible to access the performance of raw pointers **without needing to venture into unsafe blocks.**
+[[rust-doc]] 
 
---- 
+[
+
+- Are allowed to ignore the borrowing rules by having both immutable and mutable pointers or multiple mutable pointers to the same location
+- Aren’t guaranteed to point to valid memory
+- Are allowed to be null
+- Don’t implement any automatic cleanup
+
+]
+
+## Raw Poiner In Unsafe [[rust-doc]]
+
+Unsafe Rust has two new types called raw pointers that are similar to references. As with references, raw pointers can be immutable or mutable and are written as *const T and *mut T, respectively. The asterisk isn’t the dereference operator; it’s part of the type name. In the context of raw pointers, immutable means that the pointer can’t be directly assigned to after being dereferenced.
+
+unsafe Notice that we don’t include the unsafe keyword in this code. We can create raw pointers in safe code; we just can’t dereference raw pointers outside an unsafe block, as you’ll see in a bit.    
+
+```
+let mut num = 5;
+let r1 = &num as *const i32;
+let r2 = &mut num as *mut i32;
+unsafe {
+    println!("r1 is: {}", *r1);
+    println!("r2 is: {}", *r2);
+}
+
+let address = 0x012345usize;
+let r = address as *const i32;
+```
+
+> Creating a raw pointer to an arbitrary memory address
+
+---
 
 > A [[smart_pointer]] type that reads from its pointer location without needing to copy it first
 

@@ -1,7 +1,9 @@
 
 [[ria-pointer]]
 
+
 [[SMARTPOINTER]]
+
 
 
 > What are the differences between references, pointers, and memory addresses?
@@ -17,6 +19,12 @@
   - > References always refer to valid data.
   - > References are correctly aligned to multiples of usize
   - > Rust ensures that *a length* is kept alongside the *internal pointer*. That way Rust can ensure that the program never overruns the type’s space in memory.
+
+## Reference vs Pointer
+
+> A reference is like a pointer in that it’s an address we can follow to access data stored at that address that is owned by some other variable. Unlike a pointer, a reference is guaranteed to point to a valid value of a particular typ
+
+
 
 ---
 
