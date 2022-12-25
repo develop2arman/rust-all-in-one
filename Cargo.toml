@@ -32,6 +32,8 @@ members = [
     "workspace/data/regex/rust-in-action",
     "workspace/data/random/rust-in-action",
     "workspace/data/convert/try_into/rust-in-action",
+    "workspace/data/convert/generic/as_ref/rust-in-action",
+    "workspace/data/convert/generic/into/rust-in-action",
     "workspace/data/convert/text_to_enum/rust-in-action",
     "workspace/data/io/file/rust-in-action",
     "workspace/data/io/io/rust-in-action",

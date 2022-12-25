@@ -1,4 +1,17 @@
 #![allow(dead_code, unused_variables)]
+use kernel32;
+use winapi;
+
+use winapi::{
+    DWORD,                                        // <1>
+    HANDLE,                                       // <2>
+    LPVOID,                                       // <2>
+    PVOID,                                        // <3>
+    SIZE_T,                                       // <4>
+    LPSYSTEM_INFO,                                // <5>
+    SYSTEM_INFO,                                  // <6>
+    MEMORY_BASIC_INFORMATION as MEMINFO,          // <6>
+};
 
 /// Main
 ///
@@ -28,19 +41,6 @@
 ///
 /// //```rust,compile_fail,no_run,ignore
 ///
-use kernel32;
-use winapi;
-
-use winapi::{
-    DWORD,                                        // <1>
-    HANDLE,                                       // <2>
-    LPVOID,                                       // <2>
-    PVOID,                                        // <3>
-    SIZE_T,                                       // <4>
-    LPSYSTEM_INFO,                                // <5>
-    SYSTEM_INFO,                                  // <6>
-    MEMORY_BASIC_INFORMATION as MEMINFO,          // <6>
-};
 
 fn main() {
     let this_pid: DWORD;                          // <7>

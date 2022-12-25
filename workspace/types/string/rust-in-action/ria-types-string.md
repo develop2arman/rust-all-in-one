@@ -8,6 +8,22 @@ A &str is a borrowed type. In practical terms, this means that **&str can be tho
 "A String" is made up of three parts, shown on the left: a pointer to the memory that holds the contents of the string, a length, and a capacity.
 **String store data on heap and refs to stack**
 
+> One (&str) is allocated on the stack, the other (String) allocates memory on the heap. That means that types cannot be trivially cast between one another. It’s possible, however, to work around this with Rust’s generics.
+
+#As_Ref  #As_Mut #Into [[GENERIC]]
+
+```
+fn is_strong<T: AsRef<str>>(password: T) -> bool {
+    password.as_ref().len() > 5
+}
+```
+
+```
+fn is_strong<T: Into<String>>(password: T) -> bool {
+    password.into().len() > 5
+}
+```
+
 ## String-str Vs char
 
 •char—A single character encoded as **4 bytes**. The internal representation of char is equivalent to UCS-4/UTF-32. This differs from &str and String, which encodes single characters as UTF-8. Conversion does impose a penalty, but it means that char values are of fixed-width and are, therefore, easier for the [[COMPILER]]] to reason about. Characters encoded as UTF-8 can span 1 to 4 bytes.
