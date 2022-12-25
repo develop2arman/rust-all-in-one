@@ -18,3 +18,9 @@ Four general strategies can help with ownership issues:
 > To borrow: ==there is no obligation to return the value to its owner==. Its meaning is used to emphasize that while values can have a **single owner**, it’s possible for many parts of the program to **share access** to those values.
 
 > [[LIFETIME]]
+
+
+## Glossery
+
+### [[Ownership]]
+Ownership has a particular meaning within Rust. An owner is able to make any changes to the data and is responsible for deleting values that it owns when it leaves scope.

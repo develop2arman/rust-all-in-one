@@ -8,7 +8,7 @@
 /// ```cargo run -q -p rust-in-action-pointers-bin --bin  rust-in-action-pointers-ex-8```
 ///
 /// ## What
-/// `TODO`
+/// `Dereference raw pointer`
 ///
 /// ## How
 /// `TODO`

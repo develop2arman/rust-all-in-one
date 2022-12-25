@@ -61,5 +61,6 @@ fn main() {
     let b = &B;
     let c = &C;
 
+
     println!("a: {}, b: {:p}, c: {:p}", a, b, c);
 }

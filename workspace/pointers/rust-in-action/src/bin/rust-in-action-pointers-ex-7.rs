@@ -25,10 +25,11 @@
 /// a: 42 (0x7ffe1b271790...0x7ffe1b271797)
 /// ```
 /// ## Example
-/// //``rust,no_run,compile_fail,ignore
-/// Casts a reference to the variable a (&a) to a constant raw pointer i64 (*const i64)
-/// ```
+/// ```rust,no_run
+/// //Casts a reference to the variable a (&a) to a constant raw pointer i64 (*const i64)
 ///  let a_ptr = &a as *const i64;
+/// ```rust,no_run,compile_fail,ignore
+/// println!("a: {} ({:p}...0x{:x})", a, a_ptr+7, a_addr);
 /// ```
 fn main() {
     let a: i64 = 42;
@@ -36,5 +37,5 @@ fn main() {
     let a_addr: usize = unsafe {
     std::mem::transmute(a_ptr)
     };
-    println!("a: {} ({:p}...0x{:x})", a, a_ptr, a_addr + 7);
+    println!("a: {} ({:p}...0x{:x})", a, a_ptr, a_addr +7);
 }
