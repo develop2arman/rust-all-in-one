@@ -84,7 +84,7 @@ might be useful when discussing open file descriptors.
 
 
 
-### Let vs Const
+### Let Vs Const
 
 > If variables defined with #let are immutable, then why does Rust include a #const keyword?
  
@@ -92,7 +92,22 @@ The short answer is that data behind let can change. Rust allows types to have a
 At the level of the [[COMPILER]], let relates more to #alias ing than immutability.
 Aliasing in compiler terminology refers to having multiple references **to the same location in memory at the same time** 
 
-> **Read-only references** (borrows) to variables declared with **let** can alias the same data. 
+> **Read-only references** (borrows) to variables declared with **let can alias the same data**.
 > 
 > **Read-write references** (mutable borrows) are guaranteed to **never alias data.**
 Some types such as std:sync::Arc and std:#rc::Rc present an immutable façade, yet change their internal state over time. In the case of those two types, these increment a #reference_count as references to those are made and decrement that count when those references expire.
+
+
+## Const Vs Static
+
+```
+const WORDS: &'static str = "hello rust!";
+```
+
+> Thanks to static lifetime elision, you usually don't have to explicitly use 'static:
+
+```
+const WORDS: &str = "hello convenience!";
+```
+
+> const items looks remarkably similar to static items, which introduces some confusion as to which one should be used at which times. To put it simply, == **constants are inlined** == wherever they're used, making using them identical to simply replacing the name of the const with its value. Static variables, on the other hand, point to **a single location** in memory, which all accesses share. This means that, unlike with constants, they can't have **destructors**, and act as a single value across the == **entire codebase** ==.

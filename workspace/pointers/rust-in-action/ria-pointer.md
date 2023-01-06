@@ -36,6 +36,8 @@
 
 ]
 
+
+
 ## Raw Poiner In Unsafe [[rust-doc]]
 
 Unsafe Rust has two new types called raw pointers that are similar to references. As with references, raw pointers can be immutable or mutable and are written as *const T and *mut T, respectively. 
@@ -51,11 +53,15 @@ let r1 = &num as *const i32;
 let r2 = &mut num as *mut i32;
 unsafe {
     println!("r1 is: {}", *r1);
-    println!("r2 is: {}", *r2);
+    println!("r2 is: {}", *r2);    
 }
 
 let address = 0x012345usize;
 let r = address as *const i32;
+unsafe {        
+    std::ptr::write(r as *mut usize, 0usize); //Memory overwrite to a address
+    println!("r1 is: {}", *r);
+}
 ```
 
 
@@ -140,4 +146,4 @@ let ptr = 42 as *const Vec<String>;
 
 ---
 
-tags #into_raw [[Box]] [[unsafe]]
+tags #into_raw [[Box]] [[unsafe]] #from_raw_parts #null_mut #write [[ptr]] #size_of #to_string_lossy #from_ptr #CStr
