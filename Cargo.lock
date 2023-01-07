@@ -239,6 +239,17 @@ name = "code-like-pro-dryoc_bin"
 version = "0.1.0"
 
 [[package]]
+name = "code-like-pro-hashmap_bin"
+version = "0.1.0"
+dependencies = [
+ "metrohash",
+]
+
+[[package]]
+name = "code-like-pro-slice_bin"
+version = "0.1.0"
+
+[[package]]
 name = "color_quant"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -927,6 +938,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "master-rust-closure_bin"
+version = "0.1.0"
+
+[[package]]
+name = "master-rust-hashmap_bin"
+version = "0.1.0"
+
+[[package]]
+name = "master-rust-slice_bin"
+version = "0.1.0"
+
+[[package]]
 name = "memchr"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -949,6 +972,12 @@ checksum = "5de893c32cde5f383baa4c04c5d6dbdd735cfd4a794b0debdb2bb1b421da5ff4"
 dependencies = [
  "autocfg",
 ]
+
+[[package]]
+name = "metrohash"
+version = "1.0.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3ba553cb19e2acbc54baa16faef215126243fe45e53357a3b2e9f4ebc7b0506c"
 
 [[package]]
 name = "minimal-lexical"
@@ -1502,6 +1531,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "pnkfx-slice_bin"
+version = "0.1.0"
+
+[[package]]
 name = "ppv-lite86"
 version = "0.2.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1751,6 +1784,10 @@ name = "rust-doc-match-flowcontrol_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-slice_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-doc-struct_bin"
 version = "0.1.0"
 dependencies = [
@@ -1778,6 +1815,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-egg-return_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-egg-slice_bin"
 version = "0.1.0"
 
 [[package]]
@@ -1879,6 +1920,10 @@ name = "rust-in-action-for-flowcontrol_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-in-action-hashmap_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-in-action-io-io_bin"
 version = "0.1.0"
 dependencies = [
@@ -1924,6 +1969,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-in-action-semantic_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-in-action-slice_bin"
 version = "0.1.0"
 
 [[package]]

@@ -75,6 +75,15 @@ members = [
     "workspace/flowcontrol/pnfx-flowcontrol",
 
     "workspace/collection/vec/rust-in-action",
+    "workspace/collection/hashmap/master-rust",
+    "workspace/collection/hashmap/rust-in-action",
+    "workspace/collection/hashmap/code-like-pro",
+    "workspace/collection/slice/master-rust",
+    "workspace/collection/slice/rust-egg",
+    "workspace/collection/slice/rust-doc",
+    "workspace/collection/slice/rust-in-action",
+    "workspace/collection/slice/code-like-pro",
+    "workspace/collection/slice/pnkfx",
 
     "workspace/commandline/rust-in-action",
 
@@ -90,4 +99,6 @@ members = [
     "workspace/pointers/rust-in-action",
 
     "workspace/data/serde/candle_dev",
+
+    "workspace/functional-programming/closure",
 ]
