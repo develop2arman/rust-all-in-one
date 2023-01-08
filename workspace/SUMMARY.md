@@ -38,4 +38,4 @@
 
 [[NETWORK]]
 
- - [RUST](rust/RUST.md)
+ [RUST](rust/RUST.md)
