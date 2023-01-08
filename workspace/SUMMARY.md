@@ -12,9 +12,9 @@
           - [pb-lifetime-static](borrowchecker/lifetime/static/packtpub/pb-lifetime-static.md)
           - [re-lifetime-static](borrowchecker/lifetime/static/rust-egg/re-lifetime-static.md)
           - [ria-lifetime-static](borrowchecker/lifetime/static/rust-in-action/ria-lifetime-static.md)      
-  - [ELISION](borrowchecker/lifetime/elision/ELISION.md)
-  - [DANGLING](borrowchecker/lifetime/dangling/DANGLING.md)
-    - [ria-dangling](borrowchecker/lifetime/dangling/rust-in-action/ria-dangling.md)      
+    - [ELISION](borrowchecker/lifetime/elision/ELISION.md)
+    - [DANGLING](borrowchecker/lifetime/dangling/DANGLING.md)
+      - [ria-dangling](borrowchecker/lifetime/dangling/rust-in-action/ria-dangling.md)      
 
 ---
 
@@ -29,3 +29,12 @@
     - [rd-slice](collection/slice/rust-doc/rd-slice.md)
   - [VECTOR](collection/vec/VECTOR.md)
     - [ria-vec](collection/vec/rust-in-action/ria-vec.md)    
+
+---
+
+- [COMMANDLINE](commandline/COMMANDLINE.md)
+  - [ria-commandline](commandline/rust-in-action/ria-commandline.md)
+
+---
+
+

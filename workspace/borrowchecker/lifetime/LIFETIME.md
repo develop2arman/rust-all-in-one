@@ -1,3 +1,11 @@
+
+[[DANGLING]]
+
+[[ELISION]]
+
+[[STATIC]]
+
+
 # Lifetime
 > lifetime = timetolive = subset of their scope.
 
@@ -72,16 +80,6 @@ might be useful when discussing open file descriptors.
 
 > Unfortunately, it’s not straightforward to disable the automatic drop functionality. Disabling drop isn’t usually necessary; the whole point of the Drop trait is that it’s taken care of automatically. Occasionally, however, you might want to clean up a value early. 
 > Rust doesn’t let you call the Drop trait’s drop method manually; instead you have to call the **std::mem::drop function**
-
-
-[[DANGLING]]
-
-[[ELISION]]
-
-[[STATIC]]
-
-
-
 
 
 ### Let Vs Const
