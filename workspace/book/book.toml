@@ -2,5 +2,5 @@
 authors = ["Arman Riazi"]
 language = "en"
 multilingual = false
-src = "."
+src = "./"
 title = "Rust-All-In-One"
