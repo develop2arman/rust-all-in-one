@@ -1,10 +1,10 @@
 
 # Intro
 
-[RUST](../../workspace/rust/RUST.md)
+[RUST](rust/RUST.md)
 
 # Template
-
+```
 /// #![allow(dead_code, unused_variables)]
 
 /// packtpub-string-bin-ex-1
@@ -28,3 +28,4 @@
 ///
 /// ## Example
 /// //```rust,compile_fail,ignore
+```
