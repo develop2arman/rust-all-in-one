@@ -37,4 +37,15 @@
 
 ---
 
+- [DATA](data/DATA.md)
+  - [CONVERT](data/convert/CONVERT.md)
+    - [ria-texttoenum](data/convert/text_to_enum/rust-in-action/ria-texttoenum.md)
+  - [IO](data/io/IO.md)
+    - [ria-data-io-io](data/io/io/rust-in-action/ria-data-io-io.md)
+    - [FILE](data/io/file/FILE.md)
+      - [ria-data-file](data/io/file/rust-in-action/ria-data-file.md)
+  - [ria-data-csv-bin](data/rust-in-action/csv_bin/ria-data-csv-bin.md)
+  - [REGEX](data/regex/REGEX.md)
+    - [ria-regex](data/regex/ria-regex.md)
 
+---    
