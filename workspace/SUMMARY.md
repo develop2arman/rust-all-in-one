@@ -1,6 +1,9 @@
 # Summary
 
 - [TEMPLATE](TEMPLATE.md)
+- [RUST](rust/RUST.md)
+
+---
 
 - [BORROWCHECKER](borrowchecker/BORROWCHECKER.md)
   - [SEMANTIC](borrowchecker/semantic/SEMANTIC.md)
@@ -26,40 +29,3 @@
     - [rd-slice](collection/slice/rust-doc/rd-slice.md)
   - [VECTOR](collection/vec/VECTOR.md)
     - [ria-vec](collection/vec/rust-in-action/ria-vec.md)    
-
-
-[COMMANDLINE](commandline/COMMANDLINE.md)
-
-[COLLECTION](collection/COLLECTION.md)
-
-- [DATA](data.md)
-    - [CONVERT](data/convert/CONVERT.md)
-    - [FILE](data/io/file/FILE.md)
-    - [FILE](data/convert/text_to_enum/rust-in-action/ria-texttoenum.md)
-    
-
-[[Duplication]]
-
-[[ERROR-HANDLING]]
-
-[[FEATURE]]
-
-[[FLOWCONTROL]]
-
-[[FUNC-PROG]]
-
-[[MEMORY]]
-
--[POINTERS](pointers/POINTERS.md)
-    - [SMARTPOINTER](pointers/smartpointer/SMARTPOINTER.md)
-      - [BOX](pointers/smartpointer/box/BOX.md)
-
-[[THREAD]]
-
-[[TYPES]]
-
-[[OOP]]
-
-[[NETWORK]]
-
- [RUST](rust/RUST.md)
