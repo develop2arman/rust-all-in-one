@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Rust-All-In-One</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="TEMPLATE.html">TEMPLATE</a></li><li class="chapter-item expanded affix "><a href="borrowchecker/BORROWCHECKER.html">BORROWCHECKER</a></li><li class="chapter-item expanded affix "><a href="commandline/COMMANDLINE.html">COMMANDLINE</a></li><li class="chapter-item expanded affix "><a href="collection/COLLECTION.html">COLLECTION</a></li><li class="chapter-item expanded "><a href="data.html"><strong aria-hidden="true">1.</strong> DATA</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data/convert/CONVERT.html"><strong aria-hidden="true">1.1.</strong> CONVERT</a></li><li class="chapter-item expanded "><a href="data/io/file/FILE.html"><strong aria-hidden="true">1.2.</strong> FILE</a></li><li class="chapter-item expanded "><a href="data/convert/text_to_enum/rust-in-action/ria-texttoenum.html"><strong aria-hidden="true">1.3.</strong> FILE</a></li></ol></li><li class="chapter-item expanded "><a href="pointers/POINTERS.html">POINTERS</a></li><li class="chapter-item expanded affix "><a href="pointers/smartpointer/SMARTPOINTER.html">SMARTPOINTER</a></li><li class="chapter-item expanded affix "><a href="pointers/smartpointer/box/BOX.html">BOX</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Rust-All-In-One</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="intro"><a class="header" href="#intro">Intro</a></h1>
+<p><a href="../../workspace/rust/RUST.html">RUST</a></p>
+<h1 id="template"><a class="header" href="#template">Template</a></h1>
+<p>/// #![allow(dead_code, unused_variables)]</p>
+<p>/// packtpub-string-bin-ex-1
+///
+/// ## Commands
+///
+/// <code>cargo run -q -p packtpub-types-string_bin --bin packtpub-string-bin-ex-1</code>
+///
+/// ## What
+/// <code>TODO</code>
+///
+/// ## How
+/// <code>TODO</code>
+///
+/// # Arguments
+///
+/// * <code>Arg1</code> - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// <code>assert:true</code>
+///
+/// ## Example
+/// //```rust,compile_fail,ignore</p>
+<div style="break-before: page; page-break-before: always;"></div><blockquote>
+<p>It underpins the term <strong>fearless concurrency</strong></p>
+</blockquote>
+<p>Borrow checking relies on three interrelated concepts—lifetimes, ownership, and borrowing:</p>
+<blockquote>
+<p>Ownership: the notion of ownership is rather limited. <strong>An owner cleans up when its values’ lifetimes end.</strong>
+For example, <u>when a function returns, the memory holding its local variables needs to be freed</u>. 
+Owners cannot prevent other parts of the program from accessing their values or report data theft to some overarching Rust authority.==the term move means== something very specific within Rust. Nothing physically moves.Movement within Rust code <strong>refers to movement of ownership</strong>, rather than the movement of data. 
+Ownership is a term used within the Rust community to <u>refer to the compile-time process that checks</u> that every use of a value is valid and that every value is destroyed cleanly.
+ownership system provides a route to memory safety without needing a garbage collector. 
+Four general strategies can help with ownership issues:
+- <strong>Use references</strong> where full ownership is not required.
+- <strong>Duplicate</strong> the value.
+- <strong>Refactor</strong> code to reduce the number of long-lived objects.
+- <strong>Wrap</strong> your data in a type designed to assist with movement issues.</p>
+</blockquote>
+<blockquote>
+<p>To borrow: ==there is no obligation to return the value to its owner==. Its meaning is used to emphasize that while values can have a <strong>single owner</strong>, it’s possible for many parts of the program to <strong>share access</strong> to those values.</p>
+</blockquote>
+<blockquote>
+<p>[[LIFETIME]]</p>
+</blockquote>
+<h2 id="glossery"><a class="header" href="#glossery">Glossery</a></h2>
+<h3 id="ownership"><a class="header" href="#ownership">[[Ownership]]</a></h3>
+<p>Ownership has a particular meaning within Rust. An owner is able to make any changes to the data and is responsible for deleting values that it owns when it leaves scope.</p>
+<div style="break-before: page; page-break-before: always;"></div><p><a href="commandline/ria-rust-rust-in-action/ria-commandline.html">ria-commandline</a></p>
+<div style="break-before: page; page-break-before: always;"></div><p>[[VECTOR]]</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="data"><a class="header" href="#data">DATA</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><p>tags #try_into</p>
+<p>[[ria-texttoenum]]</p>
+<div style="break-before: page; page-break-before: always;"></div><p>[[rust-in-action/ria-data-file]]</p>
+<div style="break-before: page; page-break-before: always;"></div><p>tags #parse #enum #log #splitn</p>
+<div style="break-before: page; page-break-before: always;"></div><p>[[ria-pointer]]</p>
+<p>[[SMARTPOINTER]]</p>
+<blockquote>
+<p>What are the differences between references, pointers, and memory addresses?</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>A memory address</strong>, often shortened to address, is a number that happens to <em>refer to a single byte in memory</em>. Memory addresses are abstractions <em>provided by assembly languages</em>.
+&gt;&gt; Used <strong>for types</strong> where it’s important to make their <strong>unsafe</strong> nature explicit.</p>
+</li>
+<li>
+<p><strong>A pointer</strong>, sometimes expanded to raw pointer, is a memory address that ==points to a value of some type==. Pointers are abstractions provided by <em>higher-level languages</em>.
+&gt;&gt; Refer to something more <strong>primitive</strong>. This also includes the implication that <strong>we are responsible</strong> for maintaining safety. (There is an implied connotation of being <strong>unsafe</strong>.)</p>
+</li>
+<li>
+<p><strong>A reference</strong> <em>is a pointer</em>, or in the case of <em>dynamically sized types</em>, a pointer and an integer with extra guarantees. References are abstractions <em>provided by Rust</em>.
+&gt;&gt; References—Signal that the <strong>Rust compiler</strong> will provide its <strong>safety guarantees</strong>.</p>
+<ul>
+<li>
+<blockquote>
+<p>References always ==refer to valid data==.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>References are correctly aligned to ==multiples of usize==.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Rust ensures that <em>a length</em> is kept alongside the <em>internal pointer</em>. That way Rust can ensure that the program never overruns the type’s space in memory.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="reference-vs-pointer"><a class="header" href="#reference-vs-pointer">Reference vs Pointer</a></h2>
+<blockquote>
+<p>A reference is like a pointer in that it’s an address we can follow to access data stored at that address that is owned by some other variable. Unlike a pointer, a reference is guaranteed ==to point to a valid value of a particular type==</p>
+</blockquote>
+<h2 id="special-pointers"><a class="header" href="#special-pointers">Special pointers</a></h2>
+<p>In addition, the following tools can also be handy in certain situations:</p>
+<ul>
+<li>Deeply interlinked data structures can benefit from <strong>std::rc::Weak and std::arc::Weak</strong> for single and multi-threaded programs, respectively. These allow access to data within an <strong>Rc/Arc without incrementing its reference count</strong>. This can prevent never-ending cycles of pointers.</li>
+<li>The <strong>alloc::raw_vec::RawVec</strong> type underlies Vec<T> and <strong>VecDeq<T>.</strong> An expandable, double-ended queue that hasn’t appeared in the book so far, it understands how <strong>to allocate and deallocate memory in a smart way</strong> for any given type.</li>
+<li>The std::cell::UnsafeCell type sits behind both Cell<T> and RefCell<T>. If you would like to provide interior mutability to your types, its implementation is worth investigating.</li>
+</ul>
+<hr />
+<p><img src="pointers/../rust/assets/images/mem-layout1.JPG" alt="Memory-Layout-1" />
+<img src="pointers/../rust/assets/images/mem-layout2.JPG" alt="Memory-Layout-2" /></p>
+<p><img src="pointers/../rust/assets/images/dynamic-mem.JPG" alt="Dynamic Memory" /></p>
+<hr />
+<h2 id="pointer-definations"><a class="header" href="#pointer-definations">Pointer Definations</a></h2>
+<p><img src="pointers/../rust/assets/images/smart-pointer-1.JPG" alt="Smart-Pointer-1" /></p>
+<p><img src="pointers/../rust/assets/images/smart-pointer-2.JPG" alt="Smart-Pointer-2" /></p>
+<p><img src="pointers/../rust/assets/images/smart-pointer-3.JPG" alt="Smart-Pointer-3" /></p>
+<h2 id="glossery-1"><a class="header" href="#glossery-1">Glossery</a></h2>
+<h3 id="smart_pointer"><a class="header" href="#smart_pointer">[[smart_pointer]]</a></h3>
+<p>e.q wrapper type. Rust’s smart pointer types tend to wrap raw pointers and bestow them with added semantics.</p>
+<h3 id="fat-pointer-vs-thin-pointer"><a class="header" href="#fat-pointer-vs-thin-pointer">fat pointer Vs thin pointer</a></h3>
+<p>The term <strong>fat</strong> pointer refers to <strong>memory layout</strong>. 
+<strong>Thin</strong> pointers, such as <strong>raw pointers</strong>, are <em>a single usize wide</em>. 
+Fat pointers are usually <em>two usize</em> wide,and occasionally more</p>
+<div style="break-before: page; page-break-before: always;"></div><p>[[BOX]]</p>
+<p>[[RC]]</p>
+<h2 id="comparistions-of-smart-pointers-rust-doc"><a class="header" href="#comparistions-of-smart-pointers-rust-doc">Comparistions of Smart pointers [[rust-doc]]</a></h2>
+<blockquote>
+<p>Rc<T> enables multiple owners of the same data; Box<T> and RefCell<T> have single owners.</p>
+</blockquote>
+<blockquote>
+<p>Box<T> allows immutable or mutable borrows checked at compile time; Rc<T> allows only immutable borrows checked at compile time; RefCell<T> allows immutable or mutable borrows checked at runtime.</p>
+</blockquote>
+<blockquote>
+<p>Because RefCell<T> allows mutable borrows checked at runtime, you can mutate the value inside the RefCell<T> even when the RefCell<T> is immutable.</p>
+</blockquote>
+<blockquote>
+<p>RefCell<T> lets us have many immutable borrows or one mutable borrow at any point in time.</p>
+</blockquote>
+<blockquote>
+<p>Similar to Rc<T>, RefCell<T> is only for use in [[single_threaded]] scenarios.</p>
+</blockquote>
+<blockquote>
+<p>Neither Cell<T> nor RefCell<T> are thread safe (they do not implement #Sync )</p>
+</blockquote>
+<blockquote>
+<p>Standard library has other types that provide interior mutability:</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Such as Cell<T>, which is similar except that instead of giving references to the inner value, the <strong>value is copied</strong> in and out of the Cell<T>.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>There’s also Mutex<T>, which offers interior mutability that’s safe to use <strong>across threads</strong> [[multi_tread]] scenarios.</p>
+</blockquote>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><p>[[ria-smartpointer-box]]</p>
+<p>[[rust-doc]]</p>
+<p>[</p>
+<blockquote>
+<p>cons=recursive type</p>
+<p>We now know that any List value will take up the size of an i32 plus the size of a box’s pointer data. By using a box, <strong>we’ve broken the infinite</strong>, recursive chain, so the <strong>compiler can figure out the size it</strong> needs to <em>store a List value</em>.
+Cons+Box :A List that is not infinitely sized because Cons holds a Box Cons : A List that is infinitely sized because Cons is just a name and it is replacable with anyname.</p>
+<blockquote>
+<p>Boxes allow you to store data on the heap rather than the stack.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>What remains on the stack is the pointer to the heap also don’t have any performance overhead that these special capabilities incur, so they can be useful in cases like the cons list where the indirection is the only feature we need.
+&gt;&gt;The Box<T> type is a [[smart_pointer]] because it implements the #Deref trait, </p>
+<p><strong>which allows Box<T> values to be treated like references</strong>. When a Box<T> value goes out of scope, the #heap data that the box is pointing to is cleaned up as well because of the #Drop [[trait]] implementation.</p>
+</blockquote>
+<blockquote>
+<p>You’ll use them most often in these situations:</p>
+</blockquote>
+<blockquote>
+<p><strong>When you have a type whose size can’t be known at compile time</strong> and you want to use a value of that type in a context that requires an exact size <strong>When you have a large amount of data</strong> and you want to transfer ownership but ensure the data won’t be copied when you do so When you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type.</p>
+</blockquote>
+<blockquote>
+<p>At [[compile_time]] , Rust needs to know how much space a type takes up. One type <strong>whose size can’t be known at compile time is a recursive type</strong>, where a value can have as part of itself another value of the same type. Because this nesting of values could theoretically continue infinitely, Rust doesn’t know how much space a value of a recursive type needs.</p>
+<p>However, <strong>boxes have a known size</strong>, so by inserting a box in a recursive type definition, you can have recursive types.</p>
+</blockquote>
+<blockquote>
+<p><strong>Box is very useful for returning traits</strong>. You also saw that we can use impl Trait to return other traits, or closures. Box can be used in a similar way. </p>
+</blockquote>
+<blockquote>
+<p>You can use a <strong>Box because otherwise the compiler won't know the size of the value</strong>. </p>
+<blockquote>
+<p>[[dyn]] is a word that shows you that you are talking about a trait, not a struct or anything else.</p>
+</blockquote>
+</blockquote>
+<p>]</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
