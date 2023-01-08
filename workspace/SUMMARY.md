@@ -104,7 +104,7 @@
 
 - [FEATURE](feature/FEATURE.md)
   - [clp-feature-dryoc](feature/code-like-pro/dryoc_bin/clp-feature-dryoc.md)
-  - [rd-feature-shapes-lib](rd-feature/rust-doc/rd-feature-shapes-lib.md)
+  - [rd-feature-shapes-lib](feature/rust-doc/rd-feature-shapes-lib.md)
 
 ---
 
