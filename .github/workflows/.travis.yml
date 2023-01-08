@@ -1,3 +1,5 @@
+name : Travis
+
 language: rust
 
 sudo: required

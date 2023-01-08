@@ -24,6 +24,10 @@ check-clippy :
 .PHONY : lint
 lint : check-fmt check-clippy
 
+.PHONY : install-mdbook
+check-fmt :
+	cargo install mdbook
+
 .PHONY : test
 test :
 	@cargo test --workspace --lib
