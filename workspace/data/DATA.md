@@ -1,6 +1,5 @@
+[ria-data-csv-bin](../ria-rust-in-action/csv_bin/ria-data-csv-bin.md)
 
-[[ria-data-csv-bin]]
+[ria-regex](../regex/ria-regex.md)
 
-[[ria-regex]]
-
-[[io/IO]]
+[io/IO](io/IO.md)
