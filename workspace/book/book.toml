@@ -1,6 +1,0 @@
-[book]
-authors = ["Arman Riazi"]
-language = "en"
-multilingual = false
-src = "./"
-title = "Rust-All-In-One"

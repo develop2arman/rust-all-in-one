@@ -1,3 +1,3 @@
-[[loop/packtpub/pb-loop]]
+[[pp-loop]]]
 
 [[loop/rust-in-action/ria-loop]]

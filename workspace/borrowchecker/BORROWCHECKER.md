@@ -1,5 +1,6 @@
 
-
+> [[LIFETIME]]
+>
 > It underpins the term **fearless concurrency**
 
 Borrow checking relies on three interrelated concepts—lifetimes, ownership, and borrowing:
@@ -17,7 +18,7 @@ Four general strategies can help with ownership issues:
 
 > To borrow: ==there is no obligation to return the value to its owner==. Its meaning is used to emphasize that while values can have a **single owner**, it’s possible for many parts of the program to **share access** to those values.
 
-> [[LIFETIME]]
+
 
 
 ## Glossery

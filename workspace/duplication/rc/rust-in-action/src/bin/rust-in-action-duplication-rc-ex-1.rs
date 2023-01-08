@@ -1,5 +1,7 @@
 #![allow(dead_code, unused_variables)]
 
+use std::rc::Rc;
+
 /// rust-in-action-duplication-rc-ex-1
 ///
 /// ## Commands
