@@ -57,4 +57,5 @@ build-docs :
 
 .PHONY : build-docs
 build-docs :
+	mdbook build
 	cargo doc --workspace --message-format short --no-deps --color always
