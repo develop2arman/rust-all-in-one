@@ -18,13 +18,9 @@
 - [BORROWCHECKER](borrowchecker/BORROWCHECKER.md)
   - [SEMANTIC](borrowchecker/semantic/SEMANTIC.md)
   - [LIFETIME](borrowchecker/lifetime/LIFETIME.md)
-    - [STATIC](borrowchecker/lifetime/static/STATIC.md)
-          - [pb-lifetime-static](borrowchecker/lifetime/static/packtpub/pb-lifetime-static.md)
-          - [re-lifetime-static](borrowchecker/lifetime/static/rust-egg/re-lifetime-static.md)
-          - [ria-lifetime-static](borrowchecker/lifetime/static/rust-in-action/ria-lifetime-static.md)      
+    - [STATIC](borrowchecker/lifetime/static/STATIC.md)  
     - [ELISION](borrowchecker/lifetime/elision/ELISION.md)
     - [DANGLING](borrowchecker/lifetime/dangling/DANGLING.md)
-      - [ria-dangling](borrowchecker/lifetime/dangling/rust-in-action/ria-dangling.md)      
 
 ---
 
