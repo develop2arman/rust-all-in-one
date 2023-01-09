@@ -44,8 +44,12 @@
     - [ELISION](borrowchecker/lifetime/elision/ELISION.md)
     - [DANGLING](borrowchecker/lifetime/dangling/DANGLING.md)
       - [ria-dangling](borrowchecker/lifetime/dangling/rust-in-action/ria-dangling.md)      
+
 ---
 
+- [BENCHMARK](benches/BENCHMARK.md)
+
+---
 
 - [POINTERS](pointers/POINTERS.md)
   - [ria-pointer](pointers/rust-in-action/ria-pointer.md)

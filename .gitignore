@@ -3,3 +3,4 @@ debug/
 rls/
 *.o
 .vscode/
+Cargo.lock
