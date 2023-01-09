@@ -1,1 +1,1 @@
-tags #time #duratio #instant
+> `tags` [[time]] [[duration]] [[instant]]

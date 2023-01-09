@@ -1,3 +1,3 @@
 
 
-tags #parse #enum #log #splitn
+> `tags` [[parse]] [[enum]] [[log]] [[splitn]]

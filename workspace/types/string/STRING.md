@@ -6,15 +6,7 @@
 
 [[ria-types-string]]
 
-
-## Glossery
-
-### Literal
-"hello" called-> string literal, equal=> &'static str.
-
-### Notation 
-&str, &[]
-
+---
 
 ## str
 str is a high-performance, relatively feature-poor type. Once created, **str values cannot expand or shrink**. In this sense, these are similar to interacting with **a raw memory array**. Unlike a raw memory array, though, str values are guaranteed to be valid UTF-8 characters.
@@ -28,7 +20,7 @@ A &str is a borrowed type. In practical terms, this means that **&str can be tho
 
 > One (&str) is allocated on the stack, the other (String) allocates memory on the heap. That means that types cannot be trivially cast between one another. It’s possible, however, to work around this with Rust’s generics.
 
-#As_Ref  #As_Mut #Into [[GENERIC]]
+> `tags` [[as_ref]]  [[as_mut]] [[into]] [[GENERIC]]
 
 ```
 fn is_strong<T: AsRef<str>>(password: T) -> bool {
@@ -43,8 +35,6 @@ fn is_strong<T: Into<String>>(password: T) -> bool {
 ```
 
 ## String-str Vs char
-
-> #ria
 
 •char—A single character encoded as **4 bytes**. The internal representation of char is equivalent to UCS-4/UTF-32. This differs from &str and String, which encodes single characters as UTF-8. Conversion does impose a penalty, but it means that char values are of fixed-width and are, therefore, easier for the [[COMPILER]]] to reason about. Characters encoded as UTF-8 can span 1 to 4 bytes.
 
@@ -75,4 +65,13 @@ Lists of things are incredibly common. The two types that you will work with mos
 •std::ffi:: #OSString —A platform-native string. It’s behavior is close to String but without a guarantee that it’s encoded as #UTF-8 and that it won’t contain the zero byte (0x00).
 
 •std:: #path ::Path—A string-like type that is dedicated to handling filesystem paths.
+
+
+## Glossery
+
+### Literal
+"hello" called-> string literal, equal=> &'static str.
+
+### Notation 
+&str, &[]
 

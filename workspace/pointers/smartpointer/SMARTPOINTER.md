@@ -2,8 +2,9 @@
 
 [[RC]]
 
+---
 
-## Comparistions of Smart pointers [[rust-doc]]
+## Comparistions of Smart pointers 
 
 > Rc<T> enables multiple owners of the same data; Box<T> and RefCell<T> have single owners.
 

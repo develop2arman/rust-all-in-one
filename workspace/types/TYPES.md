@@ -10,6 +10,8 @@
 
 [[STRUCT]]
 
+---
+
 ## Class Vs Struct
 ![Class Vs Struct](../rust/assets/images/class.JPG)
 

@@ -5,6 +5,7 @@
 
 [[STATIC]]
 
+---
 
 # Lifetime
 > lifetime = timetolive = subset of their scope.
@@ -96,7 +97,7 @@ Aliasing in compiler terminology refers to having multiple references **to the s
 Some types such as std:sync::Arc and std:#rc::Rc present an immutable façade, yet change their internal state over time. In the case of those two types, these increment a #reference_count as references to those are made and decrement that count when those references expire.
 
 
-## Const Vs Static
+### Const Vs Static
 
 ```
 const WORDS: &'static str = "hello rust!";

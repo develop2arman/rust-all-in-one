@@ -1,3 +1,3 @@
 
 
-tags #string_to_hashm[[HashSet]]
+> `tags` [[string_to_hash]] [[HashSet]]

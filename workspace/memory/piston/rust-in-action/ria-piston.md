@@ -1,1 +1,5 @@
-tags #time #memory_allocate #graphic #2d #random [[ria-heap]] #GlobalAlloc #..=
+[[ria-heap]]
+
+---
+
+> `tags` [[time]] [[memory_allocate]] [[graphic]] [[2d]] [[random]]  [[GlobalAlloc]]

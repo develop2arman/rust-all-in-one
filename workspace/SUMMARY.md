@@ -3,7 +3,6 @@
 - [TEMPLATE](TEMPLATE.md)
 - [RUST](rust/RUST.md)
 
-
 ---
 
 - [TYPES](types/TYPES.md)
@@ -29,78 +28,50 @@
 ---
 
 - [POINTERS](pointers/POINTERS.md)
-  - [ria-pointer](pointers/rust-in-action/ria-pointer.md)
 - [SMARTPOINTER](pointers/smartpointer/SMARTPOINTER.md)
   - [RC](pointers/smartpointer/rc/RC.md)
-    - [ria-smartpointer-rc](pointers/smartpointer/rc/rust-in-action/ria-smartpointer-rc.md)
-  - [BOX](pointers/smartpointer/box/BOX.md)
-    - [ria-smartpointer-box](pointers/smartpointer/box/rust-in-action/ria-smartpointer-box.md)
+  - [BOX](pointers/smartpointer/box/BOX.md)    
 
 ---
 
 - [COLLECTION](collection/COLLECTION.md)
-  - [HASHMAP](collection/hashmap/HASHMAP.md)
-    - [clp-hashmap](collection/hashmap/code-like-pro/clp-hashmap.md)
-    - [mr-hashmap](collection/hashmap/master-rust/mr-hashmap.md)
-    - [ria-hashmap](collection/hashmap/rust-in-action/ria-hashmap.md)
-  - [SLICE](collection/slice/SLICE.md)
-    - [clp-slice](collection/slice/code-like-pro/clp-slice.md)
-    - [mr-slice](collection/slice/master-rust/mr-slice.md)
-    - [rd-slice](collection/slice/rust-doc/rd-slice.md)
+  - [HASHMAP](collection/hashmap/HASHMAP.md)    
+  - [SLICE](collection/slice/SLICE.md)    
   - [VECTOR](collection/vec/VECTOR.md)
-    - [ria-vec](collection/vec/rust-in-action/ria-vec.md)    
 
 ---
 
-- [COMMANDLINE](commandline/COMMANDLINE.md)
-  - [ria-commandline](commandline/rust-in-action/ria-commandline.md)
+- [COMMANDLINE](commandline/COMMANDLINE.md)  
 
 ---
 
 - [DATA](data/DATA.md)
-  - [CONVERT](data/convert/CONVERT.md)
-    - [ria-texttoenum](data/convert/text_to_enum/rust-in-action/ria-texttoenum.md)
-  - [IO](data/io/IO.md)
-    - [ria-data-io-io](data/io/io/rust-in-action/ria-data-io-io.md)
-    - [FILE](data/io/file/FILE.md)
-      - [ria-data-file](data/io/file/rust-in-action/ria-data-file.md)
-  - [ria-data-csv-bin](data/rust-in-action/csv_bin/ria-data-csv-bin.md)
-  - [REGEX](data/regex/REGEX.md)
-    - [ria-regex](data/regex/ria-regex.md)
+  - [CONVERT](data/convert/CONVERT.md)    
+  - [IO](data/io/IO.md)    
+    - [FILE](data/io/file/FILE.md)        
+  - [REGEX](data/regex/REGEX.md)    
 
 ---    
 
 - [Duplication](duplication/Duplication.md)
-  - [COPY-CLONE](duplication/copy-clone/COPY-CLONE.md)
-    - [ria-copy-clone](duplication/copy-clone/rust-in-action/ria-copy-clone.md)
-- [RC](pointers/smartpointer/rc/RC.md)
-  - [ria-rc](duplication/rc/rust-in-action/ria-rc.md)
+  - [COPY-CLONE](duplication/copy-clone/COPY-CLONE.md)    
+- [RC](pointers/smartpointer/rc/RC.md)  
 
 ---
 
-- [ERROR-HANDLING](errorhandling/ERROR-HANDLING.md)
-  - [ria-errorhandling](errorhandling/rust-in-action/ria-errorhandling.md)
+- [ERROR-HANDLING](errorhandling/ERROR-HANDLING.md)  
 
 ---
 
-- [FEATURE](feature/FEATURE.md)
-  - [clp-feature-dryoc](feature/code-like-pro/dryoc_bin/clp-feature-dryoc.md)
-  - [rd-feature-shapes-lib](feature/rust-doc/rd-feature-shapes-lib.md)
+- [FEATURE](feature/FEATURE.md)  
 
 ---
 
-- [pnfx-flowcontrol](flowcontrol/pnfx-flowcontrol/pnfx-flowcontrol.md)
 - [FLOWCONTROL](flowcontrol/FLOWCONTROL.md)
-  - [FOR](flowcontrol/for/FOR.md)
-    - [ria-for](flowcontrol/for/rust-in-action/ria-for.md)    
-  - [LOOP](flowcontrol/loop/LOOP.md)
-    - [pp-loop](flowcontrol/loop/packtpub/pp-loop.md)
-    - [ria-loop](flowcontrol/loop/rust-in-action/ria-loop.md)
-  - [WHILE](flowcontrol/while/WHILE.md)
-    - [ria-while](flowcontrol/while/rust-in-action/ria-while.md)
+  - [FOR](flowcontrol/for/FOR.md)    
+  - [LOOP](flowcontrol/loop/LOOP.md)    
+  - [WHILE](flowcontrol/while/WHILE.md)    
   - [MATCH](flowcontrol/match/MATCH.md)
-    - [ria-match](flowcontrol/match/rust-in-action/ria-match.md)
-    - [rd-match](flowcontrol/match/rust-doc/rd-match.md)
 
 ---
 
@@ -111,13 +82,10 @@
 
 - [MEMORY](memory/MEMORY.md)
   - [PISTON](memory/piston/PISTON.md)
-    - [ria-heap](memory/piston/rust-in-action/ria-heap.md)
-    - [ria-piston](memory/piston/rust-in-action/ria-piston.md)
   
 ---
 
-- [NETWORK](network/NETWORK.md)
-  - [ria-network](network/rust-in-action/ria-network.md)
+- [NETWORK](network/NETWORK.md)  
 
 ---
 
@@ -127,8 +95,7 @@
 ---
 
 - [THREAD](thread/THREAD.md)
-  - [RACE](thread/race/RACE.md)
-    - [ria-race](thread/race/rust-in-action/ria-race.md)
+  - [RACE](thread/race/RACE.md)    
 
 ---
 
