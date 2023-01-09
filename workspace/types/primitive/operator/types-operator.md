@@ -1,1 +1,1 @@
-tags #power #xor #or #and #operator #shift
+> `tags` [power] [xor] [or] [and] [operator] [shift]

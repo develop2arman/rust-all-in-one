@@ -7,30 +7,11 @@
 ---
 
 - [TYPES](types/TYPES.md)
-  - [NUM](types/complex/num/NUM.md)
-    - [ria-types-complex](types/complex/num/rust-in-action/ria-types-complex.md)
-  - [GENERIC](types/generic/GENERIC.md)
-    - [rd-types-generic](types/generic/rust-doc/rd-types-generic.md)
-    - [ria-types-generic](types/generic/rust-in-action/ria-types-generic.md)
+  - [NUM](types/complex/num/NUM.md)    
+  - [GENERIC](types/generic/GENERIC.md)  
   - [PRIMITIVE](types/primitive/PRIMITIVE.md)
-    - [types-array](types/primitive/array/types-array.md)
-    - [types-char](types/primitive/char/types-char.md)
-    - [types-float](types/primitive/float/types-float.md)
-    - [types-int](types/primitive/int/types-int.md)
-    - [types-operator](types/primitive/operator/types-operator)
-    - [types-radix](types/primitive/radix/types-radix.md)
-    - [types-size](types/primitive/size/types-size.md)
-    - [types-tuple](types/primitive/tuple/types-tuple.md)    
-  - [RETURN](types/return/RETURN.md)
-    - [re-return](types/return/rust-egg/re-return.md)
-    - [pb-return](types/return/packpub/pb-return.md)
+  - [RETURN](types/return/RETURN.md)        
   - [STRING](types/string/STRING.md)
-    - [rd-types-string](types/string/rust-doc/rd-types-string.md)
-    - [pb-types-string](types/string/packtpub/pp-types-string.md)
-    - [clap-types-string](types/string/code-like-a-pro/clap-types-string.md)
-    - [re-types-string](types/string/rust-egg/re-types-string.md)
-    - [pp-types-string](types/string/packtpub/pp-types-string.md)
-    - [ria-types-string](types/string/rust-in-action/ria-types-string.md)
 
 ---
 
