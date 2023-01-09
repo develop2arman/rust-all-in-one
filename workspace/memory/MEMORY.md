@@ -22,7 +22,8 @@
 ## Heap
 > The heap is an area of program memory for types that **do not have known sizes at compile time**. 
 > What does it mean to have no known size at compile time? In Rust, there are two meanings. Some types grow and shrink over time as required. 
-> Obvious cases are **String and Vec<T>** . Other types are unable to tell the Rust compiler how much memory to allocate even though these don’t change size at runtime. These are known as dynamically sized types. **Slices** ([T]) are the commonly cited example. Slices have no compile-time length. Internally, these are a pointer to some part of an array. But slices actually represent some number of elements within that array. Another example is a **trait** objects.
+> Obvious cases are **String and Vec<T>** . Other types are unable to tell the Rust compiler how much memory to allocate even though these don’t change size at runtime. These are known as dynamically sized types.
+**Slices** ([T]) are the commonly cited example. Slices have no compile-time length. Internally, these are a pointer to some part of an array. But slices actually represent some number of elements within that array. Another example is a **trait** objects.
 
 ## Stack Vs Heap
 - The stack is fast, but the heap is slow.
