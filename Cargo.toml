@@ -50,6 +50,7 @@ members = [
     "workspace/types/return/packpub",
     "workspace/types/generic/rust-in-action",
     "workspace/types/generic/rust-doc",
+    "workspace/types/generic/master-rust",
     "workspace/types/primitive/float/rust-in-action",
     "workspace/types/primitive/char/rust-egg",
     "workspace/types/primitive/array/rust-egg",
@@ -66,6 +67,10 @@ members = [
     "workspace/types/string/code-like-a-pro",
     "workspace/types/primitive/radix/rust-in-action",
     "workspace/types/complex/num/rust-in-action",
+
+    "workspace/trait/associate-type/rust-doc",
+    "workspace/trait/associate-type/master-rust",
+    "workspace/trait/inheritance/master-rust",
 
     "workspace/flowcontrol/loop/rust-in-action",
     "workspace/flowcontrol/loop/packtpub",

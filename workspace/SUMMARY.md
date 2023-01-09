@@ -5,6 +5,12 @@
 
 ---
 
+- [TRAIT](trait/TRAIT.md)
+  - [ASSOCIATE](trait/associate-type/ASSOCIATE.md)
+  - [INHERITANCE](trait/inheritance/INHERITANCE.md)
+
+---
+
 - [TYPES](types/TYPES.md)
   - [NUM](types/complex/num/NUM.md)    
   - [GENERIC](types/generic/GENERIC.md)  

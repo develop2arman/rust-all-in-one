@@ -1266,6 +1266,18 @@ name = "master-rust-slice_bin"
 version = "0.1.0"
 
 [[package]]
+name = "master-rust-trait-associate-type_bin"
+version = "0.1.0"
+
+[[package]]
+name = "master-rust-trait-inheritance_bin"
+version = "0.1.0"
+
+[[package]]
+name = "master-rust-types-generic_bin"
+version = "0.1.0"
+
+[[package]]
 name = "master_rust_benches_criterion_lib"
 version = "0.1.0"
 dependencies = [
@@ -2268,6 +2280,10 @@ version = "0.1.0"
 dependencies = [
  "proptest",
 ]
+
+[[package]]
+name = "rust-doc-trait-associate-type_bin"
+version = "0.1.0"
 
 [[package]]
 name = "rust-doc-types-generic_bin"
