@@ -101,4 +101,8 @@ members = [
     "workspace/data/serde/candle_dev",
 
     "workspace/functional-programming/closure",
+
+    "workspace/benches/master-rust",
+    "workspace/benches/criterion/master-rust",
+    "workspace/benches/criterion/criterion_doc",
 ]
