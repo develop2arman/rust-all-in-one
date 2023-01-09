@@ -1,25 +1,27 @@
-#![allow(dead_code, unused_variables)]
-use graphics::math::{Vec2d, add, mul_scalar};    // <1>
 
-use piston_window::*;                            // <2>
+#![allow(dead_code, unused_variables)]
+/// provides mathematical operations and conversion functionality for 2D vectors.
+use graphics::math::{Vec2d, add, mul_scalar};
+/// piston_window provides the tools to create a GUI program and draws shapes to it.
+use piston_window::*;
 
 use rand::prelude::*;                            // <3>
-
-use std::alloc::{GlobalAlloc, System, Layout};   // <4>
+/// std::alloc provides facilities for controlling memory allocation.
+use std::alloc::{GlobalAlloc, System, Layout};
 
 use std::time::Instant;                          // <5>
 
 
-#[global_allocator]                              // <6>
-static ALLOCATOR: ReportingAllocator = ReportingAllocator;
 
 /// Main
 ///
 /// ## Commands
-///
+/// Run in in quiet mode
 /// ````cargo run -q 2> alloc.tsv -p rust-in-action-memory-piston_bin --bin rust-in-action-memory-piston-main```
-///
+/// Views the first 10 lines of output
 /// ``` head alloc.tsv```
+/// `alloc.plot` is a script used to generate plot gui with gnuplot
+///
 /// ```cargo doc  --package rust-in-action-memory-piston_bin  --message-format short --no-deps --open --color always```
 ///
 /// ```cargo test --doc  --package rust-in-action-memory-piston_bin ```
@@ -35,7 +37,7 @@ static ALLOCATOR: ReportingAllocator = ReportingAllocator;
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `a: 42, b: 0x5563e6ece000, c: 0x5563e6ece00a`
+/// `Two col of random numbers`
 ///
 /// ## Example
 ///  `TODO`
@@ -43,9 +45,14 @@ static ALLOCATOR: ReportingAllocator = ReportingAllocator;
 /// //```rust,compile_fail,no_run,ignore
 ///
 
+/// marks the following value (ALLOCATOR) as satisfying the GlobalAlloc trait.
+#[global_allocator]
+static ALLOCATOR: ReportingAllocator = ReportingAllocator;
 
-struct ReportingAllocator;                       // <7>
+/// Prints the time taken for each allocation to STDOUT as the program runs. This provides a fairly accurate indication of the time taken for dynamic memory allocation.
+struct ReportingAllocator;
 
+/// 'System.alloc(layout);' Defers the actual memory allocation to the system’s default memory allocator
 unsafe impl GlobalAlloc for ReportingAllocator {
   unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
     let start = Instant::now();
@@ -63,6 +70,7 @@ unsafe impl GlobalAlloc for ReportingAllocator {
   }
 }
 
+/// Contains the data that is useful for the lifetime of the program
 struct World {                      // <9>
   current_turn: u64,                // <9>
   particles: Vec<Box<Particle>>,    // <9>
@@ -71,6 +79,7 @@ struct World {                      // <9>
   rng: ThreadRng,                   // <9>
 }
 
+/// Defines an object in 2D space
 struct Particle {                   // <10>
   height: f64,                      // <10>
   width: f64,                       // <10>
@@ -80,6 +89,9 @@ struct Particle {                   // <10>
   color: [f32; 4],                  // <10>
 }
 
+/// Starts at a random position along the bottom of the window
+/// Rises vertically over time
+/// Increases the speed of the rise over time
 impl Particle {
   fn new(world : &World) -> Particle {
     let mut rng = thread_rng();
@@ -93,14 +105,17 @@ impl Particle {
     Particle {
       height: 4.0,
       width: 4.0,
-      position: [x, y].into(),                     // <14>
+      position: [x, y].into(),                     // into() converts the arrays of type [f64; 2]into Vec2d
       velocity: [x_velocity, y_velocity].into(),   // <14>
       acceleration: [x_acceleration,
 	                 y_acceleration].into(),       // <14>
-      color: [1.0, 1.0, 1.0, 0.99],                // <15>
+      color: [1.0, 1.0, 1.0, 0.99],               // Inserts a fully saturated white that has a tiny amount of transparency
     }
   }
 
+  /// > Moves the particle to its next position
+  /// > Slows down the particle’s rate of increase as it travels across the screen
+  /// > Makes the particle more transparent over time
   fn update(&mut self) {
     self.velocity = add(self.velocity,
 	                    self.acceleration);        // <16>
@@ -110,11 +125,12 @@ impl Particle {
       self.acceleration,                           // <17>
       0.7                                          // <17>
     );                                             // <17>
-    self.color[3] *= 0.995;                        // <18>
+    self.color[3] *= 0.995;
   }
 }
 
 impl World {
+  /// > Uses Box<Particle> rather than Particle to incur an extra memory allocation when every particle is created
   fn new(width: f64, height: f64) -> World {
     World {
       current_turn: 0,
@@ -125,6 +141,10 @@ impl World {
     }
   }
 
+  /// > Creates a Particle as a local variable on the stack
+  /// > Takes ownership of particle, moving its data to the heap, and creates a reference to that data on the stack
+  /// Pushes the reference into self.shapes
+  ///
   fn add_shapes(&mut self, n: i32) {
     for _ in 0..n.abs() {
       let particle = Particle::new(&self);         // <20>
@@ -137,10 +157,11 @@ impl World {
     for _ in 0..n.abs() {
       let mut to_delete = None;
 
-      let particle_iter = self.particles           // <23>
+      let particle_iter = self.particles           // particle_iter is split into its own variable to more easily fit on the page.
         .iter()                                    // <23>
         .enumerate();                              // <23>
 
+      // For n iterations, removes the first particle that’s invisible. If there are no invisible particles, then removes the oldest.
       for (i, particle) in particle_iter {         // <24>
         if particle.color[3] < 0.02 {              // <24>
           to_delete = Some(i);                     // <24>

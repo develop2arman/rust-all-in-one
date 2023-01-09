@@ -72,13 +72,13 @@ fn main() {
 
 fn finish() -> impl std::process::Termination {
     let machine_kind = if cfg!(unix) {
-        println!("I was running on a {} machine!", "unix");
+        println!("I was running on a unix machine!");
         std::process::ExitCode::SUCCESS
     } else if cfg!(windows) {
-        println!("I was running on a {} machine!", "windows");
+        println!("I was running on a windows machine!");
         std::process::ExitCode::SUCCESS
     } else {
-        println!("I was running on a {} machine!", "unknown");
+        println!("I was running on a unknown machine!");
         std::process::ExitCode::FAILURE
     };
 }

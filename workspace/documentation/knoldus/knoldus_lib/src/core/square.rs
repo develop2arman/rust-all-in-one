@@ -17,6 +17,6 @@
 /// ```
 
 pub fn calculate_square_of_integer(operand1: u32) -> u32 {
-    let result = operand1 * operand1;
-    return result;
+    
+    operand1 * operand1
 }

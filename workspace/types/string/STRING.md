@@ -2,7 +2,7 @@
 
 [[re-types-string]]
 
-[[pb-types-string]]
+[[pp-types-string]]
 
 [[ria-types-string]]
 

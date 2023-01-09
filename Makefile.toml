@@ -12,6 +12,12 @@ args = [
   "cargo-fmt",
 ]
 
+[tasks.build-bin]
+command = "mdbook"
+args = [
+  "build",
+]
+
 [tasks.build-bins]
 command = "cargo"
 args = [
@@ -68,4 +74,3 @@ alias = "check"
 
 [tasks.t]
 alias = "test"
-

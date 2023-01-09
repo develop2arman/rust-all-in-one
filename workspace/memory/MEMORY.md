@@ -1,4 +1,6 @@
 
+[[PISTON]]
+
 [[types-int]]
 
 [[POINTERS]]
@@ -22,13 +24,18 @@
 ## Heap
 > The heap is an area of program memory for types that **do not have known sizes at compile time**. 
 > What does it mean to have no known size at compile time? In Rust, there are two meanings. Some types grow and shrink over time as required. 
+<<<<<<< HEAD
 > Obvious cases are **String and Vec<T>** . Other types are unable to tell the Rust compiler how much memory to allocate even though these don’t change size at runtime. These are known as dynamically sized types.
 **Slices** ([T]) are the commonly cited example. Slices have no compile-time length. Internally, these are a pointer to some part of an array. But slices actually represent some number of elements within that array. Another example is a **trait** objects.
+=======
+> 
+> Obvious cases are **String and Vec<T>** . Other types are unable to tell the Rust compiler how much memory to allocate even though these don’t change size at runtime. These are known as dynamically sized types. **Slices** ([T]) are the commonly cited example. Slices have no compile-time length. Internally, these are a pointer to some part of an array. But slices actually represent some number of elements within that array. Another example is a **trait** objects.
+>>>>>>> refs/remotes/origin/main
 
 ## Stack Vs Heap
 - The stack is fast, but the heap is slow.
 - That difference leads to the following axiom: **“When in doubt, prefer the stack.”** To place data onto the stack, the compiler must know the type’s size at compile time- Translated to Rust, that means, **“When in doubt, use types that implement Sized.”**
-- based on Memory layout image we can say Heap in-replacable space in comprasion of stack that is LIFO
+- based on Memory layout image we can say **Heap in-replacable** space in comprasion of stack that is LIFO
 
 | Stack  | Heap |
 | ----------- | ----------- |

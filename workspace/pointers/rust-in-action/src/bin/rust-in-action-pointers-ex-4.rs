@@ -52,9 +52,6 @@ use std::mem::size_of;
 /// //Notice: it print 11 even without mention directly e.g  c::size_of::<Box<[u8]>>()
 /// println!(" size: {:?} bytes", size_of::<Box<[u8]>>());
 /// ```
-
-
-
 /// related to: [rust-in-action-pointers-ex-5](rust-in-action-pointers-ex-5)
 /// The Box<[u8]> type is a boxed byte slice. When we place values inside a box, ownership of the value moves to the owner of the box.
 /// ```

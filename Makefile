@@ -24,6 +24,10 @@ check-clippy :
 .PHONY : lint
 lint : check-fmt check-clippy
 
+.PHONY : install-mdbook
+check-fmt :
+	cargo install mdbook
+
 .PHONY : test
 test :
 	@cargo test --workspace --lib
@@ -53,4 +57,5 @@ build-docs :
 
 .PHONY : build-docs
 build-docs :
+	mdbook build
 	cargo doc --workspace --message-format short --no-deps --color always

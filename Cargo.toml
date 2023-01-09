@@ -19,15 +19,6 @@ members = [
     "workspace/feature/rust-doc/mod_draw_lib",
     "workspace/feature/code-like-pro/dryoc_bin",
 
-    "workspace/projects/file/rust-in-action/file_bin",
-    "workspace/projects/file/rust-in-action/file_lib",
-    "workspace/projects/fuzzme/rust-in-action/fuzz_bin",
-    "workspace/projects/fuzzme/rust-in-action/fuzz_lib",
-    "workspace/projects/satelite_messaging/rust-in-action/satelite_messaging_bin",
-    "workspace/projects/satelite_messaging/rust-in-action/satelite_messaging_lib",
-    "workspace/projects/process_line/rust-in-action/process_line_bin",
-    "workspace/projects/process_line/rust-in-action/process_line_lib",
-
     "workspace/data/rust-in-action/csv_bin",
     "workspace/data/regex/rust-in-action",
     "workspace/data/random/rust-in-action",
@@ -84,6 +75,15 @@ members = [
     "workspace/flowcontrol/pnfx-flowcontrol",
 
     "workspace/collection/vec/rust-in-action",
+    "workspace/collection/hashmap/master-rust",
+    "workspace/collection/hashmap/rust-in-action",
+    "workspace/collection/hashmap/code-like-pro",
+    "workspace/collection/slice/master-rust",
+    "workspace/collection/slice/rust-egg",
+    "workspace/collection/slice/rust-doc",
+    "workspace/collection/slice/rust-in-action",
+    "workspace/collection/slice/code-like-pro",
+    "workspace/collection/slice/pnkfx",
 
     "workspace/commandline/rust-in-action",
 
@@ -97,4 +97,12 @@ members = [
 
     "workspace/pointers/smartpointer/box/rust-in-action",
     "workspace/pointers/rust-in-action",
+
+    "workspace/data/serde/candle_dev",
+
+    "workspace/functional-programming/closure",
+
+    "workspace/benches/master-rust",
+    "workspace/benches/criterion/master-rust",
+    "workspace/benches/criterion/criterion_doc",
 ]
