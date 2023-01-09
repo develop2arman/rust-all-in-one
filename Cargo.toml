@@ -19,6 +19,7 @@ members = [
     "workspace/feature/rust-doc/mod_draw_lib",
     "workspace/feature/code-like-pro/dryoc_bin",
 
+    "workspace/data/operator/master-rust",
     "workspace/data/rust-in-action/csv_bin",
     "workspace/data/regex/rust-in-action",
     "workspace/data/random/rust-in-action",

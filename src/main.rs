@@ -1,6 +1,8 @@
 #![crate_name = "rust_all_in_one"]
 #![allow(dead_code, unused_variables)]
 
+#![doc(html_logo_url = "https://armanriazi.github.io/site/assets/attachments/me.png")]
+
 
 /// Main
 ///
