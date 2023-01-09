@@ -13,7 +13,7 @@
 > What remains on the stack is the pointer to the heap also don’t have any performance overhead that these special capabilities incur, so they can be useful in cases like the cons list where the indirection is the only feature we need.
 > >>The Box<T> type is a [[smart_pointer]] because it implements the #Deref trait, 
 > 
-> **which allows Box<T> values to be treated like references**. When a Box<T> value goes out of scope, the #heap data that the box is pointing to is cleaned up as well because of the #Drop [[trait]] implementation.
+> **which allows Box<T> values to be treated like references**. When a Box<T> value goes out of scope, the [[heap]] data that the box is pointing to is cleaned up as well because of the [[Drop]] [[trait]] implementation.
 
 > You’ll use them most often in these situations:
 

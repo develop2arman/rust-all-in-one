@@ -1,3 +1,3 @@
 
 
-tags #bench
+> `tags` [[bench]]

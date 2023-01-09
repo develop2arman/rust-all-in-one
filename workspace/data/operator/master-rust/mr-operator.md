@@ -1,1 +1,1 @@
-tags #operator #logic #xor #and #half
+> `tags` [[operator]] [[logic]] [[xor]] [[and]] [[half]]

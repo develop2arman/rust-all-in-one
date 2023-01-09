@@ -105,7 +105,7 @@ unsafe {
 
 ```use std::ffi::CStr;```
 
-> #c_char , a type alias for Rust’s i8 type, presents the possibility of a platform-specific nuances.
+> [[c_char]] , a type alias for Rust’s i8 type, presents the possibility of a platform-specific nuances.
 
 ```use std::os::raw::c_char;```
 
@@ -142,7 +142,7 @@ fn main() {
 
  ```let b_ptr = &B as *const u8 as *mut u8;```
 
- > String:: #from_raw_parts () accepts a pointer (*mut T) to an array of bytes, a size, and a #capacity parameter
+ > String:: #from_raw_parts () accepts a pointer (*mut T) to an array of bytes, a size, and a [[capacity]] parameter
 
  ```b = String::from_raw_parts(b_ptr, 10, 10);```
 

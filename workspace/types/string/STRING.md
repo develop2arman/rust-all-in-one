@@ -62,9 +62,9 @@ Vec<T> performs best when you can provide it with a size hint via Vec:: #with_ca
 Lists of things are incredibly common. The two types that you will work with most often are arrays and vectors. 
 > Arrays are fixed-width and extremely lightweight.
 
-•std::ffi:: #OSString —A platform-native string. It’s behavior is close to String but without a guarantee that it’s encoded as #UTF-8 and that it won’t contain the zero byte (0x00).
+•std::ffi:: [[OSString]] —A platform-native string. It’s behavior is close to String but without a guarantee that it’s encoded as #UTF-8 and that it won’t contain the zero byte (0x00).
 
-•std:: #path ::Path—A string-like type that is dedicated to handling filesystem paths.
+•std:: [[path]] ::Path—A string-like type that is dedicated to handling filesystem paths.
 
 
 ## Glossery
