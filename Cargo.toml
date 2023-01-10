@@ -68,9 +68,12 @@ members = [
     "workspace/types/primitive/radix/rust-in-action",
     "workspace/types/complex/num/rust-in-action",
 
-    "workspace/trait/associate-type/rust-doc",
-    "workspace/trait/associate-type/master-rust",
+    "workspace/trait/associate-type-or-trait/rust-doc",
+    "workspace/trait/associate-type-or-trait/master-rust",
     "workspace/trait/inheritance/master-rust",
+    "workspace/trait/shared-behavior/trait-bound/master-rust",
+    "workspace/trait/shared-behavior/trait-bound/operator/master-rust",
+    "workspace/trait/shared-behavior/aggregator/rust-doc",
 
     "workspace/flowcontrol/loop/rust-in-action",
     "workspace/flowcontrol/loop/packtpub",

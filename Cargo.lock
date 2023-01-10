@@ -1270,6 +1270,14 @@ name = "master-rust-trait-associate-type_bin"
 version = "0.1.0"
 
 [[package]]
+name = "master-rust-trait-bound-operator_bin"
+version = "0.1.0"
+
+[[package]]
+name = "master-rust-trait-bound_bin"
+version = "0.1.0"
+
+[[package]]
 name = "master-rust-trait-inheritance_bin"
 version = "0.1.0"
 
@@ -2271,6 +2279,10 @@ name = "rust-doc-match-flowcontrol_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-shared-behavior-aggregator_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-doc-slice_bin"
 version = "0.1.0"
 
@@ -2282,7 +2294,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust-doc-trait-associate-type_bin"
+name = "rust-doc-trait-associate-type-and-trait_bin"
 version = "0.1.0"
 
 [[package]]

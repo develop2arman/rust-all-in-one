@@ -4,11 +4,11 @@
 ///
 /// ## Commands
 ///
-/// ````RUST_BACKTRACE=full cargo run -q -p rust-doc-trait-associate-type_bin --bin rust-doc-trait-associate-type-main```
+/// ````RUST_BACKTRACE=full cargo run -q -p rust-doc-trait-associate-type-and-trait_bin --bin rust-doc-trait-associate-type-and-trait-main```
 ///
-/// ```cargo doc  --package rust-doc-trait-associate-type_bin  --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-doc-trait-associate-type-and-trait_bin  --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-doc-trait-associate-type_bin ```
+/// ```cargo test --doc  --package rust-doc-trait-associate-type-and-trait_bin ```
 ///
 /// ## What
 /// `TODO`
@@ -32,15 +32,16 @@ struct Counter {
   count: u32,
 }
 
-impl Counter {
+///sample of asscociate type impl
+impl Counter {  
   fn new() -> Counter {
       Counter { count: 0 }
   }
 }
 
+///sample of asscociate trait impl
 impl Iterator for Counter {
   type Item= u32;
-
   fn next(&mut self) -> Option<Self::Item> {
       // --snip--
       if self.count < 5 {
