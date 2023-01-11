@@ -69,9 +69,6 @@ Lists of things are incredibly common. The two types that you will work with mos
 
 ## Glossery
 
-### Literal
-"hello" called-> string literal, equal=> &'static str.
+> `Literal` : "hello" called-> string literal, equal=> &'static str.
 
-### Notation 
-&str, &[]
-
+> `Notation` : &str, &[]

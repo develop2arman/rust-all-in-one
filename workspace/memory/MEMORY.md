@@ -67,4 +67,4 @@
 
 ## Glossery
 
-stack = contiguous layout memory = LIFO
+ > `stack` : contiguous layout memory = LIFO

@@ -19,6 +19,19 @@
 >
 > npm chose Rust to handle CPU-bound bottlenecks.
 
+## Syntax
+  
+  > path`:	::
+ 
+  > `!`: that’s known in type theory lingo as the empty type because it has no values. We prefer to call it the never type.Functions that return never are called diverging functions.
+
+  > `implicit`:	encapsulation (like method, copy)
+  
+  > `DSTs`: unsized types 
+  
+  > `?Sized`: T may or may not be Sized-Trait syntax with this meaning is only available for Sized, this notation overrides the default that generic types must have a known size at compile time. not any other traits.
+  
+
 ## Safety
 
 ![safetay-control](./assets/images/Screenshot%20from%202022-12-14%2017-53-56.png)
@@ -86,3 +99,10 @@ To understand what is included in local scope by default(like try_into()), you s
 ## Version
 
 Internally, Cargo uses the **semver** crate for parsing the versions
+
+
+## Glossery
+
+[Rust Glossary](https://doc.rust-lang.org/nightly/reference/glossary.html)
+
+[Rust Notation](https://doc.rust-lang.org/reference/notation.html)

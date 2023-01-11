@@ -21,3 +21,8 @@
 ## Include_Consequences
 > Master Rust says:
 > Vec=>String=>&str=>slice=>[u8]
+
+
+## Glossery
+
+> In Rust, global variables are called static variables

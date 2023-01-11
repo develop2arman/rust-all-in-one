@@ -189,10 +189,15 @@ let ptr = 42 as *const Vec<String>;
 
 ## Glossery
 
-### [[smart_pointer]]
-e.q wrapper type. Rust’s smart pointer types tend to wrap raw pointers and bestow them with added semantics.
+> Rust has a feature called automatic referencing and dereferencing.Calling methods is one of the few places in Rust that has this behavior.
 
-### fat pointer Vs thin pointer
-The term **fat** pointer refers to **memory layout**. 
-**Thin** pointers, such as **raw pointers**, are *a single usize wide*. 
-Fat pointers are usually *two usize* wide,and occasionally more
+```
+p1.distance(&p2);
+(&p1).distance(&p2);
+```
+
+> `smart_pointer` e.q wrapper type. Rust’s smart pointer types tend to wrap raw pointers and bestow them with added semantics.
+
+> `fat pointer Vs thin pointer` : The term **fat** pointer refers to **memory layout**. **Thin** pointers, such as **raw pointers**, are *a single usize wide*. Fat pointers are usually *two usize* wide,and occasionally more
+
+> `tags` [[smart_pointer]]

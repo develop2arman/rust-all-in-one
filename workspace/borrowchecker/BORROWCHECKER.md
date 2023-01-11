@@ -23,5 +23,13 @@ Four general strategies can help with ownership issues:
 
 ## Glossery
 
+  > `&`:	borrow
+ 
+  > `*`:	dereference
+
+  > `aliasing`: Having several immutable references (&T) to the object (Rc).
+  
+  > `mutability`: Having one mutable reference (&mut T) to the object (mut Refcell).
+
 ### Ownership
 [[Ownership]] has a particular meaning within Rust. An owner is able to make any changes to the data and is responsible for deleting values that it owns when it leaves scope.

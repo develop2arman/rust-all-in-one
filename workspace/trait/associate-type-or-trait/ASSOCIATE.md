@@ -19,6 +19,13 @@ trait Foo {
     type Out;
     fn get_value(self) -> Self::Out;
 }
+
 ```
+
+## Glossery
+
+  > `The associated type = placeholder type` :  is named Item'pub trait Iterator {type Item;}'another example is 'HasAssocType<Ty = T>'  
+
+---
 
 > `tags` [[associate_method]] [[instance_method]] [[associate_trait]]
