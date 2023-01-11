@@ -1,5 +1,5 @@
 #![allow(dead_code, unused_variables)]
-
+use std::ops::Add;
 /// Main
 ///
 /// ## Commands
@@ -29,12 +29,13 @@
 ///  `TODO`
 ///
 ///
-use std::ops::Add;
+
 
 fn add_thing<T: Add>(fst: T, snd: T) {
     let _ = fst + snd;
 }
 
 fn main() {
+
     add_thing(2, 2);
 }

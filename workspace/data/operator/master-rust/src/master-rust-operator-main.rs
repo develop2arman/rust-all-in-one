@@ -63,19 +63,19 @@ mod tests {
         assert_eq!(1, xor(0, 1));
     }
 
-    
+
 
 
     pub type Sum = u8;
     pub type Carry = u8;
 
-    pub fn half_adder_input_output() -> Vec<((u8, u8), (Sum, Carry))> { 
+    pub fn half_adder_input_output() -> Vec<((u8, u8), (Sum, Carry))> {
         vec![
-            ((0, 0), (0, 0)), 
-            ((0, 1), (1, 0)), 
-            ((1, 0), (1, 0)), 
-            ((1, 1), (0, 1)), 
-        ] 
+            ((0, 0), (0, 0)),
+            ((0, 1), (1, 0)),
+            ((1, 0), (1, 0)),
+            ((1, 1), (0, 1)),
+        ]
     }
 
     /// This function implements a half adder using primitive gates
@@ -90,4 +90,8 @@ mod tests {
             assert_eq!(half_adder(a, b), out);
         }
     }
+}
+
+fn main(){
+    
 }
