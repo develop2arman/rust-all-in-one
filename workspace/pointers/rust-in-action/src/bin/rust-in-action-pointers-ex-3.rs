@@ -25,4 +25,5 @@
 ///
 fn main() {
      unsafe { std::ptr::null_mut::<i32>().write(42) };
+     //std::ptr::write(uc_addr as *mut usize, 0usize); //Unsafe OverWrite 0 to addr
 }

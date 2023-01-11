@@ -1,4 +1,2 @@
 
-
-
-tags #vec #with_capacity #complex #screen
+> `tags` [vec] [with_capacity] [complex] [screen]

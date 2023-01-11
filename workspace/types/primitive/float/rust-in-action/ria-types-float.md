@@ -15,4 +15,4 @@
 
 
 
-tags #from_bits #hex #to_bits  #EPSILON #is_infinite #is_finite #abs.
+> `tags` [[from_bits]] [[hex]] [[to_bits]] [[EPSILON]] [[is_infinite]] [[is_finite]] [[abs]]

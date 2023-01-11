@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-elision_bin --bin  rust-in-action-vec-collection-ex-1```
+/// ```cargo run -q -p rust-in-action-vec-collection_bin --bin  rust-in-action-vec-collection-ex-1```
 ///
 /// ## What
 /// `TODO`

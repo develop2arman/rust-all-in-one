@@ -1,2 +1,2 @@
 
-tags #is_alphabetic #is_numeric
+> `tags` [is_alphabetic] [is_numeric]

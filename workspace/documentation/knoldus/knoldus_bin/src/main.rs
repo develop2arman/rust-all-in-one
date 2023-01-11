@@ -4,7 +4,7 @@
     html_root_url = "https://doc.rust-lang.org/"
 )]
 #![doc(test(attr(allow(unused_variables), deny(warnings))))]
-use knoldus_lib::core::check_doc_test::*;
+
 use knoldus_lib::core::cube::calculate_cube_of_integer;
 use knoldus_lib::core::square::calculate_square_of_integer;
 // Example from the futures-rs library

@@ -10,7 +10,7 @@
 /// This function returns the cube of the integer number
 pub fn calculate_cube_of_integer(operand1: u32) -> u32 {
     let result: u32 = operand1 * operand1 * operand1;
-    return result;
+    result
 }
 
 /// Only runs on the 2018 edition.

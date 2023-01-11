@@ -70,10 +70,12 @@ For data that is created while the application is running. Data in this region m
 ## Numerous community tools 
 (for improving code quality and productivity)
 
-rust-clippy, an advanced linter and style tool
-rustfmt, an opinionated code formatter
-**sccache**, a compiler cache for rustc
-rust-analyzer, full-featured IDE integration for the Rust language
+>rust-clippy, an advanced linter and style tool - This warns you of common mistakes and potential **code smells**. Clippy relies on **compiler plugins** that are marked as unstable, so it is available with nightly Rust only. With rustup, you can switch to nightly easily.
+>
+>rustfmt, an opinionated code formatter-It formats code according to conventions that are mentioned in the Rust style guide.
+> rust-analyzer, full-featured IDE integration for the Rust language
+> 
+> **sccache**, a compiler cache for rustc
 
 
 ### std:prelude

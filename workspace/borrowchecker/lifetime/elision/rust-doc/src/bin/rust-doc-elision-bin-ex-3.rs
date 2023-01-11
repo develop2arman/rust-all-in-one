@@ -1,6 +1,4 @@
 #![allow(dead_code, unused_variables)]
-use std::slice;
-use std::str;
 
 /// rust-doc-elision-bin-ex-2
 ///

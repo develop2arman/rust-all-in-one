@@ -1,6 +1,8 @@
 #![crate_name = "rust_all_in_one"]
 #![allow(dead_code, unused_variables)]
 
+#![doc(html_logo_url = "https://armanriazi.github.io/site/assets/attachments/me.png")]
+
 
 /// Main
 ///
@@ -9,6 +11,8 @@
 /// ```cargo run -q -p rust-all-in-one```
 ///
 /// ```cargo doc  --workspace --message-format short --no-deps --open --color always```
+///
+/// ```cargo check --workspace --message-format=json --all-targets```
 ///
 /// ```cargo test --doc  --workspace```
 /// ## What
@@ -72,13 +76,13 @@ fn main() {
 
 fn finish() -> impl std::process::Termination {
     let machine_kind = if cfg!(unix) {
-        println!("I was running on a {} machine!", "unix");
+        println!("I was running on a unix machine!");
         std::process::ExitCode::SUCCESS
     } else if cfg!(windows) {
-        println!("I was running on a {} machine!", "windows");
+        println!("I was running on a windows machine!");
         std::process::ExitCode::SUCCESS
     } else {
-        println!("I was running on a {} machine!", "unknown");
+        println!("I was running on a unknown machine!");
         std::process::ExitCode::FAILURE
     };
 }

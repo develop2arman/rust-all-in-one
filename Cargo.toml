@@ -19,6 +19,10 @@ members = [
     "workspace/feature/rust-doc/mod_draw_lib",
     "workspace/feature/code-like-pro/dryoc_bin",
 
+<<<<<<< HEAD
+=======
+    "workspace/data/operator/master-rust",
+>>>>>>> refs/remotes/origin/main
     "workspace/data/rust-in-action/csv_bin",
     "workspace/data/regex/rust-in-action",
     "workspace/data/random/rust-in-action",
@@ -49,6 +53,7 @@ members = [
     "workspace/types/return/packpub",
     "workspace/types/generic/rust-in-action",
     "workspace/types/generic/rust-doc",
+    "workspace/types/generic/master-rust",
     "workspace/types/primitive/float/rust-in-action",
     "workspace/types/primitive/char/rust-egg",
     "workspace/types/primitive/array/rust-egg",
@@ -66,6 +71,13 @@ members = [
     "workspace/types/primitive/radix/rust-in-action",
     "workspace/types/complex/num/rust-in-action",
 
+    "workspace/trait/associate-type-or-trait/rust-doc",
+    "workspace/trait/associate-type-or-trait/master-rust",
+    "workspace/trait/inheritance/master-rust",
+    "workspace/trait/shared-behavior/trait-bound/master-rust",
+    "workspace/trait/shared-behavior/trait-bound/operator/master-rust",
+    "workspace/trait/shared-behavior/aggregator/rust-doc",
+
     "workspace/flowcontrol/loop/rust-in-action",
     "workspace/flowcontrol/loop/packtpub",
     "workspace/flowcontrol/for/rust-in-action",
@@ -75,6 +87,15 @@ members = [
     "workspace/flowcontrol/pnfx-flowcontrol",
 
     "workspace/collection/vec/rust-in-action",
+    "workspace/collection/hashmap/master-rust",
+    "workspace/collection/hashmap/rust-in-action",
+    "workspace/collection/hashmap/code-like-pro",
+    "workspace/collection/slice/master-rust",
+    "workspace/collection/slice/rust-egg",
+    "workspace/collection/slice/rust-doc",
+    "workspace/collection/slice/rust-in-action",
+    "workspace/collection/slice/code-like-pro",
+    "workspace/collection/slice/pnkfx",
 
     "workspace/commandline/rust-in-action",
 
@@ -90,4 +111,13 @@ members = [
     "workspace/pointers/rust-in-action",
 
     "workspace/data/serde/candle_dev",
+<<<<<<< HEAD
+=======
+
+    "workspace/functional-programming/closure",
+
+    "workspace/benchmark/master-rust",
+    "workspace/benchmark/criterion/master-rust",
+    "workspace/benchmark/criterion/criterion_doc",
+>>>>>>> refs/remotes/origin/main
 ]

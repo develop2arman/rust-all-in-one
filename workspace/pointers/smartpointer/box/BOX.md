@@ -1,10 +1,7 @@
 [[ria-smartpointer-box]]
 
 
-
-[[rust-doc]]
-
-[
+---
 
 > cons=recursive type
 > 
@@ -16,7 +13,7 @@
 > What remains on the stack is the pointer to the heap also don’t have any performance overhead that these special capabilities incur, so they can be useful in cases like the cons list where the indirection is the only feature we need.
 > >>The Box<T> type is a [[smart_pointer]] because it implements the #Deref trait, 
 > 
-> **which allows Box<T> values to be treated like references**. When a Box<T> value goes out of scope, the #heap data that the box is pointing to is cleaned up as well because of the #Drop [[trait]] implementation.
+> **which allows Box<T> values to be treated like references**. When a Box<T> value goes out of scope, the [[heap]] data that the box is pointing to is cleaned up as well because of the [[Drop]] [[trait]] implementation.
 
 > You’ll use them most often in these situations:
 
@@ -32,4 +29,10 @@
 > 
 >> [[dyn]] is a word that shows you that you are talking about a trait, not a struct or anything else.
 
-]
+
+## Drop Box
+All of the programmer-facing pointer types like Box<T> are built from more primitive types that live deeper within Rust, often in its core or alloc modules.
+
+
+> std::mem::drop brings the function #drop () into local scope. drop() deletes objects before their scope ends.
+> Types that implement Drop have a drop() method, but explicitly calling it is illegal within user code. std::mem::drop is an escape hatch from that rule.
