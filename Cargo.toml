@@ -111,7 +111,7 @@ members = [
 
     "workspace/functional-programming/closure",
 
-    "workspace/benches/master-rust",
-    "workspace/benches/criterion/master-rust",
-    "workspace/benches/criterion/criterion_doc",
+    "workspace/benchmark/master-rust",
+    "workspace/benchmark/criterion/master-rust",
+    "workspace/benchmark/criterion/criterion_doc",
 ]

@@ -12,6 +12,8 @@
 ///
 /// ```cargo doc  --workspace --message-format short --no-deps --open --color always```
 ///
+/// ```cargo check --workspace --message-format=json --all-targets```
+///
 /// ```cargo test --doc  --workspace```
 /// ## What
 /// `TODO`
