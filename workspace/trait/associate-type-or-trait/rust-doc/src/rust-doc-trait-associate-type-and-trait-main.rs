@@ -33,13 +33,13 @@ struct Counter {
 }
 
 ///sample of asscociate type impl
-impl Counter {  
+impl Counter {
   fn new() -> Counter {
       Counter { count: 0 }
   }
 }
 
-///sample of asscociate trait impl
+///sample of asscociate trait impl because of ret Option<Self::Item>
 impl Iterator for Counter {
   type Item= u32;
   fn next(&mut self) -> Option<Self::Item> {
@@ -60,12 +60,12 @@ pub trait Iterator<T> {
 }
 */
 fn main() {
-   
+
   let mut ct=Counter{count:3};
   println!("{:?}",&ct.next());
   println!("{:?}",&ct.next());
   println!("{:?}",&ct.next());
   println!("{:?}",&ct.next());
   println!("{:?}",&ct.next());
-   
+
 }

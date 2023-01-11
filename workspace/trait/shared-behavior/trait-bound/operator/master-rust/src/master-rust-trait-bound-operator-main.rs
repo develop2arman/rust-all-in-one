@@ -14,9 +14,7 @@ use std::ops::Add;
 /// `TODO`
 ///
 /// ## How
-/// > two kinds of methods within a trait:
-/// > self is just a type alias to Self,which refers to the type on which the trait is being implemented
-/// > Sample Associated method: pause, Instance methods: play
+/// `TODO`
 ///
 /// # Arguments
 ///

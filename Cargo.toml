@@ -19,10 +19,7 @@ members = [
     "workspace/feature/rust-doc/mod_draw_lib",
     "workspace/feature/code-like-pro/dryoc_bin",
 
-<<<<<<< HEAD
-=======
     "workspace/data/operator/master-rust",
->>>>>>> refs/remotes/origin/main
     "workspace/data/rust-in-action/csv_bin",
     "workspace/data/regex/rust-in-action",
     "workspace/data/random/rust-in-action",
@@ -111,13 +108,10 @@ members = [
     "workspace/pointers/rust-in-action",
 
     "workspace/data/serde/candle_dev",
-<<<<<<< HEAD
-=======
 
     "workspace/functional-programming/closure",
 
     "workspace/benchmark/master-rust",
     "workspace/benchmark/criterion/master-rust",
     "workspace/benchmark/criterion/criterion_doc",
->>>>>>> refs/remotes/origin/main
 ]

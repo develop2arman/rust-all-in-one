@@ -5,3 +5,6 @@
 [io/IO](io/IO.md)
 
 [mr-operator](operator/master-rust/mr-operator.md)
+
+
+> `tags' [[serde]] [[json]]  [[rmp_serde]] [[from_read_ref]]
