@@ -5,15 +5,15 @@ read message
 #read branch
 #
 
-echo "git added all"
-
-git add --all && git commit -a "${message}"
-
 #if [ -n "$(git status - porcelain)" ];
 #then
 # echo "IT IS CLEAN"
 #else
 #
+
+echo "git added all"
+
+git add --all && git commit -a "${message}"
 
 echo "Pushing data to remote server!!!"
 

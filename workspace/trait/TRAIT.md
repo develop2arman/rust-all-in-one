@@ -34,7 +34,7 @@ trait Foo {
 > Two such examples are is the **From<T> and Into<T> traits**, which allow from conversion from a type to a type T and vice versa.
 > generic traits can get quite **verbose** when they are declared with three or four generic types.
 
-```rust
+```rust,no_compile
 pub trait From<T> {
     fn from(T) -> Self;
 }
@@ -51,7 +51,7 @@ pub trait From<T> {
 
 ## Trait bounds
 
-```rust
+```rust,no_compile
 fn load<T: Loadable>(&self, entity: T) { .. }
 ```
 
@@ -61,6 +61,23 @@ fn load<T: Loadable>(&self, entity: T) { .. }
 > 
 > We can specify **trait bounds on types** too:
 
-```
+```rust,no_compile
 struct Foo<T: Display> {..}
+```
+```rust,ignore
+struct TEST<T: Display> {..}
+```
+```rust
+fn main(){
+    println("Hi amran")
+}
+```
+```rust
+    println("Hi amran")
+```
+
+```rust
+# fn main(){
+    println("Hi amran")
+# }
 ```
