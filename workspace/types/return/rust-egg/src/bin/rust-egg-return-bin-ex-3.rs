@@ -46,5 +46,4 @@ fn main() {
 
     }
     println!("Printed:{:?}",numbers);
-
 }

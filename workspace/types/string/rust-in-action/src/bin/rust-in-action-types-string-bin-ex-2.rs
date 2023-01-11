@@ -27,7 +27,7 @@
 fn main(){
     let mut s = String::from("hello");
 
-s.truncate(2);
+    s.truncate(2);
 
-assert_eq!("he", s);
+    assert_eq!("he", s);
 }
