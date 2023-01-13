@@ -12,7 +12,7 @@
 
 > Generic functions are a cheap way to give the illusion of **polymorphic code**.
 
-> Note: By substitution, we mean that every time a generic item is used with a concrete type, a specialized copy of that code is generated at compile time with the type variable T, getting replaced with the concrete type. This process of generating specialized functions with concrete types at compile time is called [[monomorphization]] , which is the procedure of doing the opposite of [[polymorphic]] functions.
+> Note: By substitution, we mean that every time a generic item is used with a concrete type, a specialized copy of that code is generated at compile time with the type variable T, getting replaced with the concrete type. This process of generating specialized functions with concrete types at **compile time is called** [[monomorphization]] , which is the procedure of doing the **opposite of** [[polymorphic]] functions.
 
 > generics is preferred in most cases because it has **no runtime overhead**, as is the case with trait objects.
 
@@ -20,25 +20,33 @@
 
 
 >Let's look at the case of instantiating Vec<T>, a generic type. Without any type signature, the following code does not compile:
-```
+
+```rust,comile_fail,no_run
 fn main() {
     let a = Vec::new();
 }
 ```
 
-> The fragment <T: std::ops::Add<Output = T>> says that T must implement trait std::ops::Add. Using a single type variable T with the trait bound ensures that arguments i and j, as well as the result type, are the same type and that their type supports addition.
+## Right Hand Side
+
+> or default type parameters, for example the fragment <T: std::ops::Add<Output = T>> says that T must implement trait std::ops::Add. Using a single type variable T with the trait bound ensures that arguments i and j, as well as the result type, are the same type and that their type supports addition.
+
+```rust
+trait Add<Rhs=Self> {  type Output; fn add(self, rhs: Rhs) -> Self::Output;}
+```
+
 
 
 ## Glossery
 
-  > `default type parameters = right hand side` :
-      Example:
+### Thin Wrapper
 
-      trait Add<Rhs=Self> {  type Output; fn add(self, rhs: Rhs) -> Self::Output;}
-             
-     `another example:`
-      
-      `thin wrapper around the type` : part of Vec<String> is noticed. struct Wrapper(Vec<String>);       
-      `newtype pattern =  wrapper type = NewPattern` :  thin wrapping of an existing type in another struct
-                    impl Add<Meters> for Millimeters {type Output = Millimeters;fn add(self, other: Meters) -> Millimeters {}}
-                    // we specify impl Add<Meters> to set the value of the Rhs type parameter instead of using the default of Self
+
+> `Thin wrapper around the type` : part of Vec<String> is noticed. struct Wrapper(Vec<String>);       
+
+> `Newtype pattern =  wrapper type = NewPattern` :
+> Thin wrapping of an existing type in another struct.we specify impl Add<Meters> to set the value of the Rhs type parameter instead of using the default of Self.
+
+```rust
+impl Add<Meters> for Millimeters {type Output = Millimeters;fn add(self, other: Meters) -> Millimeters {}}
+```

@@ -48,7 +48,9 @@ members = [
     "workspace/types/struct/rust-egg",
     "workspace/types/return/rust-egg",
     "workspace/types/return/packpub",
-    "workspace/types/generic/rust-in-action",
+    "workspace/types/rhs/rust-in-action",
+    "workspace/types/rhs/master-rust",
+    "workspace/types/rhs/rust-doc",
     "workspace/types/generic/rust-doc",
     "workspace/types/generic/master-rust",
     "workspace/types/primitive/float/rust-in-action",
@@ -76,7 +78,7 @@ members = [
     "workspace/trait/shared-behavior/trait-bound/operator/master-rust",
     "workspace/trait/shared-behavior/aggregator/rust-doc",
     "workspace/trait/shared-behavior/builtin-trait/master-rust",
-    
+
     "workspace/flowcontrol/loop/rust-in-action",
     "workspace/flowcontrol/loop/packtpub",
     "workspace/flowcontrol/for/rust-in-action",

@@ -1262,6 +1262,13 @@ name = "master-rust-closure_bin"
 version = "0.1.0"
 
 [[package]]
+name = "master-rust-complex-rhs_lib"
+version = "0.1.0"
+dependencies = [
+ "proptest",
+]
+
+[[package]]
 name = "master-rust-hashmap_bin"
 version = "0.1.0"
 
@@ -2303,6 +2310,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-doc-types-generic_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-doc-types-rhs_bin"
 version = "0.1.0"
 
 [[package]]

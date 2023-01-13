@@ -13,7 +13,8 @@ read message
 
 echo "git added all"
 
-git add --all && git commit -a "${message}"
+git add --all && git commit -m "${message}"
+
 
 echo "Pushing data to remote server!!!"
 
