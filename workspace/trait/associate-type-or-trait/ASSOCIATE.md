@@ -14,12 +14,35 @@
 > This removes the redundant specification of types, as is the case with generic traits. One of the finest examples of associated type traits is the Iterator trait.
 - [x] The advantage of them is that, in the implementation, they allow us to declare the assciated type once and use **Self::Out as the return type** or parameter type in any of the trait methods or functions.
 
-```rust,compile_fail,no_run,ignore
+> **We have two kind of asscociate type for purpose: output, constraints associated type(Ty = T).**
+
+```rust
 trait Foo {
     type Out;
     fn get_value(self) -> Self::Out;
 }
 
+```
+
+> `impl<T, U> GenericTrait<U> for u32 where U: HasAssocType<Ty = T> {}`
+The syntax for specifying a default type for a generic type is <PlaceholderType=ConcreteType> when declaring the generic type.
+> `T` ""constrains"" by being in an ""associated type(Ty = T)"" in a bound for type `U` which is itself a ""generic parameter(GenericTrait<U>)"" constraining the trait.
+  
+> For example:
+
+```rust
+// we do not need to write trait Add due to is built-in trait
+ pub trait Add<RHS = Self> {
+     type Output;
+     fn add(self, rhs: RHS) -> Self::Output;
+ }
+
+impl<T: Add<T, Output=T>> Add for Complex<T> {
+    type Output = Complex<T>;
+    fn add(self, rhs: Complex<T>) -> Self::Output {
+        Complex { re: self.re + rhs.re, im: self.im + rhs.im }
+    }
+}
 ```
 
 ## Glossery

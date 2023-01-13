@@ -25,7 +25,34 @@ fn load<T: Loadable>(&self, entity: T) { .. }
 ```rust,compile_fail,no_run,ignore
 struct Foo<T: Display> {..}
 ```
+### Trait bounds with impl trait syntax
 
+Instead of specifying T: Display, we directly use impl Display. This is the impl trait syntax. This provides advantages in cases where we want to return a complex or unrepresentable type, such as a closure from a function. Without this syntax, you had to return it by putting it behind a pointer using the Box smart pointer type, which involves heap allocation.
+
+```rust
+use std::fmt::Display;
+
+fn show_me(val: impl Display) {
+    println!("{}", val);
+}
+
+fn main() {
+    show_me("Trait bounds are awesome");
+}
+```
+The impl trait syntax for trait bounds is mostly recommended to be used as return types from functions. Using it in parameter position means that we can't use the turbofish operator. it should only be used when we don't have a concrete type available to us, as is the case with closures.
+
+```rust
+use std::fmt::Display;
+
+fn surround_with_braces(val: impl Display) -> impl Display {
+    format!("{{{}}}", val)
+}
+
+fn main() {
+    println!("{}", surround_with_braces("Hello"));
+}
+```
 
 ## Aggregator
 > Other crates that depend on the aggregator crate can also bring the Summary trait into scope to implement Summary on their own types. One restriction to note is that we can implement a trait on a type only if at least one of the trait or the type is local to our crate.
@@ -42,10 +69,7 @@ struct Foo<T: Display> {..}
 
 > `bound`  : 'where Self: Sized'
 
-  > `impl<T, U> GenericTrait<U> for u32 where U: HasAssocType<Ty = T> {}`
-  /*The syntax for specifying a default type for a generic type is <PlaceholderType=ConcreteType> when declaring the generic type.*/
-  /* 'T' ""constrains"" by being in an ""associated type(Ty = T)"" in a bound for type `U` which is itself a ""generic parameter(GenericTrait<U>)"" constraining the trait.*/
-  
+
 ---
 
 > `tags` #orphan_rule #coherence

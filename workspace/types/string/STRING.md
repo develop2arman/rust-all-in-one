@@ -72,3 +72,5 @@ Lists of things are incredibly common. The two types that you will work with mos
 > `Literal` : "hello" called-> string literal, equal=> &'static str.
 
 > `Notation` : &str, &[]
+
+> `{{{}}}` : string interpolation - for printing {} in println!()

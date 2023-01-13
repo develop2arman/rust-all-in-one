@@ -623,14 +623,19 @@
     "Test_Block": {
         "prefix": "mb.testunit",
         "body": [
+            "impl<T: Display> Display for Complex<T> {",
+            "    fn fmt(&self, f: &mut Formatter) -> Result {",
+            "        write!(f, \"{} + {}i\", self.$1, self.$2)",
+            "    }",
+            "}",
             "#[cfg(test)]",
             "mod tests {",
             "use super::*;",
             "use pretty_assertions::assert_eq;",
             "use pretty_assertions::{assert_eq, assert_ne};",
             "    #[test]",
-            "    fn $1(){",
-            "       $2",
+            "    fn $3(){",
+            "       $4",
             "    }",
             "}"
         ],
@@ -639,6 +644,11 @@
     "Test_Proptest Block": {
         "prefix": "mb.testpropunit",
         "body": [
+            "impl<T: Display> Display for Complex<T> {",
+            "    fn fmt(&self, f: &mut Formatter) -> Result {",
+            "        write!(f, \"{} + {}\", self.$1, self.$2)",
+            "    }",
+            "}",
             "#[cfg(test)]",
             "mod tests {",
             "use super::*;",
@@ -647,8 +657,8 @@
             "use pretty_assertions::{assert_eq, assert_ne};",
             "proptest! {",
             "    #[test]",
-            "    fn $1(){",
-            "       $2",
+            "    fn $3(){",
+            "       $4",
             "    }",
             "  }",
             "}"
