@@ -10,6 +10,8 @@
 
 [[STRUCT]]
 
+[[RHS]]
+
 ---
 
 ## Class Vs Struct

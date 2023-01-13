@@ -6,7 +6,7 @@ use std::rc::Rc;
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-trait-associate-type-and-trait_bin --bin  rust-doc-trait-associate-type-ex-1```
+/// ```cargo run -q -p rust-doc-trait-associate-type_bin --bin  rust-doc-trait-associate-type-ex-1```
 ///
 /// ## What
 /// `TODO`

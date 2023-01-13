@@ -4,6 +4,8 @@
 
 [[SHARED_BEHAVIOR]]
 
+[[SAFEOBJECT]]
+
 ---
 
 > Traits are **private** by default.

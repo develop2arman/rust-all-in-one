@@ -19,6 +19,7 @@ members = [
     "workspace/feature/rust-doc/mod_draw_lib",
     "workspace/feature/code-like-pro/dryoc_bin",
 
+    "workspace/data/serde/candle_dev",
     "workspace/data/operator/master-rust",
     "workspace/data/rust-in-action/csv_bin",
     "workspace/data/regex/rust-in-action",
@@ -29,7 +30,8 @@ members = [
     "workspace/data/convert/text_to_enum/rust-in-action",
     "workspace/data/io/file/rust-in-action",
     "workspace/data/io/io/rust-in-action",
-
+    "workspace/data/convert/trait/from/rust-egg",
+    "workspace/data/convert/try_from/rust-egg",
     "workspace/borrowchecker/lifetime/elision/rust-doc",
     "workspace/borrowchecker/lifetime/elision/rust-in-action",
     "workspace/borrowchecker/semantic/rust-in-action",
@@ -61,6 +63,7 @@ members = [
     "workspace/types/primitive/int/code-like-a-pro",
     "workspace/types/primitive/int/rust-in-action",
     "workspace/types/primitive/int/num/rust-in-action",
+    "workspace/types/num/from/rust-in-action",
     "workspace/types/primitive/operator/rust-in-action",
     "workspace/types/string/rust-doc",
     "workspace/types/string/rust-egg",
@@ -72,6 +75,8 @@ members = [
 
     "workspace/trait/shared-behavior/builtin-trait/master-rust",
     "workspace/trait/associate-type-or-trait/rust-doc",
+    "workspace/trait/associate-type-or-trait/rust-egg",
+    "workspace/trait/associate-type-or-trait/rust-in-action",
     "workspace/trait/associate-type-or-trait/master-rust",
     "workspace/trait/inheritance/master-rust",
     "workspace/trait/shared-behavior/trait-bound/master-rust",
@@ -110,8 +115,6 @@ members = [
 
     "workspace/pointers/smartpointer/box/rust-in-action",
     "workspace/pointers/rust-in-action",
-
-    "workspace/data/serde/candle_dev",
 
     "workspace/functional-programming/closure",
 

@@ -12,7 +12,8 @@
 
 ## Associated type traits
 > This removes the redundant specification of types, as is the case with generic traits. One of the finest examples of associated type traits is the Iterator trait.
-- [x] The advantage of them is that, in the implementation, they allow us to declare the assciated type once and use **Self::Out as the return type** or parameter type in any of the trait methods or functions.
+
+> The advantage of them is that, in the implementation, they allow us to declare the assciated type once and use **Self::Out as the return type** or parameter type in any of the trait methods or functions.
 
 > **We have two kind of asscociate type for purpose: output, constraints associated type(Ty = T).**
 
@@ -51,4 +52,4 @@ impl<T: Add<T, Output=T>> Add for Complex<T> {
 
 ---
 
-> `tags` [[associate_method]] [[instance_method]] [[associate_trait]]
+> `tags` [[associate_method]] [[instance_method]] [[associate_trait]] [[rhs]]]

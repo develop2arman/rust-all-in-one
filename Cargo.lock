@@ -2324,6 +2324,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust-egg-convert-from_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-egg-convert-try_from_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
+
+[[package]]
 name = "rust-egg-dangle_bin"
 version = "0.1.0"
 
@@ -2345,6 +2356,10 @@ version = "0.1.0"
 dependencies = [
  "proptest",
 ]
+
+[[package]]
+name = "rust-egg-trait-associate-type-and-trait_bin"
+version = "0.1.0"
 
 [[package]]
 name = "rust-egg-types-array_bin"
@@ -2371,6 +2386,13 @@ dependencies = [
 [[package]]
 name = "rust-in-action-convert-as_ref_bin"
 version = "0.1.0"
+
+[[package]]
+name = "rust-in-action-convert-from_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
 
 [[package]]
 name = "rust-in-action-convert-into_bin"
@@ -2495,6 +2517,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-in-action-smartpointer-box_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-in-action-trait-associate-type-and-trait_bin"
 version = "0.1.0"
 
 [[package]]
