@@ -4,9 +4,9 @@
 
 > Dispatch is the mechanism to determine which specific version of code is actually run when it involves polymorphism. Two major forms of dispatch are static dispatch and dynamic dispatch. While Rust favors static dispatch, it also supports dynamic dispatch through a mechanism called ‘trait objects’.
 
->The code that results from monomorphization is doing static dispatch, which is when the compiler knows what method you’re calling at compile time. This is opposed to dynamic dispatch, which is when the compiler can’t tell at compile time which method you’re calling.
+>The code that results from **monomorphization (early binding)** is doing static dispatch, which is when the compiler knows what method you’re calling at compile time. This is opposed to dynamic dispatch, which is when the compiler can’t tell at compile time which method you’re calling.
 
-> Process of method resolution in a **polymorphic** context is called dispatch.
+> Process of method resolution in a **polymorphic(late binding)** context is called dispatch.
 
 > **Invoking the method is called dispatching**. In mainstream languages that support polymorphism, the dispatch may happen in either of the following ways:
 
@@ -44,6 +44,8 @@ fn main() {
 
 ### Dynamic
 
+[[TRAITOBJECT]]
+
 > Dynamic dispatch: In object-oriented languages, there are times when the method call can't be decided until runtime. This is because the concrete type is hidden and only interface methods are available to call on the type. In Java, this is the case when a function has an argument, which is **known as an interface**. Such a scenario can only be handled by dynamic dispatch. 
 
 > In dynamic dispatch, **the method is determined dynamically** *by navigating through the list of implementations of the interface from* **the vtable and invoking the method**. 
@@ -64,7 +66,15 @@ pub struct Screen {
 }
 ```
 
+## Summery
 
+> Traits, along with generics, provide both kinds of code reuse, either through monomorphization (early binding) or through runtime polymorphism (late binding). 
+
+> The decision on when to use which depends on the context and the needs of the application in question. Often, **error** types are taken toward the **dynamic** dispatch train as they are supposed to be code paths that **rarely get executed**. 
+
+> **Monomorphization** can be handy for **small use cases**, but the downside to it is that it introduces **code bloat and duplication, which affects the cache line and increases binary size**. 
+
+> However, of these two options, **static** dispatch should be preferred unless there is a hard constraint on binary size.
 
 ---
 

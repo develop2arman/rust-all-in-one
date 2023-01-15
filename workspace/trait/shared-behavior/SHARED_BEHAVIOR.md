@@ -63,6 +63,7 @@ fn main() {
 
 
 
+
 ## Glossery
 
 > `fully qualified syntax` : <Type as Trait>::function(receiver_if_method, next_arg, ...);
