@@ -5,6 +5,43 @@
 
 [[POINTERS]]
 
+---
+
+# Memory
+
+![Memory](../rust/assets/images/mem-master1.JPG)
+
+* **Text segment:** This section contains the actual code to be executed in the **compiled binary**. The text segment is a read-only segment and any user code is forbidden to modify it. Doing so can result in a crash of the program.
+* **Data segment:** This is further divided into subsections, that is, the initialized data segment and uninitialized data segment, which is historically known as **Block Started by Symbol (BSS)**, and **holds all global and static values **declared in the program. Uninitialized values are initialized to zero when they are loaded into memory.
+* **Stack segment:** This segment is used to hold any **local variables** and the return addresses of functions. All resources whose sizes are known in advance and any temporary/intermediary variables that a program creates are implicitly stored on the stack.
+* **Heap segment:** This segment is used to store any **dynamically allocated data whose size is not known up **front and can change at runtime depending on the needs of the program. This is the ideal allocation place when we want values to outlive their declaration within a function.
+
+> a process is not allowed to access the physical memory directly. Instead, it uses a virtual memory, which is mapped to the actual physical memory by the OS using an **in-memory** data structure called pages, which are maintained in **page tables**. The process has to request memory from the OS for its use, and what it gets is a virtual address that is internally mapped to a physical address in the RAM. For performance reasons, this memory is requested and processed in chunks. When virtual memory is accessed by the process,**the memory management unit** *does the actual conversion from virtual to physical memory*.
+>
+> a process from the OS is known as **memory allocation**. A process requests *a chunk of memory* from the OS by using system calls, and the OS marks that chunk of memory in use by that process.
+
+> > POSIX is an acronym for Portable Operating System Interface.
+
+> A **GC** *runs as a daemon thread as part of the running program and analyzes the memory* that is no longer being referenced by any variable in the program and frees it automatically at certain points in time along with program execution.
+
+
+## Memory Management Strategies 
+
+* Manual: C has his form of memory management, where it's completely **the programmers responsibility to put free calls** after the code is done using memory. C++ automates this to some extent using smart pointers where the free call is put in a class's deconstructor method definition.
+
+* Automatic: Languages with this form of memory management include an additional runtime thread,that is the **Garbage Collector, that runs alongside the program as a daemon thread**. Most dynamic languages based on a virtual machine such Python, Java, C# and Ruby rely on automatic memory management. Automatic memory management is one of the reasons that writing code in these languages is easy.
+
+* [[SemiAutomatic]]: Languages such as Swift fall into this category. They don't have a dedicated GC built in as part of the runtime, but offer a reference counting type, which does automatic management of memory at a granular level. **Rust also provides the reference counting types Rc<T> and Arc<T>.**
+
+> the majority of  Common Vulnerabilities & Exposure (CVEs) in software related to memory management, it shows that we humans are not very good at this!
+
+
+### Memory Allocator
+
+> the compiler **rustc** itself uses the **jemalloc** allocator, whereas the libraries and binaries that are built from Rust use the system allocator. On **Linux**, it would be the **glibc** memory allocator APIs. Jemalloc is an efficient allocator library for use in *multithreaded* environments and it greatly reduces the build time of Rust programs. While jemalloc is used by the compiler, it's not used by any applications that are built with Rust because it increases the size of the binary. So, compiled binaries and libraries always use the system allocators by default.
+
+> **Rust also has a pluggable allocator design**, and can use the system allocator or any user implemented allocator that implements *the GlobalAlloc trait* from the std::alloc module. This is often implemented by the *#[global_allocator]* attribute, which can be put on any type to declare it as an allocator.
+> For rare cases where you need to allocate a primitive type on the heap, you can use the Box<T> type, which is a generic smart pointer type.
 
 ## Stack
 
@@ -14,23 +51,32 @@
 
 > So why is the stack called the stack?
 >> Because of the usage pattern. Entries on the stack are made in a **Last In, First Out (#LIFO) manner.**The entries **in the stack are called stack frames. Stack frames are created as function calls are made**. As a program progresses, a cursor within the CPU updates to reflect the current address of the current stack frame. 
+
+> one CPU instruction: incrementing/decrementing the stack frame pointer
+
 >> The #cursor is known as the [[stack_pointer]]. As functions are called within functions, the stack pointer decreases in value as the stack grows. When a function returns, the stack pointer increases.Stack frames contain a function’s state during the call. When a function is called within a function, the older function’s values are effectively frozen in time. Stack frames are also known as activation frames, and less commonly allocation records.
+
 >> Unlike dinner plates, **every stack frame is a different size**. 
+
 >> The stack frame contains **space for its function’s arguments**, a pointer to the original **call site, and local variables** (except the data which is allocated on the heap).
 
 > **The stack’s primary role is to make space for local variables**. Why is the stack fast?
 >> All of a function’s variables are **side by side in memory**. That speeds up access.
 
+> **The stack frame pointer (esp) is a CPU register** *that always points to the top of the stack*. The stack frame pointer keeps on updating as functions get called, or when they return. When a function returns, its stack frame is discarded by restoring the stack frame pointer to where it was before entering the function.
+
 ## Heap
 > The heap is an area of program memory for types that **do not have known sizes at compile time**. 
 > What does it mean to have no known size at compile time? In Rust, there are two meanings. Some types grow and shrink over time as required. 
-<<<<<<< HEAD
-> Obvious cases are **String and Vec<T>** . Other types are unable to tell the Rust compiler how much memory to allocate even though these don’t change size at runtime. These are known as dynamically sized types.
-**Slices** ([T]) are the commonly cited example. Slices have no compile-time length. Internally, these are a pointer to some part of an array. But slices actually represent some number of elements within that array. Another example is a **trait** objects.
-=======
-> 
+
 > Obvious cases are **String and Vec<T>** . Other types are unable to tell the Rust compiler how much memory to allocate even though these don’t change size at runtime. These are known as dynamically sized types. **Slices** ([T]) are the commonly cited example. Slices have no compile-time length. Internally, these are a pointer to some part of an array. But slices actually represent some number of elements within that array. Another example is a **trait** objects.
->>>>>>> refs/remotes/origin/main
+
+> > [[RAII]] stands for Resource Acquisition Is Initialization; a paradigm suggesting that *resources must be acquired during initialization of objects and must be released* when they are deallocated or their destructors are called.
+
+> The only way to allocate memory on the heap is through smart pointer types.
+
+> **The heap memory** is to be used with care. Values in the heap can possibly live forever during the lifetime of the program if not freed, and may eventually lead to the program being killed by **the Out Of Memory (OOM) killer in the kernel**. At runtime, a bug in the code or mistake from the developer can also cause the program to either forget to free the memory, or access a portion of memory that is outside the bounds of its memory layout, or dereference a memory address in the protected code segment. When this happens, the process receives a trap instruction from the kernel, which is what you see as **a segmentation fault error message**, followed by the process getting aborted. As such, we must ensure that processes and their interactions with memory need to be safe! Either we as programmers need to be critically aware of our malloc and free calls.or used memory safe language to handle these details for us.
+
 
 ## Stack Vs Heap
 - The stack is fast, but the heap is slow.

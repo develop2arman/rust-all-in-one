@@ -33,9 +33,9 @@ In addition, the following tools can also be handy in certain situations:
 
 ---
 
-![Pointers in memory](../../rust/assets/images/pointers1.JPG)
+![Pointers in memory](../rust/assets/images/pointers1.JPG)
 
-![Memory](../../rust/assets/images/memory.JPG)
+![Memory](../rust/assets/images/memory.JPG)
 
 
 ## usize
