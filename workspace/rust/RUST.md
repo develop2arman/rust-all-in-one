@@ -25,9 +25,6 @@
  
   > `!`: that’s known in type theory lingo as the empty type because it has no values. We prefer to call it the never type.Functions that return never are called diverging functions.
 
-  > `implicit`:	encapsulation (like method, copy)
-  
-  > `DSTs`: unsized types 
   
   > `?Sized`: T may or may not be Sized-Trait syntax with this meaning is only available for Sized, this notation overrides the default that generic types must have a known size at compile time. not any other traits.
   

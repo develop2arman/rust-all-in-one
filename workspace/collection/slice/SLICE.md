@@ -14,3 +14,8 @@
 > we can't have slices as bare values – only behind a pointer. This is because **slices are unsized types**.
 
 > Note: The &str type also comes under the category of a slice type (a [u8]). The only distinction from other byte slices is that they are guaranteed to be UTF-8. Slices can also be taken on Vecs or Strings.
+
+
+---
+
+> `tags` unsize

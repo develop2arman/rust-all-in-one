@@ -54,6 +54,22 @@ fn main() {
 }
 ```
 
+## Example Trait Bound
+
+In the implementation of outline_print, we want to use the Display trait’s functionality. Therefore, we need to specify that the OutlinePrint trait will work only for types that also implement Display and provide the functionality that OutlinePrint needs. We can do that in the trait definition by specifying OutlinePrint: Display. 
+This technique is similar to adding a trait bound to the trait.
+we can use the to_string function that is automatically implemented for any type that implements Display.
+
+```rust
+use std::fmt;
+trait OutlinePrint: fmt::Display {
+    fn outline_print(&self) { 
+         let output = self.to_string();
+         output
+    }
+}
+```
+
 ## Aggregator
 > Other crates that depend on the aggregator crate can also bring the Summary trait into scope to implement Summary on their own types. One restriction to note is that we can implement a trait on a type only if at least one of the trait or the type is local to our crate.
 > > For example, **we can implement standard library traits like Display on a custom type like Tweet as part of our aggregator crate functionality**, because the type Tweet is local to our aggregator crate. We can also implement Summary on Vec<T> in our aggregator crate, because the trait Summary is local to our aggregator crate.

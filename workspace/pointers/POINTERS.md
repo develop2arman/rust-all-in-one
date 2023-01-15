@@ -74,7 +74,7 @@ Unsafe Rust has two new types called raw pointers that are similar to references
 
 > Creating a raw pointer to an arbitrary memory address
 
-```
+```rust
 let mut num = 5;
 let r1 = &num as *const i32;
 let r2 = &mut num as *mut i32;
@@ -109,15 +109,16 @@ unsafe {
 
 ```use std::os::raw::c_char;```
 
-```
+```rust
 static B: [u8; 10] = [99, 97, 114, 114, 121, 116, 111, 119, 101, 108];
 
 static C: [u8; 11] = [116, 104, 97, 110, 107, 115, 102, 105, 115, 104, 0];
 ```
 
-```
+```rust
 fn main() {
     let a = 42;
+}
 ```
 > **String is a [[smart_pointer]]** type that holds a pointer to a backing array and a field to store its size
 
@@ -133,9 +134,9 @@ fn main() {
 > 
 > C does not define the width of its char type in its standard, although it’s one byte wide in practice. Retrieving the type alias c_char from the std::os:raw module allows for differences.
 
- ```
+ ```rust,compile_fail,no_run
  let c: Cow<str>;
- unsafe {
+ unsafe {}
  ```
 
  > References cannot be [[cast]] directly to *mut T, the type required by String::from_raw_parts(). But [[star_const]] T can be cast to *mut T, leading to this double cast syntax
@@ -154,17 +155,17 @@ fn main() {
 
  ```c = CStr::from_ptr(c_ptr).to_string_lossy();```
 
- ```
- }
+ ```rust,compile_fail,no_run
+
  println!("a: {}, b: {}, c: {}", a, b, c);
- }
+
  ```
 
 ---
 
 You can create pointers safely from any integral value. An i32 is not a Vec<String>, but Rust is quite comfortable .ignoring that here.
 
-```
+```rust
 let ptr = 42 as *const Vec<String>;
 ```
 
@@ -187,11 +188,22 @@ let ptr = 42 as *const Vec<String>;
 
 ![Smart-Pointer-3](../rust/assets/images/smart-pointer-3.JPG)
 
+
+## Ownership
+
+The ownership rule of Rust states the following principles:
+
+> When you create a value or a resource using the **let** statement and assign it to a variable, the variable becomes the owner of the resource When the value is reassigned from one variable to another, **the ownership of the value moves to the other variable and the older variable becomes invalid** for further use The value and the variable are deallocated at the end of their scope.
+
+> The ownership rule prevents you from having multiple points of access for modifying the value, which can lead to use after free situations, even in single threaded contexts with languages that permit multiple mutable aliases for values.
+
+> The drop and write {} method comes from the Drop trait, which is implemented for most heap allocated types in Rust and makes automatic freeing of resources a breeze.
+
 ## Glossery
 
 > Rust has a feature called automatic referencing and dereferencing.Calling methods is one of the few places in Rust that has this behavior.
 
-```
+```rust,compile_fail,no_run
 p1.distance(&p2);
 (&p1).distance(&p2);
 ```
@@ -200,4 +212,4 @@ p1.distance(&p2);
 
 > `fat pointer Vs thin pointer` : The term **fat** pointer refers to **memory layout**. **Thin** pointers, such as **raw pointers**, are *a single usize wide*. Fat pointers are usually *two usize* wide,and occasionally more
 
-> `tags` [[smart_pointer]]
+> `tags` [[smart_pointer]] [[fat_pointer]]

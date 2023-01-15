@@ -31,7 +31,8 @@
 
 * Automatic: Languages with this form of memory management include an additional runtime thread,that is the **Garbage Collector, that runs alongside the program as a daemon thread**. Most dynamic languages based on a virtual machine such Python, Java, C# and Ruby rely on automatic memory management. Automatic memory management is one of the reasons that writing code in these languages is easy.
 
-* [[SemiAutomatic]]: Languages such as Swift fall into this category. They don't have a dedicated GC built in as part of the runtime, but offer a reference counting type, which does automatic management of memory at a granular level. **Rust also provides the reference counting types Rc<T> and Arc<T>.**
+* [[SemiAutomatic]]: Languages such as Swift fall into this category. They don't have a dedicated GC built in as part of the runtime, but offer a reference counting type, which does automatic management of memory at a granular level **Rust also provides the reference counting types Rc<T> and Arc<T>.** 
+
 
 > the majority of  Common Vulnerabilities & Exposure (CVEs) in software related to memory management, it shows that we humans are not very good at this!
 
@@ -40,8 +41,14 @@
 
 > the compiler **rustc** itself uses the **jemalloc** allocator, whereas the libraries and binaries that are built from Rust use the system allocator. On **Linux**, it would be the **glibc** memory allocator APIs. Jemalloc is an efficient allocator library for use in *multithreaded* environments and it greatly reduces the build time of Rust programs. While jemalloc is used by the compiler, it's not used by any applications that are built with Rust because it increases the size of the binary. So, compiled binaries and libraries always use the system allocators by default.
 
-> **Rust also has a pluggable allocator design**, and can use the system allocator or any user implemented allocator that implements *the GlobalAlloc trait* from the std::alloc module. This is often implemented by the *#[global_allocator]* attribute, which can be put on any type to declare it as an allocator.
+> **Rust also has a pluggable allocator design**, and can use the system allocator or any user implemented allocator that implements *the GlobalAlloc trait* from the std::alloc module. This is often implemented by the *#[[global_allocator]]* attribute, which can be put on any type to declare it as an allocator.
 > For rare cases where you need to allocate a primitive type on the heap, you can use the Box<T> type, which is a generic smart pointer type.
+
+---
+
+> `tags` [[segmentation_fault_error]] [[GlobalAlloc]]
+
+---
 
 ## Stack
 
@@ -111,6 +118,21 @@
 - Release memory that isn’t needed back to the OS via **free() for UNIX systems and HeapFree() for Windows**.
 
 
+## Memory Safety
+
+> Safety: **cannot point to invalid memory and remain valid in all code paths**. In other words, safety basically boils down to pointers having valid references all of the time in your program, and that the operations with **pointers do not lead to undefined behavior**. 
+
+> Undefined behavior is the state of a program where it has entered a situation that has not been accounted for in the compiler's because the **compiler specification does not clarify what happens in that situation**.
+
+> Languages based on virtual machines use garbage collection to eliminate whole classes of memory safety issues.
+
+> While Rust doesn't have a built-in GC, it relies on the same **RAII** built into the language and makes freeing used memory automatic for us based on the scope of variables and is much more safer than C or C++.
+
+>> Memory safety bugs lead to memory leaks.
+
 ## Glossery
 
  > `stack` : contiguous layout memory = LIFO
+
+
+> `tags` [[memory_leak]] [[safety]] [[LIFO]]

@@ -46,6 +46,30 @@ impl<T: Add<T, Output=T>> Add for Complex<T> {
 }
 ```
 
+### Generic Associate Type
+
+> With associated types, we don’t need to annotate types because **we can’t implement a trait on a type multiple times**. we can only choose what the type of Item will be once, because there can only be one impl Iterator for Counter. We don’t have to specify that we want an iterator of u32 values everywhere that we call next on Counter.
+
+```rust
+pub trait Iterator {
+    type Item;
+
+    fn next(&mut self) -> Option<Self::Item>;
+}
+impl Iterator for Counter {
+    type Item = u32;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        // --snip--
+//This syntax seems comparable to that of generics. 
+
+pub trait Iterator<T> {
+    fn next(&mut self) -> Option<T>;
+}
+//A hypothetical definition of the Iterator trait using generics
+```
+
+
 ## Glossery
 
   > `The associated type = placeholder type` :  is named Item'pub trait Iterator {type Item;}'another example is 'HasAssocType<Ty = T>'  
