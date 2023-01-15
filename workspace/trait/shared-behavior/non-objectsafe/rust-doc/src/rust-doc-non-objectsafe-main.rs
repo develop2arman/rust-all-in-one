@@ -4,11 +4,11 @@
 ///
 /// ## Commands
 ///
-/// ````RUST_BACKTRACE=full cargo run -q -p rust-doc-shared-behavior-nondispatchable_bin --bin rust-doc-shared-behavior-nondispatchable-main```
+/// ```RUST_BACKTRACE=full cargo run -q -p rust-doc-non-objectsafe_bin --bin rust-doc-non-objectsafe-main```
 ///
-/// ```cargo doc  --package rust-doc-shared-behavior-nondispatchable_bin  --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-doc-non-objectsafe_bin  --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-doc-shared-behavior-nondispatchable_bin ```
+/// ```cargo test --doc  --package rust-doc-non-objectsafe_bin ```
 ///
 /// ## What
 /// `TODO`

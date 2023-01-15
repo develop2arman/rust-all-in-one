@@ -9,8 +9,8 @@
   - [ASSOCIATE](trait/associate-type-or-trait/ASSOCIATE.md)
   - [INHERITANCE](trait/inheritance/INHERITANCE.md)
   - [SHARED_BEHAVIOR](trait/shared-behavior/SHARED_BEHAVIOR.md)  
-  - [SAFE OBJECT](trait/shared-behavior/safe-object/SAFEOBJECT.md)
-    - [TRAITOBJECT](trait/shared-behavior/safe-object/dispatchable/TRAITOBJECT.md)
+    - [SAFE OBJECT](trait/shared-behavior/safe-object/SAFEOBJECT.md)
+      - [TRAITOBJECT](trait/shared-behavior/safe-object/dispatchable/TRAITOBJECT.md)
 ---
 
 - [TYPES](types/TYPES.md)

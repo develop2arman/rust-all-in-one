@@ -85,6 +85,7 @@ members = [
     "workspace/trait/shared-behavior/builtin-trait/master-rust",
     "workspace/trait/shared-behavior/safe-object/non-dispatchable/rust-doc",
     "workspace/trait/shared-behavior/safe-object/dispatchable/master-rust",
+    "workspace/trait/shared-behavior/non-objectsafe/rust-doc",
 
     "workspace/flowcontrol/loop/rust-in-action",
     "workspace/flowcontrol/loop/packtpub",
@@ -109,6 +110,7 @@ members = [
 
     "workspace/errorhandling/rust-in-action",
 
+    "workspace/duplication/copy-clone/pnkfx",
     "workspace/duplication/copy-clone/rust-in-action",
     "workspace/duplication/rc/rust-in-action",
 

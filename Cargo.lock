@@ -1982,6 +1982,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "pnkfx-duplication_bin"
+version = "0.1.0"
+
+[[package]]
 name = "pnkfx-slice_bin"
 version = "0.1.0"
 
@@ -2291,6 +2295,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-doc-match-flowcontrol_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-doc-non-objectsafe_bin"
 version = "0.1.0"
 
 [[package]]

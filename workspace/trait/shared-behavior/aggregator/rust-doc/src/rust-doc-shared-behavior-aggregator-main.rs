@@ -45,13 +45,29 @@ pub struct Tweet {
     pub reply: bool,
     pub retweet: bool,
 }
-
+pub struct NewsArticle {
+    pub headline: String,
+    pub location: String,
+    pub author: String,
+    pub content: String,
+}
 impl Summary for Tweet {
     fn summarize_author(&self) -> String {
         format!("@{}", self.username)
     }
 }
+impl Summary for NewsArticle {
 
+
+    fn summarize_author(&self) -> String {
+        format!("@{}", self.headline)
+    }
+}
+
+pub fn notify(item: &impl Summary) {
+    println!("Breaking news! {}", item.summarize());
+}
+//pub fn notify(item1: &impl Summary, item2: &impl Summary) {
 
 fn main() {
     let tweet = Tweet {
@@ -63,5 +79,16 @@ fn main() {
         retweet: false,
     };
 
-    println!("1 new tweet: {}", tweet.summarize());
+      let article = NewsArticle {
+        headline: String::from("Penguins win the Stanley Cup Championship!"),
+        location: String::from("Pittsburgh, PA, USA"),
+        author: String::from("Iceburgh"),
+        content: String::from(
+            "The Pittsburgh Penguins once again are the best \
+             hockey team in the NHL.",
+        ),
+    };
+
+    notify(&tweet);
+    println!("New article available! {}", article.summarize());
 }
