@@ -1,9 +1,11 @@
 
-[[DANGLING]]
+[[LIFETIME_DANGLING]]
 
-[[ELISION]]
+[[LIFETIME_ELISION]]
 
-[[STATIC]]
+[[LIFETIME_STATIC]]
+
+[[LIFETIME_GENERIC]]
 
 ---
 
@@ -24,53 +26,30 @@
 > When we pass concrete references to longest, the concrete lifetime that is substituted for 'a is the part of the scope of x that overlaps with the scope of y. In other words, the generic lifetime 'a will get the concrete lifetime that is equal to the smaller of the lifetimes of x and y. Because we’ve annotated the returned reference with the same lifetime parameter 'a, the returned reference will also be valid for the length of the smaller of the lifetimes of x and y.
 > Ultimately, lifetime syntax is about connecting the lifetimes of various parameters and return values of functions. Once they’re connected, Rust has enough information to allow= **memory-safe operations** and disallow operations that would **create dangling pointers or otherwise violate memory safety.**
 
-### Syntax
+> For data allocated on the stack, we can easily reason by looking at the code and figure out whether a variable is alive or not. For heap allocated values, though, this isn't clear.
 
-> syntax <'a, 'b> declares two lifetime variables, 'a and 'b, within the scope of
-j: &'b i32 binds the lifetime variable 'b to the lifetime of j. The syntax reads as “parameter j is a reference to an i32 with lifetime b.”
-Although every parameter has a lifetime, these checks are typically invisible as the compiler can infer most lifetimes by itself.
+The following are the rules that are followed when eliding lifetimes:
+> If the input lifetime contains only a single reference, the output lifetime is assumed to be the same
 
-> All values bound to a given lifetime must live as long as the last access to any value bound to that lifetime.
-> No lifetime annotations are required when calling a function.
-> `Example`
- 'a in generic func means: function will live at least as long as lifetime 'a
- e.g. Note that the longest function doesn’t need to know exactly how long x and y will live, only that some scope can be substituted for 'a that will satisfy this signature.
- 
+> For methods involving self and &mut self, the input lifetime is inferred for the  &self parameter
 
-> Using two lifetime parameters (a and b) indicates that the lifetimes of i and j are decoupled.
-```fn add_with_lifetimes<'a, 'b>(i: &'a i32, j: &'b i32) -> i32 {}```
+> where we have to specify lifetimes when Rust cannot figure them out for us:
+    * Function signatures
+    * Structs and struct fields
+    * impl blocks
 
-> The lifetime annotations indicate that the references first and second must both live as long as that generic lifetime.
-Lifetimes on function or method parameters are called **input lifetimes**, and lifetimes on return values are called output lifetimes.
-
-```
-let result = longest(string1.as_str(), string2);
-fun longest<'a>(x: &'a str, y: &'a str) -> &'a str {}
-```
-
-> Using two lifetime parameters (a and b) indicates that the lifetimes of i and j are decoupled.
-```
-fn add_with_lifetimes<'a, 'b>(i: &'a i32, j: &'b i32) -> i32 {}
-```
-
-> the 'c part, like a type, also guards what is allowed into r.
-```
-let r: &'c S = &c;   
-```
-
-
-### lifetime of that usage
+## lifetime of that usage
 
 the #LOC ('existence time' or Line of code) between when a location is 
 > first used in a certain way, and when that usage stops.
 
-### lifetime of that value
+## lifetime of that value
 
 the LOC (or actual time) between when 
 > a value is created, and when that value is dropped.
 might be useful when discussing open file descriptors.
 
-### Drop
+## Drop
 
 > When values go out of scope or their lifetimes end for some other reason, their **destructors** are called. A destructor is a function that removes traces of the value from the program by deleting references and freeing memory. You won’t find a call to any destructors in most Rust code. The compiler injects that code itself as part of the process of tracking every value’s lifetime.
 
@@ -107,6 +86,31 @@ const WORDS: &str = "hello convenience!";
 ```
 
 > const items looks remarkably similar to static items, which introduces some confusion as to which one should be used at which times. To put it simply,  **constants are inlined**  wherever they're used, making using them identical to simply replacing the name of the const with its value. Static variables, on the other hand, point to **a single location** in memory, which all accesses share. This means that, unlike with constants, they can't have **destructors**, and act as a single value across the  **entire codebase** .
+
+
+## Syntax
+
+> syntax <'a, 'b> declares two lifetime variables, 'a and 'b, within the scope of
+    j: &'b i32 binds the lifetime variable 'b to the lifetime of j. The syntax reads as “parameter j is a reference to an i32 with lifetime b.”
+    Although every parameter has a lifetime, these checks are typically invisible as the compiler can infer most lifetimes by itself.
+
+---
+
+> All values bound to a given lifetime must live as long as the last access to any value bound to that lifetime.
+> No lifetime annotations are required when calling a function.
+> `Example`
+ 'a in generic func means: function will live at least as long as lifetime 'a
+  e.g. Note that the longest function doesn’t need to know exactly how long x and y will live, only that some scope can be substituted for 'a that will satisfy this signature.
+ 
+---
+
+> Using two lifetime parameters (a and b) indicates that the lifetimes of i and j are decoupled.
+
+```rust,no_run,compile_fail
+fn add_with_lifetimes<'a, 'b>(i: &'a i32, j: &'b i32) -> i32 {}//working fine without error
+```
+
+---
 
 
 ## Glossery

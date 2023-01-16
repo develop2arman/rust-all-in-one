@@ -25,13 +25,14 @@
 - [BORROWCHECKER](borrowchecker/BORROWCHECKER.md)
   - [SEMANTIC](borrowchecker/semantic/SEMANTIC.md)
   - [LIFETIME](borrowchecker/lifetime/LIFETIME.md)
-    - [STATIC](borrowchecker/lifetime/static/STATIC.md)  
-    - [ELISION](borrowchecker/lifetime/elision/ELISION.md)
-    - [DANGLING](borrowchecker/lifetime/dangling/DANGLING.md)
+    - [STATIC](borrowchecker/lifetime/static/LIFETIME_STATIC.md)  
+    - [ELISION](borrowchecker/lifetime/elision/LIFETIME_ELISION.md)
+    - [DANGLING](borrowchecker/lifetime/dangling/LIFETIME_DANGLING.md)
+    - [GENERIC](borrowchecker/lifetime/generic/LIFETIME_GENERIC.md)
 
 ---
 
-- [BENCHMARK](benches/BENCHMARK.md)
+- [BENCHMARK](benchmark/BENCHMARK.md)
 
 ---
 

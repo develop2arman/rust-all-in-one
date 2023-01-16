@@ -28,6 +28,19 @@ Four general strategies can help with ownership issues:
 * If there's a mutable reference to a value, no other references, either mutable or immutable references, are allowed to the same value in that scope. A mutable reference is an exclusive borrow.
 * If there is no mutable reference to a thing, any number of immutable references to the same value are allowed in the scope.
 
+## Ownership
+[[Ownership]] has a particular meaning within Rust. An owner is able to make any changes to the data and is responsible for deleting values that it owns when it leaves scope.
+
+The ownership rule of Rust states the following principles:
+
+> When you create a value or a resource using the **let** statement and assign it to a variable, the variable becomes the owner of the resource When the value is reassigned from one variable to another, **the ownership of the value moves to the other variable and the older variable becomes invalid** for further use The value and the variable are deallocated at the end of their scope.
+
+> The ownership rule prevents you from having multiple points of access for modifying the value, which can lead to use after free situations, even in single threaded contexts with languages that permit multiple mutable aliases for values.
+
+> The drop and write {} method comes from the Drop trait, which is implemented for most heap allocated types in Rust and makes automatic freeing of resources a breeze.
+
+
+![Ownership](../rust/assets/images/Ownership.jpg)
 
 ## Glossery
 
@@ -38,6 +51,3 @@ Four general strategies can help with ownership issues:
   > `aliasing`: Having several immutable references (&T) to the object (Rc).
   
   > `mutability`: Having one mutable reference (&mut T) to the object (mut Refcell).
-
-### Ownership
-[[Ownership]] has a particular meaning within Rust. An owner is able to make any changes to the data and is responsible for deleting values that it owns when it leaves scope.

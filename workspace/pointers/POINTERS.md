@@ -189,15 +189,7 @@ let ptr = 42 as *const Vec<String>;
 ![Smart-Pointer-3](../rust/assets/images/smart-pointer-3.JPG)
 
 
-## Ownership
 
-The ownership rule of Rust states the following principles:
-
-> When you create a value or a resource using the **let** statement and assign it to a variable, the variable becomes the owner of the resource When the value is reassigned from one variable to another, **the ownership of the value moves to the other variable and the older variable becomes invalid** for further use The value and the variable are deallocated at the end of their scope.
-
-> The ownership rule prevents you from having multiple points of access for modifying the value, which can lead to use after free situations, even in single threaded contexts with languages that permit multiple mutable aliases for values.
-
-> The drop and write {} method comes from the Drop trait, which is implemented for most heap allocated types in Rust and makes automatic freeing of resources a breeze.
 
 
 

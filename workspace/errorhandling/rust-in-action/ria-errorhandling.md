@@ -1,3 +1,3 @@
 
 
-> `tags` [[error]] [[static]] [[unsafe]] [[thread_rng]] [[probability]] [[gen_ratio]]
+> `tags` [[error]] [[LIFETIME_STATIC]] [[unsafe]] [[thread_rng]] [[probability]] [[gen_ratio]]
