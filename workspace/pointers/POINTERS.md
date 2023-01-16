@@ -199,6 +199,8 @@ The ownership rule of Rust states the following principles:
 
 > The drop and write {} method comes from the Drop trait, which is implemented for most heap allocated types in Rust and makes automatic freeing of resources a breeze.
 
+
+
 ## Glossery
 
 > Rust has a feature called automatic referencing and dereferencing.Calling methods is one of the few places in Rust that has this behavior.

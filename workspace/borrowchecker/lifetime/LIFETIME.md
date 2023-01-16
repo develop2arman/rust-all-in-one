@@ -12,20 +12,17 @@
 
 > A function’s local variables live until the function returns, while global variables might live for the life of the program.
 
-> Make hypotheses about whether or not your experiments will pass the borrow checker before you compile
-reference in Rust has a lifetime, which is the scope for which that reference is valid. 
-Most of the time, lifetimes are implicit and inferred, just like most of the time, types are inferred.
+> Make hypotheses about whether or not your experiments will pass the borrow checker before you compile reference in Rust has a lifetime, which is the scope for which that reference is valid.Most of the time, lifetimes are implicit and inferred, just like most of the time, types are inferred.
 
 > We must annotate types when multiple types are possible. 
-In a similar way, we must annotate lifetimes when the lifetimes of references could be related in a few different ways.
-==The main aim of lifetimes is to prevent dangling references==, which cause a program to reference data other than the data it’s intended to reference.
+> In a similar way, we must annotate lifetimes when the lifetimes of references could be related in a few different ways. The main aim of lifetimes is to prevent dangling references, which cause a program to reference data other than the data it’s intended to reference.
 
 > All references in Rust have a lifetime, even if they are not explicitly annotated. The compiler is capable of implicitly assigning lifetimes.
 
 > A value’s lifetime is the period when accessing that value is valid behavior. A function’s local variables live until the function returns, while global variables might live for the life of the program.
 
 > When we pass concrete references to longest, the concrete lifetime that is substituted for 'a is the part of the scope of x that overlaps with the scope of y. In other words, the generic lifetime 'a will get the concrete lifetime that is equal to the smaller of the lifetimes of x and y. Because we’ve annotated the returned reference with the same lifetime parameter 'a, the returned reference will also be valid for the length of the smaller of the lifetimes of x and y.
-> Ultimately, lifetime syntax is about connecting the lifetimes of various parameters and return values of functions. Once they’re connected, Rust has enough information to ==allow= **memory-safe operations** and ==disallow== operations that would **create dangling pointers or otherwise violate memory safety.**
+> Ultimately, lifetime syntax is about connecting the lifetimes of various parameters and return values of functions. Once they’re connected, Rust has enough information to allow= **memory-safe operations** and disallow operations that would **create dangling pointers or otherwise violate memory safety.**
 
 ### Syntax
 
@@ -109,7 +106,7 @@ const WORDS: &'static str = "hello rust!";
 const WORDS: &str = "hello convenience!";
 ```
 
-> const items looks remarkably similar to static items, which introduces some confusion as to which one should be used at which times. To put it simply, == **constants are inlined** == wherever they're used, making using them identical to simply replacing the name of the const with its value. Static variables, on the other hand, point to **a single location** in memory, which all accesses share. This means that, unlike with constants, they can't have **destructors**, and act as a single value across the == **entire codebase** ==.
+> const items looks remarkably similar to static items, which introduces some confusion as to which one should be used at which times. To put it simply,  **constants are inlined**  wherever they're used, making using them identical to simply replacing the name of the const with its value. Static variables, on the other hand, point to **a single location** in memory, which all accesses share. This means that, unlike with constants, they can't have **destructors**, and act as a single value across the  **entire codebase** .
 
 
 ## Glossery

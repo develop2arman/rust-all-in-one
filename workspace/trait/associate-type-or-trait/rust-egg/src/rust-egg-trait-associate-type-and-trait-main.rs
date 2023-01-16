@@ -51,6 +51,9 @@ impl AppendBar for Vec<String> {
     }
 }
 
+fn main(){
+    unimplemented!();
+}
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -35,6 +35,7 @@ members = [
     "workspace/borrowchecker/lifetime/elision/rust-doc",
     "workspace/borrowchecker/lifetime/elision/rust-in-action",
     "workspace/borrowchecker/semantic/rust-in-action",
+    "workspace/borrowchecker/semantic/master-rust",
     "workspace/borrowchecker/lifetime/static/rust-in-action",
     "workspace/borrowchecker/lifetime/static/pnkfx",
     "workspace/borrowchecker/lifetime/static/packtpub",
