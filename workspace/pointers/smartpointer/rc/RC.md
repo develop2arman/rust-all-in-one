@@ -1,4 +1,6 @@
 
+[[ria-smartpointer-rc]]
+
 > [[SemiAutomatic]]
 
 > To enable multiple ownership, Rust has a type called Rc<T>, which is an abbreviation for reference counting. The Rc<T> type keeps track of the number of references to a value to determine whether or not the value is still in use. If there are zero references to a value, the value can be cleaned up without any references becoming invalid.

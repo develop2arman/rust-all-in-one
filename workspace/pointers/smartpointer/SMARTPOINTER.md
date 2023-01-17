@@ -52,11 +52,11 @@ pub trait Deref {
 
 ### Pointer Definations
 
-![Smart-Pointer-1](../rust/assets/images/smart-pointer-1.JPG)
+![Smart-Pointer-1](../../rust/assets/images/smart-pointer-1.JPG)
 
-![Smart-Pointer-2](../rust/assets/images/smart-pointer-2.JPG)
+![Smart-Pointer-2](../../rust/assets/images/smart-pointer-2.JPG)
 
-![Smart-Pointer-3](../rust/assets/images/smart-pointer-3.JPG)
+![Smart-Pointer-3](../../rust/assets/images/smart-pointer-3.JPG)
 
 ### Box
 
@@ -70,8 +70,6 @@ pub trait Deref {
 
 
 ## Other Smart Pointers
-
-## Example overview
 
 > [[Cow]] is a [[smart_pointer]] type that reads from its pointer location **without needing to copy**(like Box,  stands for copy on write) it first.
 >
