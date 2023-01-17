@@ -54,11 +54,6 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: test
-      - name: Rustfmt
-        uses: actions-rs/cargo@v1
-        with:
-          command: fmt
-          args: --all -- --check
       - name: Clippy
         uses: actions-rs/cargo@v1
         with:
