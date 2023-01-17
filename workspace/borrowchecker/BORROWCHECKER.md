@@ -44,10 +44,6 @@ The ownership rule of Rust states the following principles:
 
 ## Glossery
 
-  > `&`:	borrow
- 
-  > `*`:	dereference
-
   > `aliasing`: Having several immutable references (&T) to the object (Rc).
   
   > `mutability`: Having one mutable reference (&mut T) to the object (mut Refcell).

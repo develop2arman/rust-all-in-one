@@ -1269,6 +1269,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "master-rust-drop_bin"
+version = "0.1.0"
+
+[[package]]
 name = "master-rust-hashmap_bin"
 version = "0.1.0"
 

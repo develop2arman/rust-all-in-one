@@ -120,6 +120,7 @@ members = [
     "workspace/memory/winapi/rust-in-action",
 
     "workspace/pointers/smartpointer/box/rust-in-action",
+    "workspace/pointers/smartpointer/master-rust",
     "workspace/pointers/rust-in-action",
 
     "workspace/functional-programming/closure",
