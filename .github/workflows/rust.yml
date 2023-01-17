@@ -1,11 +1,13 @@
 name: Rust
-
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+permissions:
+  pull-requests: write
+  issues: write
+  repository-projects: write
 env:
   CARGO_TERM_COLOR: always
 
