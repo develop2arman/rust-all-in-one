@@ -918,7 +918,16 @@
         ],
         "description": "inner is new important-Match Option"
     },
-
+    "Match Parse as kind of result": {
+        "prefix": "ms.match.result",
+        "body": [
+            "match number.parse::<i32>() {",
+                "Ok(num) => num,",
+                "Err(_error) => 0",
+            "}"
+        ],
+        "description": "Match On Parse Result"
+    },
     "Implement for dsiplay": {
         "prefix": "ms.impl.display",
         "body": [

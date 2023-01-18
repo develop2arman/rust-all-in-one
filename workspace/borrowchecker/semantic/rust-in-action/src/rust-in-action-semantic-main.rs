@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-semantic_bin --bin rust-in-action-dangling-main```
+/// ```cargo run -q -p rust-in-action-semantic_bin --bin rust-in-action-semantic-main```
 ///
 /// ```cargo doc  --package rust-in-action-semantic_bin --message-format short --no-deps --open --color always```
 ///
@@ -40,6 +40,8 @@
 ///}
 ///```
 
-fn main(){
-    unimplemented!()
+fn main() {
+    let string = "Hello World!".to_string();
+    let reference = &string;
+    println!("this is the original string: {} and this is the reference: {}", string, reference);
 }

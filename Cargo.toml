@@ -35,12 +35,14 @@ members = [
     "workspace/borrowchecker/lifetime/elision/rust-doc",
     "workspace/borrowchecker/lifetime/elision/rust-in-action",
     "workspace/borrowchecker/semantic/rust-in-action",
+    "workspace/borrowchecker/semantic/educative",
     "workspace/borrowchecker/semantic/master-rust",
     "workspace/borrowchecker/lifetime/static/rust-in-action",
     "workspace/borrowchecker/lifetime/static/pnkfx",
     "workspace/borrowchecker/lifetime/static/packtpub",
     "workspace/borrowchecker/lifetime/static/rust-egg",
     "workspace/borrowchecker/lifetime/static/rust-doc",
+    "workspace/borrowchecker/lifetime/dangling/educative",
     "workspace/borrowchecker/lifetime/dangling/rust-doc",
     "workspace/borrowchecker/lifetime/dangling/rust-egg",
     "workspace/borrowchecker/lifetime/dangling/rust-in-action",
@@ -88,6 +90,7 @@ members = [
     "workspace/trait/shared-behavior/safe-object/non-dispatchable/rust-doc",
     "workspace/trait/shared-behavior/safe-object/dispatchable/master-rust",
     "workspace/trait/shared-behavior/non-objectsafe/rust-doc",
+    "workspace/trait/shared-behavior/trait-bound/educative",
 
     "workspace/flowcontrol/loop/rust-in-action",
     "workspace/flowcontrol/loop/packtpub",
@@ -111,6 +114,8 @@ members = [
     "workspace/commandline/rust-in-action",
 
     "workspace/errorhandling/rust-in-action",
+    "workspace/errorhandling/code-like-pro",
+    "workspace/errorhandling/educative",
 
     "workspace/duplication/copy-clone/pnkfx",
     "workspace/duplication/copy-clone/rust-in-action",
@@ -131,5 +136,5 @@ members = [
 
 
 
-    
+
 ]

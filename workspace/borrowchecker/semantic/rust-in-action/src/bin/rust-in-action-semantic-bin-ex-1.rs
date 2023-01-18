@@ -7,7 +7,7 @@
 /// ```cargo run -q -p rust-in-action-semantic_bin --bin  rust-in-action-semantic-bin-ex-1```
 ///
 /// ## What
-/// `/// `primitives do not requiring impl Copy trait``
+/// `Mome Semantic` primitives do not requiring impl Copy trait
 ///
 /// ## How
 /// `TODO`

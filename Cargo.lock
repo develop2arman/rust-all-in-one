@@ -67,6 +67,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "anyhow"
+version = "1.0.68"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2cb2f989d18dd141ab8ae82f64d1a8cdd37e0840f73a406896cf5e99502fab61"
+
+[[package]]
 name = "atty"
 version = "0.2.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -291,6 +297,13 @@ version = "0.1.0"
 [[package]]
 name = "code-like-pro-dryoc_bin"
 version = "0.1.0"
+
+[[package]]
+name = "code-like-pro-error-handling_bin"
+version = "0.1.0"
+dependencies = [
+ "rand 0.8.5",
+]
 
 [[package]]
 name = "code-like-pro-hashmap_bin"
@@ -678,6 +691,28 @@ checksum = "33cf9537e2d06891448799b96d5a8c8083e0e90522a7fdabe6ebf4f41d79d651"
 dependencies = [
  "bitflags",
 ]
+
+[[package]]
+name = "educative-dangle_bin"
+version = "0.1.0"
+
+[[package]]
+name = "educative-error-handling_bin"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "rand 0.8.5",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "educative-semantic_bin"
+version = "0.1.0"
+
+[[package]]
+name = "educative-trait-bound_bin"
+version = "0.1.0"
 
 [[package]]
 name = "either"

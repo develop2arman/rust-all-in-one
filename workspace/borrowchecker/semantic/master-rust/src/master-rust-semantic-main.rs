@@ -24,8 +24,14 @@
 /// `Owned string!`
 ///
 /// ## Example
-/// `TODO`
+/// ```rust,no_run,ignore,compile_fail
+// fn main() {
+//     let string = "Hello World!".to_string();
+//     let _new_place = string;
+//     println!("this will generates an error: {}", string);
+// }
 ///```
+/// `Out put` error[E0382]: borrow of moved value: `string`
 fn main() {
     let mut a = String::from("Owned string");
     let a_ref = &mut a;
