@@ -139,6 +139,6 @@ members = [
     "workspace/benchmark/criterion/criterion_doc",
 
 
-
+    "workspace/macro/educative",
 
 ]
