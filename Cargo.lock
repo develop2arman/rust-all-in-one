@@ -2303,6 +2303,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "rip-error-handling_bin"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "rand 0.8.5",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "rmp"
 version = "0.8.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2335,6 +2345,15 @@ version = "0.1.0"
 [[package]]
 name = "rust-doc-elision_bin"
 version = "0.1.0"
+
+[[package]]
+name = "rust-doc-error-handling_bin"
+version = "0.1.0"
+dependencies = [
+ "rand 0.8.5",
+ "serde",
+ "serde_json",
+]
 
 [[package]]
 name = "rust-doc-life-time-static_bin"
@@ -2400,6 +2419,13 @@ dependencies = [
 [[package]]
 name = "rust-egg-dangle_bin"
 version = "0.1.0"
+
+[[package]]
+name = "rust-egg-error-handling_bin"
+version = "0.1.0"
+dependencies = [
+ "rand 0.8.5",
+]
 
 [[package]]
 name = "rust-egg-lifetime-static_bin"

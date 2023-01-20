@@ -9,6 +9,11 @@
 [[edu-errorhandling]]
 
 
+[[rip-errorhandling]]
+
+
+[[rd-errorhandling]]
+
 ---
 
 ## Anyhow Library

@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p master-rust-semantic_bin --bin  educative-semantic-bin-ex-1```
+/// ```cargo run -q -p educative-semantic_bin  --bin  educative-semantic-bin-ex-1```
 ///
 /// ## What
 /// `/// `primitives do not requiring impl Copy trait``
@@ -48,15 +48,15 @@ struct Product {
     cost: f64
 }
 
-fn price(product: Product) -> f64 {
+fn price(product: &Product) -> f64 {
     product.cost * 1.30
 }
 
-fn discount(product: Product) -> f64 {
+fn discount(product: &Product) -> f64 {
     price(product) / 1.10
 }
 
 fn main() {
     let hat = Product {name: "Hat".to_string(), cost: 100.0};
-    println!("The price of product: {}, is {:.2}", hat.name, price(hat));
+    println!("The price of product: {}, is {:.2}", &hat.name, price(&hat));
 }

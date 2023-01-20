@@ -66,3 +66,7 @@
 /// ```
 /// `output`
 /// error[E0597]: `b` does not live long enough
+
+fn main(){
+    unimplemented!();
+}

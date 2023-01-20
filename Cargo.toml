@@ -116,6 +116,10 @@ members = [
     "workspace/errorhandling/rust-in-action",
     "workspace/errorhandling/code-like-pro",
     "workspace/errorhandling/educative",
+    "workspace/errorhandling/riptutorial",
+    "workspace/errorhandling/rust-doc",
+    "workspace/errorhandling/rust-egg",
+
 
     "workspace/duplication/copy-clone/pnkfx",
     "workspace/duplication/copy-clone/rust-in-action",
