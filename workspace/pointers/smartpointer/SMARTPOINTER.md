@@ -64,9 +64,9 @@ pub trait Deref {
 
 > It can be used to create **recursive type** definitions. 
 
-> When you need to store types as trait objects.
+> When you need to **store types as trait objects**.
 
-> When you need to store functions in a collection.
+> When you need to **store functions in a collection**.
 
 
 ## Other Smart Pointers

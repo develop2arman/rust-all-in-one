@@ -38,7 +38,7 @@
 
 - [POINTERS](pointers/POINTERS.md)
 - [SMARTPOINTER](pointers/smartpointer/SMARTPOINTER.md)
-  - [RC](pointers/smartpointer/rc/RC.md)
+  - [RC](pointers/smartpointer/rc/RC.md)  
   - [BOX](pointers/smartpointer/box/BOX.md)    
 
 ---
@@ -47,6 +47,7 @@
   - [HASHMAP](collection/hashmap/HASHMAP.md)    
   - [SLICE](collection/slice/SLICE.md)    
   - [VECTOR](collection/vec/VECTOR.md)
+  - [LINKEDLIST](pointers/smartpointer/rc/linkedlist/LINKEDLIST.md)
 
 ---
 

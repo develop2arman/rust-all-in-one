@@ -1326,6 +1326,10 @@ name = "master-rust-lifetime-generic_bin"
 version = "0.1.0"
 
 [[package]]
+name = "master-rust-linkedlist_bin"
+version = "0.1.0"
+
+[[package]]
 name = "master-rust-semantic_bin"
 version = "0.1.0"
 
@@ -1335,6 +1339,10 @@ version = "0.1.0"
 
 [[package]]
 name = "master-rust-slice_bin"
+version = "0.1.0"
+
+[[package]]
+name = "master-rust-smartpointer-box_bin"
 version = "0.1.0"
 
 [[package]]
@@ -1775,6 +1783,10 @@ name = "packtpub-lifetime-static_bin"
 version = "0.1.0"
 
 [[package]]
+name = "packtpub-linkedlist_bin"
+version = "0.1.0"
+
+[[package]]
 name = "packtpub-loop-flowcontrol_bin"
 version = "0.1.0"
 
@@ -2040,6 +2052,10 @@ dependencies = [
 
 [[package]]
 name = "pnkfx-duplication_bin"
+version = "0.1.0"
+
+[[package]]
+name = "pnkfx-linkedlist_bin"
 version = "0.1.0"
 
 [[package]]
@@ -2367,6 +2383,10 @@ dependencies = [
 
 [[package]]
 name = "rust-doc-life-time-static_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-doc-linkedlist_bin"
 version = "0.1.0"
 
 [[package]]
