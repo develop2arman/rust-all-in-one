@@ -3,6 +3,15 @@
 
 ---
 
+
+> The Box type can be used in the following situations:
+
+> It can be used to create **recursive type** definitions. 
+
+> When you need to **store types as trait objects**.
+
+> When you need to **store functions in a collection**.
+
 > cons=recursive type
 > 
 > We now know that any List value will take up the size of an i32 plus the size of a box’s pointer data. By using a box, **we’ve broken the infinite**, recursive chain, so the **compiler can figure out the size it** needs to *store a List value*.

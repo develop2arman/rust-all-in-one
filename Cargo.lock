@@ -1346,6 +1346,10 @@ name = "master-rust-smartpointer-box_bin"
 version = "0.1.0"
 
 [[package]]
+name = "master-rust-smartpointer-ref-cell_bin"
+version = "0.1.0"
+
+[[package]]
 name = "master-rust-trait-associate-type_bin"
 version = "0.1.0"
 

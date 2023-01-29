@@ -24,7 +24,7 @@
 
 > Using Rc<T> came with the **risk of creating reference cycles, where two Rc<T>** values refer to each other, causing [[memory_leaks]].
 
-]
+
 
 ## Refcell and Cell
 

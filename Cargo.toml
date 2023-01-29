@@ -128,13 +128,15 @@ members = [
     "workspace/memory/piston/rust-in-action",
     "workspace/memory/winapi/rust-in-action",
 
-    "workspace/pointers/smartpointer/rc/linkedlist/packtpub",
-    "workspace/pointers/smartpointer/rc/linkedlist/pnkfx",
-    "workspace/pointers/smartpointer/rc/linkedlist/rust-doc",
-    "workspace/pointers/smartpointer/rc/linkedlist/master-rust",
-    "workspace/pointers/smartpointer/box/master-rust",
-    "workspace/pointers/smartpointer/box/rust-in-action",
-    "workspace/pointers/smartpointer/master-rust",
+
+    "workspace/pointers/smartpointer/runtime/shared_mutability/ref-cell/master-rust",
+    "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/packtpub",
+    "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/pnkfx",
+    "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/rust-doc",
+    "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/master-rust",
+    "workspace/pointers/smartpointer/compiletime/box/master-rust",
+    "workspace/pointers/smartpointer/compiletime/box/rust-in-action",
+    "workspace/pointers/smartpointer/compiletime/master-rust",
     "workspace/pointers/rust-in-action",
 
     "workspace/functional-programming/closure",

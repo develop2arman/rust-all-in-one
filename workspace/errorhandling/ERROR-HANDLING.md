@@ -16,6 +16,15 @@
 
 ---
 
+## Prelude
+
+> Most error handling, in general, falls into three categories:
+
+- Recoverable errors that are expected to happen due to the user and the environment interacting with the program, for example, a file not found error or a number parse error.
+- Non-recoverable errors that violate the contracts or invariants of the program, for example, index out of bounds or divide by zero.
+- Fatal errors that abort the program immediately. Such situations include running out of memory, and stack overflow.
+
+
 ## Anyhow Library
 
 > The problem with the ? operator is that all errors have to be the same type to work. However, in most cases, we have to deal with different error types. To solve that, we can use the crate anyhow.

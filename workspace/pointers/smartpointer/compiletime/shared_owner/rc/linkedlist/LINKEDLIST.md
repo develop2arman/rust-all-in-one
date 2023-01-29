@@ -1,6 +1,8 @@
 
 [[mr-linkedlist]]
 
+[[rd-linkedlist]]
+
 ---
 
 > In the preceding diagram, we have two variables, var1 and var2, that reference two resources, Obj1 and Obj2. Along with that, Obj1 also has a reference to Obj2 and Obj2 has a reference to Obj1. Both Obj1 and Obj2 have reference count of 2 when var1 and var2 goes out of scope, the reference count of Obj1 and Obj2 reaches 1. They won't get freed because they still refer to each other.

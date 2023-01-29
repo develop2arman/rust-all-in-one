@@ -2,6 +2,8 @@
 
 [[RC]]
 
+[[REF_CELL]]
+
 ---
 
 ## What are Smart Pointers?
@@ -28,7 +30,7 @@ pub trait Deref {
 
 > Rc<T> enables multiple owners of the same data; whenever somebody takes a new reference, and decrements it when someone releases a reference. When the counter hits zero, the value is dropped.
 
-> Box<T> The ownership semantics with Box type depends on the wrapped type. If the underlying type is Copy, the Box instance becomes copy, otherwise it **moves by default**.allows immutable or mutable borrows checked at compile time; Rc<T> allows only immutable borrows checked at compile time; RefCell<T> allows immutable or mutable borrows checked at runtime. 
+> Box<T> The ownership semantics with Box type depends on the wrapped type. If the underlying type is Copy, the Box instance becomes copy, otherwise it **moves by default**.allows immutable or mutable borrows checked at compile time; **Rc<T> allows only immutable borrows checked at compile time; RefCell<T> allows immutable or mutable borrows checked at runtime.**
 
 > Because RefCell<T> allows mutable borrows checked at runtime, you can mutate the value inside the RefCell<T> even when the RefCell<T> is immutable.
 
@@ -38,7 +40,7 @@ pub trait Deref {
 
 > RefCell<T>: This gives us internal mutability for types, without requiring the Copy trait. It uses runtime locking for safety. Lets us have many immutable borrows or one mutable borrow at any point in time.Box<T> and RefCell<T> have single owners.
 
-> Similar to Rc<T>, RefCell<T> is only for use in [[single_threaded]] scenarios.
+> Similar to Rc<T>, RefCell<T> is only for use in [[single_threaded]] scenarios.The Cell and RefCell types are not thread safe. This simply means that **Rust won't allow you to share these types in multiple threads**.
 
 > Neither Cell<T> nor RefCell<T> are thread safe (they do not implement #Sync )
 
@@ -58,15 +60,7 @@ pub trait Deref {
 
 ![Smart-Pointer-3](../../rust/assets/images/smart-pointer-3.JPG)
 
-### Box
 
-> The Box type can be used in the following situations:
-
-> It can be used to create **recursive type** definitions. 
-
-> When you need to **store types as trait objects**.
-
-> When you need to **store functions in a collection**.
 
 
 ## Other Smart Pointers
