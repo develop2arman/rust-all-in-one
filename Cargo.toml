@@ -113,13 +113,14 @@ members = [
 
     "workspace/commandline/rust-in-action",
 
-    "workspace/errorhandling/rust-in-action",
-    "workspace/errorhandling/code-like-pro",
-    "workspace/errorhandling/educative",
-    "workspace/errorhandling/riptutorial",
-    "workspace/errorhandling/rust-doc",
-    "workspace/errorhandling/rust-egg",
-    "workspace/errorhandling/master-rust",
+    "workspace/errorhandling/recoverable/rust-in-action",
+    "workspace/errorhandling/recoverable/code-like-pro",
+    "workspace/errorhandling/recoverable/educative",
+    "workspace/errorhandling/recoverable/riptutorial",
+    "workspace/errorhandling/recoverable/rust-doc",
+    "workspace/errorhandling/recoverable/rust-egg",
+    "workspace/errorhandling/recoverable/master-rust",
+    "workspace/errorhandling/non-recoverable/master-rust",
 
 
     "workspace/duplication/copy-clone/pnkfx",

@@ -70,7 +70,8 @@
 
 ---
 
-- [ERROR-HANDLING](errorhandling/recoverable/ERROR_HANDLING.md)  
+- [ERROR-HANDLING](errorhandling/ERROR_HANDLING.md)  
+  - [ERROR_NONRECOVERABLE](errorhandling/non-recoverable/ERROR_NONRECOVERABLE.md)  
 
 ---
 
