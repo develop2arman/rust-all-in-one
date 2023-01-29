@@ -48,7 +48,7 @@
   - [HASHMAP](collection/hashmap/HASHMAP.md)    
   - [SLICE](collection/slice/SLICE.md)    
   - [VECTOR](collection/vec/VECTOR.md)
-  - [LINKEDLIST](pointers/smartpointer/rc/linkedlist/LINKEDLIST.md)
+  - [LINKEDLIST](pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/LINKEDLIST.md)
 
 ---
 
@@ -66,11 +66,11 @@
 
 - [Duplication](duplication/Duplication.md)
   - [COPY-CLONE](duplication/copy-clone/COPY-CLONE.md)    
-- [RC](pointers/smartpointer/rc/RC.md)  
+- [RC](pointers/smartpointer/compiletime/shared_owner/rc/RC.md)  
 
 ---
 
-- [ERROR-HANDLING](errorhandling/ERROR-HANDLING.md)  
+- [ERROR-HANDLING](errorhandling/recoverable/ERROR_HANDLING.md)  
 
 ---
 

@@ -1318,6 +1318,13 @@ name = "master-rust-drop_bin"
 version = "0.1.0"
 
 [[package]]
+name = "master-rust-error-handling_bin"
+version = "0.1.0"
+dependencies = [
+ "rand 0.8.5",
+]
+
+[[package]]
 name = "master-rust-hashmap_bin"
 version = "0.1.0"
 

@@ -119,6 +119,7 @@ members = [
     "workspace/errorhandling/riptutorial",
     "workspace/errorhandling/rust-doc",
     "workspace/errorhandling/rust-egg",
+    "workspace/errorhandling/master-rust",
 
 
     "workspace/duplication/copy-clone/pnkfx",
