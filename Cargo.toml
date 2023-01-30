@@ -157,6 +157,8 @@ members = [
 
     "workspace/macro/educative",
 
+    "workspace/arithmetic/code-like-pro",
+
     "workspace/grammer/dtolnay",
 
 ]

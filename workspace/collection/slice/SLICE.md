@@ -1,5 +1,5 @@
 
-[[clp-slice]]
+[[clp-arithmetic]]
 
 [[mr-slice]]
 

@@ -295,6 +295,10 @@ name = "code-like-a-pro-types-string_bin"
 version = "0.1.0"
 
 [[package]]
+name = "code-like-pro-arithmetic_bin"
+version = "0.1.0"
+
+[[package]]
 name = "code-like-pro-dryoc_bin"
 version = "0.1.0"
 

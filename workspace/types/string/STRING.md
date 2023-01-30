@@ -11,9 +11,10 @@
 ## str
 str is a high-performance, relatively feature-poor type. Once created, **str values cannot expand or shrink**. In this sense, these are similar to interacting with **a raw memory array**. Unlike a raw memory array, though, str values are guaranteed to be valid UTF-8 characters.
 
-str is usually seen in this form: &str. A **&str (pronounced string slice) **is a small type that contains a reference to str data and a length. Attempting to assign a variable to type str will fail. The Rust compiler wants to create fixed-sized variables within a function’s stack frame. As str values can be of arbitrary length, these can only be stored as local variables by reference.
+str is usually seen in this form: &str. A **&str (pronounced string slice)** is a small type that contains a reference to str data and a length. Attempting to assign a variable to type str will fail. The Rust compiler wants to create fixed-sized variables within a function’s stack frame. As str values can be of arbitrary length, these can only be stored as local variables by reference.
 
 ## String Vs str
+owned strings (String) and borrowed strings (&str).
 A &str is a borrowed type. In practical terms, this means that **&str can be thought of as read-only data**, whereas **String is read-write.String is an owned type.**
 "A String" is made up of three parts, shown on the left: a pointer to the memory that holds the contents of the string, a length, and a capacity.
 **String store data on heap and refs to stack**
