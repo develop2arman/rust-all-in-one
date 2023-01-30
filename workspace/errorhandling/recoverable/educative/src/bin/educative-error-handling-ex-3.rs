@@ -1,6 +1,6 @@
 #![allow(dead_code, unused_variables)]
 
-use std::num::ParseIntError;
+
 /// educative-error-handling-ex-3
 ///
 /// ## Commands
@@ -9,7 +9,7 @@ use std::num::ParseIntError;
 ///
 /// ```cargo doc  --package educative-error-handling_bin  --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package educative-error-handling_bin ```
+/// ```cargo test --doc  --package educative-error-handling_bin```
 ///
 /// ## What
 /// `error-conversion`
@@ -29,7 +29,7 @@ use std::num::ParseIntError;
 ///
 ///
 
-
+use std::num::ParseIntError;
 
 // This is the same function as above, but easier to read.
 fn sum_numbers(numbers: [&str; 3]) -> Result<i32, ParseIntError> {

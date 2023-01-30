@@ -50,6 +50,12 @@ members = [
 
     "workspace/thread/race/rust-in-action",
 
+    "workspace/types/enum/packtpub",
+    "workspace/types/enum/rust-egg",
+    "workspace/types/enum/rust-in-action",
+    "workspace/types/enum/rust-doc",
+    "workspace/types/enum/master-rust",
+    "workspace/types/struct/master-rust",
     "workspace/types/struct/rust-doc",
     "workspace/types/struct/rust-egg",
     "workspace/types/return/rust-egg",
@@ -92,6 +98,7 @@ members = [
     "workspace/trait/shared-behavior/non-objectsafe/rust-doc",
     "workspace/trait/shared-behavior/trait-bound/educative",
 
+    "workspace/flowcontrol/loop/master-rust",
     "workspace/flowcontrol/loop/rust-in-action",
     "workspace/flowcontrol/loop/packtpub",
     "workspace/flowcontrol/for/rust-in-action",
@@ -149,5 +156,7 @@ members = [
 
 
     "workspace/macro/educative",
+
+    "workspace/grammer/dtolnay",
 
 ]

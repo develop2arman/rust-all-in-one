@@ -1,6 +1,5 @@
 #![allow(dead_code, unused_variables)]
 
-use std::num::ParseIntmacro;
 /// educative-macro-handling-ex-3
 ///
 /// ## Commands
@@ -31,8 +30,9 @@ use std::num::ParseIntmacro;
 
 
 
+use std::num::ParseIntError;
 // This is the same function as above, but easier to read.
-fn sum_numbers(numbers: [&str; 3]) -> Result<i32, ParseIntmacro> {
+fn sum_numbers(numbers: [&str; 3]) -> Result<i32, ParseIntError> {
     let number = numbers[0].parse::<i32>()?;
     let number2 = numbers[1].parse::<i32>()?;
     let number3 = numbers[2].parse::<i32>()?;

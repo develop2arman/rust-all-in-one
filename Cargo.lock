@@ -1011,6 +1011,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "grammer-dtolnay_bin"
+version = "0.1.0"
+
+[[package]]
 name = "half"
 version = "1.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1318,6 +1322,10 @@ name = "master-rust-drop_bin"
 version = "0.1.0"
 
 [[package]]
+name = "master-rust-enum_bin"
+version = "0.1.0"
+
+[[package]]
 name = "master-rust-error-handling_bin"
 version = "0.1.0"
 dependencies = [
@@ -1341,6 +1349,10 @@ name = "master-rust-linkedlist_bin"
 version = "0.1.0"
 
 [[package]]
+name = "master-rust-loop-flowcontrol_bin"
+version = "0.1.0"
+
+[[package]]
 name = "master-rust-semantic_bin"
 version = "0.1.0"
 
@@ -1358,6 +1370,10 @@ version = "0.1.0"
 
 [[package]]
 name = "master-rust-smartpointer-ref-cell_bin"
+version = "0.1.0"
+
+[[package]]
+name = "master-rust-struct_bin"
 version = "0.1.0"
 
 [[package]]
@@ -1791,6 +1807,10 @@ dependencies = [
 
 [[package]]
 name = "packpub-return_bin"
+version = "0.1.0"
+
+[[package]]
+name = "packtpub-enum_bin"
 version = "0.1.0"
 
 [[package]]
@@ -2388,6 +2408,10 @@ name = "rust-doc-elision_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-enum_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-doc-error-handling_bin"
 version = "0.1.0"
 dependencies = [
@@ -2463,6 +2487,10 @@ dependencies = [
 
 [[package]]
 name = "rust-egg-dangle_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-egg-enum_bin"
 version = "0.1.0"
 
 [[package]]
@@ -2572,6 +2600,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-in-action-elision_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-in-action-enum_bin"
 version = "0.1.0"
 
 [[package]]
