@@ -1,1 +1,5 @@
 [[VECTOR]]
+
+[[SLICE]]
+
+[[HASHMAP]]

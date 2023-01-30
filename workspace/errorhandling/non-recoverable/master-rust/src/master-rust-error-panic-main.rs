@@ -1,5 +1,4 @@
 #![allow(dead_code, unused_variables)]
-use std::thread;
 
 /// Main
 ///
@@ -28,26 +27,6 @@ use std::thread;
 ///  `TODO`
 ///
 ///
-
-
-fn alice() -> thread::JoinHandle<()> {
-    thread::spawn(move || {
-        bob();
-    })
-}
-
-fn bob() {
-    malice();
-}
-
-fn malice() {
-    panic!("malice is panicking!");
-}
-
-fn main() {
-    let child = alice();
-    let _ = child.join();
-
-    bob();
-        println!("This is unreachable code");
+fn main(){
+    unimplemented!();
 }

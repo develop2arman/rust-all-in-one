@@ -7,7 +7,7 @@
 
 > In the preceding diagram, we have two variables, var1 and var2, that reference two resources, Obj1 and Obj2. Along with that, Obj1 also has a reference to Obj2 and Obj2 has a reference to Obj1. Both Obj1 and Obj2 have reference count of 2 when var1 and var2 goes out of scope, the reference count of Obj1 and Obj2 reaches 1. They won't get freed because they still refer to each other.
 
-![LinkedList](../../../../rust/assets/images/tree-linkedlist.JPG)
+![LinkedList](../../../../../../rust/assets/images/tree-linkedlist.JPG)
 
 > The reference cycle can be broken using weak references. As another example, a linked list might be implemented in such a way that it maintains links via reference counting to both the next item and to the previous. A better way to do this would be to **use strong references to one direction and weak references to the other**.
 

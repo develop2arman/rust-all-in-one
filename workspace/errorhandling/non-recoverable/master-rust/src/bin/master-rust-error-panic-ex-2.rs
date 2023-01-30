@@ -1,6 +1,4 @@
 #![allow(dead_code, unused_variables)]
-use rand::prelude::*;                      // <1>
-
 
 /// master-rust-error-panic-ex-2
 ///
@@ -23,18 +21,11 @@ use rand::prelude::*;                      // <1>
 ///
 /// ## Example
 /// //``rust,no_run,compile_fail,ignore
-use std::fs::File;
-use std::io::Read;
-use std::path::Path;
+use std::panic;
 
 fn main() {
-    let path = Path::new("data.txt");
-    let mut file = match File::open(&path) {
-        Ok(file) => file,
-        Err(err) => panic!("Error while opening file: {}", err),
-    };
-
-    let mut s = String::new();
-    file.read_to_string(&mut s);
-    println!("Message: {}", s);
+    panic::catch_unwind(|| {
+        panic!("Panicking!");
+    }).ok();
+println!("Survived that panic.");
 }
