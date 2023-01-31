@@ -1,6 +1,8 @@
 
 [[LIFETIME]]
 
+[[SEMANTIC]]
+
 ---
 
 > It underpins the term **fearless concurrency**
@@ -44,6 +46,10 @@ The ownership rule of Rust states the following principles:
 
 
 ![Ownership](../rust/assets/images/Ownership.jpg)
+
+
+---
+
 
 ## Glossery
 

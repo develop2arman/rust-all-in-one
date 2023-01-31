@@ -41,6 +41,36 @@ fn main() {
 }
 ```
 
+## Monomorphization
+
+> Dispatch is the mechanism to determine which specific version of code is actually run when it involves polymorphism. Two major forms of dispatch are static dispatch and dynamic dispatch. While Rust favors static dispatch, it also supports dynamic dispatch through a mechanism called ‘trait objects’.
+
+> When Rust compiles this code, it performs monomorphization. During that process, the compiler reads the values that have been used in Option<T> instances and identifies two kinds of Option<T>: one is i32 and the other is f64. As such, it expands the generic definition of Option<T> into Option_i32 and Option_f64, thereby replacing the generic definition with the specific ones.
+
+> The monomorphized version of the code looks like the following. The generic Option<T> is replaced with the specific definitions created by the compiler:
+
+> versions of a [[polymorphic]] function (or any polymorphic entity) during compilation is called Monomorphization.
+
+```rust
+let integer = Some(5);
+let float = Some(5.0);
+
+enum Option_i32 {
+    Some(i32),
+    None,
+}
+
+enum Option_f64 {
+    Some(f64),
+    None,
+}
+
+fn main() {
+    let integer = Option_i32::Some(5);
+    let float = Option_f64::Some(5.0);
+}
+```
+> Because Rust compiles generic code into code that specifies the type in each instance, we pay no runtime cost for using generics. When the code runs, it performs just as it would if we had duplicated each definition by hand. The process of monomorphization makes Rust’s generics extremely efficient at runtime.This is opposed to dynamic dispatch.
 
 ### Dynamic
 
@@ -68,7 +98,7 @@ pub struct Screen {
 
 ## Summery
 
-> Traits, along with generics, provide both kinds of code reuse, either through monomorphization (early binding) or through runtime polymorphism (late binding). 
+> Traits, along with generics, provide both kinds of code reuse, either through [[monomorphization]] (early binding) or through runtime polymorphism (late binding). 
 
 > The decision on when to use which depends on the context and the needs of the application in question. Often, **error** types are taken toward the **dynamic** dispatch train as they are supposed to be code paths that **rarely get executed**. 
 
@@ -78,4 +108,4 @@ pub struct Screen {
 
 ---
 
-> `tags` [[trait_objects]] [[monomorphization]] [[polymorphic]]
+> `tags` [[trait_objects]] #monomorphization [[polymorphic]]

@@ -82,7 +82,7 @@
 
 > The only way to allocate memory on the heap is through smart pointer types.
 
-> **The heap memory** is to be used with care. Values in the heap can possibly live forever during the lifetime of the program if not freed, and may eventually lead to the program being killed by **the Out Of Memory (OOM) killer in the kernel**. At runtime, a bug in the code or mistake from the developer can also cause the program to either forget to free the memory, or access a portion of memory that is outside the bounds of its memory layout, or dereference a memory address in the protected code segment. When this happens, the process receives a trap instruction from the kernel, which is what you see as **a segmentation fault error message**, followed by the process getting aborted. As such, we must ensure that processes and their interactions with memory need to be safe! Either we as programmers need to be critically aware of our malloc and free calls.or used memory safe language to handle these details for us.
+> **The heap memory** is to be used with care. Values in the heap can possibly live forever during the lifetime of the program if not freed, and may eventually lead to the program being killed by **the Out Of Memory (OOM) killer in the kernel**. At runtime, a bug in the code or mistake from the developer can also cause the program to either forget to free the memory, or access a portion of memory that is outside the bounds of its memory layout, or dereference a memory address in the protected code segment. When this happens, the process receives a trap instruction from the kernel, which is what you see as **a segmentation fault error message**, followed by the process getting aborted. As such, we must ensure that processes and their interactions with memory need to be safe! Either we as programmers need to be critically aware of our malloc and free calls or used memory safe language to handle these details for us.
 
 
 ## Stack Vs Heap
@@ -129,6 +129,12 @@
 > While Rust doesn't have a built-in GC, it relies on the same **RAII** built into the language and makes freeing used memory automatic for us based on the scope of variables and is much more safer than C or C++.
 
 >> Memory safety bugs lead to memory leaks.
+
+## Deallocating
+> Note: In C++, this pattern of deallocating resources at the end of an item’s lifetime is sometimes called Resource Acquisition Is Initialization (RAII). The drop function in Rust will be familiar to you if you’ve used RAII patterns.
+
+## Double Free
+> This is a problem: when s2 and s1 (s2 is copied s1 means 2different pointer and the same data) go out of scope, they will both try to free the same memory. This is known as a double free error and is one of the memory safety bugs we mentioned previously. Freeing memory twice can lead to memory corruption, which can potentially lead to security vulnerabilities.
 
 ## Glossery
 

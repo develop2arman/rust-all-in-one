@@ -4,6 +4,8 @@
 
 [[LINKEDLIST]]
 
+---
+
 > [[SemiAutomatic]]
 
 > To enable multiple ownership, Rust has a type called Rc<T>, which is an abbreviation for reference counting. The Rc<T> type keeps track of the number of references to a value to determine whether or not the value is still in use. If there are zero references to a value, the value can be cleaned up without any references becoming invalid.
@@ -25,6 +27,20 @@
 > Using Rc<T> came with the **risk of creating reference cycles, where two Rc<T>** values refer to each other, causing [[memory_leaks]].
 
 
+# Interior mutability is a design pattern
+
+> That allows you to mutate data even when there are immutable references to that data; normally, this action is disallowed by the borrowing rules. To mutate data, the pattern uses unsafe code inside a data structure to bend Rust’s usual rules that govern mutation and borrowing. 
+
+> RefCell<T> type that follows the interior mutability pattern.
+
+> Unlike Rc<T>, the RefCell<T> type represents single ownership over the data it holds. So, what makes RefCell<T> different from a type like Box<T>? Recall the borrowing rules you learned in Chapter 4:
+
+> Similar to Rc<T>, RefCell<T> is only for use in single-threaded scenarios and will give you a compile-time error if you try using it in a multithreaded context.
+
+> At any given time, you can have either (but not both of) one mutable reference or any number of immutable references.References must always be valid.
+
+> RefCell<T> uses Rust’s lifetimes to implement ‘dynamic borrowing’, a process whereby one can claim temporary, exclusive, mutable access to the inner value.
+> Because RefCell<T> borrows are dynamic it is possible to attempt to borrow a value that is already mutably borrowed; when this happens it results in thread panic.
 
 ## Refcell and Cell
 
@@ -75,3 +91,9 @@ With [[interior_mutability]], you may want to provide an argument to a method th
 > Adding more functionality (e.g., reference-counting semantics rather than move semantics) to types by wrapping these in other types typically reduces their runtime performance.
 > If implementing Clone would be prohibitively expensive, Rc<T> can be a handy alternative. This allows two places to “share” ownership.
 > > **Rc<T> is not thread-safe. In multithreaded code**, it’s much better to replace Rc<T> with Arc<T> and Rc<RefCell<T>> with Arc<Mutex<T>>. [[Arc]] stands for #atomic reference counter.
+
+
+
+---
+
+> `tags` [[pattern_design_interior]]

@@ -88,6 +88,12 @@ For data that is created while the application is running. Data in this region m
 > **sccache**, a compiler cache for rustc
 
 
+## Test
+
+> A test double is the general programming concept for a type used in place of another type during testing. Mock objects are specific types of test doubles that record what happens during a test so you can assert that the correct actions took place.
+
+> Rust doesn’t have objects in the same sense as other languages have objects, and Rust doesn’t have mock object functionality built into the standard library as some other languages do. However, you can definitely create a struct that will serve the same purposes as a mock object.
+
 ### std:prelude
 
 To understand what is included in local scope by default(like try_into()), you should investigate the std:: [[prelude]] module. Its documentation is available online at [prelude](https://doc.rust-lang.org/std/prelude/index.html)

@@ -39,9 +39,29 @@
 >> [[dyn]] is a word that shows you that you are talking about a trait, not a struct or anything else.
 
 
-## Drop Box
-All of the programmer-facing pointer types like Box<T> are built from more primitive types that live deeper within Rust, often in its core or alloc modules.
+## Recursive
 
+> At compile time, Rust needs to know how much space a type takes up. One type whose size can’t be known at compile time is a recursive type, where a value can have as part of itself another value of the same type. Because this nesting of values could theoretically continue infinitely, Rust doesn’t know how much space a value of a recursive type needs. However, boxes have a known size, so by inserting a box in a recursive type definition, you can have recursive types.
+
+> Let’s explore the cons list, which is a data type common in functional programming languages, as an example of a recursive type. The cons list type we’ll define is straightforward except for the recursion; therefore, the concepts in the example we’ll work with will be useful any time you get into more complex situations involving recursive types.
+> A cons list is a data structure.
+
+> cons function (short for “construct function”) constructs a new pair from its two arguments, which usually are a single value and another pair. These pairs containing pairs form a list.
+> cons x onto y” informally means to construct a new container instance by putting the element x at the start of this new container, followed by the container y.
+>
+> Each item in a cons list contains two elements: the value of the current item and the next item. The last item in the list contains only a value called Nil without a next item. A cons list is produced by recursively calling the cons function. The canonical name to denote the base case of the recursion is Nil.
+> The canonical name to denote the base case of the recursion is Nil. Note that this is not the same as the “null” or “nil” concept.
+
+> Although functional programming languages use cons lists frequently, the cons list isn’t a commonly used data structure in Rust. Most of the time when you have a list of items in Rust, Vec<T> is a better choice to use. Other, more complex recursive data types are useful in various situations, but by starting with the cons list, we can explore how boxes let us define a recursive data type without much distraction.
+> Nil variant stores no values, so it needs less space than the Cons variant.
+
+## Drop Box
+> All of the programmer-facing pointer types like Box<T> are built from more primitive types that live deeper within Rust, often in its core or alloc modules.
 
 > std::mem::drop brings the function #drop () into local scope. drop() deletes objects before their scope ends.
 > Types that implement Drop have a drop() method, but explicitly calling it is illegal within user code. std::mem::drop is an escape hatch from that rule.
+
+
+---
+
+> `tags` [[recursive]]

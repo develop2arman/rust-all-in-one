@@ -11,6 +11,7 @@
   - [SHARED_BEHAVIOR](trait/shared-behavior/SHARED_BEHAVIOR.md)  
     - [SAFE OBJECT](trait/shared-behavior/safe-object/SAFEOBJECT.md)
       - [TRAITOBJECT](trait/shared-behavior/safe-object/dispatchable/TRAITOBJECT.md)
+  - [BUILT_IN](trait/built-in/BUILT_IN.md) 
 ---
 
 - [TYPES](types/TYPES.md)
@@ -20,7 +21,8 @@
   - [RETURN](types/return/RETURN.md)        
   - [STRING](types/string/STRING.md)
   - [STATIC](types/static/STATIC.md)
-
+  - [WRAPPER](types/wrapper/WRAPPER.md)
+  - [UNION](types/union/UNION.md)
 ---
 
 - [BORROWCHECKER](borrowchecker/BORROWCHECKER.md)

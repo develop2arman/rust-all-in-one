@@ -8,6 +8,7 @@
 
 ---
 
+
 ## str
 str is a high-performance, relatively feature-poor type. Once created, **str values cannot expand or shrink**. In this sense, these are similar to interacting with **a raw memory array**. Unlike a raw memory array, though, str values are guaranteed to be valid UTF-8 characters.
 
@@ -24,13 +25,13 @@ A &str is a borrowed type. In practical terms, this means that **&str can be tho
 
 > `tags` [[as_ref]]  [[as_mut]] [[into]] [[GENERIC]]
 
-```
+```rust
 fn is_strong<T: AsRef<str>>(password: T) -> bool {
     password.as_ref().len() > 5
 }
 ```
 
-```
+```rust
 fn is_strong<T: Into<String>>(password: T) -> bool {
     password.into().len() > 5
 }
@@ -86,10 +87,16 @@ Vec<T> performs best when you can provide it with a size hint via Vec:: #with_ca
 Lists of things are incredibly common. The two types that you will work with most often are arrays and vectors. 
 > Arrays are fixed-width and extremely lightweight.
 
-•std::ffi:: [[OSString]] —A platform-native string. It’s behavior is close to String but without a guarantee that it’s encoded as #UTF-8 and that it won’t contain the zero byte (0x00).
 
-•std:: [[path]] ::Path—A string-like type that is dedicated to handling filesystem paths.
+## OOString Vs Path
 
+> `out of bounds crashes`
+
+• std::ffi:: [[OSString]] —A platform-native string. It’s behavior is close to String but without a guarantee that it’s encoded as #UTF-8 and that it won’t contain the zero byte (0x00).
+
+• std:: [[path]] ::Path—A string-like type that is dedicated to handling filesystem paths.
+
+ 
 
 ## Glossery
 

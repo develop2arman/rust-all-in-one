@@ -45,7 +45,7 @@
   
 - **unwrap_or:** This method **extracts the inner success value**, or returns a default one if it's a failed value. You provide the default value to it as a second argument.
   
-- **unwrap_or_else:** This method acts the same as the preceding method but computes a different value when it is a failed value by taking a closure as the second argument.
+- **unwrap_or_else:** This method acts the same as the preceding method but computes a different value when it is a failed value by taking a closure as the second argument. In the standard library documentation. Many more of these methods can clean up huge nested match expressions when you’re dealing with errors.
   
 - **as_ref:** This method **converts the inner value to a reference** and returns the wrapped value, that is, an Option<&T> or a Result<&T, &E>.
   
@@ -68,7 +68,28 @@ There is a important notice based on this examples about ?
 
 > > The ? operator abstracts this pattern, making it possible to write the **bytes_to_str** method in a more concise way
 
-> we want to make an early return and propagate the error to the caller
+> we want to make an early return and propagate the error to the caller.
+
+> The error message also mentioned that ? can be used with Option<T> values as well. As with using ? on Result, you can only use ? on Option in a function that returns an Option. The behavior of the ? operator when called on an Option<T> is similar to its behavior when called on a Result<T, E>: if the value is None, the None will be returned early from the function at that point. If the value is Some, the value inside the Some is the resulting value of the expression and the function continues.
+> This pattern of propagating errors is so common in Rust that Rust provides the question mark operator ? to make this easier.
+
+> Sample : propagating errors
+
+```rust
+match f.read_to_string(&mut s) {
+    Ok(_) => Ok(s),
+    Err(e) => Err(e),
+}
+```
+> what the ? operator does: error values that have the ? operator called on them go through the from function, defined in the From trait in the standard library, which is used to convert errors from one type into another. When the ? operator calls the from function, the error type received is converted into the error type defined in the return type of the current function. This is useful when a function returns one error type to represent all the ways a function might fail, even if parts might fail for many different reasons. As long as there’s an impl From<OtherError> for ReturnedError to define the conversion in the trait’s from function, the ? operator takes care of calling the from function automatically.
+
+> In the context of Listing 9-7, the ? at the end of the File::open call will return the value inside an Ok to the variable f. If an error occurs, the ? operator will return early out of the whole function and give any Err value to the calling code. The same thing applies to the ? at the end of the read_to_string call.
+
+> The ? operator eliminates a lot of boilerplate and makes this function’s implementation simpler. We could even shorten this code further by chaining method calls immediately after the ?
+
+> Either option&result :
+> you can’t mix and match. The ? operator won’t automatically convert a Result to an Option or vice versa; in those cases, there are methods like the ok method on Result or the ok_or method on Option that will do the conversion explicitly.
+
 
 ## Warning Handling
 
@@ -115,3 +136,8 @@ Now, things start to get a little bit complicated, but we can follow it. In the 
 In line 7, the method get will return an Option type. We need to convert it to a Result with ok_or. This way, we can use the anyhow crate.
 
 Finally, in line 8, we get a different error.
+
+
+---
+
+`rustc --explain E0599`

@@ -107,6 +107,15 @@ You can create pointers safely from any integral value. An i32 is not a Vec<Stri
 let ptr = 42 as *const Vec<String>;
 ```
 
+## Data Race
+
+> It’s something that new Rustaceans struggle with, because most languages let you mutate whenever you’d like. The benefit of having this restriction is that Rust can prevent data races at compile time. A data race is similar to a race condition and happens when these three behaviors occur:
+
+> Two or more pointers access the same data at the same time.
+> At least one of the pointers is being used to write to the data.
+> There’s no mechanism being used to synchronize access to the data.
+
+> **Data races cause** [[undefined_behavior]] and can be difficult to diagnose and fix when you’re trying to track them down at runtime;
 
 ---
 
@@ -138,4 +147,4 @@ p1.distance(&p2);
 
 > `fat pointer Vs thin pointer` : The term **fat** pointer refers to **memory layout**. **Thin** pointers, such as **raw pointers**, are *a single usize wide*. Fat pointers are usually *two usize* wide,and occasionally more
 
-> `tags` [[smart_pointer]] [[fat_pointer]]
+> `tags` [[smart_pointer]] [[fat_pointer]] [[data_race]]

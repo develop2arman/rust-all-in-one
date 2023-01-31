@@ -28,7 +28,8 @@ pub trait Deref {
 
 ## Comparistions of Smart pointers 
 
-> Rc<T> enables multiple owners of the same data; whenever somebody takes a new reference, and decrements it when someone releases a reference. When the counter hits zero, the value is dropped.
+> Rc<T> enables multiple owners of the same data; whenever somebody takes a new reference, and decrements it when someone releases a reference. When the counter hits zero, the value is dropped.Rc<T> does not allow mutation. To permit that, we need to wrap our wrapper. Rc<RefCell<T>> is a type that can be used to perform interior mutability . An object that has interior mutability presents an immutable façade while internal values are being modified.
+> Rc<T> is not thread-safe. In multithreaded code, it’s much better to replace Rc<T> with Arc<T> and Rc<RefCell<T>> with Arc<Mutex<T>>. Arc stands for atomic reference counter.
 
 > Box<T> The ownership semantics with Box type depends on the wrapped type. If the underlying type is Copy, the Box instance becomes copy, otherwise it **moves by default**.allows immutable or mutable borrows checked at compile time; **Rc<T> allows only immutable borrows checked at compile time; RefCell<T> allows immutable or mutable borrows checked at runtime.**
 
@@ -38,7 +39,9 @@ pub trait Deref {
 
 > Cell<T>: This gives us internal mutability for types that implement the Copy trait. In other words, we gain the possibility to get multiple mutable references to something.
 
-> RefCell<T>: This gives us internal mutability for types, without requiring the Copy trait. It uses runtime locking for safety. Lets us have many immutable borrows or one mutable borrow at any point in time.Box<T> and RefCell<T> have single owners.
+> RefCell<T>: This gives us internal mutability for types, without requiring the Copy trait. It uses **runtime locking for safety**. Lets us have many immutable borrows or one mutable borrow at any point in time.Box<T> and RefCell<T> have single owners. For types that implement Copy, the get method retrieves the current interior value. For types that implement Default, the take method replaces the current interior value with Default::default() and returns the replaced value.For all types, the replace method replaces the current interior value and returns the replaced value and the **into_inner** method consumes the Cell<T> and returns the interior value. Additionally, the set method replaces the interior value, dropping the replaced value.
+
+> We say that Cell<T> and RefCell<T> provide ‘interior mutability’, in contrast with typical Rust types that exhibit **‘inherited mutability’ the pattern uses unsafe** code inside a data structure to bend Rust’s usual rules that govern mutation and borrowing.
 
 > Similar to Rc<T>, RefCell<T> is only for use in [[single_threaded]] scenarios.The Cell and RefCell types are not thread safe. This simply means that **Rust won't allow you to share these types in multiple threads**.
 
