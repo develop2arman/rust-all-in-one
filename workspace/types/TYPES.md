@@ -14,6 +14,7 @@
 
 [[RHS]]
 
+[[STATIC]]
 ---
 
 ## Class Vs Struct
@@ -21,6 +22,10 @@
 
 >  Briefly, functions are regarded as **pure**, meaning their behavior is determined solely by their arguments. Methods are inherently **impure**, given that one of their arguments is effectively a side effect.
 > objects sometimes implement static methods, which do not include implicit arguments
+
+## Const Vs Let Vs Static
+> **Constants** represent concrete values and **don't have any memory location** associated with them. They are inlined wherever they are used.
+> **Static** **a fixed memory location** and exist as a single instance in the whole program. These can also be made **mutable**.
 
 ## Include_Consequences
 > Master Rust says:

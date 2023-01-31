@@ -1303,6 +1303,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "master-rust-arithmetic_bin"
+version = "0.1.0"
+
+[[package]]
 name = "master-rust-benches_lib"
 version = "0.1.0"
 
@@ -1399,6 +1403,20 @@ version = "0.1.0"
 [[package]]
 name = "master-rust-types-generic_bin"
 version = "0.1.0"
+
+[[package]]
+name = "master-rust-types-static_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
+
+[[package]]
+name = "master-rust-types-string_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
 
 [[package]]
 name = "master_rust_benches_criterion_lib"

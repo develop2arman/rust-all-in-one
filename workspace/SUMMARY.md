@@ -19,6 +19,7 @@
   - [PRIMITIVE](types/primitive/PRIMITIVE.md)
   - [RETURN](types/return/RETURN.md)        
   - [STRING](types/string/STRING.md)
+  - [STATIC](types/static/STATIC.md)
 
 ---
 
@@ -61,6 +62,7 @@
   - [IO](data/io/IO.md)    
     - [FILE](data/io/file/FILE.md)        
   - [REGEX](data/regex/REGEX.md)    
+  - [ARITHMETIC](data/arithmetic/ARITHMETIC.md)
 
 ---    
 

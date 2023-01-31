@@ -75,6 +75,8 @@ members = [
     "workspace/types/primitive/int/num/rust-in-action",
     "workspace/types/num/from/rust-in-action",
     "workspace/types/primitive/operator/rust-in-action",
+    "workspace/types/static/master-rust",
+    "workspace/types/string/master-rust",
     "workspace/types/string/rust-doc",
     "workspace/types/string/rust-egg",
     "workspace/types/string/packtpub",
@@ -157,7 +159,8 @@ members = [
 
     "workspace/macro/educative",
 
-    "workspace/arithmetic/code-like-pro",
+    "workspace/data/arithmetic/code-like-pro",
+    "workspace/data/arithmetic/master-rust",
 
     "workspace/grammer/dtolnay",
 

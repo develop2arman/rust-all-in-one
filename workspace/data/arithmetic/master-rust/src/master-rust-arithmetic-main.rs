@@ -41,5 +41,5 @@ fn main() {
 
     let one = { || 1 }();
     let zero = { || 0 }();
-    println!("{}", one / zero); // panics here
+    //println!("{}", one / zero); // panics here
 }

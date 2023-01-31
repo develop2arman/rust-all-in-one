@@ -1,0 +1,3 @@
+[[mr-types-static]]
+
+---
