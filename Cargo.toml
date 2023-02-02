@@ -150,7 +150,9 @@ members = [
     "workspace/pointers/smartpointer/compiletime/master-rust",
     "workspace/pointers/rust-in-action",
 
-    "workspace/functional-programming/closure",
+    "workspace/functional-programming/closure/master-rust",
+    "workspace/functional-programming/function/master-rust",
+    "workspace/functional-programming/lazy/master-rust",
 
     "workspace/benchmark/master-rust",
     "workspace/benchmark/criterion/master-rust",

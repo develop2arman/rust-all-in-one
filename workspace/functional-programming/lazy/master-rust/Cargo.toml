@@ -1,0 +1,9 @@
+[package]
+name = "master-rust-lazy_bin"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+doc = true
+name = "master-rust-lazy-main"
+path = "src/master-rust-lazy-main.rs"

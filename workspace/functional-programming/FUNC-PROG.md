@@ -1,5 +1,9 @@
 [[CLOSURE]]
 
+[[FUNCTION]]
+
+[[LAZY]]
+
 ---
 
 ## Jargon
@@ -34,38 +38,4 @@ fn main() {}
 - Closures that don’t move the captured variables also implement FnMut,
 - and closures that don’t need mutable access to the captured variables also implement Fn
 
-## Memorization-Lazy-Evaluation
->We can create a struct that will hold the closure and the resulting value of calling the closure.The struct will execute the closure only if we need the resulting value, and it will cache the resulting value so the rest of our code doesn’t have to be responsible for saving and reusing the result. You may know this pattern as memoization or lazy evaluation.
-
-```rust,no_run
-let fn=|num| -> {}
-```
-
-### Convert to memoization or lazy evaluation
-> Fn, FnMut, or FnOnce. We’ll discuss the difference between these traits in the “Capturing the Environment with Closures”
-
- - FnOnce consumes the variables it captures from its enclosing scope, known as the closure’s environment. To consume the captured variables, the closure must take ownership of these variables and move them into the closure when it is defined.
- > The Once part of the name represents the fact that the closure can’t take ownership of the same variables more than once, so it can be called only once.
- - FnMut can change the environment because it mutably borrows values.
- - Fn borrows values from the environment immutably.
- 
- - FnOnce: takes the whole value
- - FnMut: takes a mutable reference
- - Fn: takes a regular reference 
-  
-```rust
-struct Cacher<T>
-where
-    T: Fn(u32) -> u32,
-{
-    calculation: T,
-    value: Option<u32>,
-}
-
-fn main() {}
-```
-
-
 ---
-
-> `tags` [[memorization]] [[cache]] [[memory]] [[FnOnce]] [[FnMut]] [[Fn]] [[Lazy]] [[Evaluation]]

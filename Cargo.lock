@@ -1345,7 +1345,15 @@ name = "master-rust-error-panic_bin"
 version = "0.1.0"
 
 [[package]]
+name = "master-rust-function_bin"
+version = "0.1.0"
+
+[[package]]
 name = "master-rust-hashmap_bin"
+version = "0.1.0"
+
+[[package]]
+name = "master-rust-lazy_bin"
 version = "0.1.0"
 
 [[package]]
