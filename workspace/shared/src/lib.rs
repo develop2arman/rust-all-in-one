@@ -9,8 +9,8 @@ impl A {
         A { value }
     }
 
-    pub fn get_value(&self) -> u8 {
-        let result = core::sys_a::do_stuff_from_system_a();
-        self.value + result
-    }
+    // pub fn get_value(&self) -> u8 {
+    //     let result = core::sys_a::do_stuff_from_system_a();
+    //     self.value + result
+    // }
 }

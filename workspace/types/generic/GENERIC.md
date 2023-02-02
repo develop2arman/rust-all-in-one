@@ -2,6 +2,8 @@
 
 [[rd-types-generic]]
 
+[[pnkfx-types-generic]]
+
 ---
 
 > Generics are part of the language design feature that enables code reuse and the **Don't repeat yourself (#DRY) principle.**

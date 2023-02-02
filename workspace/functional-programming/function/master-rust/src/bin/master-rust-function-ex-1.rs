@@ -26,7 +26,7 @@
 ///  `TODO`
 ///
 ///
-// const_fns.rs
+
 
 const fn salt(a: u32) -> u32 {
     0xDEADBEEF ^ a

@@ -91,7 +91,7 @@
 
 ---
 
-- [FUNC-PROG](functional-programming/FUNC-PROG.md)
+- [FUNCTION PROGRAMMING](functional-programming/FUNC-PROG.md)
   - [CLOSURE](functional-programming/closure/CLOSURE.md)
   - [FUNCTION](functional-programming/function/FUNCTION.md)
   - [LAZY](functional-programming/lazy/LAZY.md)

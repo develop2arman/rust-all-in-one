@@ -1,3 +1,8 @@
+[[rd_function]]
+
+[[re_function]]
+
+---
 
 ## Const function
 This means that they **cannot take mutable** arguments to any type. They also **cannot** include operations that are dynamic such as a **heap** allocation.they are evaluated at **compile time**.

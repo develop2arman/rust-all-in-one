@@ -1,3 +1,10 @@
+
+[[mr_lazy]]
+
+[[rd_lazy]]
+
+---
+
 ## Dynamic Static
 
 For example, you can't create a HashMap as a static value because it requires a heap allocation. Fortunately, we can have HashMap and other dynamic collection types such as Vec as global statics too, using a third-party crate called lazy_static. This crate exposes the lazy_static! macro, which can be used to initialize any dynamic type that's accessible globally from anywhere in the program. Here's a snippet of how to initialize a Vec that can be mutated from multiple threads(Items declared within the lazy_static! macro are required to implement the Sync trait):
@@ -15,6 +22,7 @@ lazy_static! {
     }
 }
 ```
+> Items declared within the lazy_static! macro are required to implement the Sync trait. This means if we want a mutable static, we have to use a multithreaded type such as Mutex or RwLock instead of  RefCell.
 
 ## Memorization-Lazy-Evaluation
 >We can create a struct that will hold the closure and the resulting value of calling the closure.The struct will execute the closure only if we need the resulting value, and it will cache the resulting value so the rest of our code doesn’t have to be responsible for saving and reusing the result. You may know this pattern as memoization or lazy evaluation.

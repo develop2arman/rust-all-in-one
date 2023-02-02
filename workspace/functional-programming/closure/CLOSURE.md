@@ -1,4 +1,13 @@
 
+[[mr_closure]]
+
+[[rd_closure]]
+
+[[pnkfx_closure]]
+
+[[er_closure]]
+
+---
 
 ## Closure
 
