@@ -74,6 +74,20 @@ pub trait Deref {
 
 ```use std::borrow::Cow;```
 
+```rust
+pub enum Cow<'a, B> where B: 'a + ToOwned + 'a + ?Sized,  {
+    Borrowed(&'a B),
+    Owned(<B as ToOwned>::Owned),
+}
+```
+
+> First, we have the two variants:
+- Borrowed that represents the borrowed version of some type B. This B has to implement the ToOwned trait.
+- There is also owned variant which contains the owned version of the type.
+
+> This type is suitable for cases where one needs to avoid allocations where it's not needed. A real world example is the JSON parser crate called serde_json.
+---
+
 > [[CStr]] is a C-like string type that allows Rust to read in zero-terminated strings.
 
 ```use std::ffi::CStr;```

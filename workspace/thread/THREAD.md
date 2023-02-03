@@ -7,7 +7,11 @@
 
 # Thread
 
- Which parts of your code on different threads will run. This can lead to problems, such as:
+![thread1](../rust/assets/images/thread1.JPG)
+
+![thread2](../rust/assets/images/thread2.JPG)
+
+> Which parts of your code on different threads will run. This can lead to problems, such as:
 
 - Race conditions, where threads are accessing data or resources in an inconsistent order
 - Deadlocks, where two threads are waiting for each other to finish using a resource the other thread has, preventing both threads from continuing

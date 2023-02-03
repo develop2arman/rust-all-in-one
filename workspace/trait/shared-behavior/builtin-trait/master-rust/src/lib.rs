@@ -5,7 +5,7 @@ use std::fmt::{Formatter, Display, Result};
 ///
 /// ## Commands
 ///
-/// ````RUST_BACKTRACE=full cargo test -q -p master-rust-built-in-trait_lib -- --nocapture```
+/// ```RUST_BACKTRACE=full cargo test -q -p master-rust-built-in-trait_lib -- --nocapture```
 ///
 /// ```cargo doc  --package master-rust-built-in-trait_lib --message-format short --no-deps --open --color always```
 ///

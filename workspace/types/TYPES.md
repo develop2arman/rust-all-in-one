@@ -47,6 +47,33 @@
 
 > Generally, if you don't need to rely on #singleton property of statics and its predefined memory location and just want a concrete value, you should prefer using consts. They allow the compiler to make better optimizations and are more straightforward to use.
 
+## Const in Trait, Enum, Struct
+```rust
+trait Circular {
+    const PI: f64 = 3.14;
+    //...
+}
+```
+
+```rust
+enum Item {
+    One,
+    Two
+}
+
+struct Food {
+    Cake,
+    Chocolate
+}
+
+impl Item {
+    const DEFAULT_COUNT: u32 = 34;
+}
+impl Food {
+    const FAVORITE_FOOD: &str = "Cake";
+}
+```
+
 ## Include_Consequences
 > Master Rust says:
 > Vec=>String=>&str=>slice=>[u8]

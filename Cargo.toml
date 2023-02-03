@@ -112,6 +112,8 @@ members = [
     "workspace/flowcontrol/while/rust-in-action",
     "workspace/flowcontrol/pnfx-flowcontrol",
 
+
+    "workspace/collection/iterator/master-rust",
     "workspace/collection/vec/rust-in-action",
     "workspace/collection/hashmap/master-rust",
     "workspace/collection/hashmap/rust-in-action",
@@ -139,6 +141,7 @@ members = [
     "workspace/duplication/copy-clone/rust-in-action",
     "workspace/duplication/rc/rust-in-action",
 
+    "workspace/memory/size/master-rust",
     "workspace/memory/piston/rust-in-action",
     "workspace/memory/winapi/rust-in-action",
 

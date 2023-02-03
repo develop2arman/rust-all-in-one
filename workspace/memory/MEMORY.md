@@ -136,6 +136,14 @@
 ## Double Free
 > This is a problem: when s2 and s1 (s2 is copied s1 means 2different pointer and the same data) go out of scope, they will both try to free the same memory. This is known as a double free error and is one of the memory safety bugs we mentioned previously. Freeing memory twice can lead to memory corruption, which can potentially lead to security vulnerabilities.
 
+## Memory Alignment
+
+> Word size: Word size means the number of bits of data processed by the microprocessor as a unit.
+
+> Memory access granularity: The minimum chunk of data accessed by the CPU from the memory bus is called the memory access granularity.
+
+>Data types in all programming languages have both a size and an alignment. The alignment of primitive types is equal to their size. So, usually, all primitive types are aligned and the CPU has no problem doing an aligned read for these. But when we create custom data types, compilers usually insert padding between our struct fields if they are not aligned to allow the CPU to access memory in an aligned manner.
+
 ## Glossery
 
  > `stack` : contiguous layout memory = LIFO

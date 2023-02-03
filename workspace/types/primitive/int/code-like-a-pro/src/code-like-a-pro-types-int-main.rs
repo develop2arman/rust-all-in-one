@@ -39,6 +39,8 @@
 
 fn main() {
     let value = 0u8;
+
+
     println!("value={}, length={}", value, std::mem::size_of_val(&value));
     let value = 0b1u16;
     println!("value={}, length={}", value, std::mem::size_of_val(&value));

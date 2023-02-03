@@ -42,6 +42,31 @@ let s = 3.to_string();
 > Blanket implementations appear in the documentation for the trait in the “Implementors” section.
 ---
 
+## Universal function call syntax
+*Inherent methods on types are given higher priority than other methods with the same name*. To call a trait method, we can use the Universal Function Call Syntax (**UFCS**).
+```rust
+trait Driver {
+    fn drive(&self) {
+        println!("Driver's driving!");
+    }
+}
+
+struct MyCar;
+
+impl MyCar {
+    fn drive(&self) {
+        println!("I'm driving!");
+    }
+}
+
+impl Driver for MyCar {}
+
+fn main() {
+    let car = MyCar;
+    car.drive();
+}
+```
+
 ## Where
 
 ```rust,no_run

@@ -1,5 +1,12 @@
 
-
+# Object Safety
+Object safety is a set of rules and restrictions that does not allow trait objects to be constructed
+*to convert any type into a trait object*, methods on the type need to be an instance—one that takes **self** by reference.
+```rust
+trait Foo {
+    fn foo(&self);
+}
+```
 ## Dispatchable
 
 > Dispatch is the mechanism to determine which specific version of code is actually run when it involves polymorphism. Two major forms of dispatch are static dispatch and dynamic dispatch. While Rust favors static dispatch, it also supports dynamic dispatch through a mechanism called ‘trait objects’.

@@ -14,7 +14,7 @@
 // `TODO`
 ///
 /// ## How
-/// `TODO`
+/// `At the time of writing this book, union types only allow Copy types as their fields. They share the same memory space with all of their fields, exactly like C unions.`
 ///
 /// # Arguments
 ///

@@ -78,6 +78,11 @@ trait OutlinePrint: fmt::Display {
 > Without the rule, two crates could implement the same trait for the same type, and Rust wouldn’t know which implementation to use.
 
 ## Orphan Rule-Coherence
+The idea of trait coherence is that there **should be exactly one implementation of a trait on a type that implements it**. This should be quite obvious since, with two implementations there would be ambiguity in what to choose between the two.
+
+Another rule that might confuse many about traits is the orphan rule. The orphan rule, in simple words, **states that we cannot implement external traits on external types.**
+To word it in another way, *either the trait must be defined by you* if you are implementing something on an external type, or your type should be defined by you when you are implementing an external trait. This rules out the possibility of having conflicts in overlapping trait implementations across crates.
+
 > But we can’t implement external traits on external types. For example, we can’t implement the Display trait on Vec<T> within our aggregator crate, because Display and Vec<T> are defined in the standard library and aren’t local to our aggregator crate.
 
 > This restriction is part of a property of programs called coherence, and more specifically the orphan rule, so named because the parent type is not present. This rule ensures that other people’s code can’t break your code and vice versa. 

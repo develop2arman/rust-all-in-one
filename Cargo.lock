@@ -1357,6 +1357,10 @@ name = "master-rust-hashmap_bin"
 version = "0.1.0"
 
 [[package]]
+name = "master-rust-iterator_bin"
+version = "0.1.0"
+
+[[package]]
 name = "master-rust-lazy_bin"
 version = "0.1.0"
 
@@ -1378,6 +1382,10 @@ version = "0.1.0"
 
 [[package]]
 name = "master-rust-shared-behavior-dispatchable_bin"
+version = "0.1.0"
+
+[[package]]
+name = "master-rust-size_bin"
 version = "0.1.0"
 
 [[package]]

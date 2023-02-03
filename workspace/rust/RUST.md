@@ -99,6 +99,12 @@ For data that is created while the application is running. Data in this region m
 To understand what is included in local scope by default(like try_into()), you should investigate the std:: [[prelude]] module. Its documentation is available online at [prelude](https://doc.rust-lang.org/std/prelude/index.html)
 
 
+### Modules
+
+>By default, Rust recommends absolute imports within root modules. **Absolute** imports are done starting with the **crate keyword**, whereas relative imports are done using the **self keyword**. When re-exporting sub-modules to their parent modules, we might benefit from **relative** imports, *as using absolute imports becomes long and redundant*.
+
+>The privacy of items in Rust starts at the module level. As a library author, to expose things to users from a module, we use the pub keyword. But there are items that we only want to expose to other modules within the crate, but not to the users. In such cases, we can use the *-**pub(crate)** modifier for the item, which allows the item to be exposed only within the crate.*
+
 ## Version
 
 Internally, Cargo uses the **semver** crate for parsing the versions
