@@ -136,7 +136,7 @@ type SomethingComplex<T> = Vec<Result<Option<T>>>;
 > Floating-point types include “not a number” values (represented in Rust syntax as NAN values) to handle these cases.
 > NAN values poison other numbers. 
 > Almost all operations interacting with NAN return NAN.Another thing to be mindful of is that, by definition, NAN values are never equal. 
-> To program defensively, make use of the is_nan() and is_finite() methods. Inducing a crash, rather than silently proceeding with a mathematical error, allows you to debug close to what has caused the problem. The following illustrates using the is_finite().
+> To program defensively, make use of the **is_nan() and is_finite()** methods. Inducing a crash, rather than silently proceeding with a mathematical error, allows you to debug close to what has caused the problem. The following illustrates using the is_finite().
 
 ## Glossery
 

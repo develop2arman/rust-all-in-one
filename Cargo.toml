@@ -76,7 +76,11 @@ members = [
     "workspace/types/primitive/int/code-like-a-pro",
     "workspace/types/primitive/int/rust-in-action",
     "workspace/types/primitive/int/num/rust-in-action",
+
+    "workspace/types/num/bigrational/other",
+    "workspace/types/num/bigint/other",
     "workspace/types/num/from/rust-in-action",
+
     "workspace/types/primitive/operator/rust-in-action",
     "workspace/types/static/master-rust",
     "workspace/types/string/master-rust",
@@ -86,7 +90,9 @@ members = [
     "workspace/types/string/rust-in-action",
     "workspace/types/string/code-like-a-pro",
     "workspace/types/primitive/radix/rust-in-action",
-    "workspace/types/complex/num/rust-in-action",
+    "workspace/types/num/complex/rust-in-action",
+
+
 
 
     "workspace/trait/associate-type-or-trait/rust-doc",
@@ -177,6 +183,10 @@ members = [
 
 
     "workspace/macro/educative",
+
+
+    "workspace/module/rust-egg",
+
 
     "workspace/data/arithmetic/code-like-pro",
     "workspace/data/arithmetic/master-rust",

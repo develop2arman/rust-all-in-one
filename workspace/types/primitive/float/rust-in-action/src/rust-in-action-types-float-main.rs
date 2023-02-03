@@ -23,7 +23,7 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `assert:true`
+/// EPSION=`0.00000011920929`
 ///
 /// ## Example
 /// ```rust,compile_fail,ignore
@@ -64,5 +64,6 @@ fn main() {
     let desired: f32 = 0.2;
     let absolute_difference = (desired - result).abs();
     assert_eq!(absolute_difference, 0.0);
+    println!("{}",f32::EPSILON);
     assert!(absolute_difference <= f32::EPSILON);
 }

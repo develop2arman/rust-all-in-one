@@ -17,7 +17,7 @@ use std::time::Instant;                          // <5>
 ///
 /// ## Commands
 /// Run in in quiet mode
-/// ````cargo run -q 2> alloc.tsv -p rust-in-action-memory-piston_bin --bin rust-in-action-memory-piston-main```
+/// ```cargo run -q 2> alloc.tsv -p rust-in-action-memory-piston_bin --bin rust-in-action-memory-piston-main```
 /// Views the first 10 lines of output
 /// ``` head alloc.tsv```
 /// `alloc.plot` is a script used to generate plot gui with gnuplot
