@@ -1,7 +1,7 @@
 
 [[clp-arithmetic]]
 
-[[mr-iter]]
+[[mr_iter]]
 
 [[rd-slice]]
 

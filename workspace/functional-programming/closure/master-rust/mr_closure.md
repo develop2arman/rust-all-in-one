@@ -1,3 +1,3 @@
 
 
-> `tags` 
+> `tags` [[Fn]] [[FnOnce]] [[FnMut]]

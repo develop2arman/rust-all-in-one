@@ -112,7 +112,11 @@ members = [
     "workspace/flowcontrol/while/rust-in-action",
     "workspace/flowcontrol/pnfx-flowcontrol",
 
-
+    "workspace/collection/btreemap/packtpub/packtpub_lib",
+    "workspace/collection/btreemap/packtpub/packtpub_bin",
+    "workspace/collection/iterator/rust-egg",
+    "workspace/collection/iterator/pnkfx",
+    "workspace/collection/iterator/rust-doc",
     "workspace/collection/iterator/master-rust",
     "workspace/collection/vec/rust-in-action",
     "workspace/collection/hashmap/master-rust",
