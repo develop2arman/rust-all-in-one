@@ -4,9 +4,9 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-types-radix_bin --bin rust-in-action-types-radix-main```
+/// ```cargo run -q -p rust-in-action-types-operator_bin --bin rust-in-action-types-operator-main```
 ///
-/// ```cargo doc  --package rust-in-action-types-radix_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-in-action-types-operator_bin--message-format short --no-deps --open --color always```
 ///
 /// ```cargo test --doc  --package rust-in-action-types-radix_bin```
 ///

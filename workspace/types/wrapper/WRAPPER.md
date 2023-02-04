@@ -25,4 +25,9 @@ fn main() {
 }
 ```
 
+## Glossery
+
+> `Thin wrapper around the type` : part of Vec<String> is noticed. struct Wrapper(Vec<String>);       
+
+
 > `tags` [[new_type]] [[orphan]]

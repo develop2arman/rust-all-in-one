@@ -6,6 +6,10 @@
 
 [[ria-types-string]]
 
+[[mr-types-string]]
+
+[[clap-types-string]]
+
 ---
 
 
@@ -65,7 +69,7 @@ hat’s why you typically see slices referred to in their referenced form, &[T] 
 let my_str: str = "This is borrowed";
 ```
 
-> Internally, &String automatically coerces to &str, due to the type **coercion trait Deref** implemented for &String to &str. This is because String implements Deref for the str type.
+> Internally, &String automatically coerces to &str, due to the type **#coercion trait Deref** implemented for &String to &str. This is because String implements Deref for the str type.
 
 ```rust
 fn say_hello(to_whom: &str) { 
@@ -104,4 +108,4 @@ Lists of things are incredibly common. The two types that you will work with mos
 
 > `Notation` : &str(pronounced as stir), &[]
 
-> `{{{}}}` : string interpolation - for printing {} in println!()
+> `{{{}}}` :  mustache-string interpolation - for printing {} in println!()

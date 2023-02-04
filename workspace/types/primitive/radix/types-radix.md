@@ -1,1 +1,1 @@
-> `tags` [hex] [octal] [binary] [mem] [transmute]
+> `tags` [[hex]] [[octal]] [[binary]] [[mem]] [[transmute]] [[powf]]

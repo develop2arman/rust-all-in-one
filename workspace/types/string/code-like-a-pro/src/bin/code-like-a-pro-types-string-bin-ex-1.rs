@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p code-like-a-pro-types-string_bin --bin code-like-a-pro-string-bin-ex-1```
+/// ```cargo run -q -p code-like-a-pro-types-string_bin --bin code-like-a-pro-types-string-bin-ex-1```
 ///
 /// ## What
 /// `TODO`
@@ -22,7 +22,14 @@
 /// ## Example
 /// //```rust,compile_fail,ignore
 
+struct StringWrapper(String);
+
+impl From<&str> for StringWrapper {
+    fn from(other: &str) -> Self {
+        Self(other.into())
+    }
+}
 
 fn main() {
-    unimplemented!()
- }
+    println!("{}", StringWrapper::from("Hello, world!").0);
+}
