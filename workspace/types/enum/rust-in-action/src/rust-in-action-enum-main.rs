@@ -1,5 +1,6 @@
 #![allow(dead_code, unused_variables)]
-
+use std::fmt;
+use std::fmt::{Display};
 /// Main
 ///
 /// ## Commands
@@ -56,7 +57,20 @@ pub struct File {
   state: FileState,
   handle: FileHandle,
 }
+// impl Display for FileState {
+//    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+//      match *self {
+//          FileState::Opened(x) => write!(f, "OPEN"),     // <4> Sneakily, we can make use of `write!` to do the grunt work for us. Strings already implement `Display` themselves, so there's very little left for us to do.
+//          FileState::Closed => write!(f, "CLOSED"), // <4>
+//      }
+//    }
+// }
 
+// impl Display for File {
+//    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+//       write!(f, "<{} ({})>", self.name, self.state)  // <5> We can rely on the FileState Display implementation in our own code
+//    }
+// }
 impl File {
   pub fn new(name: &str) -> File {
     File {

@@ -1,14 +1,13 @@
 #![allow(dead_code, unused_variables)]
-use std::time::{Duration, Instant};
 ///
-/// rust-in-action-while-flowcontrol-bin-ex-1
+/// rust-doc-concise-flowcontrol-bin-ex-1
 ///
 /// # Commands
 ///
-/// ```cargo run -q -p rust-in-action-while-flowcontrol-bin --bin rust-in-action-while-flowcontrol-bin-ex-1```
+/// ```cargo run -q -p rust-doc-concise-flowcontrol_bin --bin rust-doc-concise-flowcontrol-bin-ex-1```
 ///
 /// ## What
-/// `Testing how fast your computer can increment a counter`
+/// `TODO`
 ///
 /// ## How
 /// `TODO`
@@ -23,8 +22,9 @@ use std::time::{Duration, Instant};
 /// ## Example
 ///
 /// //```rust,compile_fail,no_run
-
-
- fn main() {
-   unimplemented!()
- }
+fn main() {
+    let config_max = Some(3u8);
+    if let Some(max) = config_max {
+        println!("The maximum is configured to be {}", max);
+    }
+}

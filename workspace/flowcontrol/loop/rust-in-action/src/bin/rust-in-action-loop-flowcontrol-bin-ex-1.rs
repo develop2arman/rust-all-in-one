@@ -1,11 +1,11 @@
 #![allow(dead_code, unused_variables)]
-use std::time::{Duration, Instant};
+
 ///
 /// rust-in-action-loop-flowcontrol-bin-ex-1
 ///
 /// # Commands
 ///
-/// ```cargo run -q -p rust-in-action-loop-flowcontrol-bin --bin rust-in-action-loop-flowcontrol-bin-ex-1```
+/// ```cargo run -q -p rust-in-action-loop-flowcontrol_bin --bin rust-in-action-loop-flowcontrol-bin-ex-1```
 ///
 /// ## What
 /// `Testing how fast your computer can increment a counter`
@@ -38,6 +38,16 @@ use std::time::{Duration, Instant};
 // }
 /// ```
 ///
-fn main(){
-    unimplemented!()
+ fn main() -> ! {
+   let mut j=1;
+   let i=100;
+     loop {
+         if &i== &j{
+           break;
+         }
+         else
+         {
+           j+=1;
+         }
+       };
 }

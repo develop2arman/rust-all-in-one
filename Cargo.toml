@@ -26,13 +26,16 @@ members = [
     "workspace/data/random/rust-in-action",
     "workspace/data/convert/try_into/rust-in-action",
     "workspace/data/convert/generic/as_ref/rust-in-action",
+    "workspace/data/convert/generic/as_ref/rust-egg",
     "workspace/data/convert/generic/into/rust-in-action",
     "workspace/data/convert/text_to_enum/rust-in-action",
     "workspace/data/io/file/rust-in-action",
     "workspace/data/io/io/rust-in-action",
+    "workspace/data/convert/as/rust-doc",
     "workspace/data/convert/trait/as/rust-doc",
     "workspace/data/convert/trait/from/rust-egg",
     "workspace/data/convert/try_from/rust-egg",
+    "workspace/data/average/rust-egg",
     "workspace/borrowchecker/lifetime/elision/rust-doc",
     "workspace/borrowchecker/lifetime/elision/rust-in-action",
     "workspace/borrowchecker/semantic/rust-in-action",
@@ -106,12 +109,14 @@ members = [
     "workspace/trait/shared-behavior/trait-bound/operator/master-rust",
     "workspace/trait/shared-behavior/aggregator/rust-doc",
     "workspace/trait/shared-behavior/builtin-trait/master-rust",
+    "workspace/trait/built-in/display/rust-in-action",
     "workspace/trait/shared-behavior/safe-object/non-dispatchable/rust-doc",
     "workspace/trait/shared-behavior/safe-object/dispatchable/master-rust",
     "workspace/trait/shared-behavior/safe-object/dispatchable/rust-doc",
     "workspace/trait/shared-behavior/non-objectsafe/rust-doc",
 
 
+    "workspace/flowcontrol/concise_control/rust-doc",
     "workspace/flowcontrol/loop/master-rust",
     "workspace/flowcontrol/loop/rust-in-action",
     "workspace/flowcontrol/loop/packtpub",
@@ -199,7 +204,7 @@ members = [
 
     "workspace/grammer/dtolnay",
 
-    "workspace/time/rust-in-action",
+    "workspace/time/counter/rust-in-action",
 
     "workspace/tuple/rust-doc",
     "workspace/tuple/code-like-pro",

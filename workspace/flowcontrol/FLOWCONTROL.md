@@ -11,9 +11,11 @@
 ## Iter Vs For performance
 
 `test bench_search_for  ... bench:  19,620,300 ns/iter (+/- 915,700)`
+>
 `test bench_search_iter ... bench:  19,234,900 ns/iter (+/- 657,200)`
+>
 `The iterator version was slightly faster! We won’t explain the benchmark code here, because the point is not to prove that the two versions are equivalent but to get a general sense of how these two implementations compare performance-wise.`
-
+>
 
 
 ```

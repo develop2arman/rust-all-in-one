@@ -6,10 +6,10 @@
 ///
 /// # Commands
 ///
-/// ```cargo run -q -p rust-doc-convert-as_bin --bin rust-doc-convert-as-main```
+/// ```cargo run -q -p rust-doc-convert-trait-as_bin --bin rust-doc-convert-trait-as-main```
 ///
 ///
-/// ```cargo doc  --package rust-doc-convert-as_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-doc-convert-trait-as_bin --message-format short --no-deps --open --color always```
 ///
 /// ```cargo test --doc  --package rust-doc-convert-as_bin```
 ///

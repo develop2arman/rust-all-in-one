@@ -1,29 +1,11 @@
 # Summary
 
-- [TEMPLATE](TEMPLATE.md)
 - [RUST](rust/RUST.md)
+- [TEMPLATE](TEMPLATE.md)
+- [SHARED](shared/SHARED.md)
 
 ---
 
-- [TRAIT](trait/TRAIT.md)
-  - [ASSOCIATE](trait/associate-type-or-trait/ASSOCIATE.md)
-  - [INHERITANCE](trait/inheritance/INHERITANCE.md)
-  - [SHARED_BEHAVIOR](trait/shared-behavior/SHARED_BEHAVIOR.md)  
-    - [SAFE OBJECT](trait/shared-behavior/safe-object/SAFEOBJECT.md)
-      - [TRAITOBJECT](trait/shared-behavior/safe-object/dispatchable/TRAITOBJECT.md)
-  - [BUILT_IN](trait/built-in/BUILT_IN.md) 
----
-
-- [TYPES](types/TYPES.md)
-  - [NUM](types/num/NUM.md)    
-  - [GENERIC](types/generic/GENERIC.md)  
-  - [PRIMITIVE](types/primitive/PRIMITIVE.md)
-  - [RETURN](types/return/RETURN.md)        
-  - [STRING](types/string/STRING.md)
-  - [STATIC](types/static/STATIC.md)
-  - [WRAPPER](types/wrapper/WRAPPER.md)
-  - [UNION](types/union/UNION.md)
----
 
 - [BORROWCHECKER](borrowchecker/BORROWCHECKER.md)
   - [SEMANTIC](borrowchecker/semantic/SEMANTIC.md)
@@ -110,6 +92,27 @@
 - [OOP](oop/OOP.md)
   - [TRAIT](oop/trait/TRAIT.md)
 
+---
+
+- [TRAIT](trait/TRAIT.md)
+  - [ASSOCIATE](trait/associate-type-or-trait/ASSOCIATE.md)
+  - [INHERITANCE](trait/inheritance/INHERITANCE.md)
+  - [SHARED_BEHAVIOR](trait/shared-behavior/SHARED_BEHAVIOR.md)  
+    - [SAFE OBJECT](trait/shared-behavior/safe-object/SAFEOBJECT.md)
+      - [TRAITOBJECT](trait/shared-behavior/safe-object/dispatchable/TRAITOBJECT.md)
+  - [BUILT_IN](trait/built-in/BUILT_IN.md) 
+
+---
+
+- [TYPES](types/TYPES.md)
+  - [NUM](types/num/NUM.md)    
+  - [GENERIC](types/generic/GENERIC.md)  
+  - [PRIMITIVE](types/primitive/PRIMITIVE.md)
+  - [RETURN](types/return/RETURN.md)        
+  - [STRING](types/string/STRING.md)
+  - [STATIC](types/static/STATIC.md)
+  - [WRAPPER](types/wrapper/WRAPPER.md)
+  - [UNION](types/union/UNION.md)
 ---
 
 - [THREAD](thread/THREAD.md)

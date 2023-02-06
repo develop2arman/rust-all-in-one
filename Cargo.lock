@@ -2495,7 +2495,15 @@ name = "rust-doc-closure_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-concise-flowcontrol_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-doc-convert-as_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-doc-convert-trait-as_bin"
 version = "0.1.0"
 
 [[package]]
@@ -2616,6 +2624,14 @@ version = "0.1.0"
 dependencies = [
  "num",
 ]
+
+[[package]]
+name = "rust-egg-average_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-egg-convert-as_ref_bin"
+version = "0.1.0"
 
 [[package]]
 name = "rust-egg-convert-from_bin"
@@ -2852,6 +2868,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-in-action-trait-associate-type-and-trait_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-in-action-trait-display_bin"
 version = "0.1.0"
 
 [[package]]

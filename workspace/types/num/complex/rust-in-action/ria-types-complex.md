@@ -1,2 +1,2 @@
 
-> `tags` [[vec]] [[with_capacity]] [[complex]] [[screen]] [[num]]
+> `tags` [[vec]] [[with_capacity]] [[complex]] [[screen]] [[num]] [[mandelbrot]]
