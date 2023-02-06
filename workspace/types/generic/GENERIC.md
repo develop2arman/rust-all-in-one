@@ -2,6 +2,8 @@
 
 [[rd-types-generic]]
 
+[[rg-types-generic]]
+
 [[pnkfx-types-generic]]
 
 ---

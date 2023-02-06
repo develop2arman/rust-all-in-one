@@ -36,7 +36,7 @@ where 'a: 'b {}
 
 ## Lifetime Bounds
 
-> Along with the Send bound, which says that this thread can be sent to threads, we also say that the type must live as long as the 'static lifetime.
+> Along with the **Send** bound, which says that this thread **can be sent to threads,** we also say that the type must live as long as the 'static lifetime.
 
 ```rust,no_run,compile_fail
 struct Logger<'a>(&'a str, Level);

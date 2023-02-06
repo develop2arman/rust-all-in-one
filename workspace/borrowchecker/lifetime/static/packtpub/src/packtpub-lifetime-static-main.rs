@@ -7,11 +7,11 @@ use std::fmt::Display;
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p packtpub-types-static_bin --bin packtpub-types-static-main```
+/// ```cargo test -q -p packtpub-lifetime-static_bin --bin packtpub-lifetime-static-main```
 ///
-/// ```cargo doc  --package packtpub-types-static_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package packtpub-lifetime-static_bin --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package packtpub-types-static_bin```
+/// ```cargo test --doc  --package packtpub-lifetime-static_bin```
 ///
 /// ## What
 // `TODO`
@@ -38,6 +38,7 @@ pub fn get_statx()-> String{
 }
 
 pub fn get_staty<'a>()->&'a str{
+
   &"Arman"
 }
 

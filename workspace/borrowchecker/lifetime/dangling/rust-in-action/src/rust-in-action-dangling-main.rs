@@ -3,11 +3,11 @@
 ///
 /// # Commands
 ///
-/// ```cargo run -q -p rust-in-action-dangling_bin --bin rust-in-action-dangling-main```
+/// ```cargo run -q -p rust-in-action-dangle_bin --bin rust-in-action-dangling-main```
 ///
-/// ```cargo doc  --package rust-in-action-dangling_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-in-action-dangle_bin --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-in-action-dangling_bin```
+/// ```cargo test --doc  --package rust-in-action-dangle_bin```
 /// ## What
 /// `TODO`
 ///

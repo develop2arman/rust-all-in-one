@@ -117,6 +117,10 @@
 
 ---
 
+- [TIME](time/TIME.md)
+
+---
+
 - [UNSAFE](unsafe/UNSAFE.md)
 
 ---

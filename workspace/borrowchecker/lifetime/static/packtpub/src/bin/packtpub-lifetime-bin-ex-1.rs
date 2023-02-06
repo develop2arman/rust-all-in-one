@@ -1,5 +1,5 @@
 #![allow(dead_code, unused_variables)]
-use std::fmt::Debug;
+
 /// packtpub-static-bin-ex-1
 ///
 /// ## Commands

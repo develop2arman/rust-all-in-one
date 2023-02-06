@@ -30,6 +30,7 @@ members = [
     "workspace/data/convert/text_to_enum/rust-in-action",
     "workspace/data/io/file/rust-in-action",
     "workspace/data/io/io/rust-in-action",
+    "workspace/data/convert/trait/as/rust-doc",
     "workspace/data/convert/trait/from/rust-egg",
     "workspace/data/convert/try_from/rust-egg",
     "workspace/borrowchecker/lifetime/elision/rust-doc",
@@ -92,22 +93,24 @@ members = [
     "workspace/types/primitive/radix/rust-in-action",
     "workspace/types/num/complex/rust-in-action",
 
-
-
-
     "workspace/trait/associate-type-or-trait/rust-doc",
     "workspace/trait/associate-type-or-trait/rust-egg",
     "workspace/trait/associate-type-or-trait/rust-in-action",
     "workspace/trait/associate-type-or-trait/master-rust",
     "workspace/trait/inheritance/master-rust",
+    "workspace/trait/inheritance/rust-doc",
+    "workspace/trait/shared-behavior/trait-bound/rust-doc",
+    "workspace/trait/shared-behavior/trait-bound/educative",
     "workspace/trait/shared-behavior/trait-bound/master-rust",
+    "workspace/trait/shared-behavior/trait-bound/operator/rust-doc",
     "workspace/trait/shared-behavior/trait-bound/operator/master-rust",
     "workspace/trait/shared-behavior/aggregator/rust-doc",
     "workspace/trait/shared-behavior/builtin-trait/master-rust",
     "workspace/trait/shared-behavior/safe-object/non-dispatchable/rust-doc",
     "workspace/trait/shared-behavior/safe-object/dispatchable/master-rust",
+    "workspace/trait/shared-behavior/safe-object/dispatchable/rust-doc",
     "workspace/trait/shared-behavior/non-objectsafe/rust-doc",
-    "workspace/trait/shared-behavior/trait-bound/educative",
+
 
     "workspace/flowcontrol/loop/master-rust",
     "workspace/flowcontrol/loop/rust-in-action",
@@ -149,6 +152,7 @@ members = [
 
     "workspace/duplication/copy-clone/pnkfx",
     "workspace/duplication/copy-clone/rust-in-action",
+    "workspace/duplication/copy-clone/rust-doc",
     "workspace/duplication/rc/rust-in-action",
 
     "workspace/memory/size/master-rust",
@@ -156,6 +160,7 @@ members = [
     "workspace/memory/winapi/rust-in-action",
 
 
+    "workspace/pointers/smartpointer/ops/easy-rust",
     "workspace/pointers/smartpointer/runtime/shared_mutability/ref-cell/master-rust",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/packtpub",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/pnkfx",
@@ -183,6 +188,7 @@ members = [
 
 
     "workspace/macro/educative",
+    "workspace/macro/rust-doc",
 
 
     "workspace/module/rust-egg",
@@ -193,4 +199,8 @@ members = [
 
     "workspace/grammer/dtolnay",
 
+    "workspace/time/rust-in-action",
+
+    "workspace/tuple/rust-doc",
+    "workspace/tuple/code-like-pro",
 ]

@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ````RUST_BACKTRACE=full cargo run -q -p rust-doc-shared-behavior-nondispatchable_bin --bin rust-doc-shared-behavior-nondispatchable-main```
+/// ```RUST_BACKTRACE=full cargo run -q -p rust-doc-shared-behavior-nondispatchable_bin --bin rust-doc-shared-behavior-nondispatchable-main```
 ///
 /// ```cargo doc  --package rust-doc-shared-behavior-nondispatchable_bin  --message-format short --no-deps --open --color always```
 ///

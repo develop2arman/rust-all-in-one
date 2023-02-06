@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ````cargo run -q -p rust-in-action-pointers-bin --bin rust-in-action-pointers-main```
+/// ```cargo run -q -p rust-in-action-pointers-bin --bin rust-in-action-pointers-main```
 ///
 /// ```cargo doc  --package rust-in-action-pointers-bin  --message-format short --no-deps --open --color always```
 ///

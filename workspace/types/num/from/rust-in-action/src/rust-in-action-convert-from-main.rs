@@ -104,3 +104,7 @@ mod tests {
         assert_eq!(n1, n2);
     }
 }
+
+fn main(){
+    unimplemented!();
+}

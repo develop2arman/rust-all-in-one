@@ -4,6 +4,8 @@
 
 [[REF_CELL]]
 
+[[OPS]]
+
 ---
 
 ## What are Smart Pointers?

@@ -1,10 +1,10 @@
 #![allow(dead_code, unused_variables)]
 
-/// rust-doc-generic-bin-ex-2
+/// rust-doc-generic-bin-ex-4
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-types-generic_bin --bin rust-doc-generic-bin-ex-2```
+/// ```cargo run -q -p rust-doc-dangle_bin --bin rust-doc-dangling-bin-ex-4```
 ///
 /// ## What
 /// `TODO`

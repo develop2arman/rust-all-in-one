@@ -3,7 +3,7 @@
 ///
 /// # Commands
 ///
-/// ```cargo run -q -p rust-doc-elision_bin --bin rust-doc-dangling-main```
+/// ```cargo run -q -p rust-doc-elision_bin --bin rust-doc-elision-main```
 ///
 /// ```cargo doc  --package rust-doc-elision_bin --message-format short --no-deps --open --color always```
 ///

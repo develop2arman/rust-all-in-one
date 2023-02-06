@@ -89,6 +89,67 @@ fn some_function<T, U>(t: &T, u: &U) -> i32
 ```
 > This function’s signature is less cluttered: the function name, parameter list, and return type are close together, similar to a function without lots of trait bounds.
 
+
+---
+
+## Generic Implementation 
+
+### Constraits
+
+```rust,no_run,compile_fail
+trait Trait{}
+trait GenericTrait<T> {}
+trait HasAssocType { type Ty; }
+struct Struct;
+struct GenericStruct<T>(T);
+struct ConstGenericStruct<const N: usize>([(); N]);
+// T constrains by being an argument to GenericTrait.
+impl<T> GenericTrait<T> for i32 { /* ... */ }
+
+// T constrains by being an arguement to GenericStruct
+impl<T> Trait for GenericStruct<T> { /* ... */ }
+
+// Likewise, N constrains by being an argument to ConstGenericStruct
+impl<const N: usize> Trait for ConstGenericStruct<N> { /* ... */ }
+
+// T constrains by being in an associated type in a bound for type `U` which is
+// itself a generic parameter constraining the trait.
+impl<T, U> GenericTrait<U> for u32 where U: HasAssocType<Ty = T> { /* ... */ }
+
+// Like previous, except the type is `(U, isize)`. `U` appears inside the type
+// that includes `T`, and is not the type itself.
+impl<T, U> GenericStruct<U> where (U, isize): HasAssocType<Ty = T> { /* ... */ }
+```
+
+### Non-Constraits
+ 
+ The rest of these are errors, since they have type or const parameters that do not constrain.
+ `T` does not constrain since it does not appear at all.
+
+```rust,no_run,compile_fail
+impl<T> Struct { /* ... */ }
+// N does not constrain for the same reason.
+impl<const N: usize> Struct { /* ... */ }
+// Usage of T inside the implementation does not constrain the impl.
+impl<T> Struct {
+    fn uses_t(t: &T) { /* ... */ }
+}
+// T is used as an associated type in the bounds for U, but U does not constrain.
+impl<T, U> Struct where U: HasAssocType<Ty = T> { /* ... */ }
+// T is used in the bounds, but not as an associated type, so it does not constrain.
+impl<T, U> GenericTrait<U> for u32 where U: GenericTrait<T> {}
+/* 
+Example of an allowed unconstraining lifetime parameter:
+*/
+impl<'a> Struct {}
+/* 
+Example of a disallowed unconstraining lifetime parameter:
+*/
+impl<'a> HasAssocType for Struct {
+    type Ty = &'a Struct;
+}
+```
+
 ## Glossery
 
   > `receiver` : for  exampele of type of Self (i.e. self) implies this 

@@ -53,7 +53,7 @@ might be useful when discussing open file descriptors.
 
 > When values go out of scope or their lifetimes end for some other reason, their **destructors** are called. A destructor is a function that removes traces of the value from the program by deleting references and freeing memory. You won’t find a call to any destructors in most Rust code. The compiler injects that code itself as part of the process of tracking every value’s lifetime.
 
-> To provide a custom destructor for a type, we implement Drop. This typically is needed in cases where we have used unsafe blocks to allocate memory. Drop has one method, drop(&mut self), that you can use to conduct any necessary wind-up activities.
+> To provide a **custom destructor** for a type, we implement Drop. This typically is needed in cases where we have used unsafe blocks to allocate memory. Drop has one method, **drop**(&mut self), that you can use to conduct any necessary wind-up activities.
 
 > Unfortunately, it’s not straightforward to disable the automatic drop functionality. Disabling drop isn’t usually necessary; the whole point of the Drop trait is that it’s taken care of automatically. Occasionally, however, you might want to clean up a value early. 
 > Rust doesn’t let you call the Drop trait’s drop method manually; instead you have to call the **std::mem::drop function**
