@@ -299,6 +299,10 @@ name = "code-like-pro-arithmetic_bin"
 version = "0.1.0"
 
 [[package]]
+name = "code-like-pro-cow_bin"
+version = "0.1.0"
+
+[[package]]
 name = "code-like-pro-dryoc_bin"
 version = "0.1.0"
 
@@ -314,6 +318,14 @@ name = "code-like-pro-hashmap_bin"
 version = "0.1.0"
 dependencies = [
  "metrohash",
+]
+
+[[package]]
+name = "code-like-pro-libc_bin"
+version = "0.1.0"
+dependencies = [
+ "cc",
+ "libc",
 ]
 
 [[package]]
@@ -1919,6 +1931,13 @@ name = "packtpub-enum_bin"
 version = "0.1.0"
 
 [[package]]
+name = "packtpub-env_bin"
+version = "0.1.0"
+dependencies = [
+ "rand 0.8.5",
+]
+
+[[package]]
 name = "packtpub-file_bin"
 version = "0.1.0"
 
@@ -1936,6 +1955,10 @@ version = "0.1.0"
 
 [[package]]
 name = "packtpub-loop-flowcontrol_bin"
+version = "0.1.0"
+
+[[package]]
+name = "packtpub-ownership_bin"
 version = "0.1.0"
 
 [[package]]
@@ -2216,6 +2239,10 @@ version = "0.1.0"
 
 [[package]]
 name = "pnkfx-linkedlist_bin"
+version = "0.1.0"
+
+[[package]]
+name = "pnkfx-ownership_bin"
 version = "0.1.0"
 
 [[package]]
@@ -2545,6 +2572,13 @@ name = "rust-doc-convert-trait-as_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-cpu_bin"
+version = "0.1.0"
+dependencies = [
+ "num_cpus 1.15.0",
+]
+
+[[package]]
 name = "rust-doc-customized-box_bin"
 version = "0.1.0"
 
@@ -2600,6 +2634,10 @@ dependencies = [
 
 [[package]]
 name = "rust-doc-life-time-static_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-doc-lifetime-generic_bin"
 version = "0.1.0"
 
 [[package]]
@@ -2768,7 +2806,15 @@ name = "rust-egg-option_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-egg-ownership_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-egg-return_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-egg-semantic_bin"
 version = "0.1.0"
 
 [[package]]
@@ -2833,6 +2879,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-in-action-convert-try_into_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-in-action-cpu_bin"
 version = "0.1.0"
 
 [[package]]

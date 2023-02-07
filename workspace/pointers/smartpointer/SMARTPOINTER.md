@@ -6,6 +6,8 @@
 
 [[OPS]]
 
+[[COW]]
+
 [[rd-customized-smartpointer-box]]
 
 ---

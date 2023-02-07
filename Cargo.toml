@@ -37,8 +37,12 @@ members = [
     "workspace/data/convert/trait/from/rust-egg",
     "workspace/data/convert/try_from/rust-egg",
     "workspace/data/average/rust-egg",
+    "workspace/borrowchecker/ownership/packtpub",
+    "workspace/borrowchecker/ownership/pnkfx",
+    "workspace/borrowchecker/ownership/rust-egg",
     "workspace/borrowchecker/lifetime/elision/rust-doc",
     "workspace/borrowchecker/lifetime/elision/rust-in-action",
+    "workspace/borrowchecker/semantic/move/rust-egg",
     "workspace/borrowchecker/semantic/rust-in-action",
     "workspace/borrowchecker/semantic/educative",
     "workspace/borrowchecker/semantic/master-rust",
@@ -52,6 +56,7 @@ members = [
     "workspace/borrowchecker/lifetime/dangling/rust-egg",
     "workspace/borrowchecker/lifetime/dangling/rust-in-action",
     "workspace/borrowchecker/lifetime/generic/master-rust",
+    "workspace/borrowchecker/lifetime/generic/rust-doc",
 
     "workspace/thread/race/rust-in-action",
 
@@ -172,6 +177,7 @@ members = [
     "workspace/pointers/smartpointer/runtime/shared_mutability/ref-cell/master-rust",
     "workspace/pointers/smartpointer/runtime/shared_mutability/ref-cell/rust-doc",
     "workspace/pointers/smartpointer/customized/rust-doc",
+    "workspace/pointers/smartpointer/compiletime/cow/code-like-pro",
     "workspace/pointers/smartpointer/compiletime/box/customized/rust-doc",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/rust-in-action",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/rust-doc",
@@ -230,4 +236,12 @@ members = [
 
 
     "workspace/process/command/packtpub",
+
+
+    "workspace/cpu/rust-in-action",
+    "workspace/cpu/rust-doc",
+
+    "workspace/env/packtpub",
+
+    "workspace/libc/code-like-pro",
 ]

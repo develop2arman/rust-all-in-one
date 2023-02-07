@@ -2,7 +2,7 @@
 use std::slice;
 use std::str;
 
-/// rust-doc-dangling-bin-ex-2
+/// rust-doc-dangling-bin-ex-3
 ///
 /// ## Commands
 ///

@@ -21,6 +21,9 @@
 
 ---
 
+- [CPU](cpu/CPU)
+
+---
 - [POINTERS](pointers/POINTERS.md)
 - [SMARTPOINTER](pointers/smartpointer/SMARTPOINTER.md)
   - [RC](pointers/smartpointer/compiletime/shared_owner/rc/RC.md)  
@@ -42,7 +45,7 @@
 
 - [COMMANDLINE](commandline/COMMANDLINE.md)  
 
-
+---
 
 - [DATA](data/DATA.md)
   - [OPERATOR](data/operator/OPERATOR.md)
@@ -82,6 +85,10 @@
   - [CLOSURE](functional-programming/closure/CLOSURE.md)
   - [FUNCTION](functional-programming/function/FUNCTION.md)
   - [LAZY](functional-programming/lazy/LAZY.md)
+
+---
+
+- [LIBC](libc/LIBC.md)
     
 ---
 

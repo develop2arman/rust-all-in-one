@@ -10,7 +10,7 @@
 /// ```cargo test --doc  --package rust-doc-lazy_bin ```
 ///
 /// ## What
-/// `TODO`
+/// `GlobalState`
 ///
 /// ## How
 /// `TODO`

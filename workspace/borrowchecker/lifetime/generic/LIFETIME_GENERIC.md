@@ -48,4 +48,4 @@ fn configure_logger<T>(_t: T) where T: Send + 'static {
 
 ---
 
-> `tags` [[Send]] [[LIFETIME_STATIC]]
+> `tags` [[Send]] [[LIFETIME_STATIC]] [[coercion]]

@@ -1,5 +1,4 @@
 #![allow(dead_code, unused_variables)]
-use std::string::FromUtf8Error;                    // <1>
 
 
 /// master-rust-error-handling-ex-6
