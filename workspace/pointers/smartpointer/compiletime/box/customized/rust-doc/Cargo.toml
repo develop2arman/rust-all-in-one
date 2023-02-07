@@ -1,5 +1,5 @@
 [package]
-name = "rust-doc-box_bin"
+name = "rust-doc-customized-box_bin"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,5 +7,5 @@ edition = "2021"
 
 [[bin]]
 doc = true
-name = "rust-doc-box-main"
-path = "src/rust-doc-box-main.rs"
+name = "rust-doc-customized-box-main"
+path = "src/rust-doc-customized-box-main.rs"

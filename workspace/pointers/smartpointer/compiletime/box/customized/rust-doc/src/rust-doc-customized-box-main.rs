@@ -1,14 +1,14 @@
 #![allow(dead_code, unused_variables)]
 
-/// rust-doc-box-ex-1
+/// Main
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-box_bin --bin rust-doc-box-ex-1```
+/// ```cargo run -q -p rust-doc-customized-box_bin --bin rust-doc-customized-box-main```
 ///
-/// ```cargo doc  --package rust-doc-box_bin  --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-doc-customized-box_bin  --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-doc-box_bin ```
+/// ```cargo test --doc  --package rust-doc-customized-box_bin ```
 ///
 /// ## What
 /// `TODO`

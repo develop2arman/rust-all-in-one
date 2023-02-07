@@ -2,6 +2,8 @@
 
 [[ria-regex]]
 
+[[ria-parser]]
+
 [[mr-operator]]
 
 [[ARITHMETIC]]
@@ -9,6 +11,8 @@
 [[IO]]
 
 [[OPERATOR]]
+
+[[SERDE]]
 
 ---
 

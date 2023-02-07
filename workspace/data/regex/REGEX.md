@@ -1,1 +1,1 @@
-[ria-regex](ria-regex.md)
+[ria-regex](rust-in-action/ria-regex.md)

@@ -42,15 +42,16 @@
 
 - [COMMANDLINE](commandline/COMMANDLINE.md)  
 
----
+
 
 - [DATA](data/DATA.md)
   - [OPERATOR](data/operator/OPERATOR.md)
   - [CONVERT](data/convert/CONVERT.md)    
   - [IO](data/io/IO.md)    
-    - [FILE](data/io/file/FILE.md)        
+    - [FILE](data/io/file/FILE.md)            
   - [REGEX](data/regex/REGEX.md)    
   - [ARITHMETIC](data/arithmetic/ARITHMETIC.md)
+  - [SERDE](data/serde/SERDE.md)
 
 ---    
 

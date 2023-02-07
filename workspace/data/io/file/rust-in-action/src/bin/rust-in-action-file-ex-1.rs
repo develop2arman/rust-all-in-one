@@ -1,16 +1,16 @@
 #![allow(dead_code, unused_variables)]
-use std::fs::File;
-use std::io::{Read,Write,copy};
+// use std::fs::File;
+// use std::io::{Read,Write,copy};
 
 /// rust-in-action-file-ex-1
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-io-io_bin --bin rust-in-action-file-ex-1```
+/// ```cargo run -q -p rust-in-action-file_bin --bin rust-in-action-file-ex-1```
 ///
-/// ```cargo doc  --package rust-in-action-io-io_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-in-action-file_bin --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-in-action-io-io_bin```
+/// ```cargo test --doc  --package rust-in-action-file_bin```
 ///
 /// ## What
 /// `TODO`

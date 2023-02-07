@@ -1,5 +1,6 @@
 [[ria-smartpointer-box]]
 
+[[rd-customized-smartpointer-box]]
 
 ---
 

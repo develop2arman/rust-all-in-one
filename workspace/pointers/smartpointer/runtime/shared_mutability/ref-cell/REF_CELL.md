@@ -3,6 +3,14 @@
 
 ---
 
+
+> The RefCell type provides us with the following two borrowing methods:
+
+- The borrow method takes a new immutable reference
+- The borrow_mut method takes a new mutable reference
+
+
+---
 > The mutability of a binding is not fine-grained; a value is either immutable or mutable, and that includes all of its fields if it's a struct or an enum. Cell and RefCell can turn an immutable thing into something that's mutable, **allowing us to define parts of an immutable struct as mutable**.
 
 > Whenever we're using RefCell borrows, it's a good practice to think carefully that we're using it in a safe way, since making mistakes there may lead to runtime panics. In this implementation, however, it's easy to see that we have just the single borrow, and that the closing block immediately discards it.

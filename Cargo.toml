@@ -30,6 +30,7 @@ members = [
     "workspace/data/convert/generic/into/rust-in-action",
     "workspace/data/convert/text_to_enum/rust-in-action",
     "workspace/data/io/file/rust-in-action",
+    "workspace/data/io/file/packtpub",
     "workspace/data/io/io/rust-in-action",
     "workspace/data/convert/as/rust-doc",
     "workspace/data/convert/trait/as/rust-doc",
@@ -65,6 +66,7 @@ members = [
     "workspace/types/struct/master-rust",
     "workspace/types/struct/rust-doc",
     "workspace/types/struct/rust-egg",
+    "workspace/types/struct/packtpub",
     "workspace/types/return/rust-egg",
     "workspace/types/return/packpub",
     "workspace/types/rhs/rust-in-action",
@@ -168,7 +170,10 @@ members = [
 
     "workspace/pointers/smartpointer/ops/easy-rust",
     "workspace/pointers/smartpointer/runtime/shared_mutability/ref-cell/master-rust",
+    "workspace/pointers/smartpointer/runtime/shared_mutability/ref-cell/rust-doc",
+    "workspace/pointers/smartpointer/customized/rust-doc",
     "workspace/pointers/smartpointer/compiletime/box/customized/rust-doc",
+    "workspace/pointers/smartpointer/compiletime/shared_owner/rc/rust-in-action",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/rust-doc",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/packtpub",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/pnkfx",
@@ -180,6 +185,7 @@ members = [
     "workspace/pointers/smartpointer/compiletime/box/rust-doc",
     "workspace/pointers/smartpointer/compiletime/master-rust",
     "workspace/pointers/rust-in-action",
+    "workspace/pointers/rust-doc",
 
     "workspace/functional-programming/expression/rust-doc",
     "workspace/functional-programming/closure/rust-doc",
@@ -200,10 +206,16 @@ members = [
 
     "workspace/macro/educative",
     "workspace/macro/rust-doc",
+    "workspace/macro/rust-egg",
+    "workspace/macro/rust-in-action",
 
 
     "workspace/module/rust-egg",
 
+    "workspace/data/io/io/buffer/rust-in-action",
+    "workspace/data/io/process/rust-egg",
+    "workspace/data/io/io/pipe/packtpub",
+    "workspace/data/parser/rust-in-action",
     "workspace/data/operator/rust-in-action",
     "workspace/data/operator/rust-doc",
     "workspace/data/arithmetic/code-like-pro",

@@ -6,7 +6,7 @@
 
 [[OPS]]
 
-
+[[rd-customized-smartpointer-box]]
 
 ---
 
