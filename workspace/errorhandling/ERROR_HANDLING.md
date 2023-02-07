@@ -33,7 +33,7 @@
 - **Non-recoverable** errors that violate the contracts or invariants of the program, for example, **index out of bounds or divide by zero non-recoverable errors, there's a mechanism called panic**.
 - **Fatal errors** that abort the program immediately. Such situations include **running out of memory, and stack overflow.**
 
-> Rust does not have the notion of #null values, which is infamously quoted as being the #billion-dollar mistake by Tony Hoare, who introduced null references in the ALGOL W language back in 1965.
+> Rust does not have the notion of #null values, which is infamously quoted as being the #billion-dollar mistake by #Tony_Hoare, who introduced null references in the ALGOL W language back in 1965.
 
 > As an **enum**, they get the ability to store a success state and an error state, while generics allow them to specialize **at compile time** so that they store any value in either state. These types also come with a lot of convenient methods (commonly known as **combinators**) implemented on them, allowing you to consume, compose, or transform the inner values easily.
 

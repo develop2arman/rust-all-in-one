@@ -70,10 +70,13 @@ fn main() {
     if cfg!(not(any(target_arch = "x86", target_arch = "x86_64"))) {
         println!("This code is running on a non-Intel CPU");
     }
-
+    let ()= nothing();
     finish();
-}
 
+}
+fn nothing()->(){
+
+}
 fn finish() -> impl std::process::Termination {
     let machine_kind = if cfg!(unix) {
         println!("I was running on a unix machine!");

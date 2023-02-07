@@ -2,11 +2,11 @@
 use rand::prelude::*;                      // <1>
 
 
-/// master-rust-error-handling-ex-2
+/// master-rust-error-handling-ex-3
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p master-rust-error-handling_bin --bin  master-rust-error-handling-ex-2```
+/// ```cargo run -q -p master-rust-error-handling_bin --bin  master-rust-error-handling-ex-3```
 ///
 /// ## What
 /// `combinators`

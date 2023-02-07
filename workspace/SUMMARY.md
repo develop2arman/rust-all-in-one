@@ -26,6 +26,9 @@
   - [RC](pointers/smartpointer/compiletime/shared_owner/rc/RC.md)  
   - [BOX](pointers/smartpointer/compiletime/box/BOX.md)    
   - [REF_CELL](pointers/smartpointer/runtime/shared_mutability/ref-cell/REF_CELL.md) 
+---
+
+- [PROCESS](process/PROCESS.md)
 
 ---
 
@@ -42,6 +45,7 @@
 ---
 
 - [DATA](data/DATA.md)
+  - [OPERATOR](data/operator/OPERATOR.md)
   - [CONVERT](data/convert/CONVERT.md)    
   - [IO](data/io/IO.md)    
     - [FILE](data/io/file/FILE.md)        

@@ -38,7 +38,7 @@
 // }
 /// ```
 ///
- fn main() -> ! {
+ fn main() {
    let mut j=1;
    let i=100;
      loop {

@@ -36,6 +36,8 @@ fn main() {
     let a_ptr = &a as *const i64;
     let a_addr: usize = unsafe {
     std::mem::transmute(a_ptr)
+    //std::mem::swap(&mut a, &mut b);
     };
     println!("a: {} ({:p}...0x{:x})", a, a_ptr, a_addr +7);
+    println!("{:032b}", a_addr+7);
 }

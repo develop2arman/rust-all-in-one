@@ -1,6 +1,7 @@
 
 [[ria-smartpointer-rc]]
 
+[[rd-smartpointer-rc]]
 
 [[LINKEDLIST]]
 

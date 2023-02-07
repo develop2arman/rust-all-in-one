@@ -55,6 +55,7 @@ members = [
     "workspace/thread/race/rust-in-action",
 
 
+    "workspace/types/option/rust-egg",
     "workspace/types/union/master-rust",
     "workspace/types/enum/packtpub",
     "workspace/types/enum/rust-egg",
@@ -85,7 +86,6 @@ members = [
     "workspace/types/num/bigint/other",
     "workspace/types/num/from/rust-in-action",
 
-    "workspace/types/primitive/operator/rust-in-action",
     "workspace/types/static/master-rust",
     "workspace/types/string/master-rust",
     "workspace/types/string/rust-doc",
@@ -110,6 +110,7 @@ members = [
     "workspace/trait/shared-behavior/aggregator/rust-doc",
     "workspace/trait/shared-behavior/builtin-trait/master-rust",
     "workspace/trait/built-in/display/rust-in-action",
+    "workspace/trait/built-in/partialeq/rust-egg",
     "workspace/trait/shared-behavior/safe-object/non-dispatchable/rust-doc",
     "workspace/trait/shared-behavior/safe-object/dispatchable/master-rust",
     "workspace/trait/shared-behavior/safe-object/dispatchable/rust-doc",
@@ -167,18 +168,22 @@ members = [
 
     "workspace/pointers/smartpointer/ops/easy-rust",
     "workspace/pointers/smartpointer/runtime/shared_mutability/ref-cell/master-rust",
+    "workspace/pointers/smartpointer/compiletime/box/customized/rust-doc",
+    "workspace/pointers/smartpointer/compiletime/shared_owner/rc/rust-doc",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/packtpub",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/pnkfx",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/rust-doc",
     "workspace/pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/master-rust",
     "workspace/pointers/smartpointer/compiletime/box/master-rust",
     "workspace/pointers/smartpointer/compiletime/box/rust-in-action",
+    "workspace/pointers/smartpointer/compiletime/box/easy-rust",
+    "workspace/pointers/smartpointer/compiletime/box/rust-doc",
     "workspace/pointers/smartpointer/compiletime/master-rust",
     "workspace/pointers/rust-in-action",
 
     "workspace/functional-programming/expression/rust-doc",
     "workspace/functional-programming/closure/rust-doc",
-    "workspace/functional-programming/closure/easyrust",
+    "workspace/functional-programming/closure/easy-rust",
     "workspace/functional-programming/closure/pnkfx",
     "workspace/functional-programming/closure/master-rust",
     "workspace/functional-programming/function/master-rust",
@@ -187,6 +192,7 @@ members = [
     "workspace/functional-programming/lazy/master-rust",
     "workspace/functional-programming/lazy/rust-doc",
 
+    "workspace/benchmark/other",
     "workspace/benchmark/master-rust",
     "workspace/benchmark/criterion/master-rust",
     "workspace/benchmark/criterion/criterion_doc",
@@ -198,7 +204,8 @@ members = [
 
     "workspace/module/rust-egg",
 
-
+    "workspace/data/operator/rust-in-action",
+    "workspace/data/operator/rust-doc",
     "workspace/data/arithmetic/code-like-pro",
     "workspace/data/arithmetic/master-rust",
 
@@ -208,4 +215,7 @@ members = [
 
     "workspace/tuple/rust-doc",
     "workspace/tuple/code-like-pro",
+
+
+    "workspace/process/command/packtpub",
 ]

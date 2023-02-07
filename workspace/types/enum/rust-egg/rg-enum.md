@@ -1,1 +1,1 @@
-> `tags` [[process_pattern]]
+> `tags` [[process_pattern]] [[pattern]]
