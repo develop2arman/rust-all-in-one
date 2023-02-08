@@ -6,11 +6,11 @@ use std::thread;
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-race_bin --bin rust-in-action-race-main```
+/// ```cargo run -q -p pnkfx-thread-mpsc_bin --bin pnkfx-thread-mpsc-main```
 ///
-/// ```cargo doc  --package rust-in-action-race_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package pnkfx-thread-mpsc_bin--message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-in-action-race_bin```
+/// ```cargo test --doc  --package pnkfx-thread-mpsc_bin```
 ///
 /// ## What
 /// `TODO`
@@ -39,6 +39,4 @@ use std::thread;
 /// ```
 ///
 
-fn main() {
-    unimplemented!();
-}
+fn main() {}

@@ -129,7 +129,11 @@
 
 - [THREAD](thread/THREAD.md)
   - [RACE](thread/race/RACE.md)    
-
+  - [RAYON](thread/rayon/RAYON.md)    
+  - [Sync-Atomic-Mutex](thread/sync/ATOMIC.md)    
+  - [MPSC](thread/mpsc/MPSC.md)    
+  - [THREAD-TIME](thread/time/THREAD-TIME.md)  
+  
 ---
 
 - [TIME](time/TIME.md)

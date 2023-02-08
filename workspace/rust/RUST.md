@@ -41,7 +41,7 @@
 
 1. **Dangling pointers**— <u>_Live references_</u> to data that has become invalid over the course of the program (see [[ria-data-csv-bin]])
 
-2. **Data races**—The inability to determine how a program will behave from <u>_run to run_</u> because external factors change (see [[ria-race]])
+2. **Data races**—The inability to determine how a program will behave from <u>_run to run_</u> because external factors change (see [[pnkfx-mpsc]])
 
 3. **Buffer overflow**—An attempt to access the 12th element of an <u>_array_</u> with only 6 elements (see listing 1.5)
 

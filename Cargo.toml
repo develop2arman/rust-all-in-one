@@ -58,7 +58,21 @@ members = [
     "workspace/borrowchecker/lifetime/generic/master-rust",
     "workspace/borrowchecker/lifetime/generic/rust-doc",
 
+
+    "workspace/thread/threadpool/packtpub",
+    "workspace/thread/unsafe/rust-in-action",
+    "workspace/thread/rayon/rust-doc",
+    "workspace/thread/rayon/packtpub",
+    "workspace/thread/time/rust-in-action",
+    "workspace/thread/time/packtpub",
     "workspace/thread/race/rust-in-action",
+    "workspace/thread/mpsc/rust-in-action",
+    "workspace/thread/mpsc/pnkfx",
+    "workspace/thread/mpsc/rust-doc",
+    "workspace/thread/mpsc/packtpub",
+    "workspace/thread/sync/rust-egg",
+    "workspace/thread/sync/packtpub",
+    "workspace/thread/sharestate/rust-doc",
 
 
     "workspace/types/option/rust-egg",
