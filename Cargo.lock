@@ -1356,6 +1356,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "lpxxn-behavioral_bin"
+version = "0.1.0"
+
+[[package]]
 name = "malloc_buf"
 version = "0.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2720,6 +2724,10 @@ name = "rust-doc-expression_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-ffi_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-doc-function_bin"
 version = "0.1.0"
 
@@ -2769,6 +2777,14 @@ name = "rust-doc-rc_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-safe-abstraction_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-doc-safe-static-mut_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-doc-shared-behavior-aggregator_bin"
 version = "0.1.0"
 
@@ -2786,6 +2802,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-doc-smartpointer-ref-cell_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-doc-state-behavioral_bin"
 version = "0.1.0"
 
 [[package]]
@@ -2861,6 +2881,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-egg-average_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust-egg-behavioral-process_bin"
 version = "0.1.0"
 
 [[package]]

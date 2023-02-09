@@ -1,31 +1,31 @@
 #![allow(dead_code, unused_variables)]
 
-/// rust-egg-enum-ex-1
+/// Main
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p rust-egg-enum_bin --bin rust-egg-enum-ex-1```
+/// ```cargo test -q -p rust-egg-behavioral-process_bin --bin rust-egg-behavioral-process-main```
 ///
-/// ```cargo doc --package rust-egg-enum_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-egg-behavioral-process_bin --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc --package rust-egg-enum_bin```
+/// ```cargo test --doc  --package rust-egg-behavioral-process_bin```
 ///
 /// ## What
-// `TODO`
+/// `Process`
 ///
 /// ## How
-/// `TODO`
-///
 /// # Arguments
 ///
-/// * `Arg1` - This is the [your type] to [your verb] the [your enum/func name]
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
 /// `nothing`
 ///
 /// ## Example
-/// //```rust,compile_fail,ignore
-// enums3.rs
+///  `TODO`
+///
+/// //```rust,compile_fail,no_run,ignore
+///
 // Address all the TODOs to make the tests pass!
 
 enum Message {
@@ -71,8 +71,8 @@ impl State {
             Message::Echo(s) => self.echo(s),
             Message::Move { x, y } => self.move_position(Point { x, y }),
             Message::Quit => self.quit(),
+        }
     }
-}
 }
 
 #[cfg(test)]
@@ -97,6 +97,7 @@ mod tests {
         assert_eq!(state.quit, true);
     }
 }
+
 fn main(){
     unimplemented!();
 }

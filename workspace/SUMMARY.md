@@ -103,7 +103,10 @@
 
 - [OOP](oop/OOP.md)
   - [TRAIT](oop/trait/TRAIT.md)
-
+  - [STATE_PATTERN](oop/design_patterns/behavioral/state-pattern/STATE_PATTERN.md)     
+  - [BEHAVIOARAL](oop/design_patterns/behavioral/BEHAVIOARAL.md)   
+    - [LPXXN](oop/design_patterns/behavioral/lpxxn/lpxxn-behavioral.md)  
+    - [PROCESS](oop/design_patterns/behavioral/process/PROCESS.md) 
 ---
 
 - [TRAIT](trait/TRAIT.md)
@@ -141,6 +144,9 @@
 ---
 
 - [UNSAFE](unsafe/UNSAFE.md)
+  - [EXTERN-FFI](unsafe/extern-ffi/EXTERN-FFI.md)
+  - [SAFE_ABSTRACTION](unsafe/safe-abstraction/SAFE_ABSTRACTION.md)
+  - [SAFE_STATIC_MUT](unsafe/safe-static-mut/SAFE_STATIC_MUT.md)
 
 ---
 
