@@ -1,3 +1,30 @@
+#![allow(dead_code, unused_variables)]
+
+/// lpxxn-structural-ex-2
+///
+/// ## Commands
+///
+/// ```cargo run -q -p lpxxn-structural_bin --bin lpxxn-structural-ex-2```
+///
+/// ```cargo doc  --package lpxxn-structural_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package lpxxn-structural_bin```
+///
+/// ## What
+///`Decorator`
+///
+/// ## How
+/// `TODO`
+///
+/// # Return
+/// `nothing`
+///
+/// ## Example
+///  `TODO`
+///
+/// //```rust,compile_fail,no_run,ignore
+
+
 use std::rc::Rc;
 
 // The base Component trait defines operations that can be altered by
@@ -16,17 +43,16 @@ impl Component for ConcreteComponent {
     }
 }
 
-// The base Decorator class follows the same interface as the other
-// components. The primary purpose of this class is to define the wrapping
-// interface for all concrete decorators. The default implementation of the
-// wrapping code might include a field for storing a wrapped component and
-// the means to initialize it.
+/// The base Decorator class follows the same interface as the other
+/// components. The primary purpose of this class is to define the wrapping
+/// interface for all concrete decorators. The default implementation of the
+/// wrapping code might include a field for storing a wrapped component and
+/// the means to initialize it.
 trait Decorator: Component {
     fn new(component: Rc<dyn Component>) -> Self;
 }
 
-// Concrete Decorators call the wrapped object and alter its result in some
-// way.
+/// Concrete Decorators call the wrapped object and alter its result in some way.
 struct ConcreteDecoratorA {
     component: Rc<dyn Component>,
 }
@@ -59,9 +85,9 @@ impl Component for ConcreteDecoratorB {
     }
 }
 
-// The client code works with all objects using the Component interface.
-// This way it can stay independent of the concrete classes of
-// components it works with.
+/// The client code works with all objects using the Component interface.
+/// This way it can stay independent of the concrete classes of
+/// components it works with.
 struct Client;
 
 impl Client {

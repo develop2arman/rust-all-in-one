@@ -103,10 +103,16 @@
 
 - [OOP](oop/OOP.md)
   - [TRAIT](oop/trait/TRAIT.md)
+- [DESIGN_PATTERN](oop/design_patterns/DESIGN_PATTERN.md)
   - [STATE_PATTERN](oop/design_patterns/behavioral/state-pattern/STATE_PATTERN.md)     
   - [BEHAVIOARAL](oop/design_patterns/behavioral/BEHAVIOARAL.md)   
     - [LPXXN](oop/design_patterns/behavioral/lpxxn/lpxxn-behavioral.md)  
     - [PROCESS](oop/design_patterns/behavioral/process/PROCESS.md) 
+  - [CREATIONAL](oop/design_patterns/creational/CREATIONAL.md)   
+    - [LPXXN](oop/design_patterns/creational/lpxxn/lpxxn-creational.md)  
+  - [STRUCTRUAL](oop/design_patterns/structural/STRUCTURAL.md)   
+    - [LPXXN](oop/design_patterns/structural/lpxxn/lpxxn-structural.md)  
+
 ---
 
 - [TRAIT](trait/TRAIT.md)

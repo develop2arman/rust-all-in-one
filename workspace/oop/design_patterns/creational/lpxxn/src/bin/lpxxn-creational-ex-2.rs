@@ -1,4 +1,31 @@
-//! Builder is a creational design pattern, which allows constructing complex objects step by step.
+#![allow(dead_code, unused_variables)]
+
+/// lpxxn-creational-ex-2
+///
+/// ## Commands
+///
+/// ```cargo run -q -p lpxxn-creational_bin --bin lpxxn-creational-ex-2```
+///
+/// ```cargo doc  --package lpxxn-creational_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package lpxxn-creational_bin```
+///
+/// ## What
+///`Builder`
+///
+/// ## How
+/// Builder is a creational design pattern, which allows constructing complex objects step by step.
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `nothing`
+///
+/// ## Example
+///  `TODO`
+///
+/// //```rust,compile_fail,no_run,ignore
+
 
 #[derive(Clone)]
 struct Product {
@@ -107,7 +134,7 @@ struct Director {
 }
 
 impl Director {
-    fn new(builder: Box<Builder>) -> Director {
+    fn new(builder: Box<dyn Builder>) -> Director {
         Director { builder: builder }
     }
 

@@ -1,3 +1,30 @@
+#![allow(dead_code, unused_variables)]
+
+/// lpxxn-structural-ex-1
+///
+/// ## Commands
+///
+/// ```cargo run -q -p lpxxn-structural_bin --bin lpxxn-structural-ex-1```
+///
+/// ```cargo doc  --package lpxxn-structural_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package lpxxn-structural_bin```
+///
+/// ## What
+///`Adapert`
+///
+/// ## How
+/// `TODO`
+///
+/// # Return
+/// `nothing`
+///
+/// ## Example
+///  `TODO`
+///
+/// //```rust,compile_fail,no_run,ignore
+
+
 use std::rc::Rc;
 
 // The Target defines the domain-specific interface used by the client code.
@@ -44,7 +71,7 @@ impl Target for Adapter {
     }
 }
 
-// The client code supports all classes that follow the Target trait.
+/// The client code supports all classes that follow the Target trait.
 struct Client;
 impl Client {
     fn client_code<T: Target>(target: &T) {

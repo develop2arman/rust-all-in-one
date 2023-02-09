@@ -1,4 +1,31 @@
-//! Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+#![allow(dead_code, unused_variables)]
+
+/// lpxxn-creational-ex-1
+///
+/// ## Commands
+///
+/// ```cargo run -q -p lpxxn-creational_bin --bin lpxxn-creational-ex-1```
+///
+/// ```cargo doc  --package lpxxn-creational_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package lpxxn-creational_bin```
+///
+/// ## What
+///`Abstract Factory`
+///
+/// ## How
+/// Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `nothing`
+///
+/// ## Example
+///  `TODO`
+///
+/// //```rust,compile_fail,no_run,ignore
+
 
 trait GUIFactory {
     fn create_button(&self) -> Box<dyn Button>;
