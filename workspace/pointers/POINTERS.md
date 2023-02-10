@@ -25,6 +25,14 @@
 > A reference is like a pointer in that it’s an address we can follow to access data stored at that address that is owned by some other variable. 
 >> **Unlike a pointer, a reference is** *guaranteed to point to a valid value of a particular type.*
 
+## AsRef
+
+```rust,no_run,compile_fail
+    fn data(&self) -> &T {
+        self.data.as_ref()
+        //&self.data; Equal line above
+    }
+```    
 ## Special pointers
 
 In addition, the following tools can also be handy in certain situations:

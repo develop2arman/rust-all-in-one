@@ -185,7 +185,7 @@ members = [
     "workspace/memory/size/master-rust",
     "workspace/memory/piston/rust-in-action",
     "workspace/memory/winapi/rust-in-action",
-
+    "workspace/memory/allocator/code-like-pro",
 
     "workspace/pointers/smartpointer/ops/easy-rust",
     "workspace/pointers/smartpointer/runtime/shared_mutability/ref-cell/master-rust",
@@ -268,4 +268,6 @@ members = [
     "workspace/oop/design_patterns/creational/lpxxn",
     "workspace/oop/design_patterns/structural/lpxxn",
     "workspace/oop/design_patterns/behavioral/process/rust-egg"
+
+
 ]

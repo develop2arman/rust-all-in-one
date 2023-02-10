@@ -1,3 +1,29 @@
+> Object safe traits can be the base trait of a trait object. A trait is object safe if it has the following qualities (defined in RFC 255):
+
+> All supertraits must also be object safe.
+
+> Sized must not be a supertrait. In other words, it must not require Self: Sized.
+
+> It must not have any associated constants.
+
+> All associated functions must either be dispatchable from a trait object or be explicitly non-dispatchable(means cannot call method or func):
+
+> Dispatchable functions require:
+
+>Not have any type parameters (although lifetime parameters are allowed),Be a method that does not use Self except in the type of the receiver.
+> Have a receiver with one of the following types:
+  - &Self (i.e. &self)
+  - &mut Self (i.e &mut self)
+  - Box<Self>
+  - Rc<Self>
+  - Arc<Self>
+  - Pin<P> where P is one of the types above
+> Does not have a where Self: Sized bound (receiver type of Self (i.e. self) implies this).
+> Explicitly non-dispatchable functions require:
+> Have a where Self: Sized bound (receiver type of Self (i.e. self) implies this).
+
+> include the requirement that object-safe traits do not require Self:Sized and (2) specify that methods may include where Self:Sized to overcome object safety restrictions.
+
 
 # Object Safety
 Object safety is a set of rules and restrictions that does not allow trait objects to be constructed

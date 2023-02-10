@@ -1,4 +1,12 @@
+[[TRAIT_BOUND]]
 
+[[NON_OBJECTSAFE]]
+
+[[SB_TRAIT_BUILTIN]]
+
+[[SB_AGGRIGATOR]]
+
+---
 
 ## Generic traits
 > Two such examples are is the **From<T> and Into<T> traits**, which allow from conversion from a type to a type T and vice versa.
@@ -11,6 +19,18 @@ pub trait From<T> {
 ```
 
 ## Trait bounds
+> In the implementation of outline_print, we want to use the Display trait’s functionality. Therefore, we need to specify that the OutlinePrint trait will work only for types that also implement Display and provide the functionality that OutlinePrint needs. We can do that in the trait definition by specifying OutlinePrint: Display. 
+
+> This technique is similar to adding a trait bound to the trait.
+>we can use the to_string function that is automatically implemented for any type that implements Display.
+
+```rust
+use std::fmt;
+trait OutlinePrint: fmt::Display {
+    fn outline_print(&self) {  let output = self.to_string();}
+}
+```
+>
 
 ```rust,compile_fail,no_run,ignore
 fn load<T: Loadable>(&self, entity: T) { .. }

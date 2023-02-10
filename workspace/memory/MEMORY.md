@@ -120,6 +120,12 @@
 - Release memory that isn’t needed back to the OS via **free() for UNIX systems and HeapFree() for Windows**.
 
 
+## Memory Data Leak
+
+> Rust’s memory safety guarantees make it difficult, but not impossible, to accidentally create memory that is never cleaned up (known as a memory leak). Preventing memory leaks entirely is not one of Rust’s guarantees in the same way that disallowing data races at compile time is, meaning memory leaks are memory safe in Rust. 
+
+> We can see that Rust allows memory leaks by using Rc<T> and RefCell<T>: it’s possible to create references where items refer to each other in a cycle. This creates memory leaks because the reference count of each item in the cycle will never reach 0, and the values will never be dropped.
+
 ## Memory Safety
 
 > Safety: **cannot point to invalid memory and remain valid in all code paths**. In other words, safety basically boils down to pointers having valid references all of the time in your program, and that the operations with **pointers do not lead to undefined behavior** (#error). 
@@ -146,6 +152,25 @@
 
 >Data types in all programming languages have both a size and an alignment. **The alignment of primitive types is equal to their size**. So, usually, all primitive types are aligned and the CPU has no problem doing an aligned read for these. But when we create custom data types, compilers usually insert *padding* between our struct fields if they are not aligned to allow the CPU to access memory in an aligned manner.
 
+
+## UnRolling
+// is an optimization that removes the overhead of the loop controlling code and instead generates repetitive code for each iteration of the loop.
+
+
+```rust
+let buffer: &mut [i32];
+let coefficients: [i64; 12];
+let qlp_shift: i16;
+
+for i in 12..buffer.len() {
+    let prediction = coefficients.iter()
+                                 .zip(&buffer[i - 12..i])
+                                 .map(|(&c, &s)| c * s as i64)
+                                 .sum::<i64>() >> qlp_shift;
+    let delta = buffer[i];
+    buffer[i] = prediction as i32 + delta;
+}
+```
 ## Glossery
 
  > `stack` : contiguous layout memory = LIFO

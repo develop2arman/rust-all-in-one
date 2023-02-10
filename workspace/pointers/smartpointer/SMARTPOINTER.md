@@ -30,6 +30,36 @@ pub trait Deref {
     fn deref(&self) -> &Self::Target;
 }
 ```
+
+> Deref coercion is a convenience that Rust performs on arguments to functions and methods. Deref coercion works only on types that implement the Deref trait. Deref coercion converts such a type into a reference to another type. For example, deref coercion can convert &String to &str because String implements the Deref trait such that it returns &str. 
+
+> The number of times that Deref::deref needs to be inserted is resolved at compile time, so there is no runtime penalty for taking advantage of deref coercion!
+
+> Similar to how you use the Deref trait to override the * operator on immutable references, you can use the DerefMut trait to override the * operator on mutable references.
+
+> Rust does deref coercion when it finds types and trait implementations in three cases:
+
+
+- From &T to &U when T: Deref<Target=U>
+- From &mut T to &mut U when T: DerefMut<Target=U>
+- From &mut T to &U when T: Deref<Target=U>
+- The third case is trickier: Rust will also coerce a mutable reference to an immutable one. But the reverse is not possible
+
+> the Drop trait is almost always used when implementing a smart pointer. For example, when a Box<T> is dropped it will deallocate the space on the heap that the box points to.
+ Note that we didn’t need to call the drop method explicitly.
+
+> We call the as_ref method on the Option because we want a reference to the value inside the Option rather than ownership of the value. Because state is an Option<Box<dyn State>>
+
+```rust,no_run,compile_fail  
+  impl Post {
+    // --snip--
+    pub fn content(&self) -> &str {
+        self.state.as_ref().unwrap().content(self)
+    }
+    // --snip--
+```
+> At this point, when we call content on the &Box<dyn State>, deref coercion will take effect on the & and the Box so the content method will ultimately be called on the type that implements the State trait.
+
 > If defines a single method called Deref that takes self by reference and returns a immutable reference to the underlying type. This combined with the deref coercion feature of Rust, reduces a lot of code that you have to write. Deref coercion is when a type automatically gets converted from one type of reference to some other reference.
 
 ## Comparistions of Smart pointers 

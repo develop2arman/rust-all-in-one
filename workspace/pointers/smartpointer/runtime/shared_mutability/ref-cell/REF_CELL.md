@@ -3,12 +3,21 @@
 
 ---
 
+## Interior Mutability
+> *o.into_mut() += 2;// About ~ like borrow_mut in RC type both of them called interior mutability pattern(Mutably the wrap value).
+
+> Interior mutability is a design pattern in Rust that allows you to mutate data even when there are immutable references to that data; normally, this action is disallowed by the borrowing rules. To mutate data, the pattern uses unsafe code inside a data structure to bend Rust’s usual rules that govern mutation and borrowing. 
+
+> RefCell<T> type that follows the interior mutability pattern.
+
+> The RefCell<T> type is useful when you’re sure your code follows the borrowing rules but the compiler is unable to understand and guarantee that.
+
+---
 
 > The RefCell type provides us with the following two borrowing methods:
 
 - The borrow method takes a new immutable reference
 - The borrow_mut method takes a new mutable reference
-
 
 ---
 > The mutability of a binding is not fine-grained; a value is either immutable or mutable, and that includes all of its fields if it's a struct or an enum. Cell and RefCell can turn an immutable thing into something that's mutable, **allowing us to define parts of an immutable struct as mutable**.
@@ -39,8 +48,8 @@ The Cell<T> type is a smart pointer type that **enables mutability for values, e
 
 ## RefCell
 
-If you need Cell-like features for non-Copy types, there is the RefCell type. It uses a read/write pattern similar to how borrowing works, but moves the checks to runtime, which is convenient but **not zero-cost**.
+> If you need Cell-like features for non-Copy types, there is the RefCell type. It uses a read/write pattern similar to how borrowing works, but moves the checks to runtime, which is convenient but **not zero-cost**.
 
 ## RefCell vs Cell
 
-RefCell hands out references to the value, instead of returning things by value as is the case with the Cell type.
+> RefCell hands out references to the value, instead of returning things by value as is the case with the Cell type.

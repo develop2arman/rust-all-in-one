@@ -31,6 +31,21 @@ fn main() {
 }
 ```
 
+---
+
+> You might be wondering whether there is a runtime cost when using generic type parameters. The good news is that using generic types won't make your run any slower than it would with concrete types.
+
+> Rust accomplishes this by performing monomorphization of the code using generics at compile time. 
+
+> Monomorphization is the process of turning generic code into specific code by filling in the concrete types that are used when compile
+
+> Every programming language has tools for effectively handling the duplication of concepts.
+
+> In Rust, one such tool is generics. Generics are abstract stand-ins for concrete types or other properties. When we’re writing code, we can express the behavior of generics or how they relate to other generics without knowing what will be in their place when compiling and running the code.
+> The fragment <T: std::ops::Add<Output = T>> says that T must implement std::ops::Add. Using a single type variable T with the trait bound ensures that arguments i and j, as well as the result type, are the same type and that their type supports addition.
+
+
+
 ## Right Hand Side
 
 > or default type parameters, for example the **fragment** <T: std::ops::Add<Output = T>> says that T must implement trait std::ops::Add. Using a single type variable T with the trait bound ensures that arguments i and j, as well as the result type, are the same type and that their type supports addition.

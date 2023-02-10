@@ -25,9 +25,17 @@ fn main() {
 }
 ```
 
+> use wrapper types, which allow more flexibility than what is available by default. These, however, incur costs at runtime to ensure that Rust’s safety guarantees are maintained. Another way to phrase this is that Rust allows programmers to opt in to garbage collection
+> To explain the wrapper type strategy, let’s introduce a wrapper type: std:rc::Rc. std:rc::Rc takes a type parameter T and is typically referred to as Rc<T>. Rc<T> reads as “R. C. of T” and stands for “a reference-counted value of type T.” Rc<T> provides shared ownership of T. Shared ownership prevents T from being removed from memory until every owner is removed.
+
+> As indicated by the name, reference counting is used to track valid references. As each reference is created, an internal counter increases by one. When a reference is dropped, the count decreases by one. When the count hits zero, T is also dropped.
+
+> Rc<T> implements Clone. Every call to base.clone() increments an internal counter. Every Drop decrements that counter. When the internal counter reaches zero, the original instance is freed.
+
 ## Glossery
 
 > `Thin wrapper around the type` : part of Vec<String> is noticed. struct Wrapper(Vec<String>);       
 
+> `wrapper type` = reference-counted value = shared ownership = track valid references
 
 > `tags` [[new_type]] [[orphan]]

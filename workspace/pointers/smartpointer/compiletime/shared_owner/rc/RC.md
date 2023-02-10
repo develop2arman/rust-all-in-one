@@ -59,7 +59,27 @@ With [[interior_mutability]], you may want to provide an argument to a method th
 
 > Rc internally keeps two kinds of references: strong **(Rc<T>)** and weak **(Weak<T>)**. Both keep a count of how many references of each type have been handed out.
 
-## Rc VS Arc [[rust-doc]]
+---
+
+> To enable multiple ownership, Rust has a type called Rc<T>, which is an abbreviation for reference counting. The Rc<T> type keeps track of the number of references to a value to determine whether or not the value is still in use. If there are zero references to a value, the value can be cleaned up without any references becoming invalid.
+
+> Imagine Rc<T> as a TV in a family room. When one person enters to watch TV, they turn it on. Others can come into the room and watch the TV. When the last person leaves the room, they turn off the TV because it’s no longer being used. If someone turns off the TV while others are still watching it, there would be uproar from the remaining TV watchers!
+
+> We use the Rc<T> type when we want to allocate some data on the heap for multiple parts of our program to read and we can’t determine at compile time which part will finish using the data last. If we knew which part would finish last, we could just make that part the data’s owner, and the normal ownership rules enforced at compile time would take effect.
+
+> Note that Rc<T> is only for use in single-threaded scenarios.
+
+> Rc increases by 1 whenever an Rc is cloned, and decreases by 1 whenever one cloned Rc is dropped out of the scope
+
+> the definition of Cons to hold references instead, but then we would have to specify lifetime parameters. 
+By specifying lifetime parameters, we would be specifying that every element in the list will live at least as long as the entire list.
+
+> multiple mutable borrows to the same place can cause data races and inconsistencies.
+But being able to mutate data is very useful! In the next section, mutability pattern and the RefCell<T> type that you can use in conjunction with an Rc<T> to work with this Interior immutability restriction
+
+> using Rc<T> came with the risk of creating reference cycles, where two Rc<T> values refer to each other, causing memory leaks. 
+
+## Rc VS Arc [[code-like-pro]]
 
 > Unlike [Rc<T>], Arc<T> uses atomic operations for its reference counting. This means that it is thread-safe. The disadvantage is that **atomic operations are more expensive** than ordinary memory accesses. 
 > 
