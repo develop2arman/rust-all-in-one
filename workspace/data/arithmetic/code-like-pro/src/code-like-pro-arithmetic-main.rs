@@ -15,14 +15,15 @@
 /// `TODO`
 ///
 /// ## How
-/// `TODO`
+/// ```let zero = {  || 0 }(); //Error return bool or i32 mismatch type:{ 3 || 0 }();```
+///```println!("{}", one / zero); // panics here```
 ///
 /// # Arguments
 ///
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `nothing`
+/// `panic: thread 'main' panicked at 'attempt to divide by zero`
 ///
 /// ## Example
 ///  `TODO`
@@ -36,10 +37,10 @@ fn main() {
     // println!("{}", one / zero); does not compile
 
     let one = 1;
-    let zero = one - 1;
+    let zero = &one - 1;
     // println!("{}", one / zero); still doesn't compile
 
     let one = { || 1 }();
-    let zero = { || 0 }();
+    let zero = {  || 0 }(); //Error return bool or i32 mismatch type:{ 3 || 0 }();
     println!("{}", one / zero); // panics here
 }

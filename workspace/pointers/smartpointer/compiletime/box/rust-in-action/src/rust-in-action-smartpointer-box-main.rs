@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ````cargo run -q -p rust-in-action-smartpointer-box_bin --bin rust-in-action-smartpointer-box-main```
+/// ```cargo run -q -p rust-in-action-smartpointer-box_bin --bin rust-in-action-smartpointer-box-main```
 ///
 /// ```cargo doc  --package rust-in-action-smartpointer-box_bin  --message-format short --no-deps --open --color always```
 ///
@@ -31,9 +31,12 @@
 ///  let a = Box::new(10);
 ///  let b = a.clone();
 ///  let c = a;
-///  println!("Printed:{} {} {}", a,b,c);
+///  println!("Printed:{} {} {}", a,b,c); //Expose Error: a^ value borrowed here after move
 ///}
 
-fn main(){
-    unimplemented!()
+fn main() {
+  let a = Box::new(10);
+  let b = a.clone();
+  let c = &a;
+  println!("Printed:{} {} {}", a,b,c);
 }

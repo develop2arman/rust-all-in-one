@@ -8,7 +8,7 @@
 /// ```cargo run -q -p rust-in-action-smartpointer-box_bin --bin  rust-in-action-smartpointer-box-ex-1```
 ///
 /// ## What
-/// `TODO`
+/// `Box Heap`
 ///
 /// ## How
 /// `TODO`
@@ -18,17 +18,14 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `unimplemented`
+/// `40 + 60 = 100`
 ///
 /// ## Example
-/// //``rust,no_run,compile_fail,ignore
-#[derive(PartialEq)] // <1>
-struct Hostname(String); // <2>
-
+/// ``rust,no_run,compile_fail,ignore
+/// let result = a + b;
+/// ```
 fn main() {
-    let ordinary_string = String::from("localhost");
-    let host = Hostname ( ordinary_string.clone() );
-    if host.0 == ordinary_string { // <3>
-      println!("huh?{}",{ordinary_string});
-    };
+    let a: i32 = 40;
+    let b: Box<i32> = Box::new(60);
+    println!("{} + {} = {}", a, b, a + *b);
 }

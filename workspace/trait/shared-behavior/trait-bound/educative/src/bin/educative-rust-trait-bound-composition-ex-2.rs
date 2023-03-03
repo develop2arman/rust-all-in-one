@@ -2,11 +2,11 @@
 use std::fmt::Debug;
 
 
-/// master-rust-trait-bound-composition-ex-2
+/// educative-rust-trait-bound-composition-ex-2
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p master-rust-trait-bound_bin --bin  master-rust-trait-bound-composition-ex-2```
+/// ```cargo run -q -p educative-trait-bound_bin --bin  educative-rust-trait-bound-composition-ex-2```
 ///
 /// ## What
 /// `TODO`

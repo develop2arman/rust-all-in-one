@@ -1,6 +1,7 @@
 
 [[ria_trait_display]]
 
+[[edu-partial-eq-trait]
 ---
 
 

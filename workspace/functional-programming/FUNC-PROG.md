@@ -6,6 +6,20 @@
 
 ---
 
+## Expression
+> {}; is a expression
+> An expression is evaluated to a value of a specific type.
+> Every expression must evaluate to a value. So, the println! macro call must produce a result. The thing is, it doesn’t have anything useful to produce.so the result will be unit().
+> a function call order_pokeballs(12): That would be the effect of evaluating that expression.
+> x=2+3 that is result.
+> Example [[unit]] of main
+
+```rust,no_run,compile_fail
+fn main() -> () {
+    println!("3 * 2 == {}", double(3));
+}
+```
+
 ## Jargon
 
 > Functional programming jargon: “to cons x onto y” informally means to construct a new container instance by putting the element x at the start of this new container, followed by the container y.

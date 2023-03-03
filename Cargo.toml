@@ -75,8 +75,10 @@ members = [
     "workspace/thread/sharestate/rust-doc",
 
 
+    "workspace/types/var/educative",
     "workspace/types/option/rust-egg",
     "workspace/types/union/master-rust",
+    "workspace/types/enum/educative",
     "workspace/types/enum/packtpub",
     "workspace/types/enum/rust-egg",
     "workspace/types/enum/rust-in-action",
@@ -86,6 +88,7 @@ members = [
     "workspace/types/struct/rust-doc",
     "workspace/types/struct/rust-egg",
     "workspace/types/struct/packtpub",
+    "workspace/types/struct/educative",
     "workspace/types/return/rust-egg",
     "workspace/types/return/packpub",
     "workspace/types/rhs/rust-in-action",
@@ -132,6 +135,7 @@ members = [
     "workspace/trait/shared-behavior/builtin-trait/master-rust",
     "workspace/trait/built-in/display/rust-in-action",
     "workspace/trait/built-in/partialeq/rust-egg",
+    "workspace/trait/built-in/partialeq/educative",
     "workspace/trait/shared-behavior/safe-object/non-dispatchable/rust-doc",
     "workspace/trait/shared-behavior/safe-object/dispatchable/master-rust",
     "workspace/trait/shared-behavior/safe-object/dispatchable/rust-doc",
@@ -142,10 +146,12 @@ members = [
     "workspace/flowcontrol/loop/master-rust",
     "workspace/flowcontrol/loop/rust-in-action",
     "workspace/flowcontrol/loop/packtpub",
+    "workspace/flowcontrol/for/educative",
     "workspace/flowcontrol/for/rust-in-action",
     "workspace/flowcontrol/match/rust-doc",
     "workspace/flowcontrol/match/rust-in-action",
     "workspace/flowcontrol/while/rust-in-action",
+    "workspace/flowcontrol/while/educative",
     "workspace/flowcontrol/pnfx-flowcontrol",
 
     "workspace/collection/btreemap/packtpub/packtpub_lib",
@@ -177,6 +183,7 @@ members = [
     "workspace/errorhandling/non-recoverable/master-rust",
 
 
+    "workspace/duplication/copy-clone/educative",
     "workspace/duplication/copy-clone/pnkfx",
     "workspace/duplication/copy-clone/rust-in-action",
     "workspace/duplication/copy-clone/rust-doc",
@@ -239,6 +246,7 @@ members = [
     "workspace/data/operator/rust-in-action",
     "workspace/data/operator/rust-doc",
     "workspace/data/arithmetic/code-like-pro",
+    "workspace/data/arithmetic/educative",
     "workspace/data/arithmetic/master-rust",
 
     "workspace/grammer/dtolnay",

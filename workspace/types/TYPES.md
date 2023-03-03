@@ -21,6 +21,16 @@
 [[UNION]]
 ---
 
+## Unit Type
+
+```rust
+fn main() {
+    let x: () = ();
+    let y: () = println!("Hello, world!");
+    assert_eq!(x, y);
+    println!("All units are the same!");
+}
+```
 ## Class Vs Struct
 ![Class Vs Struct](../rust/assets/images/class.JPG)
 

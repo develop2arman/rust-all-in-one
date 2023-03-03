@@ -742,7 +742,30 @@ name = "easyrust-closure_bin"
 version = "0.1.0"
 
 [[package]]
+name = "eduactive-arithmetic_bin"
+version = "0.1.0"
+
+[[package]]
+name = "eduactive-var_bin"
+version = "0.1.0"
+dependencies = [
+ "proptest",
+]
+
+[[package]]
+name = "educative-built-in-trait_bin"
+version = "0.1.0"
+
+[[package]]
 name = "educative-dangle_bin"
+version = "0.1.0"
+
+[[package]]
+name = "educative-duplication_bin"
+version = "0.1.0"
+
+[[package]]
+name = "educative-enum_bin"
 version = "0.1.0"
 
 [[package]]
@@ -754,6 +777,10 @@ dependencies = [
  "serde",
  "serde_json",
 ]
+
+[[package]]
+name = "educative-for-flowcontrol_bin"
+version = "0.1.0"
 
 [[package]]
 name = "educative-macro-handling_bin"
@@ -770,7 +797,18 @@ name = "educative-semantic_bin"
 version = "0.1.0"
 
 [[package]]
+name = "educative-struct_bin"
+version = "0.1.0"
+dependencies = [
+ "proptest",
+]
+
+[[package]]
 name = "educative-trait-bound_bin"
+version = "0.1.0"
+
+[[package]]
+name = "educative-while_bin"
 version = "0.1.0"
 
 [[package]]

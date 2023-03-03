@@ -29,6 +29,12 @@
   - [RC](pointers/smartpointer/compiletime/shared_owner/rc/RC.md)  
   - [BOX](pointers/smartpointer/compiletime/box/BOX.md)    
   - [REF_CELL](pointers/smartpointer/runtime/shared_mutability/ref-cell/REF_CELL.md) 
+  - [OPS](pointers/smartpointer/ops/OPS.md) 
+  - [COW](pointers/smartpointer/compiletime/cow/COW.md) 
+
+
+
+
 ---
 
 - [PROCESS](process/PROCESS.md)
@@ -111,7 +117,7 @@
 ---
 
 - [TRAIT](trait/TRAIT.md)
-  - [ASSOCIATE](trait/associate-type-or-trait/ASSOCIATE.md)
+  - [ASSOCIATE](trait/associate-type-or-trait/ASSOCIATE.md)  
   - [INHERITANCE](trait/inheritance/INHERITANCE.md)
   - [SHARED_BEHAVIOR](trait/shared-behavior/SHARED_BEHAVIOR.md)  
     - [SAFE OBJECT](trait/shared-behavior/safe-object/SAFEOBJECT.md)
@@ -120,6 +126,9 @@
     - [SB_TRAIT_BUILTIN](trait/shared-behavior/builtin-trait/SB_TRAIT_BUILTIN.md)
     - [SB_AGGRIGATOR](trait/shared-behavior/aggregator/SB_AGGRIGATOR.md)
   - [BUILT_IN](trait/built-in/BUILT_IN.md) 
+  - [Trait Bound](trait/shared-behavior/trait-bound/TRAIT_BOUND.md)
+    
+  
 
 ---
 

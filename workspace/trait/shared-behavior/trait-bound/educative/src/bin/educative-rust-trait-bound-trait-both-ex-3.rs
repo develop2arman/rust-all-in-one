@@ -2,11 +2,11 @@
 use std::fmt::Display;
 
 
-/// master-rust-trait-bound-trait-both-ex-3
+/// educative-rust-trait-bound-trait-both-ex-3
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p master-rust-trait-bound_bin --bin  master-rust-trait-bound-trait-both-ex-3```
+/// ```cargo run -q -p educative-trait-bound_bin --bin  educative-rust-trait-bound-trait-both-ex-3```
 ///
 /// ## What
 /// `TODO`

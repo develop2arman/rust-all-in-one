@@ -2,11 +2,11 @@
 use std::fmt::Debug;
 
 
-/// master-rust-trait-closure-ex-4
+/// educative-rust-trait-closure-ex-4
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p master-rust-trait-bound_bin --bin  master-rust-trait-closure-ex-4```
+/// ```cargo run -q -p educative-trait-bound_bin --bin  educative-rust-trait-closure-ex-4```
 ///
 /// ## What
 /// `TODO`
@@ -31,4 +31,5 @@ fn lazy_adder(a:u32, b: u32) -> impl Fn() -> u32 {
 fn main() {
     let add_later = lazy_adder(1024, 2048);
     println!("{:?}", add_later());
+       println!("{:?}", add_later());
 }

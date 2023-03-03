@@ -15,7 +15,8 @@
 /// `TODO`
 ///
 /// ## How
-/// `TODO`
+/// ```assert_eq!(25u8.wrapping_mul(12), 44);```
+/// 25*12=400-256= 44
 ///
 /// # Arguments
 ///
@@ -29,17 +30,9 @@
 ///
 /// //```rust,compile_fail,no_run,ignore
 fn main() {
-    // println!("{}", 1 / 0); does not compile
-
-    let one = 1;
-    let zero = 0;
-    // println!("{}", one / zero); does not compile
-
-    let one = 1;
-    let zero = one - 1;
-    // println!("{}", one / zero); still doesn't compile
-
-    let one = { || 1 }();
-    let zero = { || 0 }();
-    //println!("{}", one / zero); // panics here
+    assert_eq!(25u8.wrapping_mul(12), 44);
+    assert_eq!(0xffu8.wrapping_add(1), 0);
+    assert_eq!(0xffffffffu32.wrapping_add(1), 0);
+    assert_eq!(0u32.wrapping_sub(1), 0xffffffff);
+    assert_eq!(0x80000000u32.wrapping_mul(2), 0);
 }

@@ -38,9 +38,65 @@
 > Traits are not usable by themselves and are meant to be implemented by types. Traits have the power to establish **relationships between distinct types**. 
 > They are the **backbone** to many language features such as closures, operators, smart pointers, loops, compile-time [[data_race]] checks, and much more.
 
----
+## Why we need traits?
+
+Example:
+```rust,no_run,compile_fail,ignore
+impl i32 {
+    fn double(&self) -> Self {
+        self * 2
+    }
+}
+
+impl i64 {
+    fn double(&self) -> Self {
+        self * 2
+    }
+}
+
+fn main() {
+    println!("double 5_i32 == {}", 5_i32.double());
+    println!("double 5_i64 == {}", 5_i64.double());
+}
+```
+> Result:
+```rust,no_run,compile_fail,ignore
+error[E0390]: only a single inherent implementation marked with `#[lang = "i32"]` is allowed for the `i32` primitive
+```
+
+NOTE: You may be wondering, why this limitation? We won’t get into these kinds of “why” questions here, but at the time of writing, there is [some material online](https://github.com/Ixrec/rust-orphan-rules) you can read regarding this if you’re curious.
+
+> Answer:
+
+```rust
+trait Double {
+    fn double(&self) -> Self;//-> i32  is wrong
+}
+
+impl Double for i32 {
+    fn double(&self) -> Self { // or i32
+        self * 2
+    }
+}
+
+impl Double for i64 {
+    fn double(&self) -> Self { // or i32
+        self * 2
+    }
+}
+
+fn main() {
+    println!("double 5_i32 == {}", 5_i32.double());
+    println!("double 5_i64 == {}", 5_i64.double());
+}
+```
+
+## Why we need trait bound?
+
+> educative-rust-trait-closure-ex-7.rs
 
 ## Marker Traits
+> Rust identifies these types with a special trait called Copy. **Copy is known as a marker trait**.
 > Traits defined in the **std::marker module** are called marker traits. **These traits don't have any method**, and simply have their declaration with their name with an empty body. Examples from the standard library include Copy, Send, and Sync. They are called marker traits because they are used to simply mark a type as belonging to a particular family for to gain some compile time guarantees. Two such examples from the standard library are the **Send and Sync traits** that are auto-implemented by the language for most types whenever appropriate, and convey which **values are safe to send and share across threads**.
 
 
