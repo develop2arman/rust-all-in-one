@@ -126,7 +126,7 @@
     - [SB_TRAIT_BUILTIN](trait/shared-behavior/builtin-trait/SB_TRAIT_BUILTIN.md)
     - [SB_AGGRIGATOR](trait/shared-behavior/aggregator/SB_AGGRIGATOR.md)
   - [BUILT_IN](trait/built-in/BUILT_IN.md) 
-  - [Trait Bound](trait/shared-behavior/trait-bound/TRAIT_BOUND.md)
+  - [TRAIT BOUND](trait/shared-behavior/trait-bound/TRAIT_BOUND.md)
     
   
 

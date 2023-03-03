@@ -96,6 +96,7 @@ members = [
     "workspace/types/rhs/rust-doc",
     "workspace/types/generic/pnkfx",
     "workspace/types/generic/rust-doc",
+    "workspace/types/generic/educative",
     "workspace/types/generic/master-rust",
     "workspace/types/primitive/float/rust-in-action",
     "workspace/types/primitive/char/rust-egg",
@@ -120,6 +121,7 @@ members = [
     "workspace/types/primitive/radix/rust-in-action",
     "workspace/types/num/complex/rust-in-action",
 
+    "workspace/trait/associate-type-or-trait/educative",
     "workspace/trait/associate-type-or-trait/rust-doc",
     "workspace/trait/associate-type-or-trait/rust-egg",
     "workspace/trait/associate-type-or-trait/rust-in-action",

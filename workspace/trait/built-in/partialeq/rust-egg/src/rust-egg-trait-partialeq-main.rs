@@ -6,7 +6,7 @@ use std::fmt::Debug;
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-egg-trait-partialeq_bin --bin  rust-egg-trait-partialeq-main```
+/// ```cargo test -q -p rust-egg-trait-partialeq_bin --bin  rust-egg-trait-partialeq-main```
 ///
 /// ## What
 /// `TODO`
@@ -40,7 +40,9 @@ impl PartialEq for Book {
     }
 }
 
-fn main(){}
+fn main(){
+    unimplemented!();
+}
 
 #[cfg(test)]
 mod tests {

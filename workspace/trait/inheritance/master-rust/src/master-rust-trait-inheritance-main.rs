@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ````RUST_BACKTRACE=full cargo run -q -p master-rust-trait-inheritance_bin --bin master-rust-trait-inheritance-main```
+/// ```RUST_BACKTRACE=full cargo run -q -p master-rust-trait-inheritance_bin --bin master-rust-trait-inheritance-main```
 ///
 /// ```cargo doc  --package master-rust-trait-inheritance_bin  --message-format short --no-deps --open --color always```
 ///

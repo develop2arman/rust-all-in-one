@@ -55,7 +55,7 @@ impl PartialEq<Book> for BookFormat {
 // }
 
 
-fn main(){}
+fn main(){unimplemented!();}
 
 #[cfg(test)]
 mod tests {

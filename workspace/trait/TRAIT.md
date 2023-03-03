@@ -40,7 +40,8 @@
 
 ## Why we need traits?
 
-Example:
+> Example:
+
 ```rust,no_run,compile_fail,ignore
 impl i32 {
     fn double(&self) -> Self {

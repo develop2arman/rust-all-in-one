@@ -13,12 +13,12 @@
 ## Associated type traits
 
 
-
+> Associated types appear quite a bit in the Rust standard library. They are part of the arithmetic operations like + and *. They play a big role in the Iterator trait.
 > The advantage of them is that, in the implementation, they allow us to declare the assciated type once and use **Self::Out as the return type** or parameter type in any of the trait methods or functions.
 
-> **We have two kind of asscociate type for purpose: output, constraints associated type(Ty = T).**
+> **We have two kind of asscociate type for purpose: output, constraints associated type (Ty = T) .**
 
-```rust
+```rust,no_run,compile_fail
 trait Foo {
     type Out;
     fn get_value(self) -> Self::Out;
@@ -27,7 +27,7 @@ trait Foo {
 ```
 >
 
-```rust,no_run
+```rust,no_run,compile_fail
 pub trait Iterator {
     type Item;
 
@@ -44,7 +44,7 @@ pub trait Iterator<T> {
     fn next(&mut self) -> Option<T>;
 }
 ```
-> -A hypothetical definition of the Iterator trait using generics
+> A hypothetical definition of the Iterator trait using generics
 
 > With associated types, we don’t need to annotate types because we can’t implement a trait on a type multiple times.  At the First Exampele with the definition that uses associated types, we can only choose what the type of Item will be once, because there can only be one impl Iterator for Counter. 
 
@@ -52,13 +52,17 @@ pub trait Iterator<T> {
 
 > This removes the redundant specification of types, as is the case with generic traits. One of the finest examples of associated type traits is the Iterator trait.
 
-> `impl<T, U> GenericTrait<U> for u32 where U: HasAssocType<Ty = T> {}`
-The syntax for specifying a default type for a generic type is <PlaceholderType=ConcreteType> when declaring the generic type.
-> `T` ""constrains"" by being in an ""associated type(Ty = T)"" in a bound for type `U` which is itself a ""generic parameter(GenericTrait<U>)"" constraining the trait.
+```rust,no_run,compile_fail
+impl<T, U> GenericTrait<U> for u32 where U: HasAssocType<Ty = T> {}
+```
+
+> The syntax for specifying a default type for a generic type is <PlaceholderType=ConcreteType> when declaring the generic type.
+
+> `T` "constrains" by being in an "associated type(Ty = T)" in a bound for type `U` which is itself a "generic parameter(GenericTrait<U>)" constraining the trait.
   
 > For example:
 
-```rust
+```rust,no_run,compile_fail
 // we do not need to write trait Add due to is built-in trait
  pub trait Add<RHS = Self> {
      type Output;
@@ -93,13 +97,14 @@ impl Iterator for Counter {
 pub trait Iterator<T> {
     fn next(&mut self) -> Option<T>;
 }
-//A hypothetical definition of the Iterator trait using generics
+//A hypothetical definition of the Iterator trait using generics.
 ```
 
 
 ## Glossery
 
-  > `The associated type = placeholder type` :  is named Item'pub trait Iterator {type Item;}'another example is 'HasAssocType<Ty = T>'  
+> `The associated type = placeholder type` :  is named Item'pub trait Iterator {type Item;}'
+>  Another example is 'HasAssocType<Ty = T>'  
 
 ---
 
