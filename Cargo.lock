@@ -753,6 +753,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "educative-average_bin"
+version = "0.1.0"
+
+[[package]]
 name = "educative-built-in-trait_bin"
 version = "0.1.0"
 
@@ -783,6 +787,10 @@ name = "educative-for-flowcontrol_bin"
 version = "0.1.0"
 
 [[package]]
+name = "educative-hashmap_bin"
+version = "0.1.0"
+
+[[package]]
 name = "educative-macro-handling_bin"
 version = "0.1.0"
 dependencies = [
@@ -794,6 +802,10 @@ dependencies = [
 
 [[package]]
 name = "educative-semantic_bin"
+version = "0.1.0"
+
+[[package]]
+name = "educative-slice_bin"
 version = "0.1.0"
 
 [[package]]
@@ -813,6 +825,10 @@ version = "0.1.0"
 
 [[package]]
 name = "educative-types-generic_bin"
+version = "0.1.0"
+
+[[package]]
+name = "educative-vec-collection_bin"
 version = "0.1.0"
 
 [[package]]

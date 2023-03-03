@@ -156,16 +156,20 @@ members = [
     "workspace/flowcontrol/while/educative",
     "workspace/flowcontrol/pnfx-flowcontrol",
 
+
     "workspace/collection/btreemap/packtpub/packtpub_lib",
     "workspace/collection/btreemap/packtpub/packtpub_bin",
     "workspace/collection/iterator/rust-egg",
     "workspace/collection/iterator/pnkfx",
     "workspace/collection/iterator/rust-doc",
     "workspace/collection/iterator/master-rust",
+    "workspace/collection/vec/educative",
     "workspace/collection/vec/rust-in-action",
+    "workspace/collection/hashmap/educative",
     "workspace/collection/hashmap/master-rust",
     "workspace/collection/hashmap/rust-in-action",
     "workspace/collection/hashmap/code-like-pro",
+    "workspace/collection/slice/educative",
     "workspace/collection/slice/master-rust",
     "workspace/collection/slice/rust-egg",
     "workspace/collection/slice/rust-doc",
@@ -241,6 +245,7 @@ members = [
 
     "workspace/module/rust-egg",
 
+    "workspace/data/array/educative",
     "workspace/data/io/io/buffer/rust-in-action",
     "workspace/data/io/process/rust-egg",
     "workspace/data/io/io/pipe/packtpub",

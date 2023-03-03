@@ -7,6 +7,7 @@
 
 ---
 
+> A slice is a type which **lacks ownership**.
 > Slices are a **generic way** to get **a view into a collection** type. Most use cases are to get a read only access to a certain range of items in a collection type. A slice is basically **a pointer or a reference** that points to a continuous range in an existing collection type that's owned by some other variable.
 > 
 >  Under the hood, slices are #fat_pointer s to existing data somewhere in the stack or the heap. By fat pointer, it means that they also have information on *how many elements they are pointing to*, along with the pointer to the data.

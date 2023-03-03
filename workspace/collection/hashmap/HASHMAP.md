@@ -11,6 +11,7 @@
 
 ## Avoid Duplication
 
+> If we want to preserve the old values, especially if we want to update a key with no value, we can use entry() paired with or_insert()
 > Default setting which is using insert you will have any duplicated key or val. 
 `map.insert(key, "some value".into());`
 >but when we use entry(word).or_insert(0) that will make avoid duplicated k/v.

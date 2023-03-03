@@ -2,6 +2,7 @@
 
 ---
 
+> Therefore, vectors are not in scope when using the following feature: `#![no_std]`.
 > A "Vec" type is shorthand for vector. Vectors are arrays that will dynamically expand when needed.
 > The underscore asks the the compiler to infer the type of the vector's elements.
 
