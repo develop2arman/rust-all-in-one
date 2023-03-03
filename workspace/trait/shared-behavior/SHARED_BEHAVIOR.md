@@ -47,7 +47,7 @@ struct Foo<T: Display> {..}
 ```
 ### Trait bounds with impl trait syntax
 
-Instead of specifying T: Display, we directly use impl Display. This is the impl trait syntax. This provides advantages in cases where we want to return a complex or unrepresentable type, such as a closure from a function. Without this syntax, you had to return it by putting it behind a pointer using the Box smart pointer type, which involves heap allocation.
+Instead of specifying T: Display, we directly use impl Display. This is the impl trait syntax. This provides advantages in cases where we want to **return a complex or unrepresentable type, such as a closure** from a function. Without this syntax, you had to return it by putting it behind a pointer using the Box smart pointer type, which involves heap allocation.
 
 ```rust
 use std::fmt::Display;
@@ -60,7 +60,8 @@ fn main() {
     show_me("Trait bounds are awesome");
 }
 ```
-The impl trait syntax for trait bounds is mostly recommended to be used as return types from functions. Using it in parameter position means that we can't use the turbofish operator. it should only be used when we don't have a concrete type available to us, as is the case with closures.
+
+>The impl trait syntax for trait bounds is mostly recommended to be used as return types from functions. Using it in parameter position means that we can't use the turbofish operator. it should only be used when we don't have a concrete type available to us, as is the case with closures.
 
 ```rust
 use std::fmt::Display;

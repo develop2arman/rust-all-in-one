@@ -31,7 +31,7 @@
 
 ## Safety
 
-![safetay-control](assets/images/safety.png)
+![safetay-control](./assets/images/safety.png)
 
 > It guarantees that your program is memory-safe without imposing any runtime costs.
 

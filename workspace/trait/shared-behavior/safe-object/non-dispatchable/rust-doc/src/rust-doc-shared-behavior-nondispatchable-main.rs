@@ -25,9 +25,10 @@
 ///
 /// ## Example
 ///  `TODO`
-///
+/// This trait is object-safe, but these methods cannot be dispatched on a trait object as:
+/// ```let obj: Box<dyn NonDispatchable> = Box::new(S);```
 fn main() {
-// This trait is object-safe, but these methods cannot be dispatched on a trait object.
+
 trait NonDispatchable {
     // Non-methods cannot be dispatched.
     fn foo() where Self: Sized {}

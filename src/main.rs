@@ -58,7 +58,11 @@ fn greet_world() {
     }
 }
 
-/// We have two get_platform and selected by conditional_features
+/// We have two get_platform and selected by conditional_features.
+/// > Line 11 :(commented)
+/// /// error: unneeded unit return type ^^^^ help: remove the `-> ()`
+/// fn nothing()->(){
+/// }
 fn main() {
     greet_world();
     println!("This code is running on a {} family OS", get_platform());
@@ -70,13 +74,11 @@ fn main() {
     if cfg!(not(any(target_arch = "x86", target_arch = "x86_64"))) {
         println!("This code is running on a non-Intel CPU");
     }
-    let ()= nothing();
+    //let ()= nothing();
     finish();
 
 }
-fn nothing()->(){
 
-}
 fn finish() -> impl std::process::Termination {
     let machine_kind = if cfg!(unix) {
         println!("I was running on a unix machine!");
