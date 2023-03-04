@@ -40,12 +40,13 @@ struct Parser<'a> {
 }
 
 fn main() {
-    let mut document = Parser {
-        body: "Hello".to_string(),
-        subtext: ""
-    };
-    document.subtext = &document.body;
+    // let mut document = Parser {
+    //     body: "Hello".to_string(),
+    //     subtext: ""
+    // };
+    // document.subtext = &document.body;
 
-    let b = document;
-    println!("{:?}", b);
+    // let b = document;
+    // println!("{:?}", b);
+    unimplemented!();
 }

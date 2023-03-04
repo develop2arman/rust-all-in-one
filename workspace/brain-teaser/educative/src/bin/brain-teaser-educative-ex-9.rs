@@ -33,8 +33,9 @@
 /// //```rust,no_run,compile_fail /// ```
 ///
 fn main() {
-    let mut floats = vec![3.1, 1.2, 4.5, 0.3];
-    floats.sort();
+    //let mut floats = vec![3.1, 1.2, 4.5, 0.3];
+    //floats.sort();
 
-    println!("{:#?}", floats);
+   // println!("{:#?}", floats);
+   unimplemented!();
 }

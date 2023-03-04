@@ -33,12 +33,16 @@
 /// //```rust,no_run,compile_fail /// ```
 ///
 
-async fn hello() {
-    println!("Hello, World!")
-}
+// async fn hello() {
+//     println!("Hello, World!")
+// }
 
-#[tokio::main]
-pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    hello();
-    Ok(())
+// #[tokio::main]
+// pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
+//     hello();
+//     Ok(())
+// }
+
+fn main(){
+    unimplemented!();
 }
