@@ -46,7 +46,7 @@
 ///
 
 #[derive(Debug)]
- pub wrapper User{
+ pub struct User{
     name:String,
     age:i32,
     height:i32,

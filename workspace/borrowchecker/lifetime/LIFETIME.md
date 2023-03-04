@@ -131,6 +131,19 @@ might be useful when discussing open file descriptors.
 
 ### Let Vs Const
 
+#### Scope
+> const variables are declared in global and local scope unlike let variables that are declared only in the local scope.
+Mutability
+> const variable cannot be mutable unlike let which can be made mutable using mut keyword.
+#### Data Type
+> Unlike let variables, it is mandatory to define the data type of const variables.
+#### Set Value at Run-time
+> The value of const variable can only be set before running the program whereas the let variable can store the result at runtime.
+#### Shadowing
+> Unlike let variables, const variables cannot be shadowed.
+
+---
+
 > If variables defined with #let are immutable, then why does Rust include a #const keyword?
  
 The short answer is that data behind let can change. Rust allows types to have an apparently contradictory property of interior mutability.
@@ -140,7 +153,7 @@ Aliasing in compiler terminology refers to having multiple references **to the s
 > **Read-only references** (borrows) to variables declared with **let can alias the same data**.
 > 
 > **Read-write references** (mutable borrows) are guaranteed to **never alias data.**
-Some types such as std:sync::Arc and std:#rc::Rc present an immutable façade, yet change their internal state over time. In the case of those two types, these increment a #reference_count as references to those are made and decrement that count when those references expire.
+> Some types such as std:sync::Arc and std:#rc::Rc present an immutable façade, yet change their internal state over time. In the case of those two types, these increment a #reference_count as references to those are made and decrement that count when those references expire.
 
 
 ### Const Vs Static

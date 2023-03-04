@@ -1,3 +1,12 @@
+[[ARITHMETIC]]
+
+[[IO]]
+
+[[OPERATOR]]
+
+[[SERDE]]
+
+
 [[ria-data-csv-bin]]
 
 [[ria-regex]]
@@ -6,13 +15,6 @@
 
 [[mr-operator]]
 
-[[ARITHMETIC]]
-
-[[IO]]
-
-[[OPERATOR]]
-
-[[SERDE]]
 
 ---
 

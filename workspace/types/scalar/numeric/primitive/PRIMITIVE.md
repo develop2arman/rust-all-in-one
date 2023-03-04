@@ -3,12 +3,6 @@
 
 [[types-float]]
 
-[[types-array]]
-
-[[types-char]]
-
-[[types-tuple]]
-
 [[types-radix]]
 
 ---
@@ -20,4 +14,3 @@
 
 
 ![Sample Bits](assets/table_2-2.png)
-

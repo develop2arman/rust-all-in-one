@@ -1,16 +1,10 @@
-[[PRIMITIVE]]
+[[COMPOUND]]
 
-[[STRING]]
-
-[[NUM]]
+[[SCALAR]]
 
 [[GENERIC]]
 
 [[RETURN]]
-
-[[STRUCT]]
-
-[[ENUM]]
 
 [[RHS]]
 
@@ -18,7 +12,9 @@
 
 [[WRAPPER]]
 
-[[UNION]]
+[[VAR]]
+
+
 ---
 
 ## Unit Type

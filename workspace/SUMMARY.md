@@ -60,7 +60,7 @@
     - [FILE](data/io/file/FILE.md)            
   - [REGEX](data/regex/REGEX.md)    
   - [ARITHMETIC](data/arithmetic/ARITHMETIC.md)
-  - [SERDE](data/serde/SERDE.md)
+  - [SERDE](data/serde/SERDE.md)  
 
 ---    
 
@@ -128,19 +128,29 @@
   - [BUILT_IN](trait/built-in/BUILT_IN.md) 
   - [TRAIT BOUND](trait/shared-behavior/trait-bound/TRAIT_BOUND.md)
     
-  
-
 ---
 
 - [TYPES](types/TYPES.md)
-  - [NUM](types/num/NUM.md)    
-  - [GENERIC](types/generic/GENERIC.md)  
-  - [PRIMITIVE](types/primitive/PRIMITIVE.md)
-  - [RETURN](types/return/RETURN.md)        
-  - [STRING](types/string/STRING.md)
+  - [GENERIC](types/generic/GENERIC.md)    
+  - [RETURN](types/return/RETURN.md)          
   - [STATIC](types/static/STATIC.md)
   - [WRAPPER](types/wrapper/WRAPPER.md)
-  - [UNION](types/union/UNION.md)
+  - [RHS](types/rhs/RHS.md)         
+  - [VAR](types/var/VAR.md) 
+  - [SCALAR](types/scalar)    
+    - [NUMERIC](types/scalar/numeric/NUMERIC.md)        
+      - [PRIMITIVE](types/scalar/numeric/primitive/PRIMITIVE.md)
+      - [NUM](types/scalar/non_numeric/num/NUM.md)        
+    - [NON_NUMERIC](types/scalar/non_numeric/NON_NUMERIC.md)        
+      - [STRING](types/scalar/non_numeric/string/STRING.md)
+  - [COMPOUND](types/compound/COMPOUND.md)
+    - [ARRAY](types/compound/array/ARRAY.md)
+    - [TUPLE](types/compound/tuple/TUPLE.md)
+    - [UNION](types/compound/union/UNION.md)
+    - [STRUCT](types/compound/struct/STRUCT.md)
+    - [ENUM](types/compound/enum/ENUM.md)
+    - [OPTION](types/compound/option/OPTION.md)
+
 ---
 
 - [THREAD](thread/THREAD.md)
