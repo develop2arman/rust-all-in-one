@@ -15,6 +15,9 @@
 /// ```cargo check --workspace --message-format=short --all-targets```
 ///
 /// ```cargo test --doc  --workspace```
+///
+/// ```cargo clippy  --workspace --message-format=short --all-targets```
+///
 /// ## What
 /// `TODO`
 ///

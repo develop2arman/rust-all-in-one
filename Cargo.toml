@@ -285,5 +285,7 @@ members = [
     "workspace/oop/design_patterns/behavioral/process/rust-egg",
 
     "workspace/idioms/factorial/educative",
+    "workspace/brain-teaser/educative",
+
 
 ]

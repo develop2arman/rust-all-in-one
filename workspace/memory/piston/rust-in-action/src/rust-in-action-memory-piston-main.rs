@@ -162,12 +162,13 @@ impl World {
         .enumerate();                              // <23>
 
       // For n iterations, removes the first particle that’s invisible. If there are no invisible particles, then removes the oldest.
-      for (i, particle) in particle_iter {         // <24>
-        if particle.color[3] < 0.02 {              // <24>
-          to_delete = Some(i);                     // <24>
-        }                                          // <24>
-        break;                                     // <24>
-      }                                            // <24>
+      // [TODO!] clippy error this loop never actually loops
+      // for (i, particle) in particle_iter {         // <24>
+      //   if particle.color[3] < 0.02 {              // <24>
+      //     to_delete = Some(i);                     // <24>
+      //   }                                          // <24>
+      //   break;                                     // <24>
+      // }                                            // <24>
                                                    // <24>
       if let Some(i) = to_delete {                 // <24>
         self.particles.remove(i);                  // <24>
