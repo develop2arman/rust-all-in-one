@@ -1,10 +1,10 @@
 #![allow(dead_code, unused_variables)]
 
-/// rust-in-action-int-bin-ex-5
+/// Main
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-types-int_bin --bin rust-in-action-int-bin-ex-5```
+/// ```cargo run -q -p educative-factorial_bin --bin educative-factorial-main```
 ///
 /// ## What
 /// `loop int`
@@ -38,16 +38,16 @@
 ///```
 ///
 fn factorial(x: u32) -> u32 {
-    let mut factorial:u32=1;
-    let mut i :u32;
-    for i in 1..=x{
-        if &i <=  &x {
+    let mut factorial: u32 = 1;
+    let mut i: u32;
+    for i in 1..=x {
+        if &i <= &x {
             factorial *= i;
         }
     }
     factorial
 }
 fn main() {
-    let n = 10;
+    let n = 4;
     println!("{}", factorial(n as u32));
 }
