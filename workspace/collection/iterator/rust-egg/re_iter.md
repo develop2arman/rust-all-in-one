@@ -1,2 +1,2 @@
 
-> `tags` [[Counter]] [[skip]] [[filter]] [[zip]]
+> `tags` [[Counter]] [[skip]] [[filter]] [[zip]] [[product]] [[factorial]]

@@ -1,13 +1,13 @@
 #![allow(dead_code, unused_variables)]
 
-/// rust-in-action-int-bin-ex-3
+/// rust-in-action-int-bin-ex-4
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-types-int_bin --bin rust-in-action-int-bin-ex-3```
+/// ```cargo run -q -p rust-in-action-types-int_bin --bin rust-in-action-int-bin-ex-4```
 ///
 /// ## What
-/// `signed int vs unsigned int`
+/// `loop int`
 ///
 /// ## How
 /// `TODO`
@@ -23,9 +23,13 @@
 /// //```rust,compile_fail,ignore
 
 fn main() {
-    let a: u16 = 50115;
-    let b: i16 = -15421;
-
-    println!("a: {:016b} {}", a, a); // <1>
-    println!("b: {:016b} {}", b, b); // <1>
+    let mut i: u16 = 0;
+    print!("{:}..", i);
+    loop {
+        i += 1000;
+        print!("{}..", i);
+        if i % 10000 == 0 {
+            print! {"Mod Equal zero\n"}
+        }
+    }
 }

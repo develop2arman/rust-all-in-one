@@ -143,6 +143,7 @@
       - [NUM](types/scalar/non_numeric/num/NUM.md)        
     - [NON_NUMERIC](types/scalar/non_numeric/NON_NUMERIC.md)        
       - [STRING](types/scalar/non_numeric/string/STRING.md)
+      - [CHAR](types/scalar/non_numeric/char/CHAR.md)
   - [COMPOUND](types/compound/COMPOUND.md)
     - [ARRAY](types/compound/array/ARRAY.md)
     - [TUPLE](types/compound/tuple/TUPLE.md)
@@ -186,3 +187,7 @@
   - [PISTON](memory/piston/PISTON.md)
   
 ---
+
+- [IDIOMS](idioms/IDIOMS.md)
+- [GRAMMER](grammer/GRAMMER.md)
+- [BRAIN_TREASER](brain-teaser/BRAIN_TREASER.md)

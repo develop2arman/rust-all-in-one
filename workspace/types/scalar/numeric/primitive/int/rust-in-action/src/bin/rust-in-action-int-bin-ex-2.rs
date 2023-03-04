@@ -1,13 +1,13 @@
 #![allow(dead_code, unused_variables)]
 
-/// rust-in-action-int-bin-ex-2
+/// rust-in-action-int-bin-ex-3
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-types-int_bin --bin rust-in-action-int-bin-ex-2```
+/// ```cargo run -q -p rust-in-action-types-int_bin --bin rust-in-action-int-bin-ex-3```
 ///
 /// ## What
-/// `TODO`
+/// `signed int vs unsigned int`
 ///
 /// ## How
 /// `TODO`
@@ -20,23 +20,12 @@
 /// `unimplemented`
 ///
 /// ## Example
-/// ```rust,compile_fail,ignore
-/// fn main() {
-/// let (a, b) = (200, 200);
-/// let c: u8 = a + b; // ^^^^^ attempt to compute `200_u8 + 200_u8`, which would overflow
-/// println!("200 + 200 = {}", c);
-/// }
-/// ```
-
-fn factorial(n: i32) -> i32 {
-    match n {
-        0 => 0,
-        1 => 1,
-        _ => n + factorial(n - 1),
-    }
-}
+/// //```rust,compile_fail,ignore
 
 fn main() {
-    let n = 10;
-    println!("{}", factorial(n));
+    let a: u16 = 50115;
+    let b: i16 = -15421;
+
+    println!("a: {:016b} {}", a, a); // <1>
+    println!("b: {:016b} {}", b, b); // <1>
 }
