@@ -31,8 +31,8 @@
 
 ///
 /// ## Example
-/// ```rust,no_run,compile_fail
-/// ```
+/// //```rust,no_run,compile_fail /// ```
+/// 
 //const HELLO_WORLD : &'static str = "Halló heimur";// result 13
 const HELLO_WORLD : &'static str = "Привет мир";//result 19
 //const HELLO_WORLD : &'static str = "❤";//3
