@@ -83,6 +83,7 @@ members = [
     "workspace/types/compound/tuple/rust-doc",
     "workspace/types/compound/tuple/code-like-pro",
     "workspace/types/compound/option/rust-egg",
+    "workspace/types/compound/option/other",
     "workspace/types/compound/union/master-rust",
     "workspace/types/compound/enum/educative",
     "workspace/types/compound/enum/packtpub",
@@ -142,6 +143,7 @@ members = [
     "workspace/trait/shared-behavior/safe-object/non-dispatchable/rust-doc",
     "workspace/trait/shared-behavior/safe-object/dispatchable/master-rust",
     "workspace/trait/shared-behavior/safe-object/dispatchable/rust-doc",
+    "workspace/trait/shared-behavior/safe-object/dispatchable/other",
     "workspace/trait/shared-behavior/non-objectsafe/rust-doc",
 
 
