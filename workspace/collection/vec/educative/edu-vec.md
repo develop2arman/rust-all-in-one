@@ -4,4 +4,4 @@
 
 ---
 
-> `tags` [[saturating_sub]] [[lines]] [[with_capacity]] [[enumerate]] [[next]] [[as_mut]] [[split]][[filter]] [[collect]] [[resize]] [[option]] [[type_system]] [[position]] [[vector]]
+> `tags` [[saturating_sub]] [[lines]] [[with_capacity]] [[enumerate]] [[next]] [[as_mut]] [[split]] [[filter]] [[collect]] [[resize]] [[option]] [[type_system]] [[position]] [[vector]] [[shrink_to_fit]] [[reverse]]

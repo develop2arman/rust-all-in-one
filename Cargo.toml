@@ -83,7 +83,6 @@ members = [
     "workspace/types/compound/tuple/rust-doc",
     "workspace/types/compound/tuple/code-like-pro",
     "workspace/types/compound/option/rust-egg",
-    "workspace/types/compound/option/other",
     "workspace/types/compound/union/master-rust",
     "workspace/types/compound/enum/educative",
     "workspace/types/compound/enum/packtpub",
@@ -116,6 +115,7 @@ members = [
     "workspace/types/scalar/numeric/primitive/radix/rust-in-action",
     "workspace/types/scalar/numeric/num/complex/rust-in-action",
     "workspace/types/scalar/non_numeric/char/rust-egg",
+    "workspace/types/scalar/non_numeric/string/other",
     "workspace/types/scalar/non_numeric/string/rust-doc",
     "workspace/types/scalar/non_numeric/string/rust-egg",
     "workspace/types/scalar/non_numeric/string/packtpub",
@@ -139,6 +139,7 @@ members = [
     "workspace/trait/shared-behavior/builtin-trait/master-rust",
     "workspace/trait/built-in/display/rust-in-action",
     "workspace/trait/built-in/partialeq/rust-egg",
+    "workspace/trait/built-in/partialeq/other",
     "workspace/trait/built-in/partialeq/educative",
     "workspace/trait/shared-behavior/safe-object/non-dispatchable/rust-doc",
     "workspace/trait/shared-behavior/safe-object/dispatchable/master-rust",
@@ -287,6 +288,7 @@ members = [
     "workspace/oop/design_patterns/behavioral/process/rust-egg",
 
     "workspace/idioms/factorial/educative",
+    "workspace/idioms/math/other",
     "workspace/brain-teaser/educative",
 
 

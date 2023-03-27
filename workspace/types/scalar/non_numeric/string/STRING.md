@@ -10,6 +10,8 @@
 
 [[clap-types-string]]
 
+[[other-types-string]]
+
 ---
 
 

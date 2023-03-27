@@ -2016,12 +2016,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "other-math-max_bin"
+version = "0.1.0"
+
+[[package]]
 name = "other-option_bin"
 version = "0.1.0"
 
 [[package]]
 name = "other-trait-dispatchable_bin"
 version = "0.1.0"
+
+[[package]]
+name = "other-types-string_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
 
 [[package]]
 name = "owned_ttf_parser"
