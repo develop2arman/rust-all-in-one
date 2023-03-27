@@ -1,9 +1,10 @@
 ## Rust-All-In-One
 ### Included All Toturials(Important Sections)
 
-[![arman' current version badge](https://img.shields.io/crates/v/weldmock.svg)](https://crates.io/crates/armanriazi)
-[![Build Status](https://travis-ci.org/serayuzgur/weld.svg?branch=master)](https://travis-ci.org/develop2arman/rust-all-in-on)
-[![codecov](https://codecov.io/gh/serayuzgur/weld/branch/master/graph/badge.svg)](https://codecov.io/gh/develop2arman/rust-all-in-one)
+
+[![codecov](https://codecov.io/gh/codecov/uploader/branch/master/graph/badge.svg?token=7ed4c74c-b784-464a-a9fe-fbea6dcb4cb8)](https://codecov.io/gh/develop2arman/rust-all-in-one)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/codecov/uploader.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/develop2arman/rust-all-in-one/alerts/)
+
 
 ## How to Contribute
 
