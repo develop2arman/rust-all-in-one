@@ -24,6 +24,7 @@
 - [CPU](cpu/CPU)
 
 ---
+
 - [POINTERS](pointers/POINTERS.md)
 - [SMARTPOINTER](pointers/smartpointer/SMARTPOINTER.md)
   - [RC](pointers/smartpointer/compiletime/shared_owner/rc/RC.md)  
@@ -31,9 +32,6 @@
   - [REF_CELL](pointers/smartpointer/runtime/shared_mutability/ref-cell/REF_CELL.md) 
   - [OPS](pointers/smartpointer/ops/OPS.md) 
   - [COW](pointers/smartpointer/compiletime/cow/COW.md) 
-
-
-
 
 ---
 
@@ -65,12 +63,12 @@
 ---    
 
 - [Duplication](duplication/Duplication.md)
-  - [COPY-CLONE](duplication/copy-clone/COPY-CLONE.md)    
+  - [COPY_CLONE](duplication/copy-clone/COPY-CLONE.md)    
 - [RC](pointers/smartpointer/compiletime/shared_owner/rc/RC.md)  
 
 ---
 
-- [ERROR-HANDLING](errorhandling/ERROR_HANDLING.md)  
+- [ERROR_HANDLING](errorhandling/ERROR_HANDLING.md)  
   - [ERROR_NONRECOVERABLE](errorhandling/non-recoverable/ERROR_NONRECOVERABLE.md)  
 
 ---
@@ -137,13 +135,13 @@
   - [WRAPPER](types/wrapper/WRAPPER.md)
   - [RHS](types/rhs/RHS.md)         
   - [VAR](types/var/VAR.md) 
-  - [SCALAR](types/scalar)    
-    - [NUMERIC](types/scalar/numeric/NUMERIC.md)        
-      - [PRIMITIVE](types/scalar/numeric/primitive/PRIMITIVE.md)
-      - [NUM](types/scalar/non_numeric/num/NUM.md)        
-    - [NON_NUMERIC](types/scalar/non_numeric/NON_NUMERIC.md)        
-      - [STRING](types/scalar/non_numeric/string/STRING.md)
-      - [CHAR](types/scalar/non_numeric/char/CHAR.md)
+  - [SCALAR](types/sscalar)    
+    - [NUMERIC](types/sscalar/numeric/NUMERIC.md)        
+      - [PRIMITIVE](types/sscalar/numeric/primitive/PRIMITIVE.md)
+      - [NUM](types/sscalar/non_numeric/num/NUM.md)        
+    - [NON_NUMERIC](types/sscalar/non_numeric/NON_NUMERIC.md)        
+      - [STRING](types/sscalar/non_numeric/string/STRING.md)
+      - [CHAR](types/sscalar/non_numeric/char/CHAR.md)
   - [COMPOUND](types/compound/COMPOUND.md)
     - [ARRAY](types/compound/array/ARRAY.md)
     - [TUPLE](types/compound/tuple/TUPLE.md)
@@ -157,9 +155,9 @@
 - [THREAD](thread/THREAD.md)
   - [RACE](thread/race/RACE.md)    
   - [RAYON](thread/rayon/RAYON.md)    
-  - [Sync-Atomic-Mutex](thread/sync/ATOMIC.md)    
+  - [Sync_Atomic_Mutex](thread/sync/ATOMIC.md)    
   - [MPSC](thread/mpsc/MPSC.md)    
-  - [THREAD-TIME](thread/time/THREAD-TIME.md)  
+  - [THREAD_TIME](thread/time/THREAD-TIME.md)  
   
 ---
 
@@ -168,7 +166,7 @@
 ---
 
 - [UNSAFE](unsafe/UNSAFE.md)
-  - [EXTERN-FFI](unsafe/extern-ffi/EXTERN-FFI.md)
+  - [EXTERN_FFI](unsafe/extern-ffi/EXTERN-FFI.md)
   - [SAFE_ABSTRACTION](unsafe/safe-abstraction/SAFE_ABSTRACTION.md)
   - [SAFE_STATIC_MUT](unsafe/safe-static-mut/SAFE_STATIC_MUT.md)
 
