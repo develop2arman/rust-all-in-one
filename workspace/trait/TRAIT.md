@@ -16,7 +16,7 @@
 
 > Traits are similar to a feature often called interfaces in other languages, although with some differences.
 
-> What is a trait? A trait is a language feature that is analogous to an interface, protocol, or contract. If you have a background in object-oriented programming, consider a trait to be an abstract base class. If you have a background in functional programming, Rust’s traits are close to Haskell’s type classes
+> What is a trait? A trait is a language feature that is analogous to an interface, protocol, or contract. If you have a background in object-oriented programming, consider a trait to be an abstract base class. If you have a background in functional programming, Rust’s traits are close to Haskell’s type classes.
 
 > these also support a form of inheritance that’s common in most object oriented languages. For now, though, the thing to remember is that traits represent common behavior (Or reusable codes like println!)that types opt into via the syntax impl Trait for Type.
 
@@ -64,11 +64,11 @@ fn main() {
 }
 ```
 > Result:
-```rust,no_run,compile_fail,ignore
+```no_run,compile_fail,ignore
 error[E0390]: only a single inherent implementation marked with `#[lang = "i32"]` is allowed for the `i32` primitive
 ```
 
-NOTE: You may be wondering, why this limitation? We won’t get into these kinds of “why” questions here, but at the time of writing, there is [some material online](https://github.com/Ixrec/rust-orphan-rules) you can read regarding this if you’re curious.
+NOTE: You may be wondering, why this limitation? We won’t get into these kinds of “why” questions here, but at the time of writing, there is [some material online](https://github.com/Ixrec/rust-orphan-rules) you can read regarding this if you’re curious. #orphan_rules
 
 > Answer:
 
@@ -233,6 +233,7 @@ impl<'a> HasAssocType for Struct {
     type Ty = &'a Struct;
 }
 ```
+
 
 ## Glossery
 

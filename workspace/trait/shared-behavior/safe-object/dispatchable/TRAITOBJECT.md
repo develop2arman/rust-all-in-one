@@ -27,6 +27,31 @@ pub struct Screen {
     pub components: Vec<Box<dyn Draw>>,
 }
 ```
+
+> Examples of object safe methods:
+
+```rust
+fn main() {
+use std::rc::Rc;
+use std::sync::Arc;
+use std::pin::Pin;
+
+trait TraitMethods {
+    fn by_ref(self: &Self) {}
+    fn by_ref_mut(self: &mut Self) {}
+    fn by_box(self: Box<Self>) {}
+    fn by_rc(self: Rc<Self>) {}
+    fn by_arc(self: Arc<Self>) {}
+    fn by_pin(self: Pin<&Self>) {}
+    fn with_lifetime<'a>(self: &'a Self) {}
+    fn nested_pin(self: Pin<Arc<Self>>) {}
+}
+struct S;
+impl TraitMethods for S {}
+let t: Box<dyn TraitMethods> = Box::new(S);
+//t.callable since object safe dispatchable
+}
+```
 ## Glossery
 
 > `DSTs`: unsized types - str(but not &str-So although a &T is a single value that stores the memory address of where the T is located, a &str is two values: the address of the str and its length. As such, we can know the size of a &str value at compile time),
