@@ -10,12 +10,12 @@ edition = "2021"   # the default edition for code blocks
 
 [preprocessor.index]
 
-[preprocessor.links]
+#[preprocessor.links]
 
 [build]
 # build-dir = "book"
 create-missing = true             # whether or not to create missing pages
-use-default-preprocessors = true  # use the default preprocessors
+#use-default-preprocessors = true  # use the default preprocessors
 # extra-watch-dirs = ["./workspace"]
 
 [output.html]
