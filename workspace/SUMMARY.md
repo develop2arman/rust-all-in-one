@@ -138,7 +138,7 @@
   - [SCALAR](types/mscal/M_SCAL.md)    
     - [NUMERIC](types/mscal/numeric/NUMERIC.md)        
       - [PRIMITIVE](types/mscal/numeric/primitive/PRIMITIVE.md)
-      - [NUM](types/mscal/non_numeric/num/NUM.md)        
+      - [NUM](types/mscal/numeric/num/NUM.md)        
     - [NON_NUMERIC](types/mscal/non_numeric/NON_NUMERIC.md)        
       - [STRING](types/mscal/non_numeric/string/STRING.md)
       - [CHAR](types/mscal/non_numeric/char/CHAR.md)
