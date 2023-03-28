@@ -1,17 +1,22 @@
-coverage:
-  status:
-    project:
-      default:
-        informational: true
-    patch:
-      default:
-        informational: true
-#comment:                  # this is a top-level key
-#  layout: "reach, diff, flags, files"
-#  behavior: default
-  #require_changes: false  # if true: only post the comment if coverage changes
-  #require_base: no        # [yes :: must have a base report to post]
-  #require_head: yes       # [yes :: must have a head report to post]
+name: API workflow
 
-# When modifying this file, please validate using
-# curl -X POST --data-binary @codecov.yml https://codecov.io/validate
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Test python API
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install requirements
+      run: pip install -r requirements.txt
+    - name: Run tests and collect coverage
+      run: pytest --cov .
+    - name: Upload coverage reports to Codecov
+      run: |
+        # Replace `linux` below with the appropriate OS
+        # Options are `alpine`, `linux`, `macos`, `windows`
+        curl -Os https://uploader.codecov.io/latest/linux/codecov
+        chmod +x codecov
+        ./codecov -t ${{secrets.CODECOV_TOKEN}}
+
