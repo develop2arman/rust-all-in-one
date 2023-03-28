@@ -8,8 +8,9 @@ fn return2() {
     }
 }
 
+/*
 fn break1() {
-    loop {
+    loop { //error: this loop never actually loops
         if (break { print!("1") }) {
         }
     }
@@ -21,12 +22,12 @@ fn break2() {
         }
     }
 }
-
+*/
 fn main() {
     return1();
     return2();
-    break1();
-    break2();
+  //  break1();
+    //break2();
 }
 /*
 121

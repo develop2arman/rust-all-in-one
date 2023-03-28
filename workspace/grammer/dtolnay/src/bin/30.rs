@@ -11,10 +11,11 @@ fn p<X>(x: X) {
 }
 
 fn main() {
+/* 
     let a = &A;
     p(a);
-    p(a.clone());
-
+    p(a.clone()); // error: using `clone` on a double-reference; this will copy the reference of type `&A` instead of cloning the inner type
+*/
     let b = &();
     p(b);
     p(b.clone());

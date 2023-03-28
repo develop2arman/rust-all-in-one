@@ -33,13 +33,16 @@ trait Read {
 
 impl Read for File {
     fn read(self: &File, save_to: &mut Vec<u8>) -> Result<usize, String> {
-        Ok(0)
+        Ok(100)
     }
 }
 
 fn main() {
+    /*
     let f = File{};
     let mut buffer = vec!();
-    let n_bytes = f.read(&mut buffer).unwrap();
+    let n_bytes = f.read(&mut buffer).unwrap(); //error: reading zero byte data to `Vec`
     println!("{} byte(s) read from {:?}", n_bytes, f);
+    */
+    unimplemented!();
 }

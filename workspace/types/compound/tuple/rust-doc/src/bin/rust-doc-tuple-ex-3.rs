@@ -32,7 +32,7 @@ fn main() {
     println!("{}", x);
 
     // rust can also be explicit about the type
-    let x: f64 = 3.14159;
+    let x: f64 =  std::f64::consts::PI;
     println!("{}", x);
 
     // rust can also declare and initialize later, but this is rarely done

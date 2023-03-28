@@ -25,7 +25,7 @@
 /// //``rust,no_run,compile_fail,ignore
 
 trait Circular {
-    const PI: f64 = 3.14;
+    //const PI: f64 = 3.14;
     fn area(&self) -> f64;
 }
 
@@ -35,7 +35,7 @@ struct Circle {
 
 impl Circular for Circle {
     fn area(&self) -> f64 {
-        Circle::PI * self.rad * self.rad
+         std::f64::consts::PI * self.rad * self.rad
     }
 }
 
