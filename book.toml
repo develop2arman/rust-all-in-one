@@ -51,6 +51,5 @@ copy-js = true           # includes the JavaScript for the code editor
 line-numbers = true     # displays line numbers for editable code
 runnable = true          # displays a run button for rust code
 
-[output.html.playground]
-runnable = true
+
 
