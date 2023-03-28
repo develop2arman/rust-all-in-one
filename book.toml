@@ -32,7 +32,7 @@ edit-url-template = "https://github.com/arman2develop/rust-all-in-one/edit/main/
 git-repository-icon = "fa-github"
 site-url = "/rust-all-in-one/"
 # cname = "main.rs"
-input-404 = "../404.md"
+input-404 = "404.md"
 
 [output.html.print]
 enable = true    # include support for printable output
