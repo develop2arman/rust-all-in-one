@@ -34,7 +34,7 @@ git-repository-icon = "fa-github"
 site-url = "/rust-all-in-one/"
 # cname = "main.rs"
 # input-404 = "not-found.md"
-site-url = "/rust-all-in-one/"
+
 
 [output.html.print]
 enable = true    # include support for printable output
@@ -51,6 +51,5 @@ copy-js = true           # includes the JavaScript for the code editor
 line-numbers = true     # displays line numbers for editable code
 runnable = true          # displays a run button for rust code
 
-[output.html.playground]
-runnable = true
+
 
