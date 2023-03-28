@@ -9,14 +9,13 @@ title = "Rust-All-In-One"
 edition = "2021"   # the default edition for code blocks
 
 #[preprocessor.index]
-
 #[preprocessor.links]
 
 [build]
-# build-dir = "book"
+build-dir = "book"
 create-missing = true             # whether or not to create missing pages
 #use-default-preprocessors = true  # use the default preprocessors
-# extra-watch-dirs = ["./workspace"]
+extra-watch-dirs = ["./workspace"]
 
 [output.html]
 # theme = "my-theme"
@@ -33,7 +32,7 @@ edit-url-template = "https://github.com/arman2develop/rust-all-in-one/edit/main/
 git-repository-icon = "fa-github"
 site-url = "/rust-all-in-one/"
 # cname = "main.rs"
-input-404 = "404.md"
+input-404 = "./workspace/404.md"
 
 [output.html.print]
 enable = true    # include support for printable output
@@ -51,5 +50,5 @@ line-numbers = true     # displays line numbers for editable code
 runnable = true          # displays a run button for rust code
 
 
-[output.linkcheck]
-optional = true
+#[output.linkcheck]
+#optional = true
