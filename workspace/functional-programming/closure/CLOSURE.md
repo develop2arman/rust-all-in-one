@@ -14,10 +14,13 @@ what sets them apart from functions is that they are also **aware of the environ
 
 ## Closure
 
-> Closure to code blocks that are encapsulated in Rust.
+> Closure to code blocks that are **encapsulated** in Rust.
 
 > Closures are also known as anonymous functions and lambda functions. 
-> (|...|) followed by curly brackets ({...}). The pair of vertical bars lets you define arguments. Lambda functions in > Rust can read variables from within their scope. These are closures.
+
+> (|...|) followed by curly brackets ({...}). The pair of vertical bars lets you define arguments. Lambda functions in 
+
+> Rust can read variables from within their scope. These are closures.
 
 > Unlike regular functions, lambda functions cannot be defined in global scope(out of main).
 
@@ -31,6 +34,24 @@ Closures that take ownership of the data they read from their environment get im
 
 ### FnMut
 When the compiler figures out that a closure **mutates a value referenced from the environment**, the closure implements the FnMut trait.
+
+## Returning Closures
+you’re not allowed to use the function pointer fn as a return type, for example.
+The following code tries to return a closure directly, but it won’t compile:
+```rust,compile_fail,no_run
+fn returns_closure() -> dyn Fn(i32) -> i32 {//error doesn't have a size known at compile-time
+    |x| x + 1
+}
+```
+
+The error references the Sized trait again! Rust doesn’t know how much space it will need to store the closure. We saw a solution to this problem earlier. We can use a trait object:
+
+```rust
+fn returns_closure() -> Box<dyn Fn(i32) -> i32> {
+    Box::new(|x| x + 1)
+}
+```
+
 
 ## Glossery
 
