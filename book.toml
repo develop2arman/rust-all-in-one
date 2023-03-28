@@ -13,7 +13,7 @@ edition = "2021"   # the default edition for code blocks
 [preprocessor.links]
 
 [build]
-# build-dir = "book" 
+# build-dir = "book"
 create-missing = true             # whether or not to create missing pages
 use-default-preprocessors = true  # use the default preprocessors
 # extra-watch-dirs = ["./workspace"]
@@ -52,4 +52,4 @@ line-numbers = true     # displays line numbers for editable code
 runnable = true          # displays a run button for rust code
 
 
-
+[output.linkcheck]
