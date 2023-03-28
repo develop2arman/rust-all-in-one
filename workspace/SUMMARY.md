@@ -21,7 +21,7 @@
 
 ---
 
-- [CPU](cpu/CPU)
+- [CPU](cpu/CPU.md)
 
 ---
 
