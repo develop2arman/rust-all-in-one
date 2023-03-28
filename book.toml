@@ -53,3 +53,4 @@ runnable = true          # displays a run button for rust code
 
 
 [output.linkcheck]
+optional = true
