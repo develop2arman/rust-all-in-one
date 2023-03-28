@@ -2916,6 +2916,10 @@ name = "rust-doc-smartpointer-box_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-smartpointer-ops_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-doc-smartpointer-ref-cell_bin"
 version = "0.1.0"
 

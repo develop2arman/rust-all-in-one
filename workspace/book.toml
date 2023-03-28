@@ -1,0 +1,5 @@
+[book]
+authors = ["Arman Riazi"]
+language = "en"
+multilingual = false
+title = "Rust-All-In-One"
