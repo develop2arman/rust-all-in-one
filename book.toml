@@ -30,7 +30,7 @@ mathjax-support = true
 git-repository-url = "https://github.com/arman2develop/rust-all-in-one/tree/main/workspace"
 edit-url-template = "https://github.com/arman2develop/rust-all-in-one/edit/main/workspace/{path}"
 git-repository-icon = "fa-github"
-site-url = "/rust-all-in-one/"
+site-url = "/arman-rust-all-in-one/"
 # cname = "main.rs"
 input-404 = "404.md"
 

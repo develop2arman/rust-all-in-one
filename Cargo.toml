@@ -288,6 +288,7 @@ members = [
     "workspace/oop/design_patterns/structural/lpxxn",
     "workspace/oop/design_patterns/behavioral/process/rust-egg",
 
+    "workspace/idioms/fizz_buzz",
     "workspace/idioms/factorial/educative",
     "workspace/idioms/math/other",
     "workspace/brain-teaser/educative",
