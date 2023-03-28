@@ -6,7 +6,7 @@
 
 > One of the use cases for trait objects is that they allow you to operate on a collection that can have multiple types, but with an extra pointer indirection at runtime.
 
-> A dyn Trait is an unsized type and can only be created as a reference.
+> A dyn Trait is an #unsized_type and can only be created as a reference.
 
 ```rust,no_run,compile_fail
 let shapes: Vec<&dyn Area> = vec![&Square(3f32), &Rectangle(4f32, 2f32)];
@@ -54,7 +54,7 @@ let t: Box<dyn TraitMethods> = Box::new(S);
 ```
 ## Glossery
 
-> `DSTs`: unsized types - str(but not &str-So although a &T is a single value that stores the memory address of where the T is located, a &str is two values: the address of the str and its length. As such, we can know the size of a &str value at compile time),
+
 > *Box<>, RC<>, Every trait is a dynamically sized type.Rust has a particular trait called the Sized trait to determine whether or not a type’s size is known at compile time. This trait is automatically implemented for everything whose size is known at compile time*. In addition, Rust implicitly adds a bound on Sized to every generic function. 
 
 ---
