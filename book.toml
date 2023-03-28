@@ -8,9 +8,9 @@ title = "Rust-All-In-One"
 [rust]
 edition = "2021"   # the default edition for code blocks
 
-[preprocessor.index]
+#[preprocessor.index]
 
-[preprocessor.links]
+#[preprocessor.links]
 
 [build]
 # build-dir = "book"
