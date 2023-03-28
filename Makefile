@@ -27,7 +27,7 @@ lint : check-fmt check-clippy
 .PHONY : install-mdbook
 check-fmt :
 	cargo install mdbook
-	cargo install mdbook-linkcheck
+
 
 .PHONY : test
 test :
