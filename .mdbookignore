@@ -6,3 +6,9 @@ Cargo.toml
 .lock
 .json
 *.rs
+target/
+debug/
+rls/
+*.o
+.vscode/
+Cargo.lock

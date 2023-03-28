@@ -8,7 +8,6 @@ exclude = '''
       __pycache__
     | \bbuild\b
     | \.git
-    | \.github
     | \.mypy_cache
     | \.pytest_cache
     | \.vscode
