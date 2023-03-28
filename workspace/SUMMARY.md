@@ -135,7 +135,7 @@
   - [WRAPPER](types/wrapper/WRAPPER.md)
   - [RHS](types/rhs/RHS.md)         
   - [VAR](types/var/VAR.md) 
-  - [SCALAR](types/sscalar)    
+  - [SCALAR](types/SSCALAR.md)    
     - [NUMERIC](types/sscalar/numeric/NUMERIC.md)        
       - [PRIMITIVE](types/sscalar/numeric/primitive/PRIMITIVE.md)
       - [NUM](types/sscalar/non_numeric/num/NUM.md)        
