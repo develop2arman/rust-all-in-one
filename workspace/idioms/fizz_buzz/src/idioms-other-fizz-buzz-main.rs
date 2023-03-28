@@ -14,33 +14,33 @@
 ///
 /// # Arguments
 ///
-/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+/// * `n=15` - This is the i32 to Fizz or Buzz or FizzBuzz the fizz_buzz
 ///
 /// # Return
-/// `unimplemented`
+/// `["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz", "Buzz"]`
 ///
 /// ## Example
 ///```rust
 
-// struct Solution;
+struct Solution;
 
-// impl Solution {
-//     pub fn fizz_buzz(n: i32) -> Vec<String> {
-//         let answer: Vec<i32>= (1..&n)[]
-//         if (i%3==0){
-//         answer[i] == "FizzBuzz"
-//         }
-//         else if (i%5==0){
-//         answer[i] == "Buzz"
-//         }
-//         else{
-//         answer[i] == i.to_string();
-//         }
-//     }
-// }
+impl Solution {
+    pub fn fizz_buzz(n: i32) -> Vec<String> {
+        (1..=n)
+            .into_iter()
+            .map(|i| match (i % 3 == 0, i % 5 == 0) {
+                (true, true) => "FizzBuzz".to_string(),
+                (true, false) => "Fizz".to_string(),
+                (false, true) => "Buzz".to_string(),
+                _ => i.to_string(),
+            })
+            .collect()
+    }
+}
 
 
 fn main(){
-    //Solution::fizz_buzz(5);
-    unimplemented!();
+    let result= Solution::fizz_buzz(100);
+    println!("{:?}",result);
+    //unimplemented!();
 }
