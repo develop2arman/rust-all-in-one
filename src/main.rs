@@ -80,10 +80,10 @@ fn finish() -> impl std::process::Termination {
     };
 }
 
-fn main(){
-    greet_world();
-    //
-}
+// fn main(){
+//     greet_world();
+//     //
+// }
 /* 1
 fn main() {
 let mut favorite_foods = vec! ["potato", "tomato"];
@@ -197,3 +197,18 @@ io::copy(echo_out, &mut wc_in)?;
 4. Nothing is printed to the console.
 ```
 */
+
+#[derive(Debug)]
+struct Items{
+    is_ordered:bool
+}
+fn main(){
+    let it1= Items{is_ordered:true};
+    let it2= Items{is_ordered:true};
+
+    let mut items:Vec<Items> = vec![it1,it2];
+    for mut item in  items{
+        item.is_ordered = true;
+    }
+    //println!("{:?}",&items);
+}

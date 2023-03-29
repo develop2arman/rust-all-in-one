@@ -9,7 +9,7 @@ let numbers = [1,3,6];
 let result: u32 = numbers
             .iter()
             .filter(|&x| x % 2 ==0)
-            .flat_map(|x| x #  2)
+            .flat_map(|x| x *  2)
             .sum();
 assert_eq!(result,12);
 # }
@@ -21,7 +21,7 @@ let numbers = [1,3,6];
 let result: u32 = numbers
             .iter()
             .filter(|&x| x % 2 ==0)
-            .map(|x| x #  2)
+            .map(|x| x *  2)
             .sum();
 assert_eq!(result,12);
 # }
@@ -32,7 +32,7 @@ assert_eq!(result,12);
 let numbers = [1,3,6];
 let result: u32 = numbers
             .iter()            
-            .map(|x| x #  2)
+            .map(|x| x *  2)
             .filter(|x| x % 2 == 0)
             .sum();
 assert_eq!(result,12);
@@ -46,7 +46,7 @@ let result: u32 = numbers
             .iter()            
             .skip(1)
             .take(1)
-            .map(|x| x #  2)            
+            .map(|x| x *  2)            
             .sum();
 assert_eq!(result,12);
 # }
@@ -153,15 +153,87 @@ fn communicate<T>(thing: &T)
     //..
 }
 ```
+
 ---
 
 [9] How can you modify as item in Vec inside a loop?
 
-[9.1]
+**[9.1]**
 ```rust 
-fn main(){
-    for item in items{
+# #[derive(Debug)]
+# struct Items{
+#    is_ordered:bool
+# }
+# fn main(){
+#    let it1= Items{is_ordered:true};
+#    let it2= Items{is_ordered:true};
+#    let items: Vec<Items>= vec![it1,it2];
+    for item in &mut items{
         item.is_ordered = true;
     }
-}
+# }
+```
+[9.2]
+```rust 
+# #[derive(Debug)]
+# struct Items{
+#    is_ordered:bool
+# }
+# fn main(){
+#    let it1= Items{is_ordered:true};
+#    let it2= Items{is_ordered:true};
+#    let items: Vec<Items>= vec![it1,it2];
+    for mut item in &items{
+        item.is_ordered = true;
+    }
+# }
+```
+[9.3]
+```rust 
+# #[derive(Debug)]
+# struct Items{
+#    is_ordered:bool
+# }
+# fn main(){
+#    let it1= Items{is_ordered:true};
+#    let it2= Items{is_ordered:true};
+#    let items: Vec<Items>= vec![it1,it2];
+    for mut item in items{
+        item.is_ordered = true;
+    }
+# }
+```
+[9.4]
+```rust 
+# #[derive(Debug)]
+# struct Items{
+#    is_ordered:bool
+# }
+# fn main(){
+#    let it1= Items{is_ordered:true};
+#    let it2= Items{is_ordered:true};
+#    let items: Vec<Items>= vec![it1,it2];
+    for &mut item in items{
+        item.is_ordered = true;
+    }
+# }
+```
+---
+
+[10] How can you modify as item in Vec inside a loop?
+
+**[10.1]**
+```rust 
+# #[derive(Debug)]
+# struct Items{
+#    is_ordered:bool
+# }
+# fn main(){
+#    let it1= Items{is_ordered:true};
+#    let it2= Items{is_ordered:true};
+#    let items: Vec<Items>= vec![it1,it2];
+    for item in &mut items{
+        item.is_ordered = true;
+    }
+# }
 ```
