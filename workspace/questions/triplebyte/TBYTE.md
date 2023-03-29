@@ -159,7 +159,7 @@ fn communicate<T>(thing: &T)
 
 [9] How can you modify as item in Vec inside a loop?
 
-**[9.1]**
+[9.1]
 ```rust 
 # #[derive(Debug)]
 # struct Items{
@@ -189,7 +189,7 @@ fn communicate<T>(thing: &T)
     }
 # }
 ```
-[9.3]
+**[9.3]**
 ```rust 
 # #[derive(Debug)]
 # struct Items{
@@ -264,7 +264,7 @@ struct Employee{
 }
  enum Staff{    
     CEO,
-    Regular(Empolyee),
+    Regular(Employee),
  }
 # fn main(){
    let s= Staff::Regular;
@@ -273,11 +273,91 @@ struct Employee{
 
 ---
 
-[11] How can you modify as item in Vec inside a loop?
+[11] You have some data that needs to be processed multi-threaded. However when trying to save the data into a HashMap the compiler throws an error saying hash_map was moved. How do you synchronize and get data out of threads?
 
-[11.1]
 ```rust 
 # fn main(){
-
+let mut hash_map: std::collections::HashMap<u32, u32>= std::collections::HashMap::new();
+for i in 1..=3 {
+    std::thread::spawn (move || { //error 
+                    let result = i * 7;
+                    hash_map.insert(i, result);
+                });
+}
+for (i, number) in &hash_map {
+    println!("{}* 7 = {}", i, number);
+}
+# }
+```
+**[11.1]**
+```rust 
+# fn main(){
+let thread_count = 3;
+let (tx, rx) = std::sync::mpsc::channel();
+for i in 1..=thread_count {
+    let tx = tx.clone();
+    std::thread::spawn (move || {
+        let result = i * 7;
+        let _= tx.send((i, result));
+    });
+}
+    for _ in 1..=thread_count {
+        let (i, number) = rx.recv().unwrap();
+        println!("{}* 7 = {}", i, number);
+    }
+# }
+```
+[11.2]
+```rust 
+# fn main(){
+let mutex = std::sync::Mutex::new(std::collections::HashMap::new());
+ let mut handles = vec! [];
+for i in 1..3 {
+    let handle = std::thread::spawn (move || {
+        let result = i * 7;
+        mutex.lock().unwrap().insert(i, result);
+    });
+    handles.push(handle);
+}
+for child in handles {
+    let _= child.join();
+}
+let hash_map=mutex.lock().unwrap();
+for (i, number) in &(*hash_map) {
+    println!("{}* 7 = {}", i, number);
+}
+# }
+```
+[11.3]
+```rust 
+# fn main(){
+use std::sync:: {Arc, Mutex};
+let hash_map = Arc::new(Mutex::new(std::collections::HashMap::new()));
+for i in 1..3 {
+    let arc_map = hash_map.clone();
+    std::thread::spawn (move || {
+        let result = i * 7;
+        arc_map.lock().unwrap().insert(i, result);
+    });
+}
+for (i, number) in &(*hash_map.lock().unwrap()) {
+    println!("{}* 7 = {}", i, number);
+}
+# }
+```
+[11.4]
+```rust 
+# fn main(){
+let mut hash_map: std::collections::HashMap<u32, u32>= std::collections::HashMap::new();
+for i in 1..=3 {
+    let mut result = 0;
+    std::thread::spawn (move || {
+        result = i * 7;
+    });
+     hash_map.insert(i, result);
+}
+for (i, number) in &hash_map {
+    println!("{}* 7 = {}", i, number);
+}
 # }
 ```
