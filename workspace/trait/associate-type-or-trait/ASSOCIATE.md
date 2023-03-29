@@ -88,9 +88,9 @@ impl<T, U> GenericTrait<U> for u32 where U: HasAssocType<Ty = T> {}
 
 > The syntax for specifying a default type for a generic type is <PlaceholderType=ConcreteType> when declaring the generic type.
 
-> `T` "constrains" by being in an "associated type(Ty = T)" in a bound for type `U` which is itself a "generic parameter(GenericTrait<U>)" constraining the trait.
-  
-> For example:
+> `T` "constrains" by being in an "associated type(Ty = T)" in a bound for type `U` which is itself *a generic parameter(GenericTrait<U>)* constraining the trait.
+
+For example:
 
 ```rust,no_run,compile_fail
 // we do not need to write trait Add due to is built-in trait
@@ -134,6 +134,7 @@ pub trait Iterator<T> {
 ## Glossery
 
 > `The associated type = placeholder type` :  is named Item'pub trait Iterator {type Item;}'
+
 >  Another example is 'HasAssocType<Ty = T>'  
 
 ---

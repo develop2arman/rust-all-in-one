@@ -189,3 +189,5 @@
 - [IDIOMS](idioms/IDIOMS.md)
 - [GRAMMER](grammer/GRAMMER.md)
 - [BRAIN_TREASER](brain-teaser/BRAIN_TREASER.md)
+- [QUESTIONS](questions/QUESTIONS.md)
+  - [TBYTE](questions/triplebyte/TBYTE.md)

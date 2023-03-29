@@ -66,21 +66,6 @@ fn greet_world() {
 /// /// error: unneeded unit return type ^^^^ help: remove the `-> ()`
 /// fn nothing()->(){
 /// }
-fn main() {
-    greet_world();
-    println!("This code is running on a {} family OS", get_platform());
-    if cfg!(target_feature = "avx2") {
-        println!("avx2 is enabled");
-    } else {
-        println!("avx2 is not enabled");
-    }
-    if cfg!(not(any(target_arch = "x86", target_arch = "x86_64"))) {
-        println!("This code is running on a non-Intel CPU");
-    }
-    //let ()= nothing();
-    finish();
-
-}
 
 fn finish() -> impl std::process::Termination {
     let machine_kind = if cfg!(unix) {
@@ -94,3 +79,118 @@ fn finish() -> impl std::process::Termination {
         std::process::ExitCode::FAILURE
     };
 }
+
+/* 1
+fn main() {
+let mut favorite_foods = vec! ["potato", "tomato"];
+let mut healthy_foods = &mut favorite_foods;
+healthy_foods.push("carrot");
+let mut grocery_list = &mut favorite_foods;
+grocery_list.push("cookies");
+println! ("Healthy Foods: "); for food in healthy_foods { println!("{}", food);
+}
+println! ("Grocery List:"); for food in grocery_list { println!("{}", food);
+}
+
+}
+//error[E0499]: cannot borrow `favorite_foods` as mutable more than once at a time
+*/
+
+/* 2
+fn main() {
+fn first_word<'a>(sentence: &'a str, separator: &'a str) -> &'a str {
+    let word: &'a str = sentence
+.split(separator)
+.next()
+.unwrap();
+word
+}
+}
+*/
+
+/* 3
+fn main(){
+
+    use std::collections::HashMap;
+    let word = "internationalization";
+    let mut letter_count = HashMap::new();
+
+
+    for letter in word.chars() {
+        // 1
+        let count = letter_count.entry (letter).or_insert(0);
+        *count += 1;
+        // 2
+        //    match &mut letter_count.get(&letter) {
+        //        Some (count) => *count += 1,
+        //}
+        // => {letter_count.insert(letter, 1);},
+        //}
+        // 3
+        // if let Some (count)
+        //    letter_count.get(&letter) {
+        //        letter_count.insert(letter, count + 1);
+        //    } else {
+        // }
+
+        //letter_count.insert(letter, 1);
+
+
+    }
+    for (letter, count) in &letter_count {
+        println!("{}: {}", letter, count);
+    }
+}
+*/
+
+/*4
+fn main(){
+
+let mut vacation_spots= vec! ["New York City", "Yosemite", "Monterey"];
+let handle = std::thread::spawn( move || {
+    for spot in vacation_spots {
+        println!("{}", spot);
+    }
+    });
+    vacation_spots.remove(1);
+    handle.join().unwrap();
+}
+*/
+
+/*
+fn main(){
+let mut echo=std::process::Command::new("echo")
+    .arg("one two three")
+    .stdout(Stdio::piped())
+    .spawn()?;
+let wc = std::process::Command::new("wc")
+    .arg("-w")
+    .stdin(Stdio::piped())
+    .stdout(stdio::inherit())
+    .spawn()?;
+let mut wc_in= let echo_out&mut wc.stdin.ok_or_else(|| Error::from(ErrorKind::BrokenPipe))?;
+echo.stdout.as_mut().ok_or_else(|| Error::from(ErrorKind::BrokenPipe))?;
+io::copy(echo_out, &mut wc_in)?;
+
+}
+
+```
+1. Pipes echo's stdout to the program's stdin.
+2. Pipes the program's stdin into wc.
+3. Copies echo's stdout into wc's stdin.
+//
+1. Starts echo.
+2. Pipes wc's stdout to the program's stdout.
+3. Copies echo's stdout into wc's stdin.
+//
+1. Pipes the program's stdin into echo.
+2. Pipes wc's stdout to the program's stdin.
+3. Copies echo's stdout into wc's stdin.
+//
+1. Starts echo.
+2. Starts wc.
+3. Copies echo's stdout into wc's stdin.
+4. Nothing is printed to the console.
+```
+*/
+
