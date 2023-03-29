@@ -1,4 +1,228 @@
+[1] resolve the problem?
 
+[1.x]
+```rust 
+#  fn main(){
+let mut favorite_foods = vec! ["potato", "tomato"];
+let mut healthy_foods = &mut favorite_foods;
+healthy_foods.push("carrot");
+let mut grocery_list = &mut favorite_foods;//error[E0499]: cannot borrow `favorite_foods` as mutable more than once at a time
+grocery_list.push("cookies");
+println! ("Healthy Foods: ");
+for food in healthy_foods {
+    println!("{}", food);
+}
+println! ("Grocery List:");
+for food in grocery_list {
+    println!("{}", food);
+}
+# }
+```
+---
+
+[2] resolve the problem?
+
+**[2.1]**
+```rust 
+#  fn main(){
+fn first_word<'a>(sentence: &'a str, separator: &'a str) -> &'a str {
+    let word: &'a str = sentence
+                            .split(separator)
+                            .next()
+                            .unwrap();
+    word
+}
+
+println!("{}",first_word("arman riazi"," "));
+
+# }
+```
+[2.2]
+```rust 
+#  fn main(){
+fn first_word(sentence: &str, separator: &str) -> &str {
+    let word: &'a str = sentence
+                            .split(separator)
+                            .next()
+                            .unwrap();
+    word
+}
+
+println!("{}",first_word("arman riazi"," "));
+
+# }
+```
+[2.3]
+```rust 
+#  fn main(){
+    fn first_word<'a>(sentence: &str, separator:  &str) -> &'a str {
+    let word: &str = sentence
+                            .split(separator)
+                            .next()
+                            .unwrap();
+        word
+    }
+    println!("{}",first_word("arman riazi"," "));
+# }
+```
+[2.4]
+```rust 
+#  fn main(){
+    fn first_word<'a>(sentence: &'a str, separator:  &'a str) -> &str {
+    let word: &str = sentence
+                            .split(separator)
+                            .next()
+                            .unwrap();
+        word
+    }
+    println!("{}",first_word("arman riazi"," "));
+# }
+```
+
+---
+
+[3] Count of array?
+
+**[3.1]**
+```rust 
+#  fn main(){
+    use std::collections::HashMap;
+    let word = "internationalization";
+    let mut letter_count = HashMap::new();
+
+    for letter in word.chars() {
+
+        let count = letter_count.entry (letter).or_insert(0);
+        *count += 1;
+    }
+    for (letter, count) in &letter_count {
+        println!("{}: {}", letter, count);
+    }
+# }
+```
+[3.2]
+```rust 
+#  fn main(){
+    use std::collections::HashMap;
+    let word = "internationalization";
+    let mut letter_count = HashMap::new();
+
+    for letter in word.chars() {
+            match &mut letter_count.get(&letter) {
+                Some (count) => *count += 1,
+        }
+         => {letter_count.insert(letter, 1);},
+    }    
+    for (letter, count) in &letter_count {
+        println!("{}: {}", letter, count);
+    }
+# }
+```
+[3.3]
+```rust 
+#  fn main(){
+    use std::collections::HashMap;
+    let word = "internationalization";
+    let mut letter_count = HashMap::new();
+
+    for letter in word.chars() {                    
+        if let Some (count) = letter_count.get(&letter) {
+               letter_count.insert(letter, count + 1);
+           } else {
+            letter_count.insert(letter, 1);
+        }        
+    }
+    for (letter, count) in &letter_count {
+        println!("{}: {}", letter, count);
+    }
+# }
+```
+[3.4]
+```rust 
+#  fn main(){
+    use std::collections::HashMap;
+    let word = "internationalization";
+    let mut letter_count = HashMap::new();
+
+    for letter in word.chars() {                    
+      match &mut letter_count.get(&letter){
+        Some(count)=> *count +=1,
+        _ => {letter_count.insert(letter,1);}
+      }
+    }
+    for (letter, count) in &letter_count {
+        println!("{}: {}", letter, count);
+    }
+# }
+```
+
+
+[4] Count of array?
+
+```rust 
+#  fn main(){
+let mut vacation_spots= vec! ["New York City", "Yosemite", "Monterey"];
+let handle = std::thread::spawn( move || {
+    for spot in vacation_spots {
+        println!("{}", spot);
+    }
+    });
+    vacation_spots.remove(1);// Error value borrowed here after move
+    handle.join().unwrap();
+# }
+```
+[4.1] The value vacation_spots was moved and then mutated in another thread. This helps us prevent race conditions.
+[4.2] Without the move keyword, the join().unwrap() would always panic. This helps us write code that does not panic.
+[4.3] Without the move keyword, the compiler wouldn't know the thread might use vacation_spots after it was mutated. This helps us prevent borrowing after moving values.
+[4.4] The closure is moved. This helps us make sure the closure used only once.
+
+---
+
+[5] Stdio?
+```rust 
+#  fn main(){
+use std::process::Stdio;
+use std::{io::ErrorKind, error::Error};
+//unimplemented!();
+
+let mut echo=std::process::Command::new("echo")
+    .arg("one two three")
+    .stdout(Stdio::piped())
+    .spawn()?;
+
+let wc = std::process::Command::new("wc")
+    .arg("-w")
+    .stdin(Stdio::piped())
+    .stdout(Stdio::inherit())
+    .spawn()?;
+
+let mut wc_in= true;
+let echo_out=&mut wc.stdin.ok_or_else(|| Error::from(ErrorKind::BrokenPipe))?;
+
+echo.stdout.as_mut().ok_or_else(|| Error::from(ErrorKind::BrokenPipe))?;
+
+std::io::copy(echo_out, &mut wc_in)?;
+# }
+```
+[5.1]
+1. Pipes echo's stdout to the program's stdin. 
+2. Pipes the program's stdin into wc.
+3. Copies echo's stdout into wc's stdin.
+[5.2]
+1. Starts echo.
+2. Pipes wc's stdout to the program's stdout. 
+3. Copies echo's stdout into wc's stdin.
+[5.3]
+1. Pipes the program's stdin into echo. 
+2. Pipes wc's stdout to the program's stdin. 
+3. Copies echo's stdout into wc's stdin.
+[5.4]
+1. Starts echo.
+2. Starts wc.
+3. Copies echo's stdout into wc's stdin. 
+4. Nothing is printed to the console.
+
+---
 
 [6] Which of the following snippetes sets result to the number 12?
 
@@ -511,24 +735,25 @@ fn export_todo (filename: &str, todo_list: &[&str], done_list: &[&str]) {
 # }
 ```
 **[15.x]**
-```rust 
+```rust  
 # fn main(){
+    use std::io::Write;
     //Because of return std::io::Result<()> is a good answer. anyoption that do not have Result will not be answer
-fn export_todo(filename: &str, todo_list: &[&str], done_list: &[&str]) -> std::io::Result<()> {
+    fn export_todo(filename: &str, todo_list: &[&str], done_list: &[&str]) -> std::io::Result<()> {
 
-    let mut file = std::fs::File::create(filename)?;
-    file.write_all(b"# To Do List \n")?;
-    file.write_all(b"## Next\n")?;
+        let mut file = std::fs::File::create(filename)?;
+        file.write_all(b"# To Do List \n")?;
+        file.write_all(b"## Next\n")?;
 
-    for item in todo_list.iter() {
-        file.write_all(format! ("- [ ] {}\n", item).as_bytes())?
+        for item in todo_list.iter() {
+            file.write_all(format! ("- [ ] {}\n", item).as_bytes())?
+        }
+
+        file.write_all(b"## Done\n")?;
+        for item in done_list.iter() {
+            file.write_all(format! ("- [x] {}\n", item).as_bytes())?
+        }
+    Ok(())
     }
-
-    file.write_all(b"## Done\n")?;
-    for item in done_list.iter() {
-        file.write_all(format! ("- [x] {}\n", item).as_bytes())?
-    }
- Ok(())
-}
 # }
 ```
