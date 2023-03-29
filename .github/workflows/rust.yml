@@ -1,17 +1,11 @@
 name: Rust
-on:
-  push:
-    branches:
-      - main
-permissions:
-  pull-requests: write
-  issues: write
-  repository-projects: write
+on: [ push ]
+permissions: read-all|write-all
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    permissions: read-all|write-all
     steps:
     - uses: actions/checkout@v2
     - name: Build

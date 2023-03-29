@@ -1,13 +1,6 @@
 name: Build & test
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-permissions:
-  pull-requests: write
-  issues: write
-  repository-projects: write
+on: [ push ]
+permissions: read-all|write-all
 env:
   CARGO_TERM_COLOR: always
 jobs:
@@ -37,6 +30,7 @@ jobs:
             features: simd_backend
 
     runs-on: ${{ matrix.os }}
+    permissions: read-all|write-all
     steps:
       - uses: actions/checkout@v2
       - name: Install Rust toolchain
