@@ -1,6 +1,6 @@
 name: Build & test
 on: [ push ]
-permissions: read-all|write-all
+permissions: write-all
 env:
   CARGO_TERM_COLOR: always
 jobs:
