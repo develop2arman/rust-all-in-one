@@ -361,3 +361,174 @@ for (i, number) in &hash_map {
 }
 # }
 ```
+
+---
+
+[12] What is the output this puzzle?
+
+```rust 
+# fn main(){
+let a = Some("a");
+let b = Some("b");
+let c = Some("c");
+let d = Some("d");
+let a_or_d = a.unwrap_or (d.unwrap());
+//println!("a_or_d  {}", a_or_d.clone()); //return a
+let default_not = || b.iter().next(); //return NONE
+let c_mapped = |_| Some(&a_or_d);
+let result= c.map_or_else(default_not, c_mapped).unwrap();
+println!("Result {}", result);
+# }
+```
+[12.1]
+**a**
+[12.2]
+b
+[12.3]
+c
+[12.4]
+d
+
+
+---
+
+[13] There is a logging function called log that takes a message: &str argument. You need to use this function to print "123". Which of the following methods work?
+
+[13.1]
+```rust 
+# fn main(){
+
+fn log(message: &str) {
+println!("{}", message);
+}
+
+let numbers = "123";
+log(&numbers[0..4]);
+# }
+```
+[13.2]
+```rust 
+# fn main(){
+
+fn log(message: &str) {
+println!("{}", message);
+}
+
+let numbers = "0123";
+log(&numbers[1:4]);
+# }
+```
+**[13.3]**
+```rust 
+# fn main(){
+
+fn log(message: &str) {
+println!("{}", message);
+}
+
+let numbers = "1234";
+log(&numbers[..3]);
+# }
+```
+**[13.4]**
+```rust 
+# fn main(){
+
+fn log(message: &str) {
+println!("{}", message);
+}
+
+let numbers = "01234";
+log(&numbers[1..4]);
+# }
+```
+---
+
+[14] You want to print the status of a request in the following format:
+
+> `success: true, errors: 0, message: success`
+
+> Which of the following is **NOT valid Rust**?
+
+[14.1]
+```rust 
+# fn main(){
+let result = (true, 0, "success");
+let (success, errors, message) = result;
+println!("success: {}, errors: {}, message: {}", success, errors, message);
+# }
+```
+[14.2]
+```rust 
+# fn main(){
+let result: (bool, i32, &str) = (true, 0, "success");
+println! ("success: {}, errors: {}, message: {}", result.0, result.1, result.2);
+# }
+```
+[14.3]
+```rust 
+# fn main(){
+let result = (true, 0, "success");
+println! ("success: {}, errors: {}, message: {}", result.0, result.1, result.2);
+# }
+```
+**[14.4]**
+```rust 
+# fn main(){
+let result = [true, 0, "success"];
+println! ("success: {}, errors: {}, message: {}", result[0], result[1], result[2]);
+# }
+```
+
+---
+
+[15] went on vacation, and the lead developer is not happy with the work they delivered below. The lead says the code "crashes all over the place, hides the issue from the calling function, and panics unrecoverably. They needed an expert so they called you in to fix it. Which function will you deliver?
+
+```rust 
+# fn main(){
+fn export_todo (filename: &str, todo_list: &[&str], done_list: &[&str]) {
+    let mut file= match std::fs::File::create(filename) {
+        Err(e) => panic!("{}", e),
+        Ok (f) => f,
+    };
+
+    match file.write_all( b"# To Do List\n") {
+        Err(e) => panic!("{}", e),
+        Ok (()) => (),
+    }
+    match file.write_all(b"## Next\n") {
+        Err(e) => panic!("{}", e),
+        Ok(()) => (),
+    }
+    for item in todo_list.iter() {
+        match file.write_all(format! ("- [] {}\n", item).as_bytes()) {
+            Err(e) => panic!("{}", e),
+            Ok (()) => (),
+        }
+    }
+}
+
+# }
+```
+**[15.x]**
+```rust 
+# fn main(){
+    //Because of return std::io::Result<()> is a good answer. anyoption that do not have Result will not be answer
+fn export_todo(filename: &str, todo_list: &[&str], done_list: &[&str]) -> std::io::Result<()> {
+
+    let mut file = std::fs::File::create(filename)?;
+    file.write_all(b"# To Do List \n")?;
+    file.write_all(b"## Next\n")?;
+
+    for item in todo_list.iter() {
+        file.write_all(format! ("- [ ] {}\n", item).as_bytes())?
+    }
+
+    file.write_all(b"## Done\n")?;
+    for item in done_list.iter() {
+        file.write_all(format! ("- [x] {}\n", item).as_bytes())?
+    }
+ Ok(())
+}
+# }
+```

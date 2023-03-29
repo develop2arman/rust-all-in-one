@@ -4,6 +4,8 @@
 #![doc(html_logo_url = "https://armanriazi.github.io/site/assets/attachments/me.png")]
 
 
+
+
 /// Main
 ///
 /// # Commands
@@ -198,9 +200,10 @@ io::copy(echo_out, &mut wc_in)?;
 ```
 */
 
-
+use std::io::Write;
 
  fn main(){
 
 unimplemented!();
+
 }
