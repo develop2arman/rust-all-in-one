@@ -14,7 +14,7 @@ let result: u32 = numbers
 assert_eq!(result,12);
 # }
 ```
-[6.2]
+**[6.2]**
 ```rust 
 #  fn main(){
 let numbers = [1,3,6];
@@ -27,7 +27,7 @@ assert_eq!(result,12);
 # }
 ```
 [6.3]
-```rust 
+```rust
 #  fn main(){
 let numbers = [1,3,6];
 let result: u32 = numbers
@@ -39,7 +39,7 @@ assert_eq!(result,12);
 # }
 ```
 [6.4]
-```rust 
+```rust
 #  fn main(){
 let numbers = [1,3,6];
 let result: u32 = numbers
@@ -50,6 +50,7 @@ let result: u32 = numbers
             .sum();
 assert_eq!(result,12);
 # }
+```
 
 ---
 
@@ -84,7 +85,7 @@ fn show_schedule(name:String){
     println!("{}'s schedule is : A,B,C",name);
 }
 ```
-[7.3]
+**[7.3]**
 ```rust 
 # fn main(){
 let name : &str = "Smith";
@@ -218,22 +219,65 @@ fn communicate<T>(thing: &T)
     }
 # }
 ```
+
 ---
 
-[10] How can you modify as item in Vec inside a loop?
+[10] Which code snippet works?
 
-**[10.1]**
+[10.1]
 ```rust 
 # #[derive(Debug)]
-# struct Items{
-#    is_ordered:bool
-# }
+ enum Staff{
+    CEO,
+    Employee { boss: Option<Staff> } 
+ }
 # fn main(){
-#    let it1= Items{is_ordered:true};
-#    let it2= Items{is_ordered:true};
-#    let items: Vec<Items>= vec![it1,it2];
-    for item in &mut items{
-        item.is_ordered = true;
-    }
+   let s= Staff:: Employee;
+# }
+```
+[10.2]
+```rust 
+# #[derive(Debug)]
+ enum Staff{
+    CEO,
+    Employee { boss: Staff } 
+ }
+# fn main(){
+   let s= Staff:: Employee;
+# }
+```
+[10.3]
+```rust 
+# #[derive(Debug)]
+ enum Staff{    
+    boss: Option<Staff>
+ }
+# fn main(){
+   let s= Staff::boss;
+# }
+```
+**[10.4]**
+```rust 
+# #[derive(Debug)]
+struct Employee{
+    boss: Staff
+}
+ enum Staff{    
+    CEO,
+    Regular(Empolyee),
+ }
+# fn main(){
+   let s= Staff::Regular;
+# }
+```
+
+---
+
+[11] How can you modify as item in Vec inside a loop?
+
+[11.1]
+```rust 
+# fn main(){
+
 # }
 ```

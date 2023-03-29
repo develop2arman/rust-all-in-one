@@ -198,17 +198,8 @@ io::copy(echo_out, &mut wc_in)?;
 ```
 */
 
-#[derive(Debug)]
-struct Items{
-    is_ordered:bool
-}
-fn main(){
-    let it1= Items{is_ordered:true};
-    let it2= Items{is_ordered:true};
 
-    let mut items:Vec<Items> = vec![it1,it2];
-    for mut item in  items{
-        item.is_ordered = true;
-    }
-    //println!("{:?}",&items);
-}
+
+ fn main(){
+ unimplemented!();
+ }
