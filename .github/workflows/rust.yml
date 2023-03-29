@@ -1,11 +1,11 @@
 name: Rust
 on: [ push ]
-permissions: read-all|write-all
+permissions: write-all
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    permissions: read-all|write-all
+    permissions: write-all
     steps:
     - uses: actions/checkout@v2
     - name: Build

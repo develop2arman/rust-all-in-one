@@ -30,7 +30,7 @@ jobs:
             features: simd_backend
 
     runs-on: ${{ matrix.os }}
-    permissions: read-all|write-all
+    permissions: write-all
     steps:
       - uses: actions/checkout@v2
       - name: Install Rust toolchain
