@@ -80,6 +80,9 @@ fn finish() -> impl std::process::Termination {
     };
 }
 
+fn main(){
+    greet_world();
+}
 /* 1
 fn main() {
 let mut favorite_foods = vec! ["potato", "tomato"];
@@ -193,4 +196,3 @@ io::copy(echo_out, &mut wc_in)?;
 4. Nothing is printed to the console.
 ```
 */
-
