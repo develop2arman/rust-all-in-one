@@ -153,3 +153,15 @@ fn communicate<T>(thing: &T)
     //..
 }
 ```
+---
+
+[9] How can you modify as item in Vec inside a loop?
+
+[9.1]
+```rust 
+fn main(){
+    for item in items{
+        item.is_ordered = true;
+    }
+}
+```
