@@ -1,11 +1,16 @@
-name: actions
-on: [ push ]
-permissions: write-all
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+env:
+  CARGO_TERM_COLOR: always
 jobs:
   check:
     name: rust-all-in-one
     runs-on: ubuntu-latest
-    permissions: write-all
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
