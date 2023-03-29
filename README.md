@@ -6,7 +6,7 @@
 
 ## How to Contribute
 
-Contributions are always welcome! Please use the following guidelines when contributing to `rust-all-in-one`
+Contributions are always welcome! Please use the following guidelines when contributing to `rust-all-in-one`.
 
 1. Fork `rust-all-in-one`
 2. Clone your fork (`git clone https://github.com/$YOUR_USERNAME/rust-all-in-one && cd rust-all-in-one`)
@@ -30,5 +30,3 @@ Contributions are always welcome! Please use the following guidelines when contr
 6. `git rebase` into concise commits and remove `--fixup`s (`git rebase -i HEAD~NUM` where `NUM` is number of commits back)
 7. Push your changes back to your fork (`git push origin $your-branch`)
 8. Create a pull request! (You can also create the pull request first, and we'll merge when ready. This a good way to discuss proposed changes.)
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdevelop2arman%2Frust-all-in-one.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdevelop2arman%2Frust-all-in-one?ref=badge_large)
