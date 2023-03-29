@@ -31,4 +31,4 @@ Contributions are always welcome! Please use the following guidelines when contr
 7. Push your changes back to your fork (`git push origin $your-branch`)
 8. Create a pull request! (You can also create the pull request first, and we'll merge when ready. This a good way to discuss proposed changes.)
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdevelop2arman%2Frust-all-in-one.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdevelop2arman%2Frust-all-in-one?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Farman2develop%2Frust-all-in-one.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Farman2develop%2Frust-all-in-one?ref=badge_large)
