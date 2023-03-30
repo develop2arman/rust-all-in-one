@@ -18,9 +18,15 @@ for food in grocery_list {
 }
 # }
 ```
+
+[1.1] favorite foods does not need to be mutable.
+[1.2] healthy foods does not need to be mutable.
+[1.3] favorite foods is already mutable.
+**[1.4]** favorite foods is mutably borrowed twice.
+
 ---
 
-[2] resolve the problem?
+[2] You're writing a function that returns the first word of a sentence. But the compiler returns an error. Some lifetimes can be elided, and others must be specified. What lifetimes need to be specified in the function below?
 
 **[2.1]**
 ```rust 
@@ -81,7 +87,7 @@ println!("{}",first_word("arman riazi"," "));
 
 ---
 
-[3] Count of array?
+[3] You want to count the letters in a word. Choose the best option?
 
 **[3.1]**
 ```rust 
@@ -157,7 +163,7 @@ println!("{}",first_word("arman riazi"," "));
 ```
 
 
-[4] Count of array?
+[4] You have a program to show the best vacation spots. It has multiple threads so eventually the API team will update the list separately from the UX team. How does move help us write better code in this code snippet?
 
 ```rust 
 #  fn main(){
@@ -176,13 +182,14 @@ let handle = std::thread::spawn( move || {
 
 [4.2] Without the move keyword, the join().unwrap() would always panic. This helps us write code that does not panic.
 
-[4.3] Without the move keyword, the compiler wouldn't know the thread might use vacation_spots after it was mutated. This helps us prevent borrowing after moving values.
+**[4.3]** Without the move keyword, the compiler wouldn't know the thread might use vacation_spots after it was mutated. This helps us prevent borrowing after moving values.
 
 [4.4] The closure is moved. This helps us make sure the closure used only once.
 
 ---
 
-[5] Stdio?
+[5] What does the following program do?
+
 ```rust 
 #  fn main(){
 use std::process::Stdio;
@@ -209,7 +216,7 @@ std::io::copy(echo_out, &mut wc_in)?;
 # }
 ```
 
->[5.1]
+> **[5.1]**
 1. Pipes echo's stdout to the program's stdin. 
 2. Pipes the program's stdin into wc.
 3. Copies echo's stdout into wc's stdin.
@@ -350,13 +357,14 @@ fn show_schedule(name:String){
 
 [8] Which of the following is **NOT equvalent**  to the trait bounds below?
 
-[8.1]
+
 ```rust 
 fn communicate<T: Speak + Listen>(thing: &T){
     //..
 }
 ```
-[8.2]
+
+[8.1]
 ```rust 
 fn communicate<T>(thing: &T)
     where T: Speak,
@@ -365,27 +373,26 @@ fn communicate<T>(thing: &T)
     //..
 }
 ```
-[8.3]
+[8.2]
 ```rust 
 fn communicate<T>(thing: &(impl Speak + Listen)){
     //..
 }
 ```
-[8.4]
+**[8.3]**
 ```rust 
 fn communicate<T>(thing: &(Speak + Listen)){
     //..
 }
 ```
-**[8.5]**
+[8.4]
 ```rust 
-fn communicate<T>(thing: &T)
-    where T: Speak + 
-          T: Listen
-{
+fn communicate<T>(thing: &T){
+    where T: Speak + Listen
     //..
 }
 ```
+
 
 ---
 
@@ -612,12 +619,12 @@ let result= c.map_or_else(default_not, c_mapped).unwrap();
 println!("Result {}", result);
 # }
 ```
-[12.1]
-**a**
+**[12.1]**
+a
 [12.2]
 b
 [12.3]
-c
+thread 'main' panicked at 'called 'Option: : unwrap()' on a 'None' value', src/main.rs:13:7'
 [12.4]
 d
 
@@ -765,3 +772,41 @@ fn export_todo (filename: &str, todo_list: &[&str], done_list: &[&str]) {
     }
 # }
 ```
+---
+
+[16] Your friend that runs a tool rental company needs a program to calculate customer orders. What is the grand total printed by this program?
+
+```rust
+struct Rental {
+    rate: u32,
+    days: u32,
+    half_off: bool,
+}
+
+impl Rental {
+ fn subtotal(&self) -> u32 {
+    let subtotal = self.rate * self.days;
+    if self.half_off {
+        return subtotal / 2;
+    }
+  subtotal
+ }
+}
+
+fn main(){
+let days = 10;
+let saw = Rental{days, rate: 15, half_off: false };
+let drill = Rental{rate:10, ..saw};
+let trailer = Rental{ half_off: true, ..drill};
+let mut grand_total=0;
+for rental in [saw, drill, trailer].iter() {
+    grand_total += rental.subtotal();
+}
+println! ("grand total: ${}", grand_total);
+}
+```
+
+**[16.1]** grand total: $300
+[16.2] grand total: $125
+[16.3] grand total: $150
+[16.4] This is not valid rust code.

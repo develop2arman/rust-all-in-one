@@ -1,6 +1,7 @@
+[[MATH]]
+
 [[FACTORIAL]]
 
-[[MAX]]
-
+[[FIZZ_BUZZ]]
 
 ---

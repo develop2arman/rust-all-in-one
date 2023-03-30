@@ -80,8 +80,8 @@ fn finish() -> impl std::process::Termination {
     };
 }
 
+
 fn main(){
-    //greet_world();
-    //
-    
+    get_platform();
+    greet_world();
 }
