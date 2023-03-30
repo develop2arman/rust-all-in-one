@@ -80,42 +80,8 @@ fn finish() -> impl std::process::Termination {
     };
 }
 
-// fn main(){
-//     greet_world();
-//     //
-// }
-
-
-
-/*
 fn main(){
-
-
-}
-
-```
-1. Pipes echo's stdout to the program's stdin.
-2. Pipes the program's stdin into wc.
-3. Copies echo's stdout into wc's stdin.
-//
-1. Starts echo.
-2. Pipes wc's stdout to the program's stdout.
-3. Copies echo's stdout into wc's stdin.
-//
-1. Pipes the program's stdin into echo.
-2. Pipes wc's stdout to the program's stdin.
-3. Copies echo's stdout into wc's stdin.
-//
-1. Starts echo.
-2. Starts wc.
-3. Copies echo's stdout into wc's stdin.
-4. Nothing is printed to the console.
-```
-*/
-
-
-
- fn main(){
-
-
+    //greet_world();
+    //
+    
 }

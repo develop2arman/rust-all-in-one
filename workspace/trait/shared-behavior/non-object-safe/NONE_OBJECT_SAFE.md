@@ -1,6 +1,6 @@
-Here is an example trait that is not object safe:
+`Here is an example trait that is not object safe:`
 
-```rust,compile_fail,no_run
+```rust,no_run,compile_fail
 trait SomeTrait {
     fn foo(&self) -> int { 
         //... 
@@ -14,7 +14,7 @@ trait SomeTrait {
 
 > One option is to split a trait into object-safe and non-object-safe parts. We hope that this will lead to better design. We are not sure how much code this will affect, it would be good to have data about this.
 
-```rust,compile_fail,no_run
+```rust,no_run,compile_fail
 //Object Safe Trait
 trait SomeTrait {
     fn foo(&self) -> int { ... }
@@ -29,7 +29,7 @@ trait SomeTraitCtor : SomeTrait {
 
 > Sometimes adding a second trait feels like overkill. In that case, it is often an option to simply add a where Self:Sized clause to the methods of the trait that would otherwise violate the object safety rule.
 
-```rust,compile_fail,no_run
+```rust,no_run,compile_fail
 trait SomeTrait {
     fn foo(&self) -> int { ... }
     

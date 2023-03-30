@@ -145,7 +145,7 @@ members = [
     "workspace/trait/shared-behavior/safe-object/dispatchable/master-rust",
     "workspace/trait/shared-behavior/safe-object/dispatchable/rust-doc",
     "workspace/trait/shared-behavior/safe-object/dispatchable/other",
-    "workspace/trait/shared-behavior/non-objectsafe/rust-doc",
+    "workspace/trait/shared-behavior/non-object-safe/rust-doc",
 
 
     "workspace/flowcontrol/concise_control/rust-doc",

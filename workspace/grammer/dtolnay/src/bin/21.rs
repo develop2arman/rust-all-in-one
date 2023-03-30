@@ -15,10 +15,12 @@ impl Trait for () {
 }
 
 fn main() {
+    unimplemented!();
+    /*
     let x = || { (return) || true; };
     x().f();
 
-    let x = loop { (break) || true; };
+    let x = loop { (break) || true; }; //Clippy Error: error: this loop never actually loops
     x.f();
 
     let x = || { return (|| true); };
@@ -31,7 +33,7 @@ fn main() {
     x().f();
 
     let x = loop { break || true; };
-    x.f();
+    x.f();*/
 }
 /*
 We want to know whether each possible parenthesization of return || true; and break || true; evaluates to the closure || true or to the unit value ().

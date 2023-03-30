@@ -171,9 +171,13 @@ let handle = std::thread::spawn( move || {
     handle.join().unwrap();
 # }
 ```
+
 [4.1] The value vacation_spots was moved and then mutated in another thread. This helps us prevent race conditions.
+
 [4.2] Without the move keyword, the join().unwrap() would always panic. This helps us write code that does not panic.
+
 [4.3] Without the move keyword, the compiler wouldn't know the thread might use vacation_spots after it was mutated. This helps us prevent borrowing after moving values.
+
 [4.4] The closure is moved. This helps us make sure the closure used only once.
 
 ---
@@ -204,19 +208,23 @@ echo.stdout.as_mut().ok_or_else(|| Error::from(ErrorKind::BrokenPipe))?;
 std::io::copy(echo_out, &mut wc_in)?;
 # }
 ```
-[5.1]
+
+>[5.1]
 1. Pipes echo's stdout to the program's stdin. 
 2. Pipes the program's stdin into wc.
 3. Copies echo's stdout into wc's stdin.
-[5.2]
+
+>[5.2]
 1. Starts echo.
 2. Pipes wc's stdout to the program's stdout. 
 3. Copies echo's stdout into wc's stdin.
-[5.3]
+
+>[5.3]
 1. Pipes the program's stdin into echo. 
 2. Pipes wc's stdout to the program's stdin. 
 3. Copies echo's stdout into wc's stdin.
-[5.4]
+
+>[5.4]
 1. Starts echo.
 2. Starts wc.
 3. Copies echo's stdout into wc's stdin. 
