@@ -1,4 +1,4 @@
-`Here is an example trait that is not object safe:`
+>Here is an example trait that is not object safe:
 
 ```rust,no_run,compile_fail
 trait SomeTrait {

@@ -33,5 +33,5 @@
 /// //```rust,no_run,compile_fail /// ```
 ///
 fn main() {
-    .. .. ..;
+    unimplemented!();
 }
