@@ -48,6 +48,7 @@ fn get_platform() -> String {
     "UNIX".into()
 }
 
+
 #[cfg(target_family = "windows")]
 fn get_platform() -> String {
     "Windows".into()
