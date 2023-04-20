@@ -82,6 +82,8 @@ fn finish() -> impl std::process::Termination {
     };
 }
 
+
+
 fn main(){
     get_platform();
     greet_world();
