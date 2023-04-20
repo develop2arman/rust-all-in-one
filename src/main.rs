@@ -60,7 +60,6 @@ fn greet_world() {
         println!("{}", &region);
     }
 }
-
 /// We have two get_platform and selected by conditional_features.
 /// > Line 11 :(commented)
 /// /// error: unneeded unit return type ^^^^ help: remove the `-> ()`
