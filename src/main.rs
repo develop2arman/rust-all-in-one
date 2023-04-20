@@ -40,6 +40,8 @@
 /// }
 /// ```
 
+
+
 #[cfg(panic = "unwind")]
 #[cfg(target_family = "unix")]
 fn get_platform() -> String {
