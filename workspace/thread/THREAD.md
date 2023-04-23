@@ -1,3 +1,4 @@
+
 [[RACE]]
 
 [[RAYON]]
@@ -13,6 +14,8 @@
 [[THREAD-SHARESTATE]]
 
 ---
+
+> Rust provides a mechanism for spawning native OS threads via the spawn function, the argument of this function is a moving closure. These threads will be scheduled by the OS.
 
 > Rc<T> is not thread-safe. In multithreaded code, it’s much better to replace Rc<T> with Arc<T> and Rc<RefCell<T>> with Arc<Mutex<T>>. [[Arc]] stands for #atomic_reference_counter.
 

@@ -12,6 +12,9 @@ members = [
 
     "workspace/shared",
 
+
+    "workspace/algorithm/graph/clique",
+
     "workspace/documentation/knoldus/knoldus_bin",
     "workspace/documentation/knoldus/knoldus_lib",
 
@@ -59,6 +62,7 @@ members = [
     "workspace/borrowchecker/lifetime/generic/rust-doc",
 
 
+    "workspace/stdmisc/rust-doc",
     "workspace/thread/threadpool/packtpub",
     "workspace/thread/unsafe/rust-in-action",
     "workspace/thread/rayon/rust-doc",

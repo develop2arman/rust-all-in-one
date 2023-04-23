@@ -26,22 +26,21 @@
 /// `nothig`
 ///
 /// ## Example
-/// In this example, we’ve specified a lifetime parameter 'a for the parameter x and the return type, but not for the parameter y, because the lifetime of y does not have any relationship with the lifetime of x or the return value.
 ///
-/// ```compile_fail,ignore
+/// //```compile_fail,ignore
 
 use std::thread;
 
 fn main() {
-    unimplemented!();
-   // let (tx, rx) = mpsc::channel();
+    
+   let (tx, rx) = std::sync::mpsc::channel();
 
-    // thread::spawn(move || {
-    //     let val = String::from("hi");
-    //     tx.send(val).unwrap();
-    //     println!("val is {}", val);
-    // });
+    thread::spawn(move || {
+        let val = String::from("hi");
+        tx.send(val).unwrap();
+       // println!("val is {}", &val);
+    });
 
-    // let received = rx.recv().unwrap();
-    // println!("Got: {}", received);
+    let received = rx.recv().unwrap();
+    println!("Got: {}", received);
 }

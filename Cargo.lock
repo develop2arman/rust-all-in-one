@@ -39,6 +39,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "algo_graph_clique_bin"
+version = "0.1.0"
+
+[[package]]
 name = "andrew"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3407,6 +3411,10 @@ version = "0.1.0"
 
 [[package]]
 name = "rust-in-action-while-flowcontrol_bin"
+version = "0.1.0"
+
+[[package]]
+name = "rust_doc_std_bin"
 version = "0.1.0"
 
 [[package]]

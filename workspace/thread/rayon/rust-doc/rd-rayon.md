@@ -1,3 +1,3 @@
 
 
-> `tags` [[quicksort]] [[PartialOrd]] [[Send]] [[swap]]
+> `tags` [[quicksort]] [[PartialOrd]] [[Send]] [[swap]] [[ALGORITHM]] [[Parallel]]

@@ -152,6 +152,10 @@
 
 ---
 
+- [STDMISC](stdmisc/STDMISC.md)
+- 
+---
+
 - [THREAD](thread/THREAD.md)
   - [RACE](thread/race/RACE.md)    
   - [RAYON](thread/rayon/RAYON.md)    
@@ -191,3 +195,4 @@
 - [BRAIN_TREASER](brain-teaser/BRAIN_TREASER.md)
 - [QUESTIONS](questions/QUESTIONS.md)
   - [TBYTE](questions/triplebyte/TBYTE.md)
+- [ALGORITHM](algorithm/ALGORITHM.md)

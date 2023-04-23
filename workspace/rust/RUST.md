@@ -1,5 +1,14 @@
 # Rust
 
+<details>
+  
+  * In fact, Rust contains several layers of the Standard Library: `core`, `alloc` and `std`. 
+  * `core` includes the most basic types and functions that don't depend on `libc`, allocator or
+    even the presence of an operating system. 
+  * `alloc` includes types which require a global heap allocator, such as `Vec`, `Box` and `Arc`.
+  * Embedded Rust applications often only use `core`, and sometimes `alloc`.
+
+</details>
 
 ## Commands
 
@@ -43,9 +52,9 @@
 
 2. **Data races**—The inability to determine how a program will behave from <u>_run to run_</u> because external factors change (see [[pnkfx-mpsc]])
 
-3. **Buffer overflow**—An attempt to access the 12th element of an <u>_array_</u> with only 6 elements (see listing 1.5)
+3. **Buffer overflow**—An attempt to access the 12th element of an <u>_array_</u> with only 6 elements 
 
-4. **Iterator invalidation**—An issue caused by something that is iterated over after being <u>_altered midway_ through</u> (see listing 1.6)
+4. **Iterator invalidation**—An issue caused by something that is iterated over after being <u>_altered midway_ through</u> 
 
 ## Memory model
 

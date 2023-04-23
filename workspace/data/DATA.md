@@ -11,7 +11,7 @@
 
 [[ria-regex]]
 
-[[ria-parser]]
+[[clique]]
 
 [[mr-operator]]
 
