@@ -44,6 +44,9 @@ fn main() {
     println!("1 - 2 = {}", 1i32 - 2);
     // TODO ^ Try changing `1i32` to `1u32` to see why the type is important
 
+    // Scientific notation
+    println!("1e4 is {}, -2.5e-3 is {}", 1e4, -2.5e-3);
+
     // Short-circuiting boolean logic
     println!("true AND false is {}", true && false);
     println!("true OR false is {}", true || false);

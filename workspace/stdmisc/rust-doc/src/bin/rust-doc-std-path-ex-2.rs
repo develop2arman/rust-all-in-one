@@ -6,7 +6,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust_doc_std_bin  --bin rust-doc-std-thread-ex-2```
+/// ```cargo run -q -p rust_doc_std_bin  --bin rust-doc-std-path-ex-2```
 ///
 /// ```cargo doc  --package rust_doc_std_bin --message-format short --no-deps --open --color always```
 ///
