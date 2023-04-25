@@ -153,6 +153,12 @@
 ---
 
 - [STDMISC](stdmisc/STDMISC.md)
+  - [thread-channel](stdmisc/rust-doc/rd-thread-channel)
+  - [path](stdmisc/rust-doc/rd-path)
+  - [file](stdmisc/rust-doc/rd-file)
+  - [filesystem](stdmisc/rust-doc/rd-filesystem)
+  - [command-process](stdmisc/rust-doc/rd-command-process)
+  - [ffi](stdmisc/rust-doc/rd-ffi)
   
 ---
 
