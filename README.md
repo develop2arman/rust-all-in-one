@@ -1,5 +1,7 @@
 ## Rust-All-In-One
 ### Included All Toturials(Important Sections)
+
+[![](https://tokei.rs/b1/arman2develop/rust-all-in-one?category=files&label=count%20of%20files)](https://github.com/arman2develop/rust-all-in-one).
 [![codecov](https://codecov.io/gh/codecov/uploader/branch/master/graph/badge.svg?token=7ed4c74c-b784-464a-a9fe-fbea6dcb4cb8)](https://codecov.io/gh/arman2develop/rust-all-in-one)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/codecov/uploader.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/arman2develop/rust-all-in-one/alerts/)
 

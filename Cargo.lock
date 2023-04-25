@@ -2799,6 +2799,27 @@ name = "rust-doc-convert-as_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-convert-doc_from_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
+
+[[package]]
+name = "rust-doc-convert-parse_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
+
+[[package]]
+name = "rust-doc-convert-to_string_in_fmt_bin"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
+
+[[package]]
 name = "rust-doc-convert-trait-as_bin"
 version = "0.1.0"
 

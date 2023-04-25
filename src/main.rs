@@ -55,6 +55,7 @@ fn get_platform() -> String {
 }
 
 fn greet_world() {
+    
     println!("Hello, world!");
     let southern_germany = "Grüß Gott!";
     let japan = "ハロー・ワールド";
