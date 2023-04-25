@@ -7,6 +7,8 @@ on:
     branches: [ main ]
 env:
   CARGO_TERM_COLOR: always
+permissions:
+  contents: write      
 jobs:
   check:
     name: rust-all-in-one
