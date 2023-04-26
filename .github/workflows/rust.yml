@@ -22,6 +22,6 @@ jobs:
     - name: Install Tokei      
       run: cargo install --git https://github.com/XAMPPRocky/tokei.git tokei
     - name: Print Tokei Report      
-      run: tokei --files --sort code      
+      run: tokei --sort code      
     - name: Run Program
       run: cargo run
