@@ -6,8 +6,31 @@
     ],
     "settings": {
         "workbench.editor.labelFormat": "medium",
-        "window.zoomLevel": 1,
+        "window.zoomLevel": 0,
         "files.autoSave": "afterDelay",
-        "editor.semanticHighlighting.enabled": true
+        "editor.semanticHighlighting.enabled": true,
+        "rust-analyzer.linkedProjects": [
+            "./workspace/tests/Cargo.toml",
+            "./workspace/tests/test_pretty/Cargo.toml",
+            "./workspace/tests/test_pretty/Cargo.toml",
+            "./workspace/tests/test_unit/Cargo.toml",
+            "./workspace/tests/test_unit/Cargo.toml",
+            "./workspace/tests/test_pretty/Cargo.toml",
+            "./workspace/tests/test_pretty/Cargo.toml",
+            "./workspace/tests/test_unit/Cargo.toml",
+            "./workspace/tests/test_pretty/Cargo.toml",
+            "./workspace/tests/test_unit/Cargo.toml",
+            "./workspace/tests/test_proptest/Cargo.toml",
+            "./workspace/tests/test_proptest_runner/Cargo.toml",
+            "./workspace/tests/test_proptest_runner/Cargo.toml",
+            "./workspace/tests/test_proptest_runner/Cargo.toml",
+            "./workspace/tests/test_proptest_runner/Cargo.toml",
+            "./workspace/tests/test_proptest_runner/Cargo.toml",
+            "./workspace/tests/test_proptest_runner/Cargo.toml",
+            "./workspace/tests/test_proptest_runner/Cargo.toml",
+            "./workspace/tests/test_proptest_runner/Cargo.toml",
+            "./workspace/tests/test_proptest_runner/Cargo.toml",
+            "./workspace/tests/test_proptest_runner/Cargo.toml"
+        ]
     }
 }

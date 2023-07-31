@@ -1,0 +1,10 @@
+[package]
+name = "test_unit_bin"
+version = "0.1.0"
+edition = "2021"
+
+
+[[bin]]
+doc = true
+name = "test_unit-main"
+path = "src/test_unit-main.rs"

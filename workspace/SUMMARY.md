@@ -175,6 +175,17 @@
 
 ---
 
+- [TEST](tests/TESTS.md)  
+
+  - [proptest](tests/test_proptest/test-proptest.md)
+  
+  - [unit](tests/test_unit/test-unit.md)
+
+  - [pretty](tests/test_pretty/test-pretty.md)
+
+    
+---
+
 - [UNSAFE](unsafe/UNSAFE.md)
   - [EXTERN_FFI](unsafe/extern-ffi/EXTERN-FFI.md)
   - [SAFE_ABSTRACTION](unsafe/safe-abstraction/SAFE_ABSTRACTION.md)
