@@ -81,7 +81,7 @@ For data that is created while the application is running. Data in this region m
 
 > String struct is also on stack,but holds a reference to data on heap
 
-```
+```rust
   let s= Struct{x:y,z:w}  
 ```
 

@@ -12,7 +12,7 @@
 /// ```cargo test --doc  --package test_proptest_runner_bin```
 ///
 /// ## What
-/// `Compound Strategies`
+/// `Test Compound Strategies`
 /// `Testing functions that take single arguments of primitive types is nice and all, but is kind of underwhelming. Back when we were writing the whole stack by hand, extending the technique to, say, two integers was clear, if verbose. But TestRunner only takes a single Strategy; how can we test a function that needs inputs from more than one?`
 ///
 /// ## How
@@ -36,7 +36,7 @@ fn add(a: i32, b: i32) -> i32 {
 }
 
 #[test]
-fn test_add() {
+pub fn test_add() {
     let mut runner = TestRunner::default();
     // Combine our two inputs into a strategy for one tuple. Our test
     // function then destructures the generated tuples back into separate

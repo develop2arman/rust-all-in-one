@@ -1,5 +1,5 @@
 #![allow(dead_code, unused_variables)]
-
+use shared::shorten_string;
 /// Main
 ///
 /// ## Commands
@@ -11,7 +11,7 @@
 /// ```cargo test --doc  --package test_unit_bin```
 ///
 /// ## What
-/// `TODO`
+/// `Unit Test`
 ///
 /// ## How
 /// `TODO`
@@ -24,9 +24,14 @@
 /// `nothing`
 ///
 /// ## Example
-///  `TODO`
+/// `Shortens a string to the given length`
 ///
-
+/// ```rust
+/// //If you want to test your library as a client, use an integration test(by use keyword).
+/// use playground::shorten_string;
+/// assert_eq!(shorten_string("Hello World", 5), "Hello");
+/// assert_eq!(shorten_string("Hello World", 20), "Hello World");
+/// ```
 
 #[cfg(test)]
 mod tests {
@@ -35,12 +40,20 @@ mod tests {
     fn test_parse_date() {
         assert_eq!(1,1);
     }
-
+    #[test]
+    fn greeting_contains_name() {
+        let result = greeting("Carol");
+        assert!(
+            result.contains("Carol"),
+            "Greeting did not contain name, value was `{}`",
+            result
+        );
+    }
 
 
 }
 
 fn main() {
 
-    println!("{}", "Arman");
+    unimplemented!();
 }
