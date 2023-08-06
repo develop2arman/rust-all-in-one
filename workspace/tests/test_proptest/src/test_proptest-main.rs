@@ -64,6 +64,12 @@ use proptest::prelude::*;
         assert_eq!(None, parse_date("2017-06017"));
         assert_eq!(Some((2017, 06, 17)), parse_date("2017-06-17"));
     }
+
+    #[test]
+    fn test_october_first() {
+        assert_eq!(Some((0, 10, 1)), parse_date("0000-10-01"));
+    }
+
     #[test]
     fn test_unicode_gibberish() {
         assert_eq!(None, parse_date("0 𞺫A® "));

@@ -22,4 +22,24 @@
 
 >> Whenever we're using RefCell borrows, it's a good practice to think carefully that we're using it in a safe way, since making mistakes there may lead to runtime panics. In this implementation, however, it's easy to see that we have just the single borrow, and that the closing block immediately discards it.
 
->> Future work: Apart from shared ownership, we can also get shared **mutability at runtime** with Rust's concept of interior mutability, which are modeled by special wrapper smart pointer types.
+
+## Future work
+Apart from shared ownership, we can also get shared **mutability at runtime** with Rust's concept of interior mutability, which are modeled by special wrapper smart pointer types.
+
+## Benchmark for the linkedlists
+
+```rust, compiled_fail, no_run
+#[cfg(test)]
+mod tests {
+    use super::*;
+    extern crate test;
+    use test::Bencher;
+
+    #[bench]
+    fn bench_list_append(b: &mut Bencher) {
+        let mut list = List::new_empty();
+        b.iter(|| {
+            list.append(10);
+        });
+    }
+```
