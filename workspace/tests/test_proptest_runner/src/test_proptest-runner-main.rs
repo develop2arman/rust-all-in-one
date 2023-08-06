@@ -29,11 +29,16 @@
 ///  `TODO`
 ///
 
-use proptest::test_runner::TestRunner;
 
 fn add(a: i32, b: i32) -> i32 {
     a + b
 }
+
+
+#[cfg(test)]
+mod tests {
+use super::*;
+use proptest::test_runner::TestRunner;
 
 #[test]
 pub fn test_add() {
@@ -47,6 +52,10 @@ pub fn test_add() {
         assert!(sum >= b);
         Ok(())
     }).unwrap();
-}
+    }
+  }
 
-fn main() { test_add(); }
+
+
+
+fn main() { unimplemented!() }

@@ -9,8 +9,7 @@ doc = true
 name = "test_dependent-main"
 path = "src/test_dependent-main.rs"
 
-[dependencies]
-shared = { shared = "../../shared/", version = "0.1.0"}
+
 
 [[test]]
 doc = true

@@ -4,5 +4,4 @@
 #
 # It is recommended to check this file in to source control so that
 # everyone who runs the test benefits from these saved cases.
-cc 2340776748b18e4a2222843668e1644d02e1c85cd6220f83de4d659832066c75 # shrinks to y = 0, m = 10, d = 1
-cc 609f00d02c9eee9c6096530b5f2dbb0ac0efad085b7d62f7012eb1c6c922b5ee # shrinks to s = " 0Aa\u{ec8} 00"
+cc 10eec3fbd36866e66be1428725d7bf8d5408d8183ca6ba4d7d15ebba1a7f505c # shrinks to s = " 𐖗AaA a"

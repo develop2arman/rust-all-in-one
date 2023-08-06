@@ -1,5 +1,5 @@
 
-> `tags` [[unit_test]] [[pretty_assertions]]
+> `tags` [[test_unit]] [[pretty_assertions]] [[test]]
 
 ## Tip
 Specify it as [dev-dependencies] and it will only be used for compiling tests, examples, and benchmarks. This way the compile time of cargo build won't be affected!

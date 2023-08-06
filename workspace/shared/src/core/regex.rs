@@ -1,4 +1,4 @@
-pub fn parse_integer(s: &str) -> Option<i32> {
+ fn parse_integer(s: &str) -> Option<i32> {
     // checks if string contains _only_ digits using a regular expression,
     // including negative numbers
     use regex::Regex;
@@ -13,7 +13,8 @@ pub fn parse_integer(s: &str) -> Option<i32> {
 
 #[cfg(test)]
 mod tests {
-    use crate::parse_integer;
+
+    use super::parse_integer;
 
     #[test]
     fn test_parse_integer() {

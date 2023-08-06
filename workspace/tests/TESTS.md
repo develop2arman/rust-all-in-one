@@ -63,4 +63,4 @@ Because constraints on values cannot be expressed in QuickCheck, generation and 
 |    Performance/Speed   |       Great       |        Good      |
 |    Perform   |       Stateless       |        Full-state      |
 |    Shrink values   |     *         |        -      |
-| Shrink values strategy |     specific type         |       Custom generator(constraint)      |
+| Generation/Shrink strategy |     per-type/specific type         |       per-value/Custom generator(constraint)      |

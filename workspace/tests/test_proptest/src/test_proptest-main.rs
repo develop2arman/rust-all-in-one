@@ -27,8 +27,8 @@
 /// ## Example
 ///  `TODO`
 ///
-fn main() {}
-use std::ascii::AsciiExt; //NOREADME
+
+use std::ascii::*; //NOREADME
 // NOREADME
 fn parse_date(s: &str) -> Option<(u32, u32, u32)> {
     if 10 != s.len() { return None; }
@@ -66,10 +66,11 @@ use proptest::prelude::*;
     }
     #[test]
     fn test_unicode_gibberish() {
-        assert_eq!(None, parse_date("0Aa\u{ec8} 00"));
+        assert_eq!(None, parse_date("0 𞺫A® "));
     }
 
     proptest! {
+        // What this does is take a literally random &String (ignore \\PC* for the moment, we’ll get back to that — if you’ve already figured it out, contain your excitement for a bit) and give it to parse_date() and then throw the output away.
         #[test]
         fn doesnt_crash(s in "\\PC*") {
             parse_date(&s);
@@ -80,7 +81,8 @@ use proptest::prelude::*;
         fn parses_all_valid_dates(s in "[0-9]{4}-[0-9]{2}-[0-9]{2}") {
             parse_date(&s).unwrap();
         }
-
    
     }
 }
+
+fn main() {unimplemented!()}

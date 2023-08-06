@@ -1,9 +1,10 @@
 
-> `tags` [[proptest_test]] 
+> `tags` [[test_proptest_runner]] [[test]]
 
-## Proptest
-Proptest is a property testing framework (i.e., the QuickCheck family) inspired by the Hypothesis framework for Python. It allows to test that certain properties of your code hold for arbitrary inputs, and if a failure is found, automatically finds the minimal test case to reproduce the problem. Unlike QuickCheck, generation and shrinking is defined on a per-value basis instead of per-type, which makes it more flexible and simplifies composition.
 
-## What is property testing?
-Property testing is a system of testing code by checking that certain properties of its output or behaviour are fulfilled for all inputs. These inputs are generated automatically, and, critically, when a failing input is found, the input is automatically reduced to a minimal test case.
-Property testing is best used to complement traditional unit testing (i.e., using specific inputs chosen by hand). Traditional tests can test specific known edge cases, simple inputs, and inputs that were known in the past to reveal bugs, whereas property tests will search for more complicated inputs that cause problems.
+## Test Compound Strategies
+Testing functions that take single arguments of primitive types is nice and all, but is kind of underwhelming. Back when we were writing the whole stack by hand, extending the technique to, say, two integers was clear, if verbose. But TestRunner only takes a single Strategy; 
+> How can we test a function that needs inputs from more than one?
+
+## How
+Other compound strategies include fixed-sizes arrays of strategies and Vecs of strategies (which produce arrays or Vecs of values parallel to the strategy collection), as well as the **various strategies** provided in the **collection module**.

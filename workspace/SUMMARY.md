@@ -178,6 +178,8 @@
 - [TEST](tests/TESTS.md)  
 
   - [proptest](tests/test_proptest/test-proptest.md)
+
+  - [proptest_runner](tests/test_proptest_runner/test-proptest_runner.md)
   
   - [unit](tests/test_unit/test-unit.md)
 

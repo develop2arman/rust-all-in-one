@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p test_unit_bin --bin test_unit-main```
+/// ```cargo test -q -p test_unit_bin --bin test_unit-main  -- --test-threads=1  --show-output --ignored --test greeting_contains_name```
 ///
 /// ```cargo doc  --package test_unit_bin --message-format short --no-deps --open --color always```
 ///

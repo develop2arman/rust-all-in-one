@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p test_unit_bin --bin test_panic```
+/// ```cargo test -q -p test_unit_bin --bin test_panic -- --show-output --ignored```
 ///
 /// ```cargo doc  --package test_unit_bin --message-format short --no-deps --open --color always```
 ///
@@ -32,21 +32,43 @@ pub struct Guess {
 
 impl Guess {
     pub fn new(value: i32) -> Guess {
-        if value < 1 || value > 100 {
-            panic!("Guess value must be between 1 and 100, got {}.", value);
+        if value < 1 {
+            panic!(
+                "Guess value must be greater than or equal to 1, got {}.",
+                value
+            );
+        } else if value > 100 {
+            panic!(
+                "Guess value must be less than or equal to 100, got {}.",
+                value
+            );
         }
 
         Guess { value }
     }
 }
 
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
+
     #[test]
-    #[should_panic]
+    #[should_panic(expected = "less than or equal to 100")]
     fn greater_than_100() {
         Guess::new(200);
     }
+
+	#[test]
+	#[ignore]
+	fn expensive_test() {
+	    assert_eq!(1,1);
+	}
+
+}
+
+
+fn main(){
+    unimplemented!();
 }
