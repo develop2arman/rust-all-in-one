@@ -1,4 +1,3 @@
-
 pub mod adder;
 
 pub fn setup() {

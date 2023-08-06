@@ -37,10 +37,10 @@ pub fn add<T: std::ops::Add<Output = T>>(a: T, b: T) -> T {
 pub fn wadd<T: WrappingAdd<Output = T>>(a: T, b: T) -> T {
   a.wrapping_add(&b)
 }
+#[cfg(test)]
 mod tests {
-    
-
-    use proptest::prelude::*;
+use super::*;
+  use proptest::prelude::*;
    
     proptest! {
       #[test]
