@@ -7,11 +7,11 @@ use self::common::adder;
 ///
 /// ```cd rust-survey-json_test```
 /// 
-/// ```cargo test  -p rust-survey-json_test -- --show-output```
+/// ```cargo test  -p test_independent -- --show-output```
 ///
-/// ```cargo test  -p rust-survey-json_test -- --show-output --ignore```
+/// ```cargo test  -p test_independent-- --show-output --ignore```
 ///             
-/// ```cargo doc  --package rust-survey-json_test --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package integration_test--message-format short --no-deps --open --color always```
 ///
 /// ```cargo test --doc  --package rust-survey-json_test```
 ///
@@ -47,5 +47,6 @@ fn it_adds_two() {
 #[test]
 #[ignore]
 fn expensive_test() {
-    // code that takes an hour to run
+    common::setup();
+    assert_eq!(7, adder::add_two(5));
 }

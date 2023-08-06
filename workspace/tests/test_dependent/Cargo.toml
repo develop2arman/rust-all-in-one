@@ -1,0 +1,19 @@
+[package]
+name = "test_dependent"
+version = "0.1.0"
+edition = "2021"
+
+
+[[bin]]
+doc = true
+name = "test_dependent-main"
+path = "src/test_dependent-main.rs"
+
+[dependencies]
+shared = { shared = "../../shared/", version = "0.1.0"}
+
+[[test]]
+doc = true
+name = "integration_dep_test"
+path = "test/integration_dep_test.rs"
+test = true

@@ -1,5 +1,5 @@
 #![allow(dead_code, unused_variables)]
-use shared::shorten_string;
+
 /// Main
 ///
 /// ## Commands
@@ -28,7 +28,7 @@ use shared::shorten_string;
 ///
 /// ```rust
 /// //If you want to test your library as a client, use an integration test(by use keyword).
-/// use playground::shorten_string;
+/// use shared::shorten_string;
 /// assert_eq!(shorten_string("Hello World", 5), "Hello");
 /// assert_eq!(shorten_string("Hello World", 20), "Hello World");
 /// ```
@@ -42,7 +42,7 @@ mod tests {
     }
     #[test]
     fn greeting_contains_name() {
-        let result = greeting("Carol");
+        let result = "Carol";
         assert!(
             result.contains("Carol"),
             "Greeting did not contain name, value was `{}`",

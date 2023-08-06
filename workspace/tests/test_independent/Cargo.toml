@@ -1,6 +1,6 @@
 [package]
 edition = "2021"
-name = "rust-survey-json_test"
+name = "test_independent"
 version = "0.1.0"
 
 

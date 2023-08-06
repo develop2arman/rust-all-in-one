@@ -33,25 +33,12 @@ mod tests {
 use super::*;
 use pretty_assertions::{assert_eq, assert_ne};
 
-
     #[test]
     fn diff(){
         let x= "Hello world";
         let y = "Helo World";
         
         assert_eq!(x, y);
-    }
-
-
-#[derive(PartialEq, Eq, Hash)]
-struct Student{
-    first_name: String,
-    last_name: String,    
-}
-
-#[derive(PartialEq, Eq, Hash)]
-struct Grade{
-        code: u32,
     }
 }
 
@@ -68,6 +55,6 @@ fn main() {
     let y = Some(Foo { lorem: "Hello Wrold!", ipsum: 42, dolor: Ok("hey ho!".to_string())});
 
     assert_eq!(x, y);
-    println!("{}", "Arman");
+    println!("{}", "print");
 }
 

@@ -10,6 +10,4 @@ name = "test_unit-main"
 path = "src/test_unit-main.rs"
 
 [dependencies]
-doc = false
-name = "shared"
 shared = { shared = "../../shared/", version = "0.1.0"}

@@ -305,4 +305,6 @@ members = [
     "workspace/tests/test_proptest",
     "workspace/tests/test_proptest_runner",
     "workspace/tests/test_unit",
+    "workspace/tests/test_independent",    
+    "workspace/tests/test_dependent",    
 ]
