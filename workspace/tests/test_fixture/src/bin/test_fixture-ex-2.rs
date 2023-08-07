@@ -82,3 +82,7 @@ unit_tests!{
         assert_eq!(g.num, 10);
     }
 }
+
+fn main(){
+    unimplemented!();
+}
