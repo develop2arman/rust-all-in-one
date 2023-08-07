@@ -4,11 +4,11 @@
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p test_unit_bin --bin test_panic -- --show-output --ignored```
+/// ```cargo test -q -p unit_test --bin test_panic -- --show-output --ignored```
 ///
-/// ```cargo doc  --package test_unit_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package unit_test --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package test_unit_bin```
+/// ```cargo test --doc  --package unit_test```
 ///
 /// ## What
 /// `Unit Test`

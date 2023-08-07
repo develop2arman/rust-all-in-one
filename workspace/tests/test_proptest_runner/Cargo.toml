@@ -1,5 +1,5 @@
 [package]
-name = "test_proptest_runner_bin"
+name = "proptest_runner_test"
 version = "0.1.0"
 edition = "2021"
 

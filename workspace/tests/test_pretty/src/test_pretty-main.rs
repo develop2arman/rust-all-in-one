@@ -5,11 +5,11 @@ use pretty_assertions::{assert_eq, assert_ne};
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p test_pretty_bin --bin test_pretty-main```
+/// ```cargo test -q -p pretty_test --bin test_pretty-main```
 ///
-/// ```cargo doc  --package test_pretty_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package pretty_test --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package test_pretty_bin```
+/// ```cargo test --doc  --package pretty_test```
 ///
 /// ## What
 /// `TODO`

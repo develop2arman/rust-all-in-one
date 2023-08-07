@@ -4,11 +4,11 @@
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p test_unit_bin --bin test_unit-main  -- --test-threads=1  --show-output --ignored --test greeting_contains_name```
+/// ```cargo test -q -p unit_test --bin test_unit-main  -- --test-threads=1  --show-output --ignored --test greeting_contains_name```
 ///
-/// ```cargo doc  --package test_unit_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package unit_test --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package test_unit_bin```
+/// ```cargo test --doc  --package unit_test```
 ///
 /// ## What
 /// `Unit Test`

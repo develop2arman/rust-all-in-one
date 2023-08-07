@@ -5,11 +5,11 @@
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p test_proptest_runner_bin --bin test_proptest-runner-main```
+/// ```cargo test -q -p proptest_runner_test --bin test_proptest-runner-main```
 ///
-/// ```cargo doc  --package test_proptest_runner_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package proptest_runner_test --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package test_proptest_runner_bin```
+/// ```cargo test --doc  --package proptest_runner_test```
 ///
 /// ## What
 /// `Test Compound Strategies`

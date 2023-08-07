@@ -1,5 +1,5 @@
 [package]
-name = "test_pretty_bin"
+name = "pretty_test"
 version = "0.1.0"
 edition = "2021"
 

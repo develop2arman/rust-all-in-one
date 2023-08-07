@@ -177,15 +177,16 @@
 
 - [TEST](tests/TESTS.md)  
 
+  - [unit](tests/test_unit/test-unit.md)  
+  
+  - [pretty](tests/test_pretty/test-pretty.md)
+  
   - [proptest](tests/test_proptest/test-proptest.md)
 
-  - [proptest_runner](tests/test_proptest_runner/test-proptest_runner.md)
+  - [proptest_runner](tests/test_proptest_runner/test-proptest_runner.md)  
+
+  - [fixture](tests/test_fixture/test-fixture.md)
   
-  - [unit](tests/test_unit/test-unit.md)
-
-  - [pretty](tests/test_pretty/test-pretty.md)
-
-    
 ---
 
 - [UNSAFE](unsafe/UNSAFE.md)

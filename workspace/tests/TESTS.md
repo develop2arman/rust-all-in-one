@@ -2,11 +2,13 @@
 
 [[test-unit]]
 
-[[test-proptest]]
+[[test_proptest]]
+
+[[test-proptest_runner]]
 
 [[test-pretty]]
 
-[[test-proptest_runner]]
+[[test-fixture]]
 
 ---
 
@@ -64,3 +66,27 @@ Because constraints on values cannot be expressed in QuickCheck, generation and 
 |    Perform   |       Stateless       |        Full-state      |
 |    Shrink values   |     *         |        -      |
 | Generation/Shrink strategy |     per-type/specific type         |       per-value/Custom generator(constraint)      |
+
+
+## Unit vs Integration Test
+As the name suggests, these test the public API of a service/crate. These tests are used to test the functionalities of a program. **Integration tests are placed in separate files, unlike the unit tests, which are present in the same file.** Additionally, integration tests are useful for ensuring the public APIs don’t change and the expected usage of the program is not broken. *These tests reside in tests folder in the root of the crate*
+
+
+## Black vs white boxes
+
+In this case, the parse method belongs to the public interface, so the test is a *black-box* test, meaning it only uses the **public API** of your crate. **Black-box tests usually belong in one or more files in the tests subdirectory** of your crate. A good convention is to have one test file per module to make it easy to find the corresponding tests.
+
+Sometimes, it makes sense to test **private functionality to better pinpoint a bug or regression**. Those tests are called *white-box* tests. Because they need to access the crate internals, they must be defined within the crate. The best practice is to **include a test submodule** directly in your crate and only compile it under test, like so:
+
+```rust, no_run, compile_fail
+#[cfg(test)]
+mod test {
+    use super::{parse_inner, check};
+
+    #[test]
+    fn test_parse_inner() { .. }
+
+    #[test]
+    fn test_check() { .. }
+}
+```

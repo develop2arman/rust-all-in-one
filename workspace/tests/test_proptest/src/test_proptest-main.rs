@@ -5,11 +5,11 @@
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p test_proptest_bin --bin test_proptest-main```
+/// ```cargo test -q -p proptest_test --bin test_proptest-main```
 ///
-/// ```cargo doc  --package test_proptest_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package proptest_test --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package test_proptest_bin```
+/// ```cargo test --doc  --package proptest_test```
 ///
 /// ## What
 /// `TODO`

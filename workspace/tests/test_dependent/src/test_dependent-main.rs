@@ -4,11 +4,11 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p test_dependent --bin test_dependent-main```
+/// ```cargo run -q -p dependent_test --bin dependent_test-main```
 ///
-/// ```cargo doc  --package test_dependent --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package dependent_test --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package test_dependent```
+/// ```cargo test --doc  --package dependent_test```
 ///
 /// ## What
 /// `Test Dependent`
