@@ -1,6 +1,6 @@
 #![allow(dead_code, unused_variables)]
 
-use pretty_assertions::assert_eq;
+use pretty_assertions::{assert_eq, assert_ne};
 
 
 /// Main
@@ -42,21 +42,29 @@ use pretty_assertions::{assert_eq, assert_ne};
         
         assert_eq!(x, y);
     }
+
+    #[test]
+    fn diff2(){
+        let x = Some(Foo { lorem: "Hello World!", ipsum: 42, dolor: Ok("hey ho!".to_string())});
+        let y = Some(Foo { lorem: "Hello World!", ipsum: 42, dolor: Ok("hey ho!".to_string())});
+
+        assert_eq!(x, y);
+   }
 }
 
 
+#[derive(Debug, PartialEq)]
+struct Foo {
+    lorem: &'static str,
+    ipsum: u32,
+    dolor: Result<String, String>,
+}
 
+
+  
+
+    
 fn main() {
-    #[derive(Debug, PartialEq)]
-    struct Foo {
-        lorem: &'static str,
-        ipsum: u32,
-        dolor: Result<String, String>,
-    }
-
-    let x = Some(Foo { lorem: "Hello World!", ipsum: 42, dolor: Ok("hey ho!".to_string())});
-    let y = Some(Foo { lorem: "Hello World!", ipsum: 42, dolor: Ok("hey ho!".to_string())});
-
-    assert_eq!(x, y);
+        unimplemented!();
 }
 

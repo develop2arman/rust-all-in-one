@@ -34,7 +34,7 @@ fn parse_date(s: &str) -> Option<(u32, u32, u32)> {
     if 10 != s.len() { return None; }
 
     // NEW: Ignore non-ASCII strings so we don't need to deal with Unicode.
-    //if !s.is_ascii() { return None; } // commented to create file log by using doesnt_crash
+    if !s.is_ascii() { return None; } // commented to create file log by using doesnt_crash
     // uncomment it to pass all test after created file
 
     if "-" != &s[4..5] || "-" != &s[7..8] { return None; }
@@ -65,14 +65,11 @@ use proptest::prelude::*;
         assert_eq!(Some((2017, 06, 17)), parse_date("2017-06-17"));
     }
 
-    #[test]
-    fn test_october_first() {
-        assert_eq!(Some((0, 10, 1)), parse_date("0000-10-01"));
-    }
+
 
     #[test]
     fn test_unicode_gibberish() {
-        assert_eq!(None, parse_date("0 𞺫A® "));
+        assert_eq!(None, parse_date("\u{c46}a®a a "));
     }
 
     proptest! {

@@ -4,9 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 
-[dependencies]
-pretty_assertions = "1.4.0"
-pretty_assertions_sorted = "1.2.3"
+[dev-dependencies]
+pretty_assertions = "1.0.0"
+# pretty_assertions = { version= "...", default-features = false, features = ["alloc"] }
 
 [[bin]]
 doc = true
