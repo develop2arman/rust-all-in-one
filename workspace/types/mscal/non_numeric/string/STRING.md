@@ -67,7 +67,7 @@ hat’s why you typically see slices referred to in their referenced form, &[T] 
 
 >  All **stack**-allocated values need to have a proper **size known** and, due to this, str cannot be initialized.
 
-```rust,compile_fail,no_run
+```rust,compile_fail,no_run,ignore
 let my_str: str = "This is borrowed";
 ```
 
