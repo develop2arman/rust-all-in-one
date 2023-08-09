@@ -56,21 +56,21 @@ pub fn main() {
     let requests : [Request<String>; 3] = [Request::GoSwimming,
                                            Request::LookAtStars,
                                            Request::EatLunch];
-    // for request in requests.iter() {
-    //     match parent.can_i(request) {
+    for request in requests.iter() {
+        match parent.can_i(request) {
 
-    //         Answer::Yes(_) => {
-    //             println!("Hooray!");
-    //             return;
-    //         }
-    //         Answer::No(why) => {
-    //             println!("I do not believe you when you say {}!", why);
-    //         }
-    //         Answer::Maybe => {
-    //             println!("Well, how about ...");
-    //         }
-    //     }
-    // }
+            Answer::Yes(_) => {
+                println!("Hooray!");
+                return;
+            }
+            Answer::No(why) => {
+                println!("I do not believe you when you say {}!", why);
+            }
+            Answer::Maybe => {
+                println!("Well, how about ...");
+            }
+        }
+    }
 }
 
 impl<X> Answer<X> {
