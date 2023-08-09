@@ -56,7 +56,7 @@ The lack of compile-time knowledge explains the distinction in the type <u>signa
 Slices are important because it’s easier to implement *traits for slices than arrays*. Traits are how Rust programmers add methods to objects. As [T; 1], [T; 2], ..., [T; n ] are all different types, implementing traits for arrays can become unwieldy. 
 > Creating a slice from an array is easy and cheap because it doesn’t need to be tied to any specific size.
 
-Another important use for <u>slices is their ability to act as a view on arrays</u> (and other slices). The term view here is taken from database technology and means that slices can gain fast, read-only access to data without needing to copy anything around.
+Another important use for <u>slices is their ability to act as a view on arrays</u> (and other slices). The term view here is taken from database technology and means that **slices can gain fast, read-only access to data without needing to copy anything around.**
 
 The problem with slices is that Rust wants to know the size of every object in your program, and **slices are defined as not having a compile-time size**. References to the rescue. 
 As mentioned in the discussion about the use of the term dynamically sized, slice size is fixed in memory. 
