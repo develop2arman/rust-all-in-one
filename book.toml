@@ -3,7 +3,7 @@ authors = ["Arman Riazi"]
 language = "en"
 multilingual = false
 src = "./workspace/"
-title = "Rust-All-In-One"
+title = "Rust-All-In-One(A.R)"
 
 [rust]
 edition = "2021"   # the default edition for code blocks
