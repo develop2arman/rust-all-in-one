@@ -12,9 +12,4 @@
 
 > 'static lifetime, which means the Rust compiler can figure out the lifetime and we aren’t required to annotate it explicitly. Accessing an **immutable** static variable is **safe**.
 
-> `Newtype pattern =  wrapper type = NewPattern = Thin Wrapper` :
-> Thin wrapping of an existing type in another struct.we specify impl Add<Meters> to set the value of the Rhs type parameter instead of using the default of Self.
 
-```rust
-impl Add<Meters> for Millimeters {type Output = Millimeters;fn add(self, other: Meters) -> Millimeters {}}
-```

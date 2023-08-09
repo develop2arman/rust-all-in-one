@@ -20,14 +20,8 @@
 /// ` 'static value passed in is: 5`
 ///
 /// ## Example
-/// //```rust,compile_fail,ignore
-///   let i = 5;
-///   print_it(i);
-///
-///   // oops, &i only has the lifetime defined by the scope of
-///   // main(), so it's not 'static:
-///   print_it(&i);//error : borrowed value does not live long enough
-/// ```
+/// `TODO`
+
 fn largest<T>(list: &[T]) -> T
     where T:  Copy + PartialOrd {
     let mut largest = list[0];

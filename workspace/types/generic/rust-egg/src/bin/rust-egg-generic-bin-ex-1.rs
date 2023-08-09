@@ -4,7 +4,7 @@ use std::fmt::Debug;
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-egg-types-generic_bin --bin rust-egg-generic-bin-ex-1```
+/// ```cargo test -q -p rust-egg-types-generic_bin --bin rust-egg-generic-bin-ex-1```
 ///
 /// ## What
 /// `TODO`
@@ -37,7 +37,7 @@ struct Wrapper<T> {
 
 impl<T> Wrapper<T> {
     pub fn new(value: T) -> Self {
-        Wrapper { value }
+        Self { value }
     }
 }
 
@@ -56,4 +56,8 @@ mod tests {
         // assert!(false);
         assert_eq!(Wrapper::new("Foo").value, "Foo");
     }
+}
+
+fn main(){
+    unimplemented!();
 }

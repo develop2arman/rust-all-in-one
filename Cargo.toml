@@ -112,6 +112,7 @@ members = [
    "workspace/types/generic/rust-doc",
    "workspace/types/generic/educative",
    "workspace/types/generic/master-rust",
+   "workspace/types/generic/rust-egg",
    "workspace/types/static/master-rust",
    "workspace/types/mscal/numeric/primitive/float/rust-in-action",
    "workspace/types/mscal/numeric/primitive/int/code-like-a-pro",

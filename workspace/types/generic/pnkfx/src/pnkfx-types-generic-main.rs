@@ -41,6 +41,7 @@ enum Request<X> {
     EatLunch,
 }
 
+#[derive(Debug)]
 enum Answer<X> {
     Yes(X),
     No(X),
@@ -50,7 +51,7 @@ enum Answer<X> {
 struct Parent;
 //     ^~~~~~~ whoa.  (zero-sized!)
 
-pub fn main() {
+fn main() {
     let parent = Parent;
 
     let requests : [Request<String>; 3] = [Request::GoSwimming,
@@ -73,14 +74,20 @@ pub fn main() {
     }
 }
 
+
+fn print_it( input: impl std::fmt::Debug + 'static ) {
+    println!( "'static value passed in is: {:?}", input );
+}
+
+
 impl<X> Answer<X> {
     fn map<Y, F>(self, f: F) -> Answer<Y> where F: Fn(X) -> Y {
-        unimplemented!(); // XXX see exercise 2 below.
+        unimplemented!();
     }
 }
 
 impl Parent {
-    fn can_i<X>(&self, r: Request<X>) -> Answer<String> {
+    fn can_i<X>(&self, r: &Request<X>) -> Answer<&str> //Answer<String>  {
         let answer = match r {
             Request::LookAtStars => Answer::Maybe,
 
@@ -90,10 +97,10 @@ impl Parent {
             Request::EatLunch => Answer::Yes("it is close to noon"),
         };
 
-        answer.map(|string_literal| string_literal.to_string())
+        answer
+        //answer.map(|string_literal| string_literal.to_string())
     }
 }
-
 // EXERCISE: code does not compile; fix it somehow.
 
 // EXERCISE: implement `Answer::map`
