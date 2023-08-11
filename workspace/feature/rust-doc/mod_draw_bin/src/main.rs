@@ -1,4 +1,31 @@
 #![allow(dead_code, unused_variables)]
+/// Main
+///
+/// ## Commands
+///
+/// ```cargo run -q -p mod_draw_bin --bin main```
+///
+/// ```cargo doc  --package mod_draw_bin  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package mod_draw_bin ```
+///
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `TODO`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `nothing`
+///
+/// ## Example
+///  `TODO`
+///
+///
 
 use mod_draw_lib::core::mod_color::color;
 use mod_draw_lib::core::mod_shapes::shapes;

@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p packpub-return_bin --bin packpub-return-main```
+/// ```cargo run -q -p packpub-return_bin --bin packpub-return-main```
 ///
 /// ```cargo doc  --package packpub-return_bin --message-format short --no-deps --open --color always```
 ///
@@ -41,13 +41,13 @@ fn main() {
     hm.insert(3 ,"Hello");
     hm.insert(5, "world");
 
-    let r = hm.get(&4).unwrap_or(&"NoString");
+    let r = hm.get(&4).unwrap(&"NoString");
 
     println!("{}", r);
 
     match get_arg(3) {
         Ok(v)=>println!("OK - {}", v),
-        Err(e)=>println!("Errrorr - {}",e),
+        Err(e)=>println!("Error - {}",e),
     }
 }
 

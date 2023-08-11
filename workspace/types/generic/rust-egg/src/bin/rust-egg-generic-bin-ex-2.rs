@@ -4,7 +4,7 @@ use std::fmt::Debug;
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-egg-types-generic_bin --bin rust-egg-generic-bin-ex-2```
+/// ```cargo test -q -p rust-egg-types-generic_bin --bin rust-egg-generic-bin-ex-2```
 ///
 /// ## What
 /// `TODO`
@@ -75,4 +75,8 @@ mod tests {
             "Gary Plotter (11) - achieved a grade of A+"
         );
     }
+}
+
+fn main(){
+    unimplemnted!();
 }

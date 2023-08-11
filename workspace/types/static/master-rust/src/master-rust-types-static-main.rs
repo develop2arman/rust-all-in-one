@@ -27,7 +27,7 @@
 ///
 /// ## Example
 /// //```rust,compile_fail,ignore
-static mut BAZ: u32 = 4;
+const mut BAZ: u32 = 4;
 static FOO: u8 = 9;
 
 fn main() {

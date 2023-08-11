@@ -6,5 +6,15 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-mod_draw_lib = { path = "../mod_draw_lib", features = ["shapes"], optional = false , default-features = false}
 rgb = { version = "0.8.25", features = ["serde"], optional = false , default-features = true}
+# mod_draw_lib = { path = "../mod_draw_lib", features = ["shapes"], optional = false , default-features = false}
+mod_draw_lib = { path = "../mod_draw_lib, default-features = false}
+[features]
+//Enables shapes support by enabling the "shapes" feature of mod_draw_lib.
+shapes = ["mod_draw_lib/shapes"]
+color = ["mod_draw_lib/color"]
+
+[[bin]]
+doc = true
+name = "main"
+path = "src/main.rs"

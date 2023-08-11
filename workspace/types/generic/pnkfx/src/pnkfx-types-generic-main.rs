@@ -87,7 +87,8 @@ impl<X> Answer<X> {
 }
 
 impl Parent {
-    fn can_i<X>(&self, r: &Request<X>) -> Answer<&str> //Answer<String>  {
+    fn can_i<X>(&self, r: &Request<X>) -> Answer<&str> //Answer<String>  
+    {
         let answer = match r {
             Request::LookAtStars => Answer::Maybe,
 
@@ -101,6 +102,7 @@ impl Parent {
         //answer.map(|string_literal| string_literal.to_string())
     }
 }
+
 // EXERCISE: code does not compile; fix it somehow.
 
 // EXERCISE: implement `Answer::map`

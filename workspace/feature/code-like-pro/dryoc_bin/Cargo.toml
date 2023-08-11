@@ -5,5 +5,5 @@ edition = "2021"
 
 [[bin]]
 doc = true
-name = "code-like-pro-feature-dryoc_bin"
+name = "code-like-pro-feature-dryoc-main"
 path = "src/code-like-pro-feature-dryoc-main.rs"
