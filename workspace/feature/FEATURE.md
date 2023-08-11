@@ -13,11 +13,40 @@ Features for the package being built can be enabled on the command-line with fla
 
 - The `--no-default-features` command-line flag disables the default features of the package.
 - The `default-features = false` option can be specified in a dependency declaration.
+- `--all-features`: Activates all features of all packages selected on the command-line.
+
 
 ## Caution
 - [x] Dependencies automatically enable default features unless `default-features = false` is specified.
 - [x] Another issue is that it can be a `SemVer incompatible change` to remove a feature from the default set, so you should be confident that you will keep those features.
-- [x] Dependencies can be marked `optional`, which means they will not be compiled by default except using `--features name` to enable dependency that has `optional` field.
+> A different feature resolver can be specified with the resolver field in Cargo.toml, like this:
+```rust,no_run, compile_fail
+[package]
+name = "my-package"
+version = "1.0.0"
+resolver = "2"
+```
+- [x] Dependencies can be marked `optional`, **which means they will not be compiled by default** except using `--features name` to enable dependency that has `optional` field.
+- [x]  There are rare cases where features may be mutually incompatible with one another. consider adding a compile error to detect this scenario. For example:
+```rust,no_run, compile_fail
+#[cfg(all(feature = "foo", feature = "bar"))]
+compile_error!("feature \"foo\" and feature \"bar\" cannot be enabled at the same time");
+```
+> When there is a conflict, choose one feature over another. The **cfg-if** package can help with writing more complex cfg expressions.
+
+- [x] For example, if you want to optionally support no_std environments, do not use a no_std feature. Instead, use a std feature that enables std. For example:
+
+```rust,no_run, compile_fail
+#![no_std]
+
+#[cfg(feature = "std")]
+extern crate std;
+
+#[cfg(feature = "std")]
+pub fn function_that_requires_std() {
+    // ...
+}
+```
 
 ## Rules 
 
@@ -71,7 +100,9 @@ C++ does not have a built-in feature directly equivalent to the ability to pick 
 
 Code of `#[cfg(feature = "my-feature")]` is used for a function or module. It is feasable to enable a feature flag for a specific struct or enum, a test/benchmark case, and a specific implementation of a trait as well.
 
-To enable a feature only when multiple flags are set, you can use the #[cfg(all(feature1, feature2, ...))].
+To enable a feature only when multiple flags are set, you can use the 
+
+> `#[cfg(all(feature1, feature2, ...))].`
 
 ## Example 1
 

@@ -8,11 +8,11 @@ edition = "2021"
 [dependencies]
 rgb = { version = "0.8.25", features = ["serde"], optional = false , default-features = true}
 # mod_draw_lib = { path = "../mod_draw_lib", features = ["shapes"], optional = false , default-features = false}
-mod_draw_lib = { path = "../mod_draw_lib, default-features = false}
+mod_draw_lib = { path = "../mod_draw_lib", optional = true ,default-features = false}
 [features]
-//Enables shapes support by enabling the "shapes" feature of mod_draw_lib.
+# Enables shapes support by enabling the "shapes" feature of mod_draw_lib.
 shapes = ["mod_draw_lib/shapes"]
-color = ["mod_draw_lib/color"]
+color = ["mod_draw_lib?/color"]
 
 [[bin]]
 doc = true
