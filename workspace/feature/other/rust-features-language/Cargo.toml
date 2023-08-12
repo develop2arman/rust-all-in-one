@@ -21,11 +21,11 @@ path = "french-linguistic-pkg"
 "rand" = "*"
 
 [features]
-# English package is installed by default
+# English p ackage is installed by default
 english = ["english-linguistic-pkg"]
 french = ["french-linguistic-pkg"]
 
 [[bin]]
-doc = true
-name = "main"
-path = "src/main.rs"
+doc = false
+name = "feature-language-main.rs"
+path = "src/feature-language-main.rs"

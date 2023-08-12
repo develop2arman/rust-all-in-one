@@ -3,7 +3,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p mod_draw_bin --bin main```
+/// ```cargo run -q -p mod_draw_bin --bin mod-draw-main```
 ///
 /// ```cargo doc  --package mod_draw_bin  --message-format short --no-deps --open --color always```
 ///

@@ -15,8 +15,8 @@ members = [
 
 #   "workspace/algorithm/graph/clique",
 #
-#   "workspace/documentation/knoldus/knoldus_bin",
-#   "workspace/documentation/knoldus/knoldus_lib",
+   "workspace/documentation/knoldus/knoldus_bin",
+   "workspace/documentation/knoldus/knoldus_lib",
 #
    "workspace/feature/rust-doc/mod_draw_bin",
    "workspace/feature/rust-doc/mod_draw_lib",

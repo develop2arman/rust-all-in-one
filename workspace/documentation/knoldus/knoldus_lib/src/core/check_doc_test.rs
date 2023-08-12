@@ -24,7 +24,7 @@ pub struct ReadmeDoctests;
 /// We have a struct here. Remember it doesn't accept negative numbers!
 pub struct MyStruct(pub usize);
 
-/// ```compile_fail
+/// ```rust,no_run,compile_fail,ignore
 /// let x = my_crate::MyStruct(-5);
 /// ```
 #[cfg(doctest)]

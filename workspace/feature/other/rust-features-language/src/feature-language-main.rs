@@ -3,9 +3,9 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-features-language_bin --bin main --features english```
+/// ```cargo run -q -p rust-features-language_bin --bin feature-language-main --features english```
 ///
-/// ```cargo run -q -p rust-features-language_bin --bin main --features french```
+/// ```cargo run -q -p rust-features-language_bin --bin feature-language-main --features french```
 /// 
 /// ```cargo doc  --package rust-features-language_bin  --message-format short --no-deps --open --color always```
 ///

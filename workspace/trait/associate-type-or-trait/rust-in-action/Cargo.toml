@@ -7,5 +7,5 @@ edition = "2021"
 
 [[bin]]
 doc = true
-name = "rust-in-action-trait-associate-type-and-trait-main"
-path = "src/rust-in-action-trait-associate-type-and-trait-main.rs"
+name = "ria-trait-associate-type-and-trait-main"
+path = "src/ria-trait-associate-type-and-trait-main.rs"

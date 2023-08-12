@@ -5,5 +5,5 @@ edition = "2021"
 
 [[bin]]
 doc = true
-name = "rust-in-action-data-csv-main"
+name = "master-rust-operator-main"
 path = "src/master-rust-operator-main.rs"
