@@ -92,5 +92,7 @@ fn main(){
     
     greet_world();
 
+    finish();
+
 }
 

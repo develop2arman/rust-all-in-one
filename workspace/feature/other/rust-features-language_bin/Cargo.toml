@@ -21,7 +21,6 @@ path = "french-linguistic-pkg"
 "rand" = "*"
 
 [features]
-# English p ackage is installed by default
 english = ["english-linguistic-pkg"]
 french = ["french-linguistic-pkg"]
 
