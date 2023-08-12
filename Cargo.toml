@@ -22,6 +22,8 @@ members = [
    "workspace/feature/rust-doc/mod_draw_lib",
    "workspace/feature/code-like-pro/dryoc_bin",
    "workspace/feature/other/rust-features-language",
+   "workspace/feature/rust-doc/rd_macro_bin/",
+   "workspace/feature/rust-doc/rd_carg_metadata",
 #
    "workspace/data/serde/candle_dev",
    "workspace/data/operator/master-rust",
