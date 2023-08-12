@@ -21,6 +21,7 @@ members = [
    "workspace/feature/rust-doc/mod_draw_bin",
    "workspace/feature/rust-doc/mod_draw_lib",
    "workspace/feature/code-like-pro/dryoc_bin",
+   "workspace/feature/other/rust-features-language",
 #
    "workspace/data/serde/candle_dev",
    "workspace/data/operator/master-rust",
@@ -257,7 +258,7 @@ members = [
 #   "workspace/macro/rust-in-action",
 #
 #
-#   "workspace/module/rust-egg",
+   "workspace/module/rust-egg",
 #
 #
 #   "workspace/data/io/io/buffer/rust-in-action",

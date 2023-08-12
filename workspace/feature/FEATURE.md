@@ -1,7 +1,9 @@
 
-[[rd-feature-shapes-lib]]
+[[other-feature-lib]]
 
 [[clp-feature-dryoc]]
+
+[[other-feature-lib]]
 
 ---
 

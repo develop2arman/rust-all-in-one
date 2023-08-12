@@ -3,8 +3,7 @@
 <details>
   
   * In fact, Rust contains several layers of the Standard Library: `core`, `alloc` and `std`. 
-  * `core` includes the most basic types and functions that don't depend on `libc`, allocator or
-    even the presence of an operating system. 
+  * `core` includes the most basic types and functions that don't depend on `libc`, allocator or even the presence of an operating system. 
   * `alloc` includes types which require a global heap allocator, such as `Vec`, `Box` and `Arc`.
   * Embedded Rust applications often only use `core`, and sometimes `alloc`.
 
@@ -107,7 +106,26 @@ For data that is created while the application is running. Data in this region m
 
 To understand what is included in local scope by default(like try_into()), you should investigate the std:: [[prelude]] module. Its documentation is available online at [prelude](https://doc.rust-lang.org/std/prelude/index.html)
 
+### no_std
 
+Finally, Rust is very well suited for embedded development and shellcodes. Because these environments don't rely on a proper Operating System, you generally can't use Rust's standard library and you need to use the core library instead.
+
+For these usecases, we use the #![no_std] attribute:
+
+```rust,no_run,compile_fail
+#![no_std]
+#![no_main]
+
+#[panic_handler]
+fn panic(_: &core::panic::PanicInfo) -> ! {
+    loop {}
+}
+
+#[no_mangle]
+fn _start() {
+  // ...
+}
+```
 ## Method & Func
 
 > Methods are functions that are coupled to some object. From a syntactic point of view, these are just functions that don’t need to specify one of their arguments. Rather than calling open() and passing a File object in as an argument (read(f, buffer)), methods allow the main object to be implicit in the function call (f.read(buffer)) using the dot operator.1
