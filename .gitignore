@@ -4,3 +4,9 @@ rls/
 *.o
 .vscode/
 Cargo.lock
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.sdf
+*.cachefile

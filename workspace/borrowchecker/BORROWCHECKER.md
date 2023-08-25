@@ -9,7 +9,7 @@
 
 > It underpins the term **fearless concurrency**
 
-> Borrow checking relies on three interrelated concepts—lifetimes, ownership, and borrowing:
+> Borrow checking relies on three interrelated concepts—**lifetimes, ownership, and borrowing**:
 
 > Ownership: the notion of ownership is rather limited. **An owner cleans up when its values’ lifetimes end.**
 
@@ -17,8 +17,10 @@
 Owners cannot prevent other parts of the program from accessing their values or report data theft to some overarching Rust authority.the term move means something very specific within Rust. Nothing physically moves.Movement within Rust code **refers to movement of ownership**, rather than the movement of data. 
 Ownership is a term used within the Rust community to <u>refer to the compile-time process that checks</u> that every use of a value is valid and that every value is destroyed cleanly.
 ownership system provides a route to memory safety without needing a garbage collector. 
-Four general strategies can help with ownership issues:
-    - **Use references** where full ownership is not required.
+
+> Four general strategies can help with **ownership issues**:
+
+    - ==Use references== where full ownership is not required.
     - **Duplicate** the value.
     - **Refactor** code to reduce the number of long-lived objects.
     - **Wrap** your data in a type designed to assist with movement issues.
