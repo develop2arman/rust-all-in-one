@@ -20,10 +20,10 @@ ownership system provides a route to memory safety without needing a garbage col
 
 > Four general strategies can help with **ownership issues**:
 
-    - ==Use references== where full ownership is not required.
-    - **Duplicate** the value.
-    - **Refactor** code to reduce the number of long-lived objects.
-    - **Wrap** your data in a type designed to assist with movement issues.
+- [x] **Use references** where full ownership is not required.
+- [x] **Duplicate** the value.
+- [x] **Refactor** code to reduce the number of long-lived objects.
+- [x] **Wrap** your data in a type designed to assist with movement issues.
 
 > To borrow: there is no obligation to return the value to its owner. Its meaning is used to emphasize that while values can have a **single owner**, it’s possible for many parts of the program to **share access** to those values.
 
@@ -57,9 +57,6 @@ The ownership rule of Rust states the following principles:
 > The ownership rule prevents you from having multiple points of access for modifying the value, which can lead to use after free situations, even in single threaded contexts with languages that permit multiple mutable aliases for values.
 
 > The drop and write {} method comes from the Drop trait, which is implemented for most heap allocated types in Rust and makes automatic freeing of resources a breeze.
-
-
-![Ownership](../rust/assets/images/Ownership.jpg)
 
 
 ---
