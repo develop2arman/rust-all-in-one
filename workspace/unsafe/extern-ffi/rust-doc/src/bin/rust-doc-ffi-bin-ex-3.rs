@@ -1,7 +1,7 @@
 #![allow(dead_code, unused_variables)]
 use std::arch::asm;
 
-/// rust-doc-ffi-main
+/// rust-doc-ffi-bin-ex-3
 ///
 /// ## Commands
 ///

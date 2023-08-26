@@ -7,6 +7,8 @@
 ///
 /// ## Commands
 ///
+/// ```rustc rust-doc-ffi-main.rs --extern multiply_numbers=multiplication.o -o rust_ffi_example```
+///
 /// ```cargo run -q -p rust-doc-ffi_bin --bin rust-doc-ffi-main```
 ///
 /// ```cargo doc  --package rust-doc-ffi_bin --message-format short --no-deps --open --color always```
@@ -30,11 +32,21 @@
 /// //```rust,compile_fail,ignore
 ///
 extern "C" {
-    fn abs(input: i32) -> i32;
+    fn add_numbers(a: u64, b: u64) -> u64;
+    fn multiply_numbers(a: u64, b: u64) -> u64;
 }
 
 fn main() {
+    let x = 5;
+    let y = 7;
+    //let sum: u64;
+    let product: u64;
+
     unsafe {
-        println!("Absolute value of -3 according to C: {}", abs(-3));
+       // sum = add_numbers(x, y);
+        product = multiply_numbers(x, y);
     }
+
+   // println!("The sum of {} and {} is {}.", x, y, sum);
+    println!("The product of {} and {} is {}.", x, y, product);
 }

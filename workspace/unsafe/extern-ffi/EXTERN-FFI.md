@@ -1,6 +1,5 @@
 [[rd-ffi]]
 
-
 ---
 
 > Functions declared within extern blocks are always unsafe to call from Rust code.
@@ -22,11 +21,16 @@ fn main() {
 ```
 
 
-## MANGLE
+##  Using extern Functions to Call External Code
+
+> Rust has the keyword extern that facilitates the creation and use of a Foreign Function Interface (FFI). An #FFI is a way for a programming language to define functions and enable a different (foreign) programming language to call those functions.
+extern "C" block, we list the names and signatures of external functions from another language we want to call. The "C" part defines which application binary interface (ABI) the external function uses: the #ABI defines how to call the function at the assembly level. The "C" ABI is the most common and follows the C programming language’s ABI.
+
 > We also need to add a #[no_mangle] annotation to tell the Rust compiler not to mangle the name of this function. Mangling is when a compiler changes the name we’ve given a function to a different name that contains more information for other parts of the compilation process to consume but is less human readable. Every programming language compiler mangles names slightly differently, so for a Rust function to be nameable by other languages, we must disable the Rust compiler’s name mangling.
 
 > In the following example, we make the call_from_c function accessible from C code, after it’s compiled to a shared library and linked from C:
 
+> We can also use extern to create an interface that **allows other languages to call Rust functions**. Instead of creating a whole extern block, we add the extern keyword and specify the ABI to use just before the fn keyword for the relevant function. We also need to **add a #[no_mangle] annotation** to tell the Rust compiler not to mangle the name of this function. Mangling is when a compiler changes the name we’ve given a function to a different name that contains more information for other parts of the compilation process to consume but is less human readable. Every programming language compiler mangles names slightly differently, so for a Rust function to be nameable by other languages, **we must disable the Rust compiler’s name mangling.**
 
 ```rust
 #![allow(unused)]
@@ -38,4 +42,6 @@ pub extern "C" fn call_from_c() {
 }
 ```
 
-> `tags` 
+- [Rust ffi](https://cratecode.com/info/rust-ffi)
+
+> `tags` #C #ffi #abi
