@@ -32,6 +32,7 @@ struct Point {
 
 impl Point {
     fn sum(&self) -> u8 {
+        
         match self.cached_sum.get() {
             Some(sum) => {
                 println!("Got from cache: {}", sum);

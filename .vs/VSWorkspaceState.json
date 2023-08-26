@@ -2,17 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\workspace",
-    "\\workspace\\thread",
-    "\\workspace\\thread\\rayon",
-    "\\workspace\\thread\\rayon\\rust-doc",
-    "\\workspace\\unsafe",
-    "\\workspace\\unsafe\\extern-ffi",
-    "\\workspace\\unsafe\\safe-abstraction",
-    "\\workspace\\unsafe\\safe-abstraction\\rust-doc",
-    "\\workspace\\unsafe\\safe-static-mut",
-    "\\workspace\\unsafe\\safe-static-mut\\rust-doc",
-    "\\workspace\\unsafe\\unsafe-thread"
+    "\\workspace\\pointers",
+    "\\workspace\\pointers\\smartpointer",
+    "\\workspace\\pointers\\smartpointer\\compiletime",
+    "\\workspace\\pointers\\smartpointer\\compiletime\\cow",
+    "\\workspace\\pointers\\smartpointer\\ops",
+    "\\workspace\\pointers\\smartpointer\\runtime",
+    "\\workspace\\pointers\\smartpointer\\runtime\\shared_mutability",
+    "\\workspace\\pointers\\smartpointer\\runtime\\shared_mutability\\ref-cell"
   ],
-  "SelectedNode": "\\workspace\\unsafe\\unsafe-thread",
+  "SelectedNode": "\\workspace\\pointers\\smartpointer\\runtime\\shared_mutability",
   "PreviewInSolutionExplorer": false
 }

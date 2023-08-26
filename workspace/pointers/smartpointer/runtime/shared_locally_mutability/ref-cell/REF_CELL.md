@@ -1,6 +1,8 @@
 
 [[mr-ref-cell]]
 
+[[rd-ref-cell]]
+
 ---
 
 ## Interior Mutability
