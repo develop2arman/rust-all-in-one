@@ -502,7 +502,22 @@
             "   result",
             "}"
         ],
-        "description": "This specifies that the reference on i32 in the Fn trait bound can have any lifetime."
+        "description": "E.g State is a trait. We call the as_ref method on the Option because we want a reference to the value inside the Option rather than ownership of the value. Because state is an Option<Box<dyn State>>"
+    },
+    "Access to content of dynamic State trait": {
+        "prefix": "ms.option.box.dyn",
+        "body": [
+            "#![allow(unused)]",
+            "fn main() {",
+            "  impl Post {",
+            "    // --snip--",
+            "    pub fn content(&self) -> &str {",
+            "        self.state.as_ref().unwrap().content(self)",
+            "    }",
+            "    // --snip--",
+            "}"
+        ],
+        "description": "At this point, when we call content on the &Box<dyn State>, deref coercion will take effect on the & and the Box so the content method will ultimately be called on the type that implements the State trait."
     },
     "Generic Imp": {
         "prefix": "ms.impl.wh.gen",

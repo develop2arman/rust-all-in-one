@@ -54,5 +54,5 @@ impl Point {
 let p1 = Point { x: 0.0, y: 0.0 };
 let p2 = Point { x: 5.0, y: 6.5 };
 p1.distance(&p2);
-(&p1).distance(&p2);
+//(&p1).distance(&p2);
 }

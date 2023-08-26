@@ -50,5 +50,5 @@ fn call_foo(arg: i32) -> i32 {
 }
 
 fn main(){
-    println!("{}",call_foo(1));
+    println!("{}",call_foo(2));
 }

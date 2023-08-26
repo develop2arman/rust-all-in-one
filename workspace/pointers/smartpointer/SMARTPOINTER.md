@@ -31,23 +31,27 @@ pub trait Deref {
 }
 ```
 
-> Deref coercion is a convenience that Rust performs on arguments to functions and methods. Deref coercion works only on types that implement the Deref trait. Deref coercion converts such a type into a reference to another type. For example, deref coercion can convert &String to &str because String implements the Deref trait such that it returns &str. 
+> Deref coercion is a convenience that Rust performs on arguments to functions and methods. Deref coercion works only on types that implement the Deref trait. 
+
+> **Deref coercion converts such a type into a reference to another type**. For example, deref coercion can convert &String to &str because String implements the Deref trait such that it returns &str. 
 
 > The number of times that Deref::deref needs to be inserted is resolved at compile time, so there is no runtime penalty for taking advantage of deref coercion!
 
-> Similar to how you use the Deref trait to override the * operator on immutable references, you can use the DerefMut trait to override the * operator on mutable references.
+> Similar to how you use the **Deref trait to override the * operator on immutable references**, you can use the DerefMut trait to override the * operator on mutable references.
 
 > Rust does deref coercion when it finds types and trait implementations in three cases:
 
 
 - From &T to &U when T: Deref<Target=U>
 - From &mut T to &mut U when T: DerefMut<Target=U>
-- From &mut T to &U when T: **Deref**<Target=U>
+- From **&mut T to &U** when T: **Deref**<Target=U>
 - **The third case** is trickier: Rust will also coerce a mutable reference to an immutable one. But the reverse is not possible
 
-> the Drop trait is almost always used when implementing a smart pointer. For example, when a Box<T> is dropped it will deallocate the space on the heap that the box points to.*Note that we didn’t need to call the+ drop method explicitly.*
+> the Drop trait is almost always used when implementing a smart pointer. For example, when a Box<T> is dropped it will deallocate the space on the heap that the box points to.
 
-> We call the as_ref method on the Option because we want a reference to the value inside the Option rather than ownership of the value. 
+> *Note that we didn’t need to call the+ drop method explicitly.*
+
+> State is a trait, we call the as_ref method on the Option because we want a reference to the value inside the Option rather than ownership of the value. 
 > Because state is an `Option<Box<dyn State>>`
 
 ```rust,no_run,compile_fail  
@@ -67,7 +71,12 @@ pub trait Deref {
 ![Ownership](../../rust/assets/images/Ownership.jpg)
 
 
+---
+
+### Pointer Definations & Comparision
+
 > Rc<T> enables multiple owners of the same data; whenever somebody takes a new reference, and decrements it when someone releases a reference. When the counter hits zero, the value is dropped.Rc<T> does not allow mutation. To permit that, we need to wrap our wrapper. Rc<RefCell<T>> is a type that can be used to perform interior mutability . An object that has interior mutability presents an immutable façade while internal values are being modified.
+
 > Rc<T> is not thread-safe. In multithreaded code, it’s much better to replace Rc<T> with Arc<T> and Rc<RefCell<T>> with Arc<Mutex<T>>. Arc stands for atomic reference counter.
 
 > Box<T> The ownership semantics with Box type depends on the wrapped type. If the underlying type is Copy, the Box instance becomes copy, otherwise it **moves by default**.allows immutable or mutable borrows checked at compile time; **Rc<T> allows only immutable borrows checked at compile time; RefCell<T> allows immutable or mutable borrows checked at runtime.**
@@ -79,6 +88,14 @@ pub trait Deref {
 > Cell<T>: This gives us internal mutability for types that implement the Copy trait. In other words, we gain the possibility to get multiple mutable references to something.
 
 > RefCell<T>: This gives us internal mutability for types, without requiring the Copy trait. It uses **runtime locking for safety**. Lets us have many immutable borrows or one mutable borrow at any point in time.Box<T> and RefCell<T> have single owners. For types that implement Copy, the get method retrieves the current interior value. For types that implement Default, the take method replaces the current interior value with Default::default() and returns the replaced value.For all types, the replace method replaces the current interior value and returns the replaced value and the **into_inner** method consumes the Cell<T> and returns the interior value. Additionally, the set method replaces the interior value, dropping the replaced value.
+
+![Smart-Pointer-1](../../rust/assets/images/smart-pointer-1.JPG)
+
+![Smart-Pointer-2](../../rust/assets/images/smart-pointer-2.JPG)
+
+![Smart-Pointer-3](../../rust/assets/images/smart-pointer-3.JPG)
+
+
 
 ### Comparison of inherited and interior/mutability
 
@@ -92,14 +109,3 @@ pub trait Deref {
 >> Such as Cell<T>, which is similar except that instead of giving references to the inner value, the **value is copied** in and out of the Cell<T>.
 
 >> There’s also Mutex<T>, which offers interior mutability that’s **safe** to use **across threads** [[multi_tread]] scenarios.
-
----
-
-### Pointer Definations
-
-![Smart-Pointer-1](../../rust/assets/images/smart-pointer-1.JPG)
-
-![Smart-Pointer-2](../../rust/assets/images/smart-pointer-2.JPG)
-
-![Smart-Pointer-3](../../rust/assets/images/smart-pointer-3.JPG)
-
