@@ -80,6 +80,7 @@ fn main() {
     println!("User is {}",u.simple_string());
     u.grow(20);
     println!("User is {}",u.simple_string());
+    u.die();
 
 
 }

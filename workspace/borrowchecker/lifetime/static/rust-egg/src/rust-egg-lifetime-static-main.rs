@@ -7,11 +7,11 @@ use std::fmt::Display;
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-egg-types-static_bin --bin rust-egg-types-static-main```
+/// ```cargo run -q -p rust-egg-lifetime-static_bin --bin rust-egg-lifetime-static-main```
 ///
-/// ```cargo doc  --package rust-egg-types-static_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-egg-lifetime-static_bin --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-egg-types-static_bin```
+/// ```cargo test --doc  --package rust-egg-lifetime-static_bin```
 ///
 /// ## What
 // `TODO`

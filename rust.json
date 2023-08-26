@@ -1,7 +1,7 @@
 {
     "Main unimplement": {
         "prefix": "mb.main.unimpl",
-        "body": ["fn main(){", "    unimplemented!()", "}"],
+        "body": [ "fn main(){", "    unimplemented!()", "}" ],
         "description": "Most used attributes"
     },
 
@@ -70,7 +70,7 @@
 
     "todo": {
         "prefix": "ml.todo",
-        "body": ["// TODO:$1", "$2"],
+        "body": [ "// TODO:$1", "$2" ],
         "description": "Todo Later sth"
     },
     "To Report Bug": {
@@ -117,7 +117,7 @@
     },
     "Pattern range": {
         "prefix": "ml.p.range..",
-        "body": ["1..=3 => {pr$1}", "$2"],
+        "body": [ "1..=3 => {pr$1}", "$2" ],
         "description": "_exclusive range  pattern, BK REF here matches 1 and 2; partially unstable. 🚧"
     },
     "Consume if let - getting value option of some": {
@@ -143,22 +143,22 @@
     },
     "Destructure struct": {
         "prefix": "ml.destruct",
-        "body": ["let Point { x: $1, y: $2 } = point;", "$3"],
+        "body": [ "let Point { x: $1, y: $2 } = point;", "$3" ],
         "description": "using a `let` binding"
     },
     "Generate random": {
         "prefix": "ml.rand1",
-        "body": ["rand::random::<$1u8>()", "$2"],
+        "body": [ "rand::random::<$1u8>()", "$2" ],
         "description": "cargo add rand"
     },
     "Generate random call fun": {
         "prefix": "ml.rand2",
-        "body": ["use rand::random;", "$1random()"],
+        "body": [ "use rand::random;", "$1random()" ],
         "description": "cargo add rand"
     },
     "@Pattern binding": {
         "prefix": "ml.patt.binding@..",
-        "body": ["x @ 1..=$1 => {pr$2}", "$3"],
+        "body": [ "x @ 1..=$1 => {pr$2}", "$3" ],
         "description": "inclusive range Bind matched to x; pattern binding, BK EX REF here x would be 1, 2, … or 5."
     },
     "Pattern Right": {
@@ -329,12 +329,12 @@
     },
     "Sum accumilator Fold": {
         "prefix": "ms.util.fold",
-        "body": ["(1..=num).into_iter().fold(0,|x,y| x+y)"],
+        "body": [ "(1..=num).into_iter().fold(0,|x,y| x+y)" ],
         "description": " sum item with next item"
     },
     "Multiply accumilator Fold": {
         "prefix": "ms.util.product",
-        "body": ["(1..=num).product()"],
+        "body": [ "(1..=num).product()" ],
         "description": " for multiply or factorial"
     },
     "Get Memory Address &Size Memory ofa struct": {
@@ -409,7 +409,7 @@
     },
 
     "AsRef Generic": {
-        "prefix": ["ms.gen.asref.where", "ms.asref.gen"],
+        "prefix": [ "ms.gen.asref.where", "ms.asref.gen" ],
         "body": [
             "fn char_counter<T: AsRef<str>>(arg: T) -> usize {",
             "   arg.as_ref().chars().count()",
@@ -418,7 +418,7 @@
         "description": "AsRef Generic to 2 style"
     },
     "AsRef Generic With Where": {
-        "prefix": ["ms.gen.asref.where", "ms.asref.where"],
+        "prefix": [ "ms.gen.asref.where", "ms.asref.where" ],
         "body": [
             "fn byte_counter<T>(arg: T) -> usize ",
             "where ",
@@ -441,18 +441,18 @@
     },
     "Print to console": {
         "prefix": "mylog",
-        "body": ["console.log(\"$1\");", "$2"],
+        "body": [ "console.log(\"$1\");", "$2" ],
         "description": "Log output to console"
     },
     "Let to let": {
         "prefix": "mb.letlet",
-        "body": ["let $1 = {let $2 = $3;let $4 = $5;$6};", "$7"],
+        "body": [ "let $1 = {let $2 = $3;let $4 = $5;$6};", "$7" ],
         "description": "block expressian without func"
     },
 
     "Println fmt macro": {
         "prefix": "ml.pr",
-        "body": ["println!(\"Printed:{:?}\",$1);", "$4"],
+        "body": [ "println!(\"Printed:{:?}\",$1);", "$4" ],
         "description": "print formated to console"
     },
     "Define Macro": {
@@ -541,28 +541,28 @@
 
     "Static lifetime": {
         "prefix": "ml.\"stat",
-        "body": ["static mut $1: &\"static str = \"$2\";", "$3"],
+        "body": [ "static mut $1: &\"static str = \"$2\";", "$3" ],
         "description": "stdin"
     },
 
     "CONST EPSILON": {
         "prefix": "ml.const.EPSILON",
-        "body": ["assert!($1your_absolute_difference <= f32::EPSILON);", "$2"],
+        "body": [ "assert!($1your_absolute_difference <= f32::EPSILON);", "$2" ],
         "description": "Equal zero float handled"
     },
     "Identifier": {
         "prefix": "ml.le",
-        "body": ["let $1:$2 = $3;", "$4"],
+        "body": [ "let $1:$2 = $3;", "$4" ],
         "description": "An identifier, for example in let x = 0; the identifier is x."
     },
     "Slice string": {
         "prefix": "ml.string.slice",
-        "body": ["&String::from($1)[0..$2]", "$3"],
+        "body": [ "&String::from($1)[0..$2]", "$3" ],
         "description": "Array String Slice"
     },
     "Format Hex Clike Cast Print": {
         "prefix": "ml.format.clike.hex",
-        "body": ["println!($1roses are #{:06x}$2, Color::Red as i32);", "$3"],
+        "body": [ "println!($1roses are #{:06x}$2, Color::Red as i32);", "$3" ],
         "description": "Format Hex Clike Cast Print"
     },
     "UnImplemented": {
@@ -577,7 +577,7 @@
     },
     "Explicit Use Crate": {
         "prefix": "ms.use.explicit.reduce.path",
-        "body": ["use crate::Status::{X, Y};", "let status = X;"],
+        "body": [ "use crate::Status::{X, Y};", "let status = X;" ],
         "description": "Exmp Union sth::sth reduced to just sth"
     },
     "Memory Address &Size Memory": {
@@ -616,7 +616,7 @@
     },
     "String to_owned": {
         "prefix": "ml.string.to_owned",
-        "body": ["let $1  = $2::$3($4my text.to_owned())", "$5"],
+        "body": [ "let $1  = $2::$3($4my text.to_owned())", "$5" ],
         "description": "Expected struct `String`, found `&str`"
     },
 
@@ -668,32 +668,32 @@
 
     "Meta": {
         "prefix": "ml.meta",
-        "body": ["#![$1]", "$2"],
+        "body": [ "#![$1]", "$2" ],
         "description": "A meta item; the things that go inside #[...] and #![...] attributes."
     },
     "Cfg": {
         "prefix": "ml.cfg",
-        "body": ["#[cfg($1)]", "$2"],
+        "body": [ "#[cfg($1)]", "$2" ],
         "description": "example #[cfg(test)]"
     },
     "Test": {
         "prefix": "ml.testmeta",
-        "body": ["#[test]", "$1"],
+        "body": [ "#[test]", "$1" ],
         "description": "test with fun def"
     },
     "Assert_eq!": {
         "prefix": "ml.asseq",
-        "body": ["assert_eq!($1)", "$2"],
+        "body": [ "assert_eq!($1)", "$2" ],
         "description": "assert equal"
     },
     "Assert!Bool": {
         "prefix": "ml.asseq.format",
-        "body": ["assert_eq!(format!($1{:?}$2, x), $3Ok([])$4)", "$5"],
+        "body": [ "assert_eq!(format!($1{:?}$2, x), $3Ok([])$4)", "$5" ],
         "description": "asserteq format"
     },
     "Assert!Format": {
         "prefix": "ml.ass.bool",
-        "body": ["assert!($1)", "$2"],
+        "body": [ "assert!($1)", "$2" ],
         "description": "assert(bool)"
     },
 
@@ -720,17 +720,17 @@
     },
     "Shorthand file read_to_string": {
         "prefix": "ml.io.readtostr",
-        "body": ["use std::fs;", "fs::read_to_string($1filename)", "$2"],
+        "body": [ "use std::fs;", "fs::read_to_string($1filename)", "$2" ],
         "description": "Eq: File::open(filename)?.read_to_string(&mut s)?;"
     },
     "IO/USE/FILE": {
         "prefix": "ml.io.use.file",
-        "body": ["use std::fs::File;", "$1"],
+        "body": [ "use std::fs::File;", "$1" ],
         "description": "Using file"
     },
     "IO/USE": {
         "prefix": "ml.io.use",
-        "body": ["use std::io::BufReader;", "use std::io::prelude::*", "$1"],
+        "body": [ "use std::io::BufReader;", "use std::io::prelude::*", "$1" ],
         "description": "Using BufReader"
     },
     "IO/BUF/Empty/NEED/FILLUP": {
@@ -744,22 +744,22 @@
     },
     "IO/IN": {
         "prefix": "ml.io.in",
-        "body": ["io::stdin().read_line(&mut $1);", "$2"],
+        "body": [ "io::stdin().read_line(&mut $1);", "$2" ],
         "description": "stdin"
     },
     "IO/READ": {
         "prefix": "ml.io.read.dyn",
-        "body": ["&mut dyn io::BufRead"],
+        "body": [ "&mut dyn io::BufRead" ],
         "description": "Dynamic Read for onvert to binary"
     },
     "IO/READER/NEW": {
         "prefix": "ml.io.read.new",
-        "body": ["let mut $1 = io::BufReader::new($2yourstr.as_bytes());"],
+        "body": [ "let mut $1 = io::BufReader::new($2yourstr.as_bytes());" ],
         "description": "New for convert to binary"
     },
     "IO/READER/DEBINARY": {
         "prefix": "ml.io.read.line",
-        "body": ["$1yourbinaryvariable.read_line(&mut $2forexmp_str_var)?;"],
+        "body": [ "$1yourbinaryvariable.read_line(&mut $2forexmp_str_var)?;" ],
         "description": "Get DeBinary"
     },
 
@@ -848,7 +848,7 @@
     },
 
     "Convert bytes to ux": {
-        "prefix": ["ml.convert.vec.to.num", "ml.fromv.ec.to.num"],
+        "prefix": [ "ml.convert.vec.to.num", "ml.fromv.ec.to.num" ],
         "body": [
             "pub fn difficulty_bytes_as_u128 (v: &Vec<u8>) -> u128 {",
             "   ((v[31] as u128) << 0xf * 8) |",
@@ -859,7 +859,7 @@
     },
 
     "Convert num to bytes slice segment": {
-        "prefix": ["ml.convert.num.to.bytes", "ml.from.num.to.sclice"],
+        "prefix": [ "ml.convert.num.to.bytes", "ml.from.num.to.sclice" ],
         "body": [
             "pub fn u64_bytes (u: &u64) -> [u8; 8] {",
             "  [",
@@ -871,7 +871,7 @@
     },
     "Convert Range to Vector": {
         "prefix": "ml.convert.range_to_vec",
-        "body": ["let numbers: Vec<_> = (0..100u32).collect(); "],
+        "body": [ "let numbers: Vec<_> = (0..100u32).collect(); " ],
         "description": "Firstly With Convert range to collection"
     },
     "Filter on collection": {
@@ -932,8 +932,8 @@
             "fn category(_a : &[i64], _b : &[i64]) -> Option<Comparison> {",
             "//Your code goes here!",
             "    None",
-            "}",
-    ],
+            "}"
+        ],
         "description": "inner is new important-Match Option"
     },
     "Implement for dsiplay": {
@@ -1005,15 +1005,31 @@
     },
     "Generate Throw Exception": {
         "prefix": "ml.err.throw",
-        "body": ["Err(io::Error::new(io::ErrorKind::$1, \"$2\"))", "$3"],
+        "body": [ "Err(io::Error::new(io::ErrorKind::$1, \"$2\"))", "$3" ],
         "description": "Return Error Exception Manual"
     },
     "Error Dynamic Box": {
         "prefix": "ml.error.dyn.box",
-        "body": ["Box<dyn error::Error>"],
+        "body": [ "Box<dyn error::Error>" ],
         "description": "The Box<dyn Error> type is called a trait object, Runtime Error by Box dyn"
     },
 
+    "Bytes to rawpointer and then get string": {
+        "prefix": "mb.raw_prt.str",
+        "body": [
+            "static B: [u8; 10] = [];",
+            "static C: [u8; 11] = [,0];",
+            "let b: String;",
+            "let c: Cow<str>;",
+            "unsafe {",
+            "let b_ptr = &B as *const u8 as *mut u8;",
+            "b = String::from_raw_parts(b_ptr, 10, 10);",
+            "let c_ptr = &C as *const u8 as *const c_char;",
+            "c = CStr::from_ptr(c_ptr).to_string_lossy();",
+            "}"
+        ],
+        "description": "c_char, a type alias for Rust’s i8 type, presents the possibility of a platform-specific nuances.CStr is a C-like string type that allows Rust to read in zero-terminated strings. Cow:A smart pointer type that reads from its pointer location without needing to copy it first"
+    },
     "Dereference & Drop Your Own Smart Pointer": {
         "prefix": "ms.impl.ref",
         "body": [
@@ -1113,7 +1129,7 @@
 
     "Clippy swap": {
         "prefix": "ml.swap",
-        "body": ["std::mem::swap(&mut a, &mut b);"],
+        "body": [ "std::mem::swap(&mut a, &mut b);" ],
         "description": "If swapping is intended, use swap() instead:a = b;b = a;"
     },
 
@@ -1193,7 +1209,7 @@
 
     "Spawn thread with move": {
         "prefix": "ms.thread.spw",
-        "body": ["use std::{thread, time};", "thread::spawn(move || {", "});"],
+        "body": [ "use std::{thread, time};", "thread::spawn(move || {", "});" ],
         "description": "create threads (often referred to as spawning treads)-Why is move required? Closures spawned in subthreads can potentially outlive their calling scope."
     },
     "Spawn thread with sleep strategy": {

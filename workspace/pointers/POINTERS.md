@@ -144,7 +144,7 @@ let ptr = 42 as *const Vec<String>;
 
 > `*`:	dereference
 
-> Rust has a feature called automatic referencing and dereferencing.Calling methods is one of the few places in Rust that has this behavior. Rust doesn’t have an equivalent to the -> operator; instead, Rust has a feature called automatic referencing and dereferencing. Calling methods is one of the few places in Rust that has this behavior.
+> Rust has a feature called automatic referencing and dereferencing.Calling methods is one of the few places in Rust that has this behavior. Rust doesn’t have an equivalent to the -> operator; 
 >
 > Here’s how it works: when you call a method with object.something(), Rust automatically adds in &, &mut, or * so object matches the signature of the method. In other words, the following are the same:
 

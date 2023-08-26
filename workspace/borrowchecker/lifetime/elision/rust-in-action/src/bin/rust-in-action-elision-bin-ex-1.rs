@@ -33,5 +33,11 @@
 /// ```
 
 fn main() {
-    unimplemented!()
+let reference_to_nothing = elision();
+}
+
+fn elision() -> String {
+   let s = String::from("hello");
+
+   s
 }

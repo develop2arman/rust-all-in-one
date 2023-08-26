@@ -133,6 +133,7 @@ members = [
    "workspace/types/mscal/non_numeric/string/rust-in-action",
    "workspace/types/mscal/non_numeric/string/code-like-a-pro",
    "workspace/types/mscal/non_numeric/string/master-rust",
+   "workspace/types/wrapper/rust-doc",
 
   "workspace/trait/associate-type-or-trait/educative",
   "workspace/trait/associate-type-or-trait/rust-doc",

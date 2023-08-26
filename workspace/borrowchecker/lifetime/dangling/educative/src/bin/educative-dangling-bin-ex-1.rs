@@ -49,7 +49,7 @@ fn price(product: Product) -> f64 {
 fn discount(product: Product) -> f64 {
     price(product) / 1.10
 }
-fn get_high_cost<'a>(product1: &'a Product, product2: &'a Product) -> &'a Product {
+fn get_high_cost<'a>(product1: &'a Product, product2: &'a Product) -> & Product {
     if product1.cost > product2.cost {
         product1
     } else {

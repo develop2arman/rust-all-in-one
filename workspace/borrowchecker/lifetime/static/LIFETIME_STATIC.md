@@ -26,7 +26,7 @@ struct ImportantExcerpt<'a> {
 }
 ```
 
-> There are two input lifetimes, so Rust applies the first lifetime elision rule and gives both &self and announcement their own lifetimes. Then, because one of the parameters is &self, the return type gets the lifetime of &self, and all lifetimes have been accounted for.
+> There are two input lifetimes, so Rust applies the first **lifetime elision rule and gives both &self and announcement their own lifetimes. Then, because one of the parameters is &self, the return type gets the lifetime of &self, and all lifetimes have been accounted for.**
 
 ```rust,no_run
  //no_err_func
@@ -37,9 +37,9 @@ fn first_word<'a>(s: &'a str) -> &str {}
 fn first_word<'a>(s: &'a str) -> &'a str {}
 
 fn longest(x: &str, y: &str) -> &str {}
-   //err_func
+   // **err_func**
 fn longest<'a, 'b>(x: &'a str, y: &'b str) -> &str {}
-  //no_err_method
+  // **no_err_method**
 fn longest<'a, 'b>(x: &'a str, y: &'b str) -> &str {}
 ```
 
@@ -52,7 +52,7 @@ let s: &'static str = "I have a static lifetime.";
 The text of this string is **stored directly in the program’s binary**, which is always available. Therefore, the lifetime of all string literals is 'static.
 
 You might see suggestions to use the 'static lifetime in error messages. 
-> Most of the time, the problem results from attempting to create <u>a dangling reference or a mismatch of the available lifetimes.</u> **In such cases, the solution is fixing those problems, not specifying the 'static lifetime.**
+> Most of the time, the problem results from attempting to create *a dangling reference or a mismatch of the available lifetimes.* **In such cases, the solution is fixing those problems, not specifying the 'static lifetime.**
 
 ## Life Time Static
 
@@ -66,4 +66,4 @@ let s: &'static str = "I have a static lifetime.";
 
 > The text of this string is stored directly in the program’s binary, which is always available. Therefore, the lifetime of all string literals is 'static.
 
-> You might see suggestions to use the 'static lifetime in error messages. But before specifying 'static as the lifetime for a reference, think about whether the reference you have actually lives the entire lifetime of your program or not.
+> **You might see suggestions to use the 'static lifetime in error messages. But before specifying 'static as the lifetime for a reference, think about whether the reference you have actually lives the entire lifetime of your program or not.**

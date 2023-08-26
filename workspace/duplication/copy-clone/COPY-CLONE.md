@@ -1,5 +1,7 @@
 
 [[ria-copy-clone]]
+[[pnkfx-copy-clone]]
+[[edu-copy-clone]]
 [[SEMANTIC]]
 ---
 

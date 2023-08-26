@@ -23,8 +23,9 @@
 /// ```rust,no_run,compile_fail,ignore
 ///```
 ///
-fn main() {
-    unimplemented!()
+fn main()
+{
+  
 
     //     let r;//This code won’t compile because the value r is referring to has gone out of scope before we try to use it
 
@@ -35,30 +36,29 @@ fn main() {
 
     // println!("r: {}", r);
 
-}
-/* dangle
-    {
+
+// dangle
+    
         let r;                // ---------+-- 'a
-                              //          |
+                                        //|
         {                     //          |
             let x = 5;        // -+-- 'b  |
             r = &x;           //  |       |
         }                     // -+       |
-                              //          |
+                                       // |
         println!("r: {}", r); //          |
-    }                         // ---------+
-*/
+                             // ---------
 
-/* undangle
-fn main() {
-    {
-        let x = 5;            // ----------+-- 'b
-                              //           |
-        let r = &x;           // --+-- 'a  |
-                              //   |       |
-        println!("r: {}", r); //   |       |
-                              // --+       |
-    }                         // ----------+
-}
 
-*/
+// undangle
+        //let x = 5;            // ----------+-- 'a
+        //                         //        |
+        //let r = &x;           // --+-- 'a  |
+        //                      //   |       |
+        //println!("r: {}", r); //   |       |
+        //                       //--+       |
+
+}                         
+
+
+

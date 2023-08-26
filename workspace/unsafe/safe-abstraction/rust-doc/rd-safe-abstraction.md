@@ -1,4 +1,5 @@
 [[rd-safe-abstraction]]
+
 ---
 
-> `tags` 
+> `tags` [[ria-pointer]]

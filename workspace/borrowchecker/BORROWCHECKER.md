@@ -7,7 +7,6 @@
 
 ---
 
-> It underpins the term **fearless concurrency**
 
 > Borrow checking relies on three interrelated concepts—**lifetimes, ownership, and borrowing**:
 
@@ -32,7 +31,7 @@ ownership system provides a route to memory safety without needing a garbage col
 
 > The borrow checker checks that all access to data is legal, which allows Rust to prevent safety issues. Learning how this works will, at the very least, speed up your development time by helping you avoid run-ins with the compiler. More significantly though, learning to work with the borrow checker allows you to build larger software systems with confidence.
 
-> It underpins the term fearless concurrency.
+> It underpins the term **fearless concurrency**
 
 ## Borrowing Rules
 

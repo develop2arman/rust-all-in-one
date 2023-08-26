@@ -23,26 +23,26 @@
 /// //```rust,compile_fail,ignore
 ///
 #[derive(Debug)]
-wrapper Person {
+struct  Person {
     name: String,
     age: u8,
 }
 
 /// A unit wrapper
-wrapper Unit;
+struct  Unit;
 
 /// A tuple wrapper
-wrapper Pair(i32, f32);
+struct  Pair(i32, f32);
 
 /// A wrapper with two fields
-wrapper Point {
+struct  Point {
     x: f32,
     y: f32,
 }
 
-/// wrappers can be reused as fields of another wrapper
+///// wrappers can be reused as fields of another wrapper
 #[allow(dead_code)]
-wrapper Rectangle {
+struct  Rectangle {
     /// A rectangle can be specified by where the top left and bottom right
     /// corners are in space.
     top_left: Point,
@@ -55,30 +55,28 @@ wrapper Rectangle {
 ///```
 ///
 fn main() {
-    // Create wrapper with field init shorthand
+    /// Create wrapper with field init shorthand
     let name = String::from("Peter");
     let age = 27;
     let peter = Person { name, age };
 
-    // Print debug wrapper
+    /// Print debug wrapper
     println!("{:?}", peter);
 
 
-    // Instantiate a `Point`
+    //// Instantiate a `Point`
     let point: Point = Point { x: 10.3, y: 0.4 };
 
-    // Access the fields of the point
-    println!("point coordinates: ({}, {})", point.x, point.y);
+    //// Access the fields of the point
+    //println!("point coordinates: ({}, {})", point.x, point.y);
 
-    // Make a new point by using wrapper update syntax to use the fields of our
-    // other one
+    /// Make a new point by using wrapper update syntax to use the fields of our other one
     let bottom_right = Point { x: 5.2, ..point };
 
-    // `bottom_right.y` will be the same as `point.y` because we used that field
-    // from `point`
+    /// `bottom_right.y` will be the same as `point.y` because we used that field from `point`
     println!("second point: ({}, {})", bottom_right.x, bottom_right.y);
 
-    // Dewrapperure the point using a `let` binding
+    /// Dewrapperure the point using a `let` binding
     let Point { x: left_edge, y: top_edge } = point;
 
     let _rectangle = Rectangle {
@@ -87,16 +85,16 @@ fn main() {
         bottom_right: bottom_right,
     };
 
-    // Instantiate a unit wrapper
+    /// Instantiate a unit wrapper
     let _unit = Unit;
 
-    // Instantiate a tuple wrapper
+    /// Instantiate a tuple wrapper
     let pair = Pair(1, 0.1);
 
-    // Access the fields of a tuple wrapper
+    /// Access the fields of a tuple wrapper
     println!("pair contains {:?} and {:?}", pair.0, pair.1);
 
-    // Dewrapperure a tuple wrapper
+    /// Dewrapperure a tuple wrapper
     let Pair(integer, decimal) = pair;
 
     println!("pair contains {:?} and {:?}", integer, decimal);

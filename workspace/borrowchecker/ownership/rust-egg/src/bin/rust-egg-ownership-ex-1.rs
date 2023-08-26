@@ -7,7 +7,7 @@
 /// ```cargo run -q -p rust-egg-ownership_bin --bin  rust-egg-ownership-ex-1```
 ///
 /// ## What
-/// `Mome Semantic` primitives do not requiring impl Copy trait
+/// `Move Semantic` primitives do not requiring impl Copy trait
 ///
 /// ## How
 /// `TODO`

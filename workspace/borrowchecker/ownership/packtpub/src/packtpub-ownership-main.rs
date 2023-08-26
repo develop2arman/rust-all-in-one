@@ -35,8 +35,9 @@ pub struct GBP(i32);
     &g
 }*/
 
-pub fn on_money(a:i32,b:i32)->GBP {
-        let mut g = GBP(a);
+ fn on_money(a:i32,b:i32)->GBP {
+
+    let mut g = GBP(a);
     let r;
 
         r = &g;

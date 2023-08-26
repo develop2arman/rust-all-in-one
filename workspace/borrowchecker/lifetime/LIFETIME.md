@@ -10,20 +10,18 @@
 ---
 
 # Lifetime
-> lifetime = timetolive = subset of their scope.
+> *lifetime = timetolive = subset of their scope.*
 
 > A function’s local variables live until the function returns, while global variables might live for the life of the program.
 
-> Make hypotheses about whether or not your experiments will pass the borrow checker before you compile reference in Rust has a lifetime, which is the scope for which that reference is valid.Most of the time, lifetimes are implicit and inferred, just like most of the time, types are inferred.
+> Make hypotheses about whether or not your experiments will pass the borrow checker before you compile reference in Rust has a lifetime, which is the scope for which that reference is valid.Most of the time, **lifetimes are implicit and inferred**, just like most of the time, types are inferred.
 
 > We must annotate types when multiple types are possible. 
-> In a similar way, we must annotate lifetimes when the lifetimes of references could be related in a few different ways. The main aim of lifetimes is to prevent dangling references, which cause a program to reference data other than the data it’s intended to reference.
 
-> All references in Rust have a lifetime, even if they are not explicitly annotated. The compiler is capable of implicitly assigning lifetimes.
-
-> A value’s lifetime is the period when accessing that value is valid behavior. A function’s local variables live until the function returns, while global variables might live for the life of the program.
+> In a similar way, we must annotate lifetimes when the lifetimes of references could be related in a few different ways. **The main aim of lifetimes is to prevent dangling references**, which cause a program to reference data other than the data it’s intended to reference.
 
 > When we pass concrete references to longest, the concrete lifetime that is substituted for 'a is the part of the scope of x that overlaps with the scope of y. In other words, the generic lifetime 'a will get the concrete lifetime that is equal to the smaller of the lifetimes of x and y. Because we’ve annotated the returned reference with the same lifetime parameter 'a, the returned reference will also be valid for the length of the smaller of the lifetimes of x and y.
+
 > Ultimately, lifetime syntax is about connecting the lifetimes of various parameters and return values of functions. Once they’re connected, Rust has enough information to allow= **memory-safe operations** and disallow operations that would **create dangling pointers or otherwise violate memory safety.**
 
 > For data allocated on the stack, we can easily reason by looking at the code and figure out whether a variable is alive or not. For heap allocated values, though, this isn't clear.
@@ -42,8 +40,6 @@ The following are the rules that are followed when eliding lifetimes:
 
 > Make hypotheses about whether or not your experiments will pass the borrow checker before you compile reference in Rust has a lifetime, which is the scope for which that reference is valid. Most of the time, lifetimes are implicit and inferred, just like most of the time, types are inferred. We must annotate types when multiple types are possible. In a similar way, we must annotate lifetimes when the lifetimes of references could be related in a few different ways.
 
-> The main aim of lifetimes is to prevent dangling references, which cause a program to reference data other than the data it’s intended to reference.
-
 > All references in Rust have a lifetime, even if they are not explicitly annotated. The compiler is capable of implicitly assigning lifetimes. 
 
 > A value’s lifetime is the period when accessing that value is valid behavior. A function’s local variables live until the function returns, while global variables might live for the life of the program.
@@ -52,16 +48,11 @@ The following are the rules that are followed when eliding lifetimes:
 
 > <'a, 'b> declares two lifetime variables, 'a and 'b, within the scope of j: &'b i32 binds the lifetime variable 'b to the lifetime of j. The syntax reads as “parameter j is a reference to an i32 with lifetime b.”
 
-> Although every parameter has a lifetime, these checks are typically invisible as the compiler can infer most lifetimes by itself
-
 > All values bound to a given lifetime must live as long as the last access to any value bound to that lifetime.
  No lifetime annotations are required when calling a function.
  
 > 'a in generic func means: function will live at least as long as lifetime 'a
  e.g. Note that the longest function doesn’t need to know exactly how long x and y will live, only that some scope can be substituted for 'a that will satisfy this signature.
- 
-> Using two lifetime parameters (a and b) indicates that the lifetimes of i and j are decoupled.
- fn add_with_lifetimes<'a, 'b>(i: &'a i32, j: &'b i32) -> i32 {}
 
 - Lifetime annotations don’t change how long any of the references live. Just as functions can accept any type when the signature specifies a generic type parameter, functions can accept references with any lifetime by specifying a generic lifetime parameter.
 - Lifetime annotations describe the relationships of the lifetimes of multiple references to each other without affecting the lifetimes.

@@ -5,7 +5,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-duplication_bin --bin  rust-in-action-duplication-ex-3```
+/// ```cargo run -q -p rust-in-action-duplication_bin --bin  rust-in-action-duplication-ex-4```
 ///
 /// ## What
 /// `TODO`

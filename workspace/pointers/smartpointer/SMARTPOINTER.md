@@ -64,6 +64,9 @@ pub trait Deref {
 
 ## Comparistions of Smart pointers 
 
+![Ownership](../../rust/assets/images/Ownership.jpg)
+
+
 > Rc<T> enables multiple owners of the same data; whenever somebody takes a new reference, and decrements it when someone releases a reference. When the counter hits zero, the value is dropped.Rc<T> does not allow mutation. To permit that, we need to wrap our wrapper. Rc<RefCell<T>> is a type that can be used to perform interior mutability . An object that has interior mutability presents an immutable façade while internal values are being modified.
 > Rc<T> is not thread-safe. In multithreaded code, it’s much better to replace Rc<T> with Arc<T> and Rc<RefCell<T>> with Arc<Mutex<T>>. Arc stands for atomic reference counter.
 
