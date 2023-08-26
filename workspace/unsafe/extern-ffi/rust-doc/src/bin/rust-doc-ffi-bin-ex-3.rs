@@ -1,10 +1,11 @@
 #![allow(dead_code, unused_variables)]
+use std::arch::asm;
 
 /// rust-doc-ffi-main
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-ffi_bin --bin rust-doc-ffi-bin-ex-1```
+/// ```cargo run -q -p rust-doc-ffi_bin --bin rust-doc-ffi-bin-ex-3```
 ///
 /// ## What
 /// `TODO`
@@ -23,12 +24,16 @@
 /// //```rust,compile_fail,ignore
 
 
-#[no_mangle]
-pub extern "C" fn call_from_c() {
-    println!("Just called a Rust function from C!");
+fn main(){
+let i: u64 = 3;
+let o: u64;
+unsafe {
+    asm!(
+        "mov {0}, {1}",
+        "add {0}, 5",
+        out(reg) o,
+        in(reg) i,
+    );
 }
-fn main() {
-    unsafe {          
-          call_from_c();
-    };
+assert_eq!(o, 8);
 }

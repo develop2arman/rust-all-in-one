@@ -75,6 +75,9 @@ To demonstrate this, next we’ll create a raw pointer whose validity we can’t
 Just because a function contains unsafe code doesn’t mean we need to mark the entire function as unsafe. In fact, wrapping unsafe code in a safe function is a common abstraction. As an example, let’s study the split_at_mut function from the standard library, which requires some unsafe code. We’ll explore how we might implement it. This safe method is defined on mutable slices: it takes one slice and makes it two by splitting the slice at the index given as an argument. Listing 19-4 shows how to use split_at_mut.
 
 ```rust,compile_fail,no_run   
+
+fn main(){
+
     let mut v = vec![1, 2, 3, 4, 5, 6];
 
     let r = &mut v[..];
@@ -84,9 +87,7 @@ Just because a function contains unsafe code doesn’t mean we need to mark the 
     assert_eq!(a, &mut [1, 2, 3]);
     assert_eq!(b, &mut [4, 5, 6]);
 
-```
-
-```rust,compile_fail,no_run   
+} 
 fn split_at_mut(values: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
     let len = values.len();
 
@@ -152,7 +153,7 @@ fn main() {
 }
 ```
 
-> We can also use extern to create an interface that **allows other languages to call Rust functions**. Instead of creating a whole extern block, we add the extern keyword and specify the ABI to use just before the fn keyword for the relevant function. We also need to **add a #[no_mangle] annotation** to tell the Rust compiler not to mangle the name of this function. Mangling is when a compiler changes the name we’ve given a function to a different name that contains more information for other parts of the compilation process to consume but is less human readable. Every programming language compiler mangles names slightly differently, so for a Rust function to be nameable by other languages, we must disable the Rust compiler’s name mangling.
+> We can also use extern to create an interface that **allows other languages to call Rust functions**. Instead of creating a whole extern block, we add the extern keyword and specify the ABI to use just before the fn keyword for the relevant function. We also need to **add a #[no_mangle] annotation** to tell the Rust compiler not to mangle the name of this function. Mangling is when a compiler changes the name we’ve given a function to a different name that contains more information for other parts of the compilation process to consume but is less human readable. Every programming language compiler mangles names slightly differently, so for a Rust function to be nameable by other languages, **we must disable the Rust compiler’s name mangling.**
 
 > In the following example, we make the call_from_c function accessible from C code, after it’s compiled to a shared library and linked from C: This usage of extern does not require unsafe.
 
@@ -205,7 +206,7 @@ fn main() {
 
 By using unsafe impl, we’re promising that we’ll uphold the invariants that the compiler can’t verify.
 
-As an example, recall the Sync and Send marker traits we discussed in the “Extensible Concurrency with the Sync and Send Traits” section in Chapter 16: the compiler implements these traits automatically if our types are composed entirely of Send and Sync types. 
+As an example, recall the Sync and Send marker traits, the compiler implements these traits automatically if our types are composed entirely of Send and Sync types. 
 
 > If we implement a type that contains a type that is not Send or Sync, such as raw pointers, and **we want to mark that type as Send or Sync, we must use unsafe**. Rust can’t verify that our type upholds the guarantees that it can be safely sent across threads or **accessed from multiple threads**; therefore, we need to do those checks manually and indicate as such with unsafe.
 
@@ -225,6 +226,37 @@ fn main() {}
 
 The final action that works only with unsafe is accessing fields of a union. A union is similar to a struct, but only one declared field is used in a particular instance at one time. Unions are primarily used to interface with unions in C code. Accessing union fields is unsafe because **Rust can’t guarantee the type of the data currently being stored in the union instance.**
 
+This will be laid out equivalently to the following more complex Rust types:
+
+
+```rust, no_run, compile_fail
+// C-compatible layout with a specified discriminant size:
+// #[repr(C, u8)]
+// A specific integer type (called Int as a shorthand below):
+// #[repr(u8)]
+// 4 bytes with #[repr(u8)], but would occupy 6 bytes with #[repr(C, u8)], as more padding is required
+
+#[repr(C)]
+union TwoCasesRepr {
+    A: TwoCasesVariantA,
+    B: TwoCasesVariantB,
+}
+        
+#[repr(u8)]
+enum TwoCasesTag { A, B }
+
+#[repr(C)]
+struct TwoCasesVariantA(TwoCasesTag, u8, u16);
+
+#[repr(C)]
+struct TwoCasesVariantB(TwoCasesTag, u16);
+```
+
 ## When to Use Unsafe Code
 
 Using unsafe to take one of the five actions (superpowers) just discussed isn’t wrong or even frowned upon. But it is trickier to get unsafe code correct because the compiler can’t help uphold memory safety. When you have a reason to use unsafe code, you can do so, and having the explicit unsafe annotation makes it easier to track down the source of problems when they occur.
+
+
+## More Info
+
+[Unsafe Code Guidelines](https://rust-lang.github.io/unsafe-code-guidelines)

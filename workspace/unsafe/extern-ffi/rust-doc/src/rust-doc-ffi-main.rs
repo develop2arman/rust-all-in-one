@@ -24,8 +24,7 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `Announcement! Today is someone's birthday!`
-/// `The longest string is abcd`
+/// `Absolute value of -3 according to C: 3`
 ///
 /// ## Example
 /// //```rust,compile_fail,ignore

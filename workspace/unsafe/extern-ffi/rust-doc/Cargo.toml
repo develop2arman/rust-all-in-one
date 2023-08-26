@@ -9,3 +9,6 @@ autobins = true
 doc = true
 name = "rust-doc-ffi-main"
 path = "src/rust-doc-ffi-main.rs"
+
+
+
