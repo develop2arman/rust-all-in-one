@@ -42,6 +42,8 @@ pub extern "C" fn call_from_c() {
 }
 ```
 
-- [Rust ffi](https://cratecode.com/info/rust-ffi)
+- [Rust FFI](https://cratecode.com/info/rust-ffi)
 
-> `tags` #C #ffi #abi
+- [ASM FFI](https://doc.rust-lang.org/rust-by-example/unsafe/asm.html)
+ 
+> `tags` #C #ffi #abi #asm

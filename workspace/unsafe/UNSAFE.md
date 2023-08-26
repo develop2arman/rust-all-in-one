@@ -108,4 +108,4 @@ Using unsafe to take one of the five actions (superpowers) just discussed isn’
 
 ## More Info
 
-[Unsafe Code Guidelines](https://rust-lang.github.io/unsafe-code-guidelines)
+- [Unsafe Code Guidelines](https://rust-lang.github.io/unsafe-code-guidelines)

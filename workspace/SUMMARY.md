@@ -193,7 +193,8 @@
   - [EXTERN_FFI](unsafe/extern-ffi/EXTERN-FFI.md)
   - [SAFE_ABSTRACTION](unsafe/safe-abstraction/SAFE_ABSTRACTION.md)
   - [SAFE_STATIC_MUT](unsafe/safe-static-mut/SAFE_STATIC_MUT.md)
-
+  - [THREAD_UNSAFE](unsafe/unsafe-thread/THREAD_UNSAFE.md)
+  
 ---
 
 - [MACRO](macro/MACRO.md)
