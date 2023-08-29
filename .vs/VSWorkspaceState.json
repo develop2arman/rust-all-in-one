@@ -1,7 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\workspace"
+    "\\.github",
+    "\\.github\\workflows",
+    "\\workspace",
+    "\\workspace\\pointers",
+    "\\workspace\\pointers\\smartpointer",
+    "\\workspace\\pointers\\smartpointer\\compiletime",
+    "\\workspace\\pointers\\smartpointer\\compiletime\\box",
+    "\\workspace\\pointers\\smartpointer\\ops",
+    "\\workspace\\pointers\\smartpointer\\ops\\rust-doc",
+    "\\workspace\\pointers\\smartpointer\\ops\\rust-doc\\src",
+    "\\workspace\\pointers\\smartpointer\\ops\\rust-doc\\src\\bin"
   ],
   "PreviewInSolutionExplorer": false
 }
