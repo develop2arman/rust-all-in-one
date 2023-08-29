@@ -3138,6 +3138,10 @@ name = "rust-doc-slice_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-smartpointer-arc_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-doc-smartpointer-box_bin"
 version = "0.1.0"
 

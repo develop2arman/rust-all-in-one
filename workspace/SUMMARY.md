@@ -32,7 +32,7 @@
   - [REF_CELL](pointers/smartpointer/runtime/shared_locally_mutability/ref-cell/REF_CELL.md) 
   - [OPS](pointers/smartpointer/ops/OPS.md) 
   - [COW](pointers/smartpointer/compiletime/cow/COW.md) 
-  - [ARC](pointers/smartpointer/runtime/shared_threads/ARC.md) 
+  - [ARC](thread/sync/arc/ARC.md) 
 
 ---
 

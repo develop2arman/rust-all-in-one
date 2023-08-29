@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\workspace",
-    "\\workspace\\pointers",
-    "\\workspace\\pointers\\smartpointer",
-    "\\workspace\\pointers\\smartpointer\\compiletime",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\cow",
-    "\\workspace\\pointers\\smartpointer\\ops",
-    "\\workspace\\pointers\\smartpointer\\runtime",
-    "\\workspace\\pointers\\smartpointer\\runtime\\shared_mutability",
-    "\\workspace\\pointers\\smartpointer\\runtime\\shared_mutability\\ref-cell"
+    "\\workspace"
   ],
-  "SelectedNode": "\\workspace\\pointers\\smartpointer\\runtime\\shared_mutability",
   "PreviewInSolutionExplorer": false
 }

@@ -1,6 +1,7 @@
 
 [[ria-pointer]]
 
+[[rd-pointer]]
 
 [[SMARTPOINTER]]
 

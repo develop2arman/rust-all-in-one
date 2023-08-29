@@ -77,17 +77,17 @@ pub trait Deref {
 
 ### Pointer Definations & Comparision
 
-> Rc<T> enables multiple owners of the same data; whenever somebody takes a new reference, and decrements it when someone releases a reference. When the counter hits zero, the value is dropped.Rc<T> does not allow mutation. To permit that, we need to wrap our wrapper. Rc<RefCell<T>> is a type that can be used to perform interior mutability . An object that has interior mutability presents an immutable façade while internal values are being modified.
+> Rc<T> enables multiple owners of the same data; whenever somebody takes a new reference, and decrements it when someone releases a reference. When the counter hits zero, the value is dropped.**Rc<T> does not allow mutation**. To permit that, we need to wrap our wrapper. Rc<RefCell<T>> is a type that can be used to perform interior mutability . An object that has interior mutability presents an immutable façade while internal values are being modified.
 
-> Rc<T> is not thread-safe. In multithreaded code safety, it’s much better to replace Rc<T> with Arc<T> and Rc<RefCell<T>> with Arc<Mutex<T>>.
+> **Rc<T> is not thread-safe**. In multithreaded code safety, it’s much better to **replace Rc<T> with Arc<T> and Rc<RefCell<T>> with Arc<Mutex<T>>.**
 
-> Box<T> The ownership semantics with Box type depends on the wrapped type. If the underlying type is Copy, the Box instance becomes copy, otherwise it **moves by default**.allows immutable or mutable borrows checked at compile time; **Rc<T> allows only immutable borrows checked at compile time; RefCell<T> allows immutable or mutable borrows checked at runtime.**
+> Box<T> The ownership semantics with Box type depends on the wrapped type. If the underlying type is **Copy**, the Box instance becomes copy, otherwise it **moves by default**.allows immutable or mutable borrows checked at **compile time**; **Rc<T> allows only immutable borrows checked at compile time; RefCell<T> allows immutable or mutable borrows checked at runtime.**
 
 > Because RefCell<T> allows mutable borrows checked at runtime, you can mutate the value inside the RefCell<T> even when the RefCell<T> is immutable.
 
-> Cell<T>: This gives us internal mutability for types that implement the Copy trait. In other words, we gain the possibility to get multiple mutable references to something.
+> Cell<T>: This gives us internal mutability for types that **implement the Copy trait**. In other words, we gain the possibility to get multiple mutable references to something.
 
-> RefCell<T>: This gives us internal mutability for types, without requiring the Copy trait. It uses **runtime locking for safety**. Lets us have many immutable borrows or one mutable borrow at any point in time.Box<T> and RefCell<T> have single owners. For types that implement Copy, the get method retrieves the current interior value. For types that implement Default, the take method replaces the current interior value with Default::default() and returns the replaced value.For all types, the replace method replaces the current interior value and returns the replaced value and the **into_inner** method consumes the Cell<T> and returns the interior value. Additionally, the set method replaces the interior value, dropping the replaced value.
+> RefCell<T>: This gives us internal mutability for types, **without requiring the Copy trait**. It uses **runtime locking for safety**. Lets us have many immutable borrows or one mutable borrow at any point in time.**Box<T> and RefCell<T> have single owners**. For types that implement Copy, the get method retrieves the current interior value. **For types that implement Default**, the take method replaces the current interior value with **Default::default()** and returns the replaced value.For all types, the replace method replaces the current interior value and returns the replaced value and the **into_inner** method **consumes the Cell<T> and returns the interior value**. Additionally, the set method replaces the interior value, dropping the replaced value.
 
 ![Smart-Pointer-1](../../rust/assets/images/smart-pointer-1.JPG)
 
@@ -103,12 +103,12 @@ pub trait Deref {
 
 > Similar to Rc<T>, RefCell<T> is only for use in [[single_threaded]] scenarios.The Cell and RefCell types are not thread safe. This simply means that **Rust won't allow you to share these types in multiple threads**.
 
+> There’s also Mutex<T>, which offers interior mutability that’s **safe** to use **across threads** [[multi_tread]] scenarios.
+
 > **Neither Cell<T> nor RefCell<T> are thread safe (they do not implement #Sync)**
 > Standard library has other types that provide interior mutability:
 
->> Such as Cell<T>, which is similar except that instead of giving references to the inner value, the **value is copied** in and out of the Cell<T>.
-
->> There’s also Mutex<T>, which offers interior mutability that’s **safe** to use **across threads** [[multi_tread]] scenarios.
+>> Such as Cell<T>, which is similar except that **instead of giving references to the inner value**, the **value is copied** in and out of the Cell<T>.
 
 
 ## Glossary

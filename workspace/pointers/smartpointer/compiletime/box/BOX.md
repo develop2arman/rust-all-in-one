@@ -7,11 +7,11 @@
 
 > The Box type can be used in the following situations:
 
-> It can be used to create **recursive type** definitions. 
+- [x] It can be used to create **recursive type** definitions. 
 
-> When you need to **store types as trait objects**.
+- [x] When you need to **store types as trait objects**.
 
-> When you need to **store functions in a collection**.
+- [x] When you need to **store functions in a collection**.
 
 > cons=recursive type
 > 
@@ -33,18 +33,18 @@
 > 
 > However, **boxes have a known size**, so by inserting a box in a recursive type definition, you can have recursive types.
 
-> **Box is very useful for returning traits**. You also saw that we can use impl Trait to return other traits, or closures. Box can be used in a similar way. 
+> **Box is very useful for returning traits**. You also saw that we can **use impl Trait to return other traits, or closures**. Box can be used in a similar way. 
 
 > You can use a **Box because otherwise the compiler won't know the size of the value**. 
 > 
->> [[dyn]] is a word that shows you that you are talking about a trait, not a struct or anything else.
+>> **[[dyn]]** is a word that shows you that you are talking about a **trait**, not a struct or anything else.
 
 
 ## Recursive
 
 > At compile time, Rust needs to know how much space a type takes up. One type whose size can’t be known at compile time is a recursive type, where a value can have as part of itself another value of the same type. Because this nesting of values could theoretically continue infinitely, Rust doesn’t know how much space a value of a recursive type needs. However, boxes have a known size, so by inserting a box in a recursive type definition, you can have recursive types.
 
-> Let’s explore the cons list, which is a data type common in functional programming languages, as an example of a recursive type. The cons list type we’ll define is straightforward except for the recursion; therefore, the concepts in the example we’ll work with will be useful any time you get into more complex situations involving recursive types.
+> Let’s explore the cons list, which is a data type common in **functional programming languages, as an example of a recursive type.** The cons list type we’ll define is straightforward except for the recursion; therefore, the concepts in the example we’ll work with will be useful any time you get into more complex situations involving recursive types.
 > A cons list is a data structure.
 
 > cons function (short for “construct function”) constructs a new pair from its two arguments, which usually are a single value and another pair. These pairs containing pairs form a list.
