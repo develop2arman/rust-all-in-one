@@ -125,7 +125,7 @@
     - [NON_OBJECT_SAFE](trait/shared-behavior/none-object-safe/NONE_OBJECT_SAFE.md)
     - [SB_AGGRIGATOR](trait/shared-behavior/aggregator/SB_AGGRIGATOR.md)
   - [BUILT_IN](trait/built-in/BUILT_IN.md) 
-  - [TRAIT BOUND](trait/shared-behavior/trait-bound/TRAIT_BOUND.md)
+  - [DEFAULT_CONCRETE_TYPE](trait/shared-behavior/trait-bound/TRAIT_BOUND.md)
     
 ---
 

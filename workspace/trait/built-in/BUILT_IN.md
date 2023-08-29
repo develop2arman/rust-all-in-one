@@ -10,7 +10,10 @@
 
 # Marker Traits
 ## ?Size
-The Sized trait is a marker trait that represents types whose sizes are **known at compile time**. It is implemented for most types in Rust **except for #unsized_types**. All type parameters have an implicit trait bound of Sized in their definition. We can also specify **optional trait bounds using the ?** operator before a trait, but the ? operator with traits **only works for marker traits** as the time of writing this book. It may be extended to other types in future.
+
+> Sized trait is a **marker trait** that represents types whose **sizes are known at compile time**. It is implemented for most types in Rust **except for #unsized_types**. All type parameters have an implicit trait bound of Sized in their definition. 
+
+> We can also specify **optional trait bounds using the ?** operator before a trait, but the ? operator with traits **only works for marker traits** as the time of writing this book. It may be extended to other types in future.
 
 ## Borrow & AsRef
 These are special traits that carry the notion of able to construct a out of any type.
@@ -18,7 +21,7 @@ These are special traits that carry the notion of able to construct a out of any
 
 ## To Owned
 
-This trait is meant to be implemented for types that can be converted in to an owned version. For example, the &str type has this trait implemented for String. This means the &str type has a method called to_owned() on it that can convert it in to a String type, which is an owned type.
+This trait is meant to be implemented for types that can be converted in to an owned version. For example, the &str type has this trait implemented for String. This means the **&str type has a method called to_owned() on it that can convert it in to a String type**, which is an owned type.
 
 
 ## From & Into
@@ -34,4 +37,5 @@ impl<T, U> Into<U> for T where U: From<T> {
 ```
 ## Partial Eq
 > comparision like <=>=.
-> f32 and f64 types only implement the std::cmp::PartialEq trait, whereas other numeric types also implement std::cmp::Eq
+
+> **f32/64** types only implement the std::cmp::**PartialEq** trait, whereas **other numeric** types also implement std::cmp::**Eq**

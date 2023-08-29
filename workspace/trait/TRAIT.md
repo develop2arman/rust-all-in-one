@@ -12,34 +12,35 @@
 
 ---
 
-> We can use traits to define shared behavior in an abstract way. We can use trait bounds to specify that a generic type can be any type that has certain behavior.
+> We can use **traits** to define **shared behavior** in an **abstract** way. We can use **trait bounds** to specify that a **generic type** can be any type that has certain behavior.
 
 > Traits are similar to a feature often called interfaces in other languages, although with some differences.
 
-> What is a trait? A trait is a language feature that is analogous to an interface, protocol, or contract. If you have a background in object-oriented programming, consider a trait to be an abstract base class. If you have a background in functional programming, Rust’s traits are close to Haskell’s type classes.
+> What is a trait? A trait is a language feature that is analogous to an **interface, protocol, or contract.** If you have a background in object-oriented programming, consider a trait to be an abstract base class. If you have a background in functional programming, Rust’s traits are close to Haskell’s type classes.
 
-> these also support a form of inheritance that’s common in most object oriented languages. For now, though, the thing to remember is that traits represent common behavior (Or reusable codes like println!)that types opt into via the syntax impl Trait for Type.
-
-> After the method signature, instead of providing an implementation within curly brackets, we use a semicolon
-
-> What does PartialEq do for types? It enables comparisons with the == operator. “Partial” allows for cases where two values that match exactly should not be treated as equal, such as the floating point’s NAN value or SQL’s NULL.  When you see a sentence with the following structure, “...T is Debug...”, what they’re saying is that T implements the Debug trait.
-
-> This interface consists of associated items, which come in three varieties:
-	- functions
-	- types
-	- constants
-
-> All traits define an implicit type parameter Self that refers to "the type that is implementing this interface"
-
-> Trait functions may omit the function body by replacing it with a semicolon. This indicates that the implementation must define the function. If the trait function defines a body, this definition acts as a default for any implementation which does not override it. Similarly, associated constants may omit the equals sign and expression to indicate implementations must define the constant value. Associated types must never define the type, the type may only be specified in an implementation.
-
-> we mentioned that to use traits as trait objects, we must put them behind a pointer, such as &dyn Trait or Box<dyn Trait> (Rc<dyn Trait> would work too).
-
+> these also **support a form of inheritance** that’s common in most object oriented languages. For now, though, the thing to remember is that traits represent common behavior (Or **reusable** codes like println!)that types opt into via the syntax impl Trait for Type.
 
 > Traits are **private** by default.
 
 > Traits are not usable by themselves and are meant to be implemented by types. Traits have the power to establish **relationships between distinct types**. 
 > They are the **backbone** to many language features such as closures, operators, smart pointers, loops, compile-time [[data_race]] checks, and much more.
+
+> After the method signature, instead of providing an implementation within curly brackets, we use a semicolon
+
+> This interface consists of associated items, which come in three varieties:
+
+- [x] Functions
+- [x] Types
+- [x] Constants
+
+> What does [[PartialEq]] do for types? It enables comparisons with the == operator. “Partial” allows for cases where two values that match exactly should not be treated as equal, such as the floating point’s NAN value or SQL’s NULL.  When you see a sentence with the following structure, “...T **is** Debug...”, what they’re saying is that T **implements** the Debug trait.
+
+> **All traits define an implicit type parameter Self** that refers to "the type that is implementing this interface"
+
+> Trait functions may omit the function body by replacing it with a semicolon. This indicates that the implementation must define the function. If the trait function defines a body, this definition acts as a default for any implementation which does not override it. Similarly, **associated constants** may omit the equals sign and expression to **indicate implementations** must define the constant value. **Associated types** must never define the type, the type may only be **specified in an implementation.**
+
+> we mentioned that to use traits as **trait objects**, we must **put them behind a pointer**, such as **&dyn Trait or Box<dyn Trait>** (Rc<dyn Trait> would work too).
+
 
 ## Why we need traits?
 
@@ -63,7 +64,9 @@ fn main() {
     println!("double 5_i64 == {}", 5_i64.double());
 }
 ```
+
 > Result:
+
 ```no_run,compile_fail,ignore
 error[E0390]: only a single inherent implementation marked with `#[lang = "i32"]` is allowed for the `i32` primitive
 ```
@@ -235,7 +238,5 @@ impl<'a> HasAssocType for Struct {
 ```
 
 
-## Glossery
 
-  > `receiver` : for  exampele of type of Self (i.e. self) implies this 
   

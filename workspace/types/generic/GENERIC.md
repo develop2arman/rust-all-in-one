@@ -14,9 +14,9 @@
 
 > telling the compiler to fill in the actual types later when any code instantiates them.
 
-> Generic functions are a cheap way to give the illusion of **polymorphic code**.
+> Generic functions are a cheap way to give the illusion of **polymorphic(late binding) code**.
 
-> Note: By substitution, we mean that every time a generic item is used with a concrete type, a specialized copy of that code is generated at compile time with the type variable T, getting replaced with the concrete type. This process of generating specialized functions with concrete types at **compile time is called** [[monomorphization]] , which is the procedure of doing the **opposite of** [[polymorphic]] functions.
+> Note: By substitution, we mean that every time a generic item is used with a concrete type, a specialized copy of that code is generated at compile time with the type variable T, getting replaced with the concrete type. This process of generating specialized functions with concrete types at **compile time is called [[monomorphization]]** (is doing [[static_dispatch]], early binding) , which is the procedure of doing the **opposite of** [[polymorphic]] functions.
 
 > generics is preferred in most cases because it has **no runtime overhead**, as is the case with trait objects.
 
@@ -46,4 +46,4 @@ fn main() {
 
 
 
-> `tags` [[pattern_new_type]]
+> `tags` [[pattern_new_type]] [[SAFEOBJECT]]

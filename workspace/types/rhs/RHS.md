@@ -18,4 +18,4 @@ trait Add<Rhs=Self> {  type Output; fn add(self, rhs: Rhs) -> Self::Output;}
 
 ---
 
-> `tags` [[rhs]]
+> `tags` [[rhs]] [[DEFAULT_CONCRETE_TYPE]]
