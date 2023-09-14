@@ -29,9 +29,11 @@
 
 > This interface consists of associated items, which come in three varieties:
 
-- [x] Functions
-- [x] Types
-- [x] Constants
+ - [x] Functions
+
+ - [x] Types
+
+ - [x] Constants
 
 > What does [[PartialEq]] do for types? It enables comparisons with the == operator. “Partial” allows for cases where two values that match exactly should not be treated as equal, such as the floating point’s NAN value or SQL’s NULL.  When you see a sentence with the following structure, “...T **is** Debug...”, what they’re saying is that T **implements** the Debug trait.
 

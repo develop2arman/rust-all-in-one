@@ -4,11 +4,11 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 use std::thread;
 
 
-/// rust-doc-smartpointer-arc-ex-1
+/// rust-doc-smartpointer-arc-ex-5
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-smartpointer-arc_bin --bin rust-doc-smartpointer-arc-ex-1```
+/// ```cargo run -q -p rust-doc-smartpointer-arc_bin --bin rust-doc-smartpointer-arc-ex-5```
 ///
 /// ## What
 /// `TODO`

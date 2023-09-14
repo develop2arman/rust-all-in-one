@@ -29,7 +29,7 @@ fn main(){
 
 unimplemented!();
 
-//let zero = Arc::<u32>::new_zeroed();
+//let zero = Arc::<u32>::try_new_zeroed()?;
 //let zero = unsafe { zero.assume_init() };
 
 //assert_eq!(*zero, 0)

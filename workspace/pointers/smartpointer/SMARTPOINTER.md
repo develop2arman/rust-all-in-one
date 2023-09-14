@@ -16,15 +16,25 @@
 
 ## What are Smart Pointers?
 
+> Smart pointers are **abstract data types** that act like regular pointers (variables that store memory addresses of values) in programming, coupled with additional features like destructors(drop) and overloaded operators.
 > They are called smart because they also have extra metadata and code associated with them that gets executed when they are created or destroyed. Being able to **automatically free the underlying resource** when a smart pointer goes out of scope is one of the major reasons to use smart pointers.
-> Much of the smartness in smart pointers comes from two traits, called the **Drop trait and the Deref trait**.
+> Much of the smartness in smart pointers comes from two traits, called the **Drop trait and the Deref trait**. Using the dereferencing operator on the memory address returns the location of the value from the pointer points.
 
+## Use cases
+
+- [x] Automatically de-allocating data and destructing objects
+- [x] Checking data or variables that exceed their bounds
+- [x] Reducing bugs related to the use of regular pointers
+- [x] Preserving the efficiency of the program after de-allocating data
+- [x] Keeping track of all memory addresses of a program’s data/objects/variables
+- [x] Managing network connections in a program application
 
 ### Drop Mechanism
 > When we instantiate any Drop implementing value (any **heap** allocated type), the Rust compiler inserts drop method calls after every end of scope, after compilation. So, we don't need to manually call drop on these instances. This kind of automatic reclamation based on scope is inspired by the **RAII** principle of C++.
 
 ### Drerf Mechanism
 > smart pointer types often implement the Deref trait, which allows us to use the * dereferencing operator with these types. While **Deref gives you read-only access**, there is also **DerefMut, which can give you a mutable reference** to the underlying type. Deref has the following type signature:
+> Enabling *easy access to the data* stored behind the smart pointers. You can use the Deref trait to *treat smart pointers as a reference*.
 
 ```rust
 pub trait Deref {
