@@ -119,7 +119,7 @@
   - [ASSOCIATE](trait/associate-type-or-trait/ASSOCIATE.md)  
   - [INHERITANCE](trait/inheritance/INHERITANCE.md)
   - [SHARED_BEHAVIOR](trait/shared-behavior/SHARED_BEHAVIOR.md)  
-    - [SB_TRAIT_BUILTIN](trait/shared-behavior/builtin-trait/SB_TRAIT_INBUILT.md)    
+    - [SB_TRAIT_INBUILT](trait/shared-behavior/builtin-trait/SB_TRAIT_INBUILT.md)    
     - [SAFE OBJECT](trait/shared-behavior/safe-object/SAFEOBJECT.md)
       - [TRAITOBJECT](trait/shared-behavior/safe-object/dispatchable/TRAITOBJECT.md)        
     - [NON_OBJECT_SAFE](trait/shared-behavior/none-object-safe/NONE_OBJECT_SAFE.md)
