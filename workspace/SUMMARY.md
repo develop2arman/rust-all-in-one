@@ -122,8 +122,7 @@
     - [SAFE OBJECT](trait/shared-behavior/safe-object/SAFEOBJECT.md)
       - [TRAITOBJECT](trait/shared-behavior/safe-object/dispatchable/TRAITOBJECT.md)        
     - [NON_OBJECT_SAFE](trait/shared-behavior/none-object-safe/NONE_OBJECT_SAFE.md)
-    - [SB_AGGRIGATOR](trait/shared-behavior/aggregator/SB_AGGRIGATOR.md)
-  - [SB_TRAIT_BUILT_IN](trait/shared-behavior/builtin-trait/SB_TRAIT_INBUILT.md) 
+    - [SB_AGGRIGATOR](trait/shared-behavior/aggregator/SB_AGGRIGATOR.md)  
   - [DEFAULT_CONCRETE_TYPE](trait/shared-behavior/trait-bound/TRAIT_BOUND.md)
       - [OPERATOR](trait/shared-behavior/trait-bound/operator/OPERATOR.md)
     
