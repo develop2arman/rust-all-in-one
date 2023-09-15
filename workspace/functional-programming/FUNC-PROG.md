@@ -4,6 +4,8 @@
 
 [[LAZY]]
 
+[[EXPRESSION]]
+
 ---
 
 ## Expression
@@ -53,3 +55,19 @@ fn main() {}
 - and closures that don’t need mutable access to the captured variables also implement Fn
 
 ---
+
+## Glossery
+
+> `Combinator`: As an **enum**, they get the ability to store a success state and an error state, while generics allow them to specialize **at compile time** so that they store any value in either state. These types also come with a lot of convenient methods (commonly known as **combinators**) implemented on them, allowing you to consume, compose, or transform the inner values easily.
+Combinators are higher-order functions that apply only functions and earlier defined combinators to provide a result from its arguments. They can be used to manage control flow in a modular fashion.
+
+> [Rust Combinators](https://kerkour.com/rust-combinators)
+
+```rust,compile_fail,no_run
+fn cook(chopped: Option<Chopped>) -> Option<Cooked> {
+    chopped.map(|Chopped(food)| Cooked(food))
+}
+```
+
+
+> `Scrutinee`: A scrutinee is the expression that is matched on in match expressions and similar pattern matching constructs. For example, in match x { A => 1, B => 2 }, the expression x is the #scrutinee .

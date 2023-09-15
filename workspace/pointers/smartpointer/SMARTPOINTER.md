@@ -120,6 +120,9 @@ pub trait Deref {
 
 >> Such as Cell<T>, which is similar except that **instead of giving references to the inner value**, the **value is copied** in and out of the Cell<T>.
 
+## Special Types
+
+[Special Traits&Types](https://doc.rust-lang.org/nightly/reference/special-types-and-traits.html#special-types-and-traits)
 
 ## Glossary
 

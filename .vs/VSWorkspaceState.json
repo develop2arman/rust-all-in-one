@@ -1,19 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\workspace",
-    "\\workspace\\pointers",
-    "\\workspace\\pointers\\smartpointer",
-    "\\workspace\\pointers\\smartpointer\\compiletime",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\box",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\box\\easy-rust",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\box\\easy-rust\\src",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\box\\easy-rust\\src\\bin",
-    "\\workspace\\thread",
-    "\\workspace\\thread\\threadpool\\packtpub",
-    "\\workspace\\thread\\threadpool\\packtpub\\src",
-    "\\workspace\\types"
+    ""
   ],
-  "SelectedNode": "\\workspace\\pointers\\smartpointer\\runtime",
   "PreviewInSolutionExplorer": false
 }

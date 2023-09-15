@@ -47,3 +47,7 @@ fn main() {
 
 
 > `tags` [[pattern_new_type]] [[SAFEOBJECT]]
+
+## Glossery
+
+> `Uncovered/Covered`: T is uncovered, but the T in Vec<T> is covered

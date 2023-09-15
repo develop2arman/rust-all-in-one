@@ -137,6 +137,8 @@ let ptr = 42 as *const Vec<String>;
 
 ## Glossery
 
+> `Size & Alignment`: For example, a value with an alignment of 2 must be stored at an even address, while a value with an alignment of 1 can be stored at any address. Alignment is measured in bytes, and must be at least 1, and always a power of 2. The alignment of a value can be checked with the align_of_val function.The unit tuple (()), which is guaranteed as a zero-sized type to have a size of 0 and an alignment of 1.the type [u16; 0] has size 0 and alignment 2). The size of a value can be checked with the size_of_val function.
+
 > `&mut T`: This means that &mut T types do **not implement the Copy** trait.
 
 > `&T`: A pointer is a **Copy** type, which simply means you can have many immutable references to a value T.

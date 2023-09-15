@@ -1,4 +1,5 @@
-[[rd-match]]
+
+> `tags` [[match_binding]] [[rd-match]] #scrutinee
 
 ---
 
@@ -76,6 +77,3 @@ One final expression that has the **type ! is a loop**:
 ```
 Here, the loop never ends, so ! is the value of the expression. However, this wouldn’t be true if we included a break, because the *loop would terminate when it got to the break*.
 
----
-
-> `tags` [[match_binding]]

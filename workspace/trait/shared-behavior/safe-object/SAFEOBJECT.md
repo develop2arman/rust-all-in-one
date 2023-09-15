@@ -95,7 +95,9 @@ fn main() {
 
 ### Dynamic
 
-ref.to [[TRAITOBJECT]]
+A dynamically sized type (DST) is a type without a statically known size or alignment.
+
+> ref.to [[TRAITOBJECT]]
 
 
 ## Summery

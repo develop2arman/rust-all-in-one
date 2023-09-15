@@ -143,6 +143,22 @@ Internally, Cargo uses the **semver** crate for parsing the versions
 
 ## Glossery
 
+> `Uninhabited`: type is the never type !, or an enum with no variants enum Never { }. Opposite of Inhabited.
+
+> `Crate`: A crate is the unit of compilation and linking. There are different types of crates, such as libraries or executables. Crates may link and refer to other library crates, called external crates. A crate has a self-contained tree of modules, starting from an unnamed root module called the crate root. Items may be made visible to other crates by marking them as public in the crate root, including through paths of public modules.
+
+> `Module`: A module is a container for zero or more items. Modules are organized in a tree, starting from an unnamed module at the root called the crate root or the root module. Paths may be used to refer to items from other modules, which may be restricted by visibility rules.
+
+> `Name` A name is an identifier or lifetime or loop label that refers to an entity. A name binding is when an entity declaration introduces an identifier or label associated with that entity. Paths, identifiers, and labels are used to refer to an entity.
+
+> `Name resolution`: Name resolution is the compile-time process of tying paths, identifiers, and labels to entity declarations.
+
+> `Namespace`: A namespace is a logical grouping of declared names based on the kind of entity the name refers to. Namespaces allow the occurrence of a name in one namespace to not conflict with the same name in another namespace. Within a namespace, names are organized in a hierarchy, where each level of the hierarchy has its own collection of named entities.
+
+> `Prelude`: Prelude, or The Rust Prelude, is a small collection of items - mostly traits - that are imported into every module of every crate. The traits in the prelude are pervasive.
+
+> `Scope`: A scope is the region of source text where a named entity may be referenced with that name.
+
 [Rust Glossary](https://doc.rust-lang.org/nightly/reference/glossary.html)
 
 [Rust Notation](https://doc.rust-lang.org/reference/notation.html)

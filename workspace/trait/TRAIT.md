@@ -29,11 +29,11 @@
 
 > This interface consists of associated items, which come in three varieties:
 
- - [x] Functions
+- [x] Functions
 
- - [x] Types
+- [x] Types
 
- - [x] Constants
+- [x] Constants
 
 > What does [[PartialEq]] do for types? It enables comparisons with the == operator. “Partial” allows for cases where two values that match exactly should not be treated as equal, such as the floating point’s NAN value or SQL’s NULL.  When you see a sentence with the following structure, “...T **is** Debug...”, what they’re saying is that T **implements** the Debug trait.
 
@@ -104,10 +104,9 @@ fn main() {
 
 > educative-rust-trait-closure-ex-7.rs
 
-## Marker Traits
+## Marker/Fundamental Traits
 > Rust identifies these types with a special trait called Copy. **Copy is known as a marker trait**.
 > Traits defined in the **std::marker module** are called marker traits. **These traits don't have any method**, and simply have their declaration with their name with an empty body. Examples from the standard library include Copy, Send, and Sync. They are called marker traits because they are used to simply mark a type as belonging to a particular family for to gain some compile time guarantees. Two such examples from the standard library are the **Send and Sync traits** that are auto-implemented by the language for most types whenever appropriate, and convey which **values are safe to send and share across threads**.
-
 
 ## Blanket Trait
 
@@ -239,6 +238,12 @@ impl<'a> HasAssocType for Struct {
 }
 ```
 
+---
 
+## Special Traits
 
+[Special Traits&Types](https://doc.rust-lang.org/nightly/reference/special-types-and-traits.html#special-types-and-traits)
   
+## Glossery
+
+> `Local trait`: A trait which was defined in the current crate. A trait definition is local or not independent of applied type arguments. Given trait Foo<T, U>, Foo is always local, regardless of the types substituted for T and U.
