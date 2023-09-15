@@ -1,5 +1,7 @@
 [[OPERAT]]
 
+[OPERAT](operator/OPERAT.md)
+
 [[edu-trait-bound]]
 
 [[ms-trait-bound]]

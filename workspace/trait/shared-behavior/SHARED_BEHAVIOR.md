@@ -6,6 +6,8 @@
 
 [[SB_TRAIT_INBUILT]]
 
+[SB_TRAIT_INBUILT](builtin-trait/SB_TRAIT_INBUILT.md)
+
 [[DEFAULT_CONCRETE_TYPE]]
 
 ---
