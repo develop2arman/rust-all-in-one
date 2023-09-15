@@ -12,7 +12,7 @@ use std::fmt::Debug;
 /// `TODO`
 ///
 /// ## How
-/// `move || a + b` to use other thread
+/// Unlike interfaces in languages like Java, C# or Scala, new traits can be implemented for existing types (as with double based on following codes).
 ///
 /// # Arguments
 ///

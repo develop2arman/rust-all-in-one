@@ -52,9 +52,13 @@ fn returns_closure() -> Box<dyn Fn(i32) -> i32> {
 }
 ```
 
+## Some references
+
+[Finding-closure-in-rust](https://huonw.github.io/blog/2015/05/finding-closure-in-rust/)
 
 ## Glossery
 
-  > `closure`:	<>  , || {}   , Closures are represented by traits, so they cannot be a return type, let consume_and_return_x = move || x;
+> `closure`:	<>  , || {}   , Closures are represented by traits, so they cannot be a return type, let consume_and_return_x = move || x;
+
 
 > `tags` 

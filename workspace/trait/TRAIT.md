@@ -163,6 +163,7 @@ pub fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32 
 ```
 
 > We can use a where clause, like this:
+
 ```rust
 fn some_function<T, U>(t: &T, u: &U) -> i32
     where T: Display + Clone,
@@ -232,6 +233,55 @@ impl<'a> HasAssocType for Struct {
 ```
 
 ---
+
+## Use-cases
+
+We've seen a lot of the mechanics and basic use of traits above, but they also wind up playing a few other important roles in Rust: 
+
+`Closures`:
+
+> Somewhat like the ClickCallback trait, closures in Rust are simply particular traits. You can read more about how this works in Huon Wilson's in-depth post on the topic.
+
+`Conditional APIs`:
+
+> Generics make it possible to implement a trait conditionally:
+
+```rust,no_run,compile_fail
+    struct Pair<A, B> { first: A, second: B }
+    impl<A: Hash, B: Hash> Hash for Pair<A, B> {
+        fn hash(&self) -> u64 {
+            self.first.hash() ^ self.second.hash()
+        }
+    }
+```
+
+Here, the Pair type implements Hash if, and only if, its components do -- allowing the single Pair type to be used in different contexts, while supporting the largest API available for each context. It's such a common pattern in Rust that there is built-in support for generating certain kinds of "mechanical" implementations automatically:
+
+```rust,no_run,compile_fail
+    #[derive(Hash)]
+    struct Pair<A, B> { .. }
+```
+
+`Extension methods`:
+
+> Traits can be used to extend an existing type (defined elsewhere) with new methods, for convenience, similarly to C#'s extension methods. This falls directly out of the scoping rules for traits: you just define the new methods in a trait, provide an implementation for the type in question, and voila, the method is available.
+
+`Markers`:
+
+> Rust has a handful of "markers" that classify types: Send, Sync, Copy, Sized. These markers are just traits with empty bodies, which can then be used in both generics and trait objects. Markers can be defined in libraries, and they automatically provide #[derive]-style implementations: if all of a types components are Send, for example, so is the type. As we saw before, these markers can be very powerful: the Send marker is how Rust guarantees thread safety.
+
+`Overloading`:
+
+> Rust does not support traditional overloading where the same method is defined with multiple signatures. But traits provide much of the benefit of overloading: if a method is defined generically over a trait, it can be called with any type implementing that trait. Compared to traditional overloading, this has two advantages. First, it means the overloading is less ad hoc: once you understand a trait, you immediately understand the overloading pattern of any APIs using it. Second, it is extensible: you can effectively provide new overloads downstream from a method by providing new trait implementations.
+
+`Operators`
+
+> Rust allows you to overload operators like `+` on your own types. Each of the operators is defined by a corresponding standard library trait, and any type implementing the trait automatically provides the operator as well.
+
+`The point(note)`:
+
+> despite their seeming simplicity, traits are a unifying concept that supports a wide range of use cases and patterns, without having to pile on additional language features.
+
 
 ## Special Traits
 
