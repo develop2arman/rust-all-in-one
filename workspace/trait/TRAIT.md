@@ -102,7 +102,7 @@ fn main() {
 
 ## Why we need trait bound?
 
-> educative-rust-trait-closure-ex-7.rs
+> educative-rust-trait-ex-7.rs
 
 ## Marker/Fundamental Traits
 > Rust identifies these types with a special trait called Copy. **Copy is known as a marker trait**.
