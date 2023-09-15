@@ -1,4 +1,4 @@
-[[OPERATOR]]
+[[OPERAT]]
 
 [[edu-trait-bound]]
 
