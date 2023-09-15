@@ -16,6 +16,20 @@
 trait Add<Rhs=Self> {  type Output; fn add(self, rhs: Rhs) -> Self::Output;}
 ```
 
+## Arithmetic Operators
+
+The following table shows the relation between arithmetic operators and traits:
+
+Operator	Trait
+a + b 	Add
+a - b 	Sub
+-a 	Neg
+a * b 	Mul
+a / b 	Div
+a % b 	Rem
+
+> Apart from Rem, which is an abbreviation for Remainder, also known as mod in some other languages, those are pretty obvious. The binary operator traits all have a RHS (=right-hand-side) generic type bound which defaults to Self, as well as an associated Output type that the implementation has to declare.
+
 ---
 
-> `tags` [[rhs]] [[DEFAULT_CONCRETE_TYPE]]
+> `tags` [[rhs]] [[DEFAULT_CONCRETE_TYPE]] [[arithmetic]]

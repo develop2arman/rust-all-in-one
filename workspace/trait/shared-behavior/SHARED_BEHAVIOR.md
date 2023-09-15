@@ -6,6 +6,8 @@
 
 [[SB_AGGRIGATOR]]
 
+[[DEFAULT_CONCRETE_TYPE]]
+
 ---
 
 ## Generic traits

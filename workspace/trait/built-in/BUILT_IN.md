@@ -25,7 +25,10 @@ This trait is meant to be implemented for types that can be converted in to an o
 
 
 ## From & Into
-To convert one type into another, we have the From and Into traits. The interesting part about both of these traits is that we only need to implement the From trait and we get the implementation of the Into trait for free, because of the following impl:
+
+> For obvious reasons, those traits cannot be auto-derived, but writing them should be trivial in most cases
+
+> To convert one type into another, we have the From and Into traits. The interesting part about both of these traits is that we only need to implement the From trait and we get the implementation of the Into trait for free, because of the following impl:
 
 ```rust
 #[stable(feature = "rust1", since = "1.0.0")]
@@ -35,6 +38,24 @@ impl<T, U> Into<U> for T where U: From<T> {
     }
 }
 ```
+
+Why not implement From everywhere? The orphan rule unfortunately forbids implementing From for types not defined in other crates. For example, I have an Optioned<T> type, that I may want to convert into an Option<T>. Trying to implement From:
+
+```rust,no_run,compile_fail
+impl<T: Noned + Copy> From<Optioned<T>> for Option<T> {
+    #[inline]
+    fn from(self) -> Option<T> { self.map_or_else(|| none(), wrap) }
+}
+```
+
+I get an error: type parameter T must be used as the type parameter for some local type (e.g. MyStruct<T>); only traits defined in the current crate can be implemented for a type parameter [E0210]
+
+Note that you can implement From and Into with multiple classes, you can have a From<Foo> and a From<Bar> for the same type.
+
+There are a good number of traits starting with Into – IntoIterator, which is stable and which we already have discussed above, just being one of them. There also is FromIterator, which does the reverse, namely constructing a value of your type from an iterator of items.
+
+Then there is FromStr for any types that can be parsed from a string, which is very useful for types that you want read from any textual source, e.g. configuration or user input. Note that its interface differs from From<&str> in that it returns a Result, and thus allows to relate parsing errors to the caller.
+
 ## Partial Eq
 > comparision like <=>=.
 

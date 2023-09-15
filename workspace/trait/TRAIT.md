@@ -30,9 +30,7 @@
 > This interface consists of associated items, which come in three varieties:
 
 - [x] Functions
-
 - [x] Types
-
 - [x] Constants
 
 > What does [[PartialEq]] do for types? It enables comparisons with the == operator. “Partial” allows for cases where two values that match exactly should not be treated as equal, such as the floating point’s NAN value or SQL’s NULL.  When you see a sentence with the following structure, “...T **is** Debug...”, what they’re saying is that T **implements** the Debug trait.
@@ -100,20 +98,12 @@ fn main() {
 }
 ```
 
-## Why we need trait bound?
-
-> educative-rust-trait-ex-7.rs
-
-## Marker/Fundamental Traits
-> Rust identifies these types with a special trait called Copy. **Copy is known as a marker trait**.
-> Traits defined in the **std::marker module** are called marker traits. **These traits don't have any method**, and simply have their declaration with their name with an empty body. Examples from the standard library include Copy, Send, and Sync. They are called marker traits because they are used to simply mark a type as belonging to a particular family for to gain some compile time guarantees. Two such examples from the standard library are the **Send and Sync traits** that are auto-implemented by the language for most types whenever appropriate, and convey which **values are safe to send and share across threads**.
-
 ## Blanket Trait
 
-Blanket implementation:
+`Blanket implementation`:
 > Any implementation where a type appears uncovered. impl<T> Foo for T, impl<T> Bar<T> for T, impl<T> Bar<Vec<T>> for T, and impl<T> Bar<T> for Vec<T> are considered blanket impls. However, impl<T> Bar<Vec<T>> for Vec<T> is not a blanket impl, as all instances of T which appear in this impl are covered by Vec.
 
-Bound:
+`Bound`:
 > Bounds are constraints on a type or trait. For example, if a bound is placed on the argument a function takes, types passed to that function must abide by that constraint.
 
 > We can also conditionally implement a trait for any type that implements another trait. Implementations of a trait on any type that satisfies the trait bounds are called blanket implementations and are extensively used in the Rust standard library. For example, the standard library implements the ToString trait on any type that implements the Display trait. The impl block in the standard library looks similar to this code:
@@ -123,11 +113,14 @@ impl<T: Display> ToString for T {
     // --snip--
 }
 ```
->Because the standard library has this blanket implementation, we can call the to_string method defined by the ToString trait on any type that implements the Display trait. For example, we can turn integers into their corresponding String values like this because integers implement Display:
-```rust
+
+> Because the standard library has this blanket implementation, we can call the to_string method defined by the ToString trait on any type that implements the Display trait. For example, we can turn integers into their corresponding String values like this because integers implement Display:
+
+```rust,no_run
 let s = 3.to_string();
 ```
 > Blanket implementations appear in the documentation for the trait in the “Implementors” section.
+
 ---
 
 ## Universal function call syntax
