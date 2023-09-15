@@ -1,6 +1,4 @@
-[[OPERAT]]
-
-[OPERAT](operator/OPERAT.md)
+[[operate]]
 
 [[edu-trait-bound]]
 
