@@ -61,6 +61,34 @@ use std::fmt::Debug;
 /// We’ve stated, “Hey, I can implement the Double trait for a Fruit with any type parameter T."
 /// But that’s not actually true. We need to know that T itself has an implementation of Double, since we rely on the double method in the implementation. To solve this, we can use a trait bound.
 
-fn main(){
-unimplemented!();
-}
+
+ trait Double {
+     fn double(&self) -> Self;
+ }
+
+ impl Double for i32 {
+     fn double(&self) -> Self {
+         self * 2
+     }
+ }
+
+ struct Fruit<T> {
+     apples: T,
+     bananas: T,
+ }
+
+ impl<T> Double for Fruit<T> {
+     fn double(&self) -> Self {
+         Fruit {
+             apples: self.apples.double(),
+             bananas: self.bananas.double(),
+         }
+     }
+ }
+
+ fn main() {
+     let fruit = Fruit {
+         apples: 5,
+         bananas: 10,
+     };
+ }
