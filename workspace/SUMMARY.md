@@ -118,12 +118,13 @@
 - [TRAIT](trait/TRAIT.md)
   - [ASSOCIATE](trait/associate-type-or-trait/ASSOCIATE.md)  
   - [INHERITANCE](trait/inheritance/INHERITANCE.md)
+  - [BUILT-IN](trait/built-in/BUILT-IN.md)  
   - [SHARED_BEHAVIOR](trait/shared-behavior/SHARED_BEHAVIOR.md)      
     - [BUILTIN-TRAIT](trait/shared-behavior/builtin-trait/BUILTIN-TRAIT.md)
     - [SAFE OBJECT](trait/shared-behavior/safe-object/SAFEOBJECT.md)
       - [TRAITOBJECT](trait/shared-behavior/safe-object/dispatchable/TRAITOBJECT.md)        
     - [NON_OBJECT_SAFE](trait/shared-behavior/none-object-safe/NONE_OBJECT_SAFE.md)
-    - [SB_AGGRIGATOR](trait/shared-behavior/aggregator/SB_AGGRIGATOR.md)  
+    - [AGGRIGATOR](trait/shared-behavior/aggregator/AGGRIGATOR.md)  
   - [TRAIT_BOUND](trait/shared-behavior/trait-bound/TRAIT_BOUND.md)
     - [OPERATOR](trait/shared-behavior/trait-bound/operator/OPERATOR.md)
 ---
@@ -177,15 +178,11 @@
 
 - [TEST](tests/TESTS.md)  
 
-  - [unit](tests/test_unit/test-unit.md)  
-  
-  - [pretty](tests/test_pretty/test-pretty.md)
-  
-  - [proptest](tests/test_proptest/test-proptest.md)
-
-  - [proptest_runner](tests/test_proptest_runner/test-proptest_runner.md)  
-
-  - [fixture](tests/test_fixture/test-fixture.md)
+  - [Unit](tests/test_unit/test-unit.md)    
+  - [Pretty](tests/test_pretty/test-pretty.md)  
+  - [Proptest](tests/test_proptest/test-proptest.md)
+  - [Proptest_runner](tests/test_proptest_runner/test-proptest_runner.md)  
+  - [Fixture](tests/test_fixture/test-fixture.md)
   
 ---
 
