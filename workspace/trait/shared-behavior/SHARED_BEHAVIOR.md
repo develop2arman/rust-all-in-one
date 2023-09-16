@@ -6,8 +6,6 @@
 
 [[BUILTIN-TRAIT]]
 
-[[TRAIT_BOUND]]
-
 ---
 
 ## Generic traits

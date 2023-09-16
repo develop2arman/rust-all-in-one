@@ -8,7 +8,7 @@
 
 
 ## Trait bounds
-> In the implementation of outline_print, we want to use the Display trait’s functionality. Therefore, we need to specify that the OutlinePrint trait will work only for types that also implement Display and provide the functionality that OutlinePrint needs. We can do that in the trait definition by specifying OutlinePrint: Display. 
+> In the implementation of outline_print, we want to use the Display traitâ€™s functionality. Therefore, we need to specify that the OutlinePrint trait will work only for types that also implement Display and provide the functionality that OutlinePrint needs. We can do that in the trait definition by specifying OutlinePrint: Display. 
 
 > This technique is similar to adding a trait bound to the trait.
 >we can use the to_string function that is automatically implemented for any type that implements Display.
