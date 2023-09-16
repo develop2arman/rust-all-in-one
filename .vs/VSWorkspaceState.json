@@ -1,16 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\.github",
-    "\\.github\\workflows",
-    "\\workspace",
-    "\\workspace\\flowcontrol\\match",
-    "\\workspace\\functional-programming\\expression",
-    "\\workspace\\functional-programming\\function",
-    "\\workspace\\trait",
-    "\\workspace\\trait\\shared-behavior",
-    "\\workspace\\types\\generic"
+    ""
   ],
-  "SelectedNode": "\\rust-toolchain.toml",
   "PreviewInSolutionExplorer": false
 }
