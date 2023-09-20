@@ -1,6 +1,6 @@
 #![allow(dead_code, unused_variables)]
 
-use std::rc::Rc;
+
 
 /// rust-doc-trait-associate-type-ex-2
 ///
@@ -24,38 +24,25 @@ use std::rc::Rc;
 /// ## Example
 /// //``rust,no_run,compile_fail,ignore
 
-struct Counter {
-    count: u32,
+#[derive(Debug)]
+struct File;
+
+trait Read {
+    fn read(self: &Self, save_to: &mut Vec<u8>) -> Result<usize, String>;
 }
 
-impl Counter {
-    fn new() -> Counter {
-        Counter { count: 0 }
+impl Read for File {
+    fn read(self: &File, save_to: &mut Vec<u8>) -> Result<usize, String> {
+        Ok(100)
     }
 }
 
-impl Iterator for Counter {
-    type Item = u32;
-
-    fn next(&mut self) -> Option<Self::Item> {
-        // --snip--
-        if self.count < 5 {
-            self.count += 1;
-            Some(self.count)
-        } else {
-            None
-        }
-    }
-}
-
-/* With generic type substitute associated type
-
-pub trait Iterator<T> {
-    fn next(&mut self) -> Option<T>;
-}
-
-*/
-
-fn main(){
-    unimplemented!()
+fn main() {
+    /*
+    let f = File{};
+    let mut buffer = vec!();
+    let n_bytes = f.read(&mut buffer).unwrap(); //error: reading zero byte data to `Vec`
+    println!("{} byte(s) read from {:?}", n_bytes, f);
+    */
+    unimplemented!();
 }

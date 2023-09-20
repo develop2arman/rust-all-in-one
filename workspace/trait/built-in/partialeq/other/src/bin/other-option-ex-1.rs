@@ -90,6 +90,10 @@ fn main() {
         let b=AB{ab:Box::<[i64;5]>::new([1,2,3,4,5])};
         println!("{:?}", category(&a,&b));
         //
+        let a=AB{ab:Box::<[i64;5]>::new([1,2,3,4,6])};
+        let b=AB{ab:Box::<[i64;5]>::new([1,2,3,4,5])};
+        println!("{:?}", category(&a,&b));
+        //
         let a=AB{ab:Box::<[i64;5]>::new([1,2,3,4,0])};
         let b=AB{ab:Box::<[i64;5]>::new([1,2,3,4,5])};
         println!("{:?}", category(&a,&b));

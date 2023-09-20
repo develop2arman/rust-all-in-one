@@ -118,7 +118,7 @@
 - [TRAIT](trait/TRAIT.md)
   - [ASSOCIATE](trait/associate-type-or-trait/ASSOCIATE.md)  
   - [INHERITANCE](trait/inheritance/INHERITANCE.md)
-  - [BUILT-IN](trait/built-in/BUILT-IN.md)  
+  - [BUILT-IN](trait/built-in/BUILT_IN.md)  
   - [SHARED_BEHAVIOR](trait/shared-behavior/SHARED_BEHAVIOR.md)      
     - [BUILTIN-TRAIT](trait/shared-behavior/builtin-trait/BUILTIN-TRAIT.md)
     - [SAFE OBJECT](trait/shared-behavior/safe-object/SAFEOBJECT.md)

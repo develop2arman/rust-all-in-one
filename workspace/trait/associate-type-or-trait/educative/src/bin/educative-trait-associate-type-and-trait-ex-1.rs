@@ -27,7 +27,7 @@
 ///  `TODO`
 ///
 fn main() {
-    let speed = Kmh { value: 90 };
+    let speed = Mph { value: 90 };
     let distance = speed.in_three_hours();
     println!("At {:?}, you will travel {:?} in 3 hours", speed, distance);
 }
@@ -44,9 +44,17 @@ struct Kmh {
 struct Km {
     value: u32
 }
+#[derive(Debug, Clone, Copy)]
 struct Mph {
     value: u32
 }
+impl InThreeHours for Mph {
+    type Distance = Miles;
+    fn in_three_hours(&self) ->  Self::Distance {
+        Miles { value: self.value * 3 }
+    }
+}
+
 #[derive(Debug, Clone, Copy)]
 struct Miles {
     value: u32
@@ -55,13 +63,7 @@ struct Miles {
 impl InThreeHours for Kmh {
     type Distance = Km;
     fn in_three_hours(&self) ->  Self::Distance {
-        Km { value: self.value * 3 }
+        Km { value: self.value * 2 }
     }
 }
 
-impl InThreeHours for Mph {
-    type Distance = Miles;
-    fn in_three_hours(&self) ->  Self::Distance {
-        Miles { value: self.value * 3 }
-    }
-}

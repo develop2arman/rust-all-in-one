@@ -34,12 +34,6 @@ fn main() {
 trait InThreeHours {
     fn in_three_hours(&self) -> Km;
 }
-impl Kmh {
-    fn in_three_hours(&self) -> Km {
-        Km { value: self.value * 3 }
-    }
-}
-
 
 impl InThreeHours for Kmh {
     fn in_three_hours(&self) -> Km {
@@ -50,7 +44,11 @@ impl InThreeHours for Kmh {
 struct Kmh {
     value: u32
 }
-
+impl Kmh {
+    fn in_three_hours(&self) -> Km {
+        Km { value: self.value * 2 }
+    }
+}
 #[derive(Debug, Clone, Copy)]
 struct Km {
     value: u32

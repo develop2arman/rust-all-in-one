@@ -24,12 +24,38 @@ use std::rc::Rc;
 /// ## Example
 /// //``rust,no_run,compile_fail,ignore
 
-#[derive(Debug)]
-struct GroundStation {}
+struct Counter {
+    count: u32,
+}
 
-fn main() {
-  let base = Rc::new(GroundStation {});   // <2>
+impl Counter {
+    fn new() -> Counter {
+        Counter { count: 0 }
+    }
+}
 
-  println!("{:?}", base);                 // <3>
-  println!("{:?}", base);                 // <3>
+impl Iterator for Counter {
+    type Item = u32;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        // --snip--
+        if self.count < 5 {
+            self.count += 1;
+            Some(self.count)
+        } else {
+            None
+        }
+    }
+}
+
+/* With generic type substitute associated type
+
+pub trait Iterator<T> {
+    fn next(&mut self) -> Option<T>;
+}
+
+*/
+
+fn main(){
+    unimplemented!()
 }

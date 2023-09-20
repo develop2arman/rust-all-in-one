@@ -159,6 +159,22 @@ Internally, Cargo uses the **semver** crate for parsing the versions
 
 > `Scope`: A scope is the region of source text where a named entity may be referenced with that name.
 
+---
+
+## Notations 
+
+```rust, compile_fail, no_run
+RArrow ->
+Eq/EqualArrow =>
+; Semi or SemiColon
+: Colon
+<> Cover, Angle Bracket
+[] Square Bracket
+() Parenthese
+```
+
+---
+
 [Rust Glossary](https://doc.rust-lang.org/nightly/reference/glossary.html)
 
 [Rust Notation](https://doc.rust-lang.org/reference/notation.html)

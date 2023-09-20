@@ -4,9 +4,9 @@
 ///
 /// ## Commands
 ///
-/// ```RUST_BACKTRACE=full cargo run -q -p rust-in-action-trait-associate-type-and-trait_bin --bin rust-in-action-trait-associate-type-and-trait-main```
+/// ```RUST_BACKTRACE=full cargo run -q -p rust-in-action-trait-associate-type-and-trait_bin --bin ria-trait-associate-type-and-trait-main```
 ///
-/// ```RUST_BACKTRACE=full cargo test -q -p rust-in-action-trait-associate-type-and-trait_bin --bin rust-in-action-trait-associate-type-and-trait-main```
+/// ```RUST_BACKTRACE=full cargo test -q -p rust-in-action-trait-associate-type-and-trait_bin --bin ria-trait-associate-type-and-trait-main```
 ///
 /// ```cargo in-action  --package rust-in-action-trait-associate-type-and-trait_bin  --message-format short --no-deps --open --color always```
 ///

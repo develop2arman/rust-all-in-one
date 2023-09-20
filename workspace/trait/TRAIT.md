@@ -10,6 +10,8 @@
 
 [[BUILT_IN]]
 
+[[BUILTIN-TRAIT]]
+
 ---
 
 > We can use **traits** to define **shared behavior** in an **abstract** way. We can use **trait bounds** to specify that a **generic type** can be any type that has certain behavior.

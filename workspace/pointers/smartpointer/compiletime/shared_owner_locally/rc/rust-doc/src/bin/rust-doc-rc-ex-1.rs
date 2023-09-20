@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-1```
+/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-main```
 ///
 /// ```cargo doc  --package rust-doc-rc_bin  --message-format short --no-deps --open --color always```
 ///
@@ -29,48 +29,42 @@
 /// //rust,compile_fail,no_run,ignore
 ///  `TODO`
 ///
-#[derive(Debug)]
 enum List {
-    Cons(Rc<RefCell<i32>>, Rc<List>),
+    Cons(i32, Rc<List>),
     Nil,
 }
-//RefCell<T> lets us have many immutable borrows or one mutable borrow at any point in time.
-//So this exmple show have many immutable borrows
-//Mutating the value inside an immutable value is the interior mutability pattern.
-//So with *value.borrow_mut() += num we had using the interior mutability pattern.
 
 use crate::List::{Cons, Nil};
-use std::cell::RefCell;
 use std::rc::Rc;
 
 fn main() {
-    let value = Rc::new(RefCell::new(5));
-
-    let a = Rc::new(Cons(Rc::clone(&value), Rc::new(Nil)));
-
-    let b = Cons(Rc::new(RefCell::new(3)), Rc::clone(&a));
-    let c = Cons(Rc::new(RefCell::new(4)), Rc::clone(&a));
-    let d = Cons(Rc::new(RefCell::new(5)), Rc::clone(&a));
-
-
-    *value.borrow_mut() += 10;
-
-    println!("a after = {:?}", a);
-    println!("b after = {:?}", b);
-    *value.borrow_mut() += 10;
-    println!("c after = {:?}", c);
+    let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
+    println!("count after creating a = {}", Rc::strong_count(&a));
+    let b = Cons(3, Rc::clone(&a));
+    println!("count after creating b = {}", Rc::strong_count(&a));
     {
-        *value.borrow_mut() += 10;
-         println!("(inner scope)d after = {:?}", d);
-         println!("(inner scope)a strong_count = {}", Rc::strong_count(&a));
+        let c = Cons(4, Rc::clone(&a));
+        println!("count after creating c = {}", Rc::strong_count(&a));
     }
-    println!("a after = {:?}", a);
-    println!("b after = {:?}", b);
-    println!("c after = {:?}", c);
-    println!("d after = {:?}", d);
-    let e = Cons(Rc::new(RefCell::new(5)), Rc::clone(&a));
-    println!("strong_count after c goes out of scope = {}", Rc::strong_count(&a));
-
-    *value.borrow_mut() += 10;
-    println!("e after = {:?}", e);
+    println!("count after c goes out of scope = {}", Rc::strong_count(&a));
 }
+/*We could have called a.clone() rather than Rc::clone(&a), but Rust’s convention is to use Rc::clone in this case. The implementation of Rc::clone doesn’t make a deep copy of all the data like most types’ implementations of clone do. The call to Rc::clone only increments the reference count, which doesn’t take much time.
+ When c goes out of scope, the count goes down by 1-above
+he implementation of the Drop trait decreases the reference count automatically when an Rc<T> value goes out of scope.
+
+
+
+
+fn main() {
+    let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
+    println!("count after creating a = {}", Rc::weak_count(&a));
+    let b = Cons(3, Rc::clone(&a));
+    println!("count after creating b = {}", Rc::weak_count(&a));
+    {
+        let c = Cons(4, Rc::clone(&a));
+        println!("count after creating c = {}", Rc::weak_count(&a));
+    }
+    println!("count after c goes out of scope = {}", Rc::weak_count(&a));
+}
+
+*/
