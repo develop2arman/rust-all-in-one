@@ -70,7 +70,8 @@ trait Foo {
 }
 
 ```
->
+
+> For Example:
 
 ```rust,no_run,compile_fail
 pub trait Iterator {
@@ -94,7 +95,6 @@ pub trait Iterator<T> {
 }
 ```
 
-
 > **With associated types**, we don’t need to annotate types because we can’t implement a trait on a type multiple times.  At the First Example with the definition that uses associated types, we can only **choose what the type of Item will be once**, because there can only be one impl Iterator for Counter. 
 
 > We don’t have to specify that we want an iterator of u32 values everywhere that we call next on Counter.
@@ -109,7 +109,7 @@ impl<T, U> GenericTrait<U> for u32 where U: HasAssocType<Ty = T> {}
 
 > `T` "constrains" by being in an "associated type(Ty = T)" in a bound for type `U` which is itself *a generic parameter(GenericTrait)* constraining the trait.
 
-For example:
+> For example:
 
 ```rust,no_run,compile_fail
 // we do not need to write trait Add due to is built-in trait
@@ -126,6 +126,68 @@ impl<T: Add<T, Output=T>> Add for Complex<T> {
 }
 ```
 
+> Next Example:
+
+```rust,no_run,compile_fail
+trait AssociatedType {
+    // Associated type declaration
+    type Assoc;
+}
+
+struct Struct;
+
+struct OtherStruct;
+
+impl AssociatedType for Struct {
+    // Associated type definition
+    type Assoc = OtherStruct;
+}
+
+impl OtherStruct {
+    fn new() -> OtherStruct {
+        OtherStruct
+    }
+}
+
+fn main() {
+    // Usage of the associated type to refer to OtherStruct as <Struct as AssociatedType>::Assoc
+    let _other_struct: OtherStruct = <Struct as AssociatedType>::Assoc::new();
+}
+```
+
+## Associated Types Container Example
+
+Consider the following example of a Container trait. Notice that the type is available for use in the method signatures:
+
+```rust,no_run,compile_fail
+trait Container {
+    type E;
+    fn empty() -> Self;
+    fn insert(&mut self, elem: Self::E);
+}
+```
+
+In order for a type to implement this trait, it must not only provide implementations for every method, but it must specify the type E. Here's an implementation of Container for the standard library type Vec:
+
+```rust,no_run,compile_fail
+impl<T> Container for Vec<T> {
+    type E = T;
+    fn empty() -> Vec<T> { Vec::new() }
+    fn insert(&mut self, x: T) { self.push(x); }
+}
+```
+
+> Relationship between Bounds and WhereBounds
+
+> In this example:
+
+```rust,no_run,compile_fail
+trait Example {
+    type Output<T>: Ord where T: Debug;
+}
+```
+
+> Given a reference to the associated type like <X as Example>::Output<Y>, the associated type itself must be Ord, and the type Y must be Debug.
 
 ## Glossery
 

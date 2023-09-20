@@ -242,7 +242,7 @@ We've seen a lot of the mechanics and basic use of traits above, but they also w
 
 `Closures`:
 
-> Somewhat like the ClickCallback trait, closures in Rust are simply particular traits. You can read more about how this works in Huon Wilson's in-depth post on the topic.
+> Somewhat like the **ClickCallback trait**, closures in Rust are simply particular traits.
 
 `Conditional APIs`:
 
