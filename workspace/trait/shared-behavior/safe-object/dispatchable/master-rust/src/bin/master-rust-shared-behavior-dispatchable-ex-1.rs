@@ -38,5 +38,6 @@ fn show_me(item: &dyn  std::fmt::Display) {
 /// show_me("Hello trait object");
 /// ```
 fn main() {
-    show_me(&"Hello trait object");
+
+    show_me("Hello trait object");
 }

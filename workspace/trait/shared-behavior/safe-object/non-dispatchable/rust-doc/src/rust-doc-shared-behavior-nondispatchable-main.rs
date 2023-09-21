@@ -25,7 +25,7 @@
 ///
 /// ## Example
 ///  `TODO`
-/// This trait is object-safe, but these methods cannot be dispatched on a trait object as:
+/// This trait is non-object-safe, but these methods cannot be dispatched on a trait object as:
 /// ```let obj: Box<dyn NonDispatchable> = Box::new(S);```
 fn main() {
 

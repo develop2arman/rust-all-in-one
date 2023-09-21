@@ -3,16 +3,12 @@
     "",
     "\\workspace",
     "\\workspace\\trait",
-    "\\workspace\\trait\\associate-type-or-trait\\rust-egg",
-    "\\workspace\\trait\\associate-type-or-trait\\rust-egg\\src",
-    "\\workspace\\trait\\associate-type-or-trait\\rust-egg\\src\\bin",
-    "\\workspace\\trait\\associate-type-or-trait\\rust-in-action",
-    "\\workspace\\trait\\associate-type-or-trait\\rust-in-action\\src",
-    "\\workspace\\trait\\inheritance",
-    "\\workspace\\trait\\inheritance\\master-rust",
-    "\\workspace\\trait\\inheritance\\master-rust\\src",
-    "\\workspace\\trait\\shared-behavior\\builtin-trait"
+    "\\workspace\\trait\\shared-behavior",
+    "\\workspace\\trait\\shared-behavior\\none-object-safe",
+    "\\workspace\\trait\\shared-behavior\\none-object-safe\\rust-doc",
+    "\\workspace\\trait\\shared-behavior\\none-object-safe\\rust-doc\\src",
+    "\\workspace\\trait\\shared-behavior\\none-object-safe\\rust-doc\\src\\bin"
   ],
-  "SelectedNode": "\\workspace\\trait\\inheritance\\rust-doc\\src\\rust-doc-trait-inheritance-main.rs",
+  "SelectedNode": "\\rust.json",
   "PreviewInSolutionExplorer": false
 }

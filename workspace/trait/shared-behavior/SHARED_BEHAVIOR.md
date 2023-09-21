@@ -4,7 +4,7 @@
 
 [[AGGRIGATOR]]
 
-[[BUILTIN-TRAIT]]
+[[SB_BUILTIN_TRAIT]]
 
 ---
 
