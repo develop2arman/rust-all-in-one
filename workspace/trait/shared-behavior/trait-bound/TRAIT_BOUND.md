@@ -8,7 +8,7 @@
 
 
 ## Trait bounds
-> In the implementation of outline_print, we want to use the Display trait’s functionality. Therefore, we need to specify that the OutlinePrint trait will work only for types that also **implement Display and provide the functionality that OutlinePrint needs.** We can do that in the trait definition by specifying OutlinePrint: Display. 
+> In the implementation of outline_print, we want to use the Display trait’s functionality. Therefore, we need to specify that the OutlinePrint trait will work only for types that also implement Display and provide the functionality that OutlinePrint needs. We can do that in the trait definition by specifying OutlinePrint: Display. 
 
 > This technique is similar to adding a trait bound to the trait.
 >we can use the to_string function that is automatically implemented for any type that implements Display.
@@ -25,7 +25,7 @@ trait OutlinePrint: fmt::Display {
 fn load<T: Loadable>(&self, entity: T) { .. }
 ```
 
-> Notice the : Loadable part. This is how we specify a trait bound. *Trait bounds allow us to constrain the range of parameters that a generic API can accept*. *Specifying a trait bound on a generic item is similar to how we specify types for variables,* but here the variable is the generic type T and the type is some trait, such as **T: SomeTrait**. 
+> Notice the : Loadable part. This is how we specify a trait bound. Trait bounds allow us to constrain the range of parameters that a generic API can accept. *Specifying a trait bound on a generic item is similar to how we specify types for variables,* but here the variable is the generic type T and the type is some trait, such as **T: SomeTrait**. 
 
 > Trait bounds are almost **always needed when defining generic functions**. 
 

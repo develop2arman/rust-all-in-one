@@ -1,17 +1,17 @@
 #![allow(dead_code, unused_variables)]
 
 
-/// rust-doc-trait-dispatchable-ex-6
+/// rust-doc-trait-dispatchable-ex-5
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-trait-dispatchable_bin --bin  rust-doc-trait-dispatchable-ex-6```
+/// ```cargo run -q -p rust-doc-trait-dispatchable_bin --bin  rust-doc-trait-dispatchable-ex-5```
 ///
 /// ## What
 /// `Is not-allow-borowchecker-messeng`
 ///
 /// ## How
-/// `This ex is comparable by ex-5 that used &self`
+/// `TODO`
 ///
 /// # Arguments
 ///
@@ -22,27 +22,40 @@
 ///
 /// ## Example
 /// //``rust,no_run,compile_fail,ignore
-trait Animal {
-    fn baby_name() -> String;
+
+
+trait Pilot {
+    fn fly(&self);
 }
 
-struct Dog;
+trait Wizard {
+    fn fly(&self);
+}
 
-impl Dog {
-    fn baby_name() -> String {
-        String::from("Spot")
+struct Human;
+
+impl Pilot for Human {
+    fn fly(&self) {
+        println!("This is your captain speaking.");
     }
 }
 
-impl Animal for Dog {
-    fn baby_name() -> String {
-        String::from("puppy")
+impl Wizard for Human {
+    fn fly(&self) {
+        println!("Up!");
     }
 }
+
+impl Human {
+    fn fly(&self) {
+        println!("*waving arms furiously*");
+    }
+}
+
 
 fn main() {
-    println!("A baby dog is called a {}", Dog::baby_name());
-    //println!("A baby dog is called a {}", Animal::baby_name()); //error cannot call associated function of trait-Rust can’t figure out which implementation of Animal::baby_name we want
-
-    println!("A baby dog is called a {}", <Dog as Animal>::baby_name());
+    let person = Human;
+    Pilot::fly(&person);
+    Wizard::fly(&person);
+    person.fly();
 }

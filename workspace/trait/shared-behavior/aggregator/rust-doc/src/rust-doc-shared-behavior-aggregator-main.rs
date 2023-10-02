@@ -37,6 +37,8 @@ pub trait Summary {
     }
 }
 
+
+
 pub struct Tweet {
     pub username: String,
     pub content: String,

@@ -62,35 +62,6 @@ use std::fmt::Debug;
 /// But that’s not actually true. We need to know that T itself has an implementation of Double, since we rely on the double method in the implementation. To solve this, we can use a trait bound.
 
 
- trait Double {
-     fn double(&self) -> Self;
- }
-
- impl Double for i32 {
-     fn double(&self) -> Self {
-         self * 2
-     }
- }
-
- struct Fruit<T:Double> {
-     apples: T,
-     bananas: T,
- }
-
- impl<T> Double for Fruit<T> where T:Double {
-     fn double(&self) -> Self {
-         Fruit {
-             apples: self.apples.double(),
-             bananas: self.bananas.double(),
-         }
-     }
- }
-
  fn main() {
-     let fruit = Fruit {
-         apples: 5,
-         bananas: 10,
-     };
-
-     println!("Fruit total is {} and then doubled, fruit total is {}.", fruit.apples + fruit.bananas, fruit.apples.double() + fruit.bananas.double());
+    unimplemented!();
  }

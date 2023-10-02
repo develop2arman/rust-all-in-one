@@ -21,6 +21,7 @@
 ///
 /// ## Example
 /// //``rust,no_run,compile_fail,ignore
+ #[derive(Debug)]
 struct ArrayLender<'a, T>(&'a mut [T; 16]);
 
 trait Lend {
@@ -46,10 +47,5 @@ fn borrow<'a, T: Lend>(array: &'a mut T) -> <T as Lend>::Lender<'a> {
 fn main() {
     let mut array = [0usize; 16];
     let lender = borrow(&mut array);
-//
-//
-    let mut array2 = [1u16; 16];
-    let lender2 = borrow(&mut array2);    
-    println!("{:?}", lender.0);
-    println!("{:?}", lender2.0);
+    println!("{:?}", lender);
 }
