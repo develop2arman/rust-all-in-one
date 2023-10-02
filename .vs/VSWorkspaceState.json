@@ -1,14 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\workspace",
-    "\\workspace\\trait",
-    "\\workspace\\trait\\shared-behavior",
-    "\\workspace\\trait\\shared-behavior\\none-object-safe",
-    "\\workspace\\trait\\shared-behavior\\none-object-safe\\rust-doc",
-    "\\workspace\\trait\\shared-behavior\\none-object-safe\\rust-doc\\src",
-    "\\workspace\\trait\\shared-behavior\\none-object-safe\\rust-doc\\src\\bin"
+    ""
   ],
-  "SelectedNode": "\\rust.json",
   "PreviewInSolutionExplorer": false
 }

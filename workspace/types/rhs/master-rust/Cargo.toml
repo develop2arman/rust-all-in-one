@@ -1,5 +1,5 @@
 [package]
-name = "master-rust-complex-rhs_lib"
+name = "master-rust-complex-rhs_bin"
 version = "0.1.0"
 edition = "2021"
 autobins = true
@@ -7,5 +7,8 @@ autobins = true
 [dependencies]
 proptest="1.0.0"
 
-[lib]
+
+[[bin]]
 doc = true
+name = "master-rust-complex-rhs-main"
+path = "src/master-rust-complex-rhs-main.rs"

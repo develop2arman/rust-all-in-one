@@ -10,3 +10,5 @@ ipch/
 *.opendb
 *.sdf
 *.cachefile
+.vs/
+.github/

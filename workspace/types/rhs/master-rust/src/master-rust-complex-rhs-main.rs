@@ -6,11 +6,11 @@ use std::fmt::{Formatter, Display, Result};
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p master-rust-complex-rhs_lib --bin master-rust-complex-rhs-main```
+/// ```cargo test -q -p master-rust-complex-rhs_bin --bin master-rust-complex-rhs-main```
 ///
-/// ```cargo doc  --package master-rust-complex-rhs_lib --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package master-rust-complex-rhs_bin --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package master-rust-complex-rhs_lib```
+/// ```cargo test --doc  --package master-rust-complex-rhs_bin```
 ///
 /// ## What
 // `TODO`
