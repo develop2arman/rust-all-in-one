@@ -35,8 +35,10 @@ use std::borrow::Cow;
             if v < 0 {
                 // Clones into a vector if not already owned.
                 input.to_mut()[i] = -v;
+                println!("Clone occured!");
             }
         }
+        println!("{:?}",input);
     }
 
 fn main() {
@@ -52,6 +54,6 @@ fn main() {
     abs_all(&mut input);
 
     // No clone occurs because `input` is already owned.
-    let mut input = Cow::from(vec![-1, 0, 1]);
+    //let mut input = Cow::from(& mut input);
     abs_all(&mut input);
 }

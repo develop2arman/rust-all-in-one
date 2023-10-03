@@ -28,7 +28,6 @@ pub enum Cow<'a, B> where B: 'a + ToOwned + 'a + ?Sized,  {
 > First, we have the two variants:
 
   - [x] Borrowed that represents the borrowed version of some type B. This B has to implement the ToOwned trait.
-
   - [x] There is also owned variant which contains the owned version of the type.
 
 ## Sample Use-case

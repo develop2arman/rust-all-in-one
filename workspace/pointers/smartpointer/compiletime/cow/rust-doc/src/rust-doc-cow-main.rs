@@ -40,7 +40,7 @@ fn main() {
     let readonly = [1, 2];
     let borrowed = Items::new((&readonly[..]).into());
         match borrowed {
-            Items { values: Cow::Borrowed(b) } => println!("borrowed {b:?}"),
+            Items { values: Cow::Borrowed(b) } => println!("borrowed values{b:?}"),
             _ => panic!("expect borrowed value"),
         }
 

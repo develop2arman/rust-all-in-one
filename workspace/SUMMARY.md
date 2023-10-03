@@ -27,7 +27,7 @@
 
 - [POINTERS](pointers/POINTERS.md)
 - [SMARTPOINTER](pointers/smartpointer/SMARTPOINTER.md)
-  - [RC](pointers/smartpointer/compiletime/shared_owner/rc/RC.md)  
+  - [RC](pointers/smartpointer/compiletime/shared_owner_locally/rc/RC.md)  
   - [BOX](pointers/smartpointer/compiletime/box/BOX.md)    
   - [REF_CELL](pointers/smartpointer/runtime/shared_locally_mutability/ref-cell/REF_CELL.md) 
   - [OPS](pointers/smartpointer/ops/OPS.md) 
