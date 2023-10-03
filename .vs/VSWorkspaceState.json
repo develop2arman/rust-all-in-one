@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\workspace",
+    "\\workspace\\pointers",
+    "\\workspace\\pointers\\smartpointer",
+    "\\workspace\\pointers\\smartpointer\\compiletime",
+    "\\workspace\\pointers\\smartpointer\\compiletime\\cow",
+    "\\workspace\\pointers\\smartpointer\\compiletime\\cow\\rust-doc",
+    "\\workspace\\pointers\\smartpointer\\compiletime\\cow\\rust-doc\\src"
   ],
   "PreviewInSolutionExplorer": false
 }

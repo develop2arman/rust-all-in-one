@@ -37,7 +37,7 @@ where
     T: Clone,
 {
     data: Box<T>,
-    next: Option<Box<ListItem<T>>>,
+    next: Option<Box<ListItem<T>>>,// is the next node reachable or not?
 }
 
 #[derive(Clone)]

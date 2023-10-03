@@ -17,13 +17,14 @@
 
 > All associated functions must either be **dispatchable** from a trait object or be explicitly **non-dispatchable** *(means cannot call method or func).*
 
-> **Dispatchable functions require:**
+## Functionality
 
-- [x] **Not have any type parameters** (although lifetime parameters are allowed).
+### Dispatchable functions require
 
-- [x] be **a method that does not use Self except in the type of the receiver.**
+  - [x] **Not have any type parameters** (although lifetime parameters are allowed).
+  - [x] be **a method that does not use Self except in the type of the receiver.**
 
-> Have a receiver with one of the following types:
+### Have a receiver with one of the following types
 
   - [x] `&Self (i.e. &self)`
   - [x] `&mut Self (i.e &mut self)`

@@ -222,6 +222,7 @@ members = [
    "workspace/pointers/smartpointer/runtime/shared_locally_mutability/ref-cell/rust-doc",   
    "workspace/pointers/smartpointer/customized/rust-doc",
    "workspace/pointers/smartpointer/compiletime/cow/code-like-pro",
+   "workspace/pointers/smartpointer/compiletime/cow/rust-doc",
    "workspace/pointers/smartpointer/compiletime/box/customized/rust-doc",
    "workspace/pointers/smartpointer/compiletime/shared_owner_locally/rc/other-rc",
    "workspace/pointers/smartpointer/compiletime/shared_owner_locally/rc/rust-in-action",

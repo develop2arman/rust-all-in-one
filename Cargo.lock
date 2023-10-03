@@ -3009,6 +3009,10 @@ name = "rust-doc-convert-trait-as_bin"
 version = "0.1.0"
 
 [[package]]
+name = "rust-doc-cow_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-doc-cpu_bin"
 version = "0.1.0"
 dependencies = [
