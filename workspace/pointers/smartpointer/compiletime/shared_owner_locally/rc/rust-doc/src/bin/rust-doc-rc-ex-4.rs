@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-4```
+/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-5```
 ///
 /// ```cargo doc  --package rust-doc-rc_bin  --message-format short --no-deps --open --color always```
 ///
@@ -29,19 +29,21 @@
 /// //rust,compile_fail,no_run,ignore
 ///  `TODO`
 ///
-use std::rc::Rc;
-use std::ptr;
+use std::rc::{Rc, Weak};
 
 fn main(){
     let strong = Rc::new("hello".to_owned());
-    let weak = Rc::downgrade(&strong);
-    // Both point to the same object
-    assert!(ptr::eq(&*strong, weak.as_ptr()));
-    // The strong here keeps it alive, so we can still access the object.
-    assert_eq!("hello", unsafe { &*weak.as_ptr() });
+
+    let raw_1 = Rc::downgrade(&strong).into_raw();
+    let raw_2 = Rc::downgrade(&strong).into_raw();
+
+    assert_eq!(2, Rc::weak_count(&strong));
+
+    assert_eq!("hello", &*unsafe { Weak::from_raw(raw_1) }.upgrade().unwrap());
+    assert_eq!(1, Rc::weak_count(&strong));
 
     drop(strong);
-    // But not any more. We can do weak.as_ptr(), but accessing the pointer would lead to
-    // undefined behaviour.
-    // assert_eq!("hello", unsafe { &*weak.as_ptr() });
+
+    // Decrement the last weak count.
+    assert!(unsafe { Weak::from_raw(raw_2) }.upgrade().is_none());
 }

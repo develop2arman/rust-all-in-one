@@ -2,17 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\workspace",
-    "\\workspace\\collection\\iterator",
-    "\\workspace\\collection\\iterator\\master-rust",
-    "\\workspace\\collection\\iterator\\master-rust\\src",
-    "\\workspace\\collection\\iterator\\pnkfx",
-    "\\workspace\\collection\\iterator\\pnkfx\\src",
     "\\workspace\\pointers",
     "\\workspace\\pointers\\smartpointer",
     "\\workspace\\pointers\\smartpointer\\compiletime",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\cow",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\cow\\code-like-pro\\src"
+    "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally",
+    "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally\\rc",
+    "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally\\rc\\rust-doc",
+    "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally\\rc\\rust-doc\\src",
+    "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally\\rc\\rust-doc\\src\\bin"
   ],
-  "SelectedNode": "\\workspace\\pointers\\smartpointer\\compiletime\\cow\\rust-doc\\src\\rust-doc-cow-main.rs",
+  "SelectedNode": "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally\\rc\\rust-doc\\src\\bin\\rust-doc-rc-ex-6.rs",
   "PreviewInSolutionExplorer": false
 }

@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-3```
+/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-4```
 ///
 /// ```cargo doc  --package rust-doc-rc_bin  --message-format short --no-deps --open --color always```
 ///
@@ -29,33 +29,19 @@
 /// //rust,compile_fail,no_run,ignore
 ///  `TODO`
 ///
-use std::ops::Deref;
-/*
-impl<T> Deref for MyBox<T> {
-    type Target = T;
+use std::rc::Rc;
+use std::ptr;
 
-    fn deref(&self) -> &T {
-        &self.0
-    }
-}*/
+fn main(){
+    let strong = Rc::new("hello".to_owned());
+    let weak = Rc::downgrade(&strong);
+    // Both point to the same object
+    assert!(ptr::eq(&*strong, weak.as_ptr()));
+    // The strong here keeps it alive, so we can still access the object.
+    assert_eq!("hello", unsafe { &*weak.as_ptr() });
 
-struct MyBox<T>(T);
-
-impl<T> MyBox<T> {
-    fn new(x: T) -> MyBox<T> {
-        MyBox(x)
-    }
+    drop(strong);
+    // But not any more. We can do weak.as_ptr(), but accessing the pointer would lead to
+    // undefined behaviour.
+    // assert_eq!("hello", unsafe { &*weak.as_ptr() });
 }
-
-fn hello(name: &str) {
-    println!("Hello, {}!", name);
-}
-//implementation of Deref on String that returns a string slice, and this is in the API documentation for Deref. Rust calls deref again to turn the &String into &str, which matches the hello function’s definition.
-fn main() {
-    let m = MyBox::new(String::from("Rust"));
-    //hello(&(*m)[..]);
-}
-
-/*
-
-*/

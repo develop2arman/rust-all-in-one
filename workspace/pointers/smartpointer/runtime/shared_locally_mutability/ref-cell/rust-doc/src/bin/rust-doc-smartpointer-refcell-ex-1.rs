@@ -1,51 +1,76 @@
 #![allow(dead_code, unused_variables)]
 
-
-/// rust-doc-smartpointer-refcell-ex-1
+/// Main
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-smartpointer-ref-cell_bin --bin  rust-doc-smartpointer-refcell-ex-1```
+/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-2```
+///
+/// ```cargo doc  --package rust-doc-rc_bin  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package rust-doc-rc_bin ```
 ///
 /// ## What
 /// `TODO`
 ///
 /// ## How
-/// `TODO`
+///  `TODO`
 ///
 /// # Arguments
 ///
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `unimplemented`
-///
-/// # Helper
-///
-/// [Reference-cycles](https://doc.rust-lang.org/book/ch15-06-reference-cycles.html)
+/// `nothing`
 ///
 /// ## Example
-/// A runtime panic ! This is because of the same ownership rule of having exclusive mutable access. But, for RefCell this is checked at runtime instead. For situations like this, one has to explicitly use bare blocks to separate the borrows or use the drop method to drop the reference.
-///```rust,no_run,compile_fail,ignore
-/// println!("{:?} {:?}", hand1.borrow(), hand1.borrow_mut())
-///```
-//A reference cycle of lists a and b pointing to each other
+///  `TODO`
+///
+/// //rust,compile_fail,no_run,ignore
+///  `TODO`
+///
+#[derive(Debug)]
+enum List {
+    Cons(Rc<RefCell<i32>>, Rc<List>),
+    Nil,
+}
+//RefCell<T> lets us have many immutable borrows or one mutable borrow at any point in time.
+//So this exmple show have many immutable borrows
+//Mutating the value inside an immutable value is the interior mutability pattern.
+//So with *value.borrow_mut() += num we had using the interior mutability pattern.
 
 use crate::List::{Cons, Nil};
 use std::cell::RefCell;
 use std::rc::Rc;
+
 fn main() {
-   let data = Rc::new(RefCell::new(10));
- 
-   let _first_list = Rc::new(Cons(Rc::clone(&data), Rc::new(Nil)));
- 
-   let _second_list = Cons(Rc::new(RefCell::new(9)), Rc::clone(&_first_list));
- 
-   let _third_list = Cons(Rc::new(RefCell::new(10)), Rc::clone(&_first_list));
- 
-   *data.borrow_mut() += 20;
- 
-   println!("first list after = {:?}", _first_list);
-   println!("second list after = {:?}", _second_list);
-   println!("third list after = {:?}", _third_list);
+    let value = Rc::new(RefCell::new(5));
+
+    let a = Rc::new(Cons(Rc::clone(&value), Rc::new(Nil)));
+
+    let b = Cons(Rc::new(RefCell::new(3)), Rc::clone(&a));
+    let c = Cons(Rc::new(RefCell::new(4)), Rc::clone(&a));
+    let d = Cons(Rc::new(RefCell::new(5)), Rc::clone(&a));
+
+
+    *value.borrow_mut() += 10;
+
+    println!("a after = {:?}", a);
+    println!("b after = {:?}", b);
+    *value.borrow_mut() += 10;
+    println!("c after = {:?}", c);
+    {
+        *value.borrow_mut() += 10;
+         println!("(inner scope)d after = {:?}", d);
+         println!("(inner scope)a strong_count = {}", Rc::strong_count(&a));
+    }
+    println!("a after = {:?}", a);
+    println!("b after = {:?}", b);
+    println!("c after = {:?}", c);
+    println!("d after = {:?}", d);
+    let e = Cons(Rc::new(RefCell::new(5)), Rc::clone(&a));
+    println!("strong_count after c goes out of scope = {}", Rc::strong_count(&a));
+
+    *value.borrow_mut() += 10;
+    println!("e after = {:?}", e);
 }
