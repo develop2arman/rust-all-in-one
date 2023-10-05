@@ -18,10 +18,10 @@ members = [
    "workspace/documentation/knoldus/knoldus_bin",
    "workspace/documentation/knoldus/knoldus_lib",
 
-   "workspace/feature/rust-doc/mod_draw_bin",
-   "workspace/feature/rust-doc/mod_draw_lib",
-   "workspace/feature/code-like-pro/dryoc_bin",
-   "workspace/feature/other/rust-features-language_bin/",
+   # "workspace/feature/rust-doc/draw/mod_draw_bin",
+   # "workspace/feature/rust-doc/draw/mod_draw_lib",
+   #"workspace/feature/code-like-pro/dryoc_bin",
+   #"workspace/feature/other/rust-features-language_bin/",
    "workspace/feature/rust-doc/rd_macro_bin/",
    "workspace/feature/rust-doc/rd_carg_metadata",
 

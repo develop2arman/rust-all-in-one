@@ -1,7 +1,5 @@
 #![allow(dead_code, unused_variables)]
 
-
-
 /// rust-doc-std-filesystem-ex-9
 /// cli with clap
 /// https://rust-lang-nursery.github.io/rust-cookbook/cli/arguments.html

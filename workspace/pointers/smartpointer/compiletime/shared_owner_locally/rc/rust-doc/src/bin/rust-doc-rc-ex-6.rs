@@ -38,10 +38,10 @@ fn main(){
 
     let strong_five: Option<Rc<_>> = weak_five.upgrade();
     assert!(strong_five.is_some());
+    assert!(weak_five.upgrade().is_none());
 
     // Destroy all strong pointers.
     drop(strong_five);
     drop(five);
 
-    assert!(weak_five.upgrade().is_none());
 }

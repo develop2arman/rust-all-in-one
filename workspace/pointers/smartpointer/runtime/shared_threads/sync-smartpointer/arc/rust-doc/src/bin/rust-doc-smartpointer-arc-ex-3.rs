@@ -1,13 +1,14 @@
 #![allow(dead_code, unused_variables)]
-//#![feature(new_uninit)]
-//#![feature(get_mut_unchecked)]
-//use std::sync::Arc;
 
 /// rust-doc-smartpointer-arc-ex-3
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-smartpointer-arc_bin --bin rust-doc-smartpointer-arc-ex-3```
+/// ```cargo run -q -p rust-doc-smartpointer-arc_bin --bin  rust-doc-smartpointer-arc-ex-3```
+///
+/// ```cargo doc  --package rust-doc-smartpointer-arc_bin  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package rust-doc-smartpointer-arc_bin```
 ///
 /// ## What
 /// `TODO`
@@ -25,6 +26,10 @@
 /// ## Example
 /// `TODO`
 
+
+//#![feature(new_uninit)]
+//#![feature(get_mut_unchecked)]
+//use std::sync::Arc;
 
 fn main(){
 

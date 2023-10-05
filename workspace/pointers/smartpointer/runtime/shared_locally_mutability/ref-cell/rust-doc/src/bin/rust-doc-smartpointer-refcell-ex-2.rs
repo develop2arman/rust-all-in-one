@@ -1,11 +1,15 @@
 #![allow(dead_code, unused_variables)]
 
 
-/// rust-doc-smartpointer-refcell-ex-1
+/// rust-doc-smartpointer-refcell-ex-2
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-smartpointer-ref-cell_bin --bin  rust-doc-smartpointer-refcell-ex-1```
+/// ```cargo run -q -p rust-doc-smartpointer-ref-cell_bin --bin rust-doc-smartpointer-refcell-ex-2```
+///
+/// ```cargo doc  --package rust-doc-smartpointer-ref-cell_bin  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package rust-doc-smartpointer-ref-cell_bin ```
 ///
 /// ## What
 /// `TODO`
@@ -34,6 +38,13 @@
 use crate::List::{Cons, Nil};
 use std::cell::RefCell;
 use std::rc::Rc;
+
+#[derive(Debug)]
+enum List {
+    Cons(Rc<RefCell<i32>>, Rc<List>),
+    Nil,
+}
+
 fn main() {
    let data = Rc::new(RefCell::new(10));
  

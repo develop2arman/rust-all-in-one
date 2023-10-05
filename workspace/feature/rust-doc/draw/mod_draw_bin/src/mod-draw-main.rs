@@ -27,11 +27,10 @@
 ///
 ///
 
-use mod_draw_lib::core::mod_color::color;
-use mod_draw_lib::core::mod_shapes::shapes;
-use rgb::*;
 
-//https://doc.rust-lang.org/cargo/reference/features.html
+use rgb::*;
+//extern crate mod_draw_lib;
+/// https://doc.rust-lang.org/cargo/reference/features.html
 
 fn main() {
     println!("Hello World");
@@ -43,13 +42,13 @@ fn main() {
     let width = 10;
     let height = 20;
 
-    let rc = shapes::Rectangle {
+    let rc = mod_draw_lib::core::mod_shapes::Rectangle {
         color: px,
         width,
         height,
     };
 
-    color::draw_line(
+    mod_draw_lib::core::mod_color::draw_line(
         rc.width.try_into().unwrap(),
         rc.height.try_into().unwrap(),
         &rc.color,

@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-5```
+/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-4```
 ///
 /// ```cargo doc  --package rust-doc-rc_bin  --message-format short --no-deps --open --color always```
 ///

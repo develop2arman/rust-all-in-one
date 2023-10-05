@@ -1,16 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\workspace",
-    "\\workspace\\pointers",
-    "\\workspace\\pointers\\smartpointer",
-    "\\workspace\\pointers\\smartpointer\\compiletime",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally\\rc",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally\\rc\\rust-doc",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally\\rc\\rust-doc\\src",
-    "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally\\rc\\rust-doc\\src\\bin"
+    ""
   ],
-  "SelectedNode": "\\workspace\\pointers\\smartpointer\\compiletime\\shared_owner_locally\\rc\\rust-doc\\src\\bin\\rust-doc-rc-ex-6.rs",
   "PreviewInSolutionExplorer": false
 }

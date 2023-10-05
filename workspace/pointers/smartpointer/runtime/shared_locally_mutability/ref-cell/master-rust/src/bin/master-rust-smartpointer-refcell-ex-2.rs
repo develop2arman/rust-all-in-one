@@ -7,6 +7,10 @@
 ///
 /// ```cargo run -q -p master-rust-smartpointer-ref-cell_bin --bin  master-rust-smartpointer-refcell-ex-2```
 ///
+/// ```cargo doc  --package master-rust-smartpointer-ref-cell_bin  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package master-rust-smartpointer-ref-cell_bin ```
+///
 /// ## What
 /// `TODO`
 ///

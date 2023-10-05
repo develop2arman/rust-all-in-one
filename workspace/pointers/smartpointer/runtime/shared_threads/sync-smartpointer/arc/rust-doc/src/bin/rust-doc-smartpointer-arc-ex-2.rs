@@ -5,7 +5,11 @@ use std::sync::{Arc, Weak};
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-smartpointer-arc_bin --bin rust-doc-smartpointer-arc-ex-2```
+/// ```cargo run -q -p rust-doc-smartpointer-arc_bin --bin  rust-doc-smartpointer-arc-ex-2```
+///
+/// ```cargo doc  --package rust-doc-smartpointer-arc_bin  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package rust-doc-smartpointer-arc_bin```
 ///
 /// ## What
 /// `TODO`

@@ -7,7 +7,6 @@ use std::num::ParseIntError;
 ///
 /// ```cargo run -q -p rust-egg-error-handling_bin --bin rust-egg-error-handling-main```
 ///
-///
 /// ```cargo test -q -p rust-egg-error-handling_bin --bin rust-egg-error-handling-main```
 ///
 /// ```cargo doc  --package rust-egg-error-handling_bin  --message-format short --no-deps --open --color always```

@@ -2,7 +2,7 @@
 name = "rust_doc_std_bin"
 version = "0.1.0"
 edition = "2021"
-autobins = true
+# autobins = true
 
 [[bin]]
 doc = true

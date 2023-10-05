@@ -4,11 +4,11 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-2```
+/// ```cargo run -q -p rust-doc-smartpointer-ref-cell_bin --bin rust-doc-smartpointer-refcell-ex-1```
 ///
-/// ```cargo doc  --package rust-doc-rc_bin  --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-doc-smartpointer-ref-cell_bin  --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-doc-rc_bin ```
+/// ```cargo test --doc  --package rust-doc-smartpointer-ref-cell_bin ```
 ///
 /// ## What
 /// `TODO`
@@ -54,9 +54,9 @@ fn main() {
 
 
     *value.borrow_mut() += 10;
-
-    println!("a after = {:?}", a);
+    println!("counter a after = {:?}", a);
     println!("b after = {:?}", b);
+
     *value.borrow_mut() += 10;
     println!("c after = {:?}", c);
     {

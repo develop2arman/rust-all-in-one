@@ -60,7 +60,7 @@ fn main() {
             children: RefCell::new(vec![Rc::clone(&leaf)]),
         });
 
-        *leaf.parent.borrow_mut() = Rc::downgrade(&branch);
+        *leaf.parent.borrow_mut() = Rc::downgrade(&branch);// with each downgrade it will add +1 to counter branch weak
 
         println!(
             "branch strong = {}, weak = {}",
@@ -80,5 +80,5 @@ fn main() {
         "leaf strong = {}, weak = {}",
         Rc::strong_count(&leaf),
         Rc::weak_count(&leaf),
-    );
+    );    
 }

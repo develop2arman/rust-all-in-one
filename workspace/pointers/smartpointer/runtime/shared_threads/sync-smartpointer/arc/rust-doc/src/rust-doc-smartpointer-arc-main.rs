@@ -9,6 +9,10 @@
 ///
 /// ```cargo run -q -p rust-doc-smartpointer-arc_bin --bin  rust-doc-smartpointer-arc-main```
 ///
+/// ```cargo doc  --package rust-doc-smartpointer-arc_bin  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package rust-doc-smartpointer-arc_bin```
+
 /// ## What
 /// `TODO`
 ///

@@ -1,11 +1,15 @@
 #![allow(dead_code, unused_variables)]
 
 
-/// rust-doc-smartpointer-refcell-ex-2
+/// rust-doc-smartpointer-refcell-ex-3
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-smartpointer-ref-cell_bin --bin  rust-doc-smartpointer-refcell-ex-2```
+/// ```cargo run -q -p rust-doc-smartpointer-ref-cell_bin --bin rust-doc-smartpointer-refcell-ex-3```
+///
+/// ```cargo doc  --package rust-doc-smartpointer-ref-cell_bin  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package rust-doc-smartpointer-ref-cell_bin ```
 ///
 /// ## What
 /// `TODO`
@@ -71,10 +75,12 @@ fn main() {
 
     println!("--b= {:?}", b);
     println!("b next item = {:?}", b.tail());
-
+    println!("\n");
     if let Some(link) = a.tail() {
         *link.borrow_mut() = Rc::clone(&b);
+        //println!("--link = {:?}", link.borrow());//overflow
     }
+    
     //println!("--a = {:?}", a);
     //println!("--a.taild() = {:?}", a.tail());
 

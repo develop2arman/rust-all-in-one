@@ -2,7 +2,7 @@
 name = "rust-in-action-types-operator_bin"
 version = "0.1.0"
 edition = "2021"
-autobins = true
+# autobins = true
 
 [dependencies]
 num="0.4.0"

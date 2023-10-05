@@ -53,4 +53,5 @@ fn main() {
     let hand2 = &bag;
     hand1.set(Bag { item: Box::new(2)});
     hand2.set(Bag { item: Box::new(3)});
+    println!("{:?}",bag.into_inner());
 }

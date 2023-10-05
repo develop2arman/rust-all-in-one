@@ -1,7 +1,7 @@
 #![allow(dead_code, unused_variables)]
-use std::error;
+/*use std::error;
 use std::fmt;
-use std::io;//::{self,BufRead};
+use std::io;//::{self,BufRead};*/
 
 /// rust-egg-error-handling-ex-5
 ///

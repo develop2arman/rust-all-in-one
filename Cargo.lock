@@ -356,10 +356,6 @@ name = "code-like-pro-cow_bin"
 version = "0.1.0"
 
 [[package]]
-name = "code-like-pro-dryoc_bin"
-version = "0.1.0"
-
-[[package]]
 name = "code-like-pro-error-handling_bin"
 version = "0.1.0"
 dependencies = [
@@ -856,10 +852,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a26ae43d7bcc3b814de94796a5e736d4029efb0ee900c12e2d54c993ad1a1e07"
 
 [[package]]
-name = "english-linguistic-pkg"
-version = "0.1.0"
-
-[[package]]
 name = "env_logger"
 version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -970,10 +962,6 @@ name = "foreign-types-shared"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "00b0228411908ca8685dba7fc2cdd70ec9990a6e753e89b6ac91a84c40fbaf4b"
-
-[[package]]
-name = "french-linguistic-pkg"
-version = "0.1.0"
 
 [[package]]
 name = "fuchsia-cprng"
@@ -1826,22 +1814,6 @@ dependencies = [
  "net2",
  "winapi 0.2.8",
  "ws2_32-sys",
-]
-
-[[package]]
-name = "mod_draw_bin"
-version = "0.1.0"
-dependencies = [
- "mod_draw_lib",
- "rgb",
-]
-
-[[package]]
-name = "mod_draw_lib"
-version = "0.1.0"
-dependencies = [
- "rgb",
- "serde",
 ]
 
 [[package]]
@@ -2897,16 +2869,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c707298afce11da2efef2f600116fa93ffa7a032b5d7b628aa17711ec81383ca"
 
 [[package]]
-name = "rgb"
-version = "0.8.36"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "20ec2d3e3fc7a92ced357df9cebd5a10b6fb2aa1ee797bf7e9ce2f17dffc8f59"
-dependencies = [
- "bytemuck",
- "serde",
-]
-
-[[package]]
 name = "rip-error-handling_bin"
 version = "0.1.0"
 dependencies = [
@@ -3350,15 +3312,6 @@ name = "rust-egg-types-string_bin"
 version = "0.1.0"
 dependencies = [
  "num",
-]
-
-[[package]]
-name = "rust-features-language_bin"
-version = "0.1.0"
-dependencies = [
- "english-linguistic-pkg",
- "french-linguistic-pkg",
- "rand 0.8.5",
 ]
 
 [[package]]
