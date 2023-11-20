@@ -1,5 +1,6 @@
 #![allow(dead_code, unused_variables)]
-
+use std::io;
+use std::io::BufRead;
 /// Main
 ///
 /// ## Commands
@@ -40,7 +41,12 @@ impl Solution {
 
 
 fn main(){
-    let result= Solution::fizz_buzz(100);
+    let stdin = io::stdin();
+    let mut stdin_iterator = stdin.lock().lines();
+
+    let n = stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
+
+    let result= Solution::fizz_buzz(n);
     println!("{:?}",result);
     //unimplemented!();
 }
