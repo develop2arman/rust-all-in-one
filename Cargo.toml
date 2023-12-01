@@ -12,7 +12,6 @@ members = [
 
    "workspace/shared",
 
-
 #  "workspace/algorithm/graph/clique",
 
    "workspace/documentation/knoldus/knoldus_bin",
@@ -68,21 +67,21 @@ members = [
    "workspace/borrowchecker/lifetime/generic/master-rust",
    "workspace/borrowchecker/lifetime/generic/rust-doc",
 
-   "workspace/stdmisc/rust-doc",   
-   "workspace/thread/threadpool/packtpub",
-   "workspace/thread/unsafe/rust-in-action",
-   "workspace/thread/rayon/rust-doc",
-   "workspace/thread/rayon/packtpub",
-   "workspace/thread/time/rust-in-action",
-   "workspace/thread/time/packtpub",
-   "workspace/thread/race/rust-in-action",
-   "workspace/thread/mpsc/rust-in-action",
-   "workspace/thread/mpsc/pnkfx",
-   "workspace/thread/mpsc/rust-doc",
-   "workspace/thread/mpsc/packtpub",
-   "workspace/thread/sync-thread/rust-egg",
-   "workspace/thread/sync-thread/packtpub",   
-   "workspace/thread/sharestate/rust-doc",
+#    "workspace/stdmisc/rust-doc",   
+#    "workspace/thread/threadpool/packtpub",
+#    "workspace/thread/unsafe/rust-in-action",
+#    "workspace/thread/rayon/rust-doc",
+#    "workspace/thread/rayon/packtpub",
+#    "workspace/thread/time/rust-in-action",
+#    "workspace/thread/time/packtpub",
+#    "workspace/thread/race/rust-in-action",
+#    "workspace/thread/mpsc/rust-in-action",
+#    "workspace/thread/mpsc/pnkfx",
+#    "workspace/thread/mpsc/rust-doc",
+#    "workspace/thread/mpsc/packtpub",
+#    "workspace/thread/sync-thread/rust-egg",
+#    "workspace/thread/sync-thread/packtpub",   
+#    "workspace/thread/sharestate/rust-doc",
 
    "workspace/types/var/educative",
    "workspace/types/compound/array/educative",
@@ -210,10 +209,10 @@ members = [
    "workspace/duplication/copy-clone/rust-doc",
    "workspace/duplication/rc/rust-in-action",
 
-   "workspace/memory/size/master-rust",
-   "workspace/memory/piston/rust-in-action",
-   "workspace/memory/winapi/rust-in-action",
-   "workspace/memory/allocator/code-like-pro",
+#    "workspace/memory/size/master-rust",
+#    "workspace/memory/piston/rust-in-action",
+#    "workspace/memory/winapi/rust-in-action",
+#    "workspace/memory/allocator/code-like-pro",
 
    "workspace/pointers/smartpointer/ops/easy-rust",
    "workspace/pointers/smartpointer/ops/rust-doc",
@@ -262,7 +261,7 @@ members = [
    "workspace/macro/rust-in-action",
 
 
-  "workspace/module/rust-egg",
+#   "workspace/module/rust-egg",
 
 
    "workspace/data/io/io/buffer/rust-in-action",
@@ -275,32 +274,32 @@ members = [
    "workspace/data/arithmetic/educative",
    "workspace/data/arithmetic/master-rust",
 
-   "workspace/grammer/dtolnay",
+#    "workspace/grammer/dtolnay",
 
-   "workspace/time/counter/rust-in-action",
-
-
+#    "workspace/time/counter/rust-in-action",
 
 
-   "workspace/process/command/packtpub",
 
 
-   "workspace/cpu/rust-in-action",
-   "workspace/cpu/rust-doc",
+#    "workspace/process/command/packtpub",
 
-   "workspace/env/packtpub",
 
-   "workspace/libc/code-like-pro",
+#    "workspace/cpu/rust-in-action",
+#    "workspace/cpu/rust-doc",
 
-   "workspace/unsafe/extern-ffi/rust-doc",
-   "workspace/unsafe/safe-abstraction/rust-doc",
-   "workspace/unsafe/safe-static-mut/rust-doc",
+#    "workspace/env/packtpub",
 
-   "workspace/oop/design_patterns/behavioral/state-pattern/rust-doc",
-   "workspace/oop/design_patterns/behavioral/lpxxn",
-   "workspace/oop/design_patterns/creational/lpxxn",
-   "workspace/oop/design_patterns/structural/lpxxn",
-   "workspace/oop/design_patterns/behavioral/process/rust-egg",
+#    "workspace/libc/code-like-pro",
+
+#    "workspace/unsafe/extern-ffi/rust-doc",
+#    "workspace/unsafe/safe-abstraction/rust-doc",
+#    "workspace/unsafe/safe-static-mut/rust-doc",
+
+#    "workspace/oop/design_patterns/behavioral/state-pattern/rust-doc",
+#    "workspace/oop/design_patterns/behavioral/lpxxn",
+#    "workspace/oop/design_patterns/creational/lpxxn",
+#    "workspace/oop/design_patterns/structural/lpxxn",
+#    "workspace/oop/design_patterns/behavioral/process/rust-egg",
 
    "workspace/idioms/fizz_buzz",
    "workspace/idioms/factorial/educative",
