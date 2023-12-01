@@ -1,14 +1,4 @@
-[[test-unit]]
 
-[[test_proptest]]
-
-[[test-proptest_runner]]
-
-[[test-pretty]]
-
-[[test-fixture]]
-
----
 
 ![safetay-control](../rust/assets/images/effective-property-based-testing-1.png)
 

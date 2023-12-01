@@ -177,12 +177,13 @@
 ---
 
 - [TEST](tests/TESTS.md)  
-
-  - [Unit](tests/test_unit/test-unit.md)    
-  - [Pretty](tests/test_pretty/test-pretty.md)  
-  - [Proptest](tests/test_proptest/test-proptest.md)
-  - [Proptest_runner](tests/test_proptest_runner/test-proptest_runner.md)  
-  - [Fixture](tests/test_fixture/test-fixture.md)
+  - [Structures](tests/test_structures/test-structures.md)    
+    - [Unit](tests/test_structures/test_unit/test-unit.md)    
+    - [Pretty](tests/test_structures/test_pretty/test-pretty.md)  
+    - [Proptest](tests/test_structures/test_proptest/test-proptest.md)
+    - [Proptest_runner](tests/test_structures/test_proptest_runner/test-proptest_runner.md)  
+    - [Fixture](tests/test_structures/test_fixture/test-fixture.md)
+  - [Samples](tests/tests_samples/test-samples.md)          
   
 ---
 
