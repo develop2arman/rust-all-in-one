@@ -39,11 +39,11 @@ fn main()
 
 // dangle
     
-        let r;                // ---------+-- 'a
+        let r=0;                // ---------+-- 'a
                                         //|
         {                     //          |
             let x = 5;        // -+-- 'b  |
-            r = &x;           //  |       |
+           // r = &x;           //  |  'x` does not live long enough     |
         }                     // -+       |
                                        // |
         println!("r: {}", r); //          |

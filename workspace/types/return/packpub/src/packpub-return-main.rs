@@ -41,7 +41,7 @@ fn main() {
     hm.insert(3 ,"Hello");
     hm.insert(5, "world");
 
-    let r = hm.get(&4).unwrap(&"NoString");
+    let r = hm.get(&4).unwrap();//&"NoString"
 
     println!("{}", r);
 

@@ -47,7 +47,8 @@ mod tests {
 
     #[test]
     fn store_u32_in_wrapper() {
-        assert_eq!(Wrapper::new(42), 42);
+        
+        assert_eq!(Wrapper::new(42).value, 42);
         
     }
 

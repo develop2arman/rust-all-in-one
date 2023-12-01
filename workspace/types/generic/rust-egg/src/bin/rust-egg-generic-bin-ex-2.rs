@@ -78,5 +78,5 @@ mod tests {
 }
 
 fn main(){
-    unimplemnted!();
+    unimplemented!();
 }
