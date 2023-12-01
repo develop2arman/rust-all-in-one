@@ -29,6 +29,21 @@ mod tests {
 }
 ```
 
+
+## Documentation Test
+
+```rust
+/// A function that panics. expect param not support yet.
+////
+/// ```should_panic
+/// use mypackagename::whoops;
+/// whoops();
+/// ```
+pub fn whoops() {
+    panic!("😱");
+}
+```
+
 ## Differences between QuickCheck and Proptest
 > QuickCheck and Proptest are similar in many ways: 
 both generate **random inputs** for a function to **check certain properties**, and automatically **shrink inputs** to minimal failing cases.
