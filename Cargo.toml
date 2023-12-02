@@ -218,6 +218,7 @@ members = [
    "workspace/pointers/smartpointer/ops/easy-rust",
    "workspace/pointers/smartpointer/ops/rust-doc",
    "workspace/pointers/smartpointer/runtime/shared_locally_mutability/ref-cell/master-rust",
+   "workspace/pointers/smartpointer/runtime/shared_locally_mutability/ref-cell/packtpub",   
    "workspace/pointers/smartpointer/runtime/shared_threads/sync-smartpointer/arc/rust-doc",
    "workspace/pointers/smartpointer/runtime/shared_locally_mutability/ref-cell/rust-doc",   
    "workspace/pointers/smartpointer/customized/rust-doc",

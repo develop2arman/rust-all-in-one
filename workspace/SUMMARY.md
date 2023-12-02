@@ -44,7 +44,7 @@
   - [HASHMAP](collection/hashmap/HASHMAP.md)    
   - [SLICE](collection/slice/SLICE.md)    
   - [VECTOR](collection/vec/VECTOR.md)
-  - [LINKEDLIST](pointers/smartpointer/compiletime/shared_owner/rc/linkedlist/LINKEDLIST.md)
+  - [LINKEDLIST](pointers/smartpointer/compiletime/shared_owner_locally/rc/linkedlist/LINKEDLIST.md)
 
 ---
 

@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/arman2develop/rust-all-in-one/graph/badge.svg?token=OXWKHZI4FP)](https://codecov.io/gh/arman2develop/rust-all-in-one)
+[![codecov](https://codecov.io/gh/arman2develop/rust-all-in-one/graph/badge.svg?token=7ed4c74c-b784-464a-a9fe-fbea6dcb4cb8)](https://codecov.io/gh/arman2develop/rust-all-in-one)
 
 <!--
 https://codecov.io/gh/arman2develop/rust-all-in-one/graphs/tree.svg?token=OXWKHZI4FP

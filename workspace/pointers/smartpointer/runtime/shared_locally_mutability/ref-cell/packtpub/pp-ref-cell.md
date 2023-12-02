@@ -1,0 +1,4 @@
+
+Test functions have to return a type that implements the std::process::Termination trait (the main function has this same restriction). Practically, this means that the returns either a unit () or a Result. If the test function returns a Result type, the test will pass if the Result is Ok, and fail if the Result is Err. Returning a result is useful when testing code that may ail, but we want to continue testing or setting up the test code includes potentially panicking code. We'll get to use the convenient ? operator to propagate the errors and avoid verbose matching.
+
+> `Tags` [[test]] #integration [[test_integration]]
