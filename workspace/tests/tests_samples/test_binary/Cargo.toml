@@ -10,7 +10,7 @@ version = "0.1.0"
 assert_cmd = "*"
 
 [[bin]]
-doc = true
+doc = false
 name = "test_binary-main"
 path = "src/test_binary-main.rs"
 

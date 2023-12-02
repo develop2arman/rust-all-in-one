@@ -2,4 +2,4 @@
 
 ---
 
-- [Binary](test_binary/test-binary.md)
+- [Binary](./test_binary/test-binary.md)

@@ -24,10 +24,10 @@
 struct Struct;
 struct GenericStruct<const ID: i32>;
 
-impl Struct {
-    // Definition not immediately evaluated
-    const PANIC: () = panic!("compile-time panic");
-}
+// impl Struct {
+//     // Definition not immediately evaluated
+//     const PANIC: () = panic!("compile-time panic");
+// }
 
 impl<const ID: i32> GenericStruct<ID> {
     // Definition not immediately evaluated

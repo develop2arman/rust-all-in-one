@@ -28,11 +28,11 @@
 /// ## Example
 /// `nothing`
 ///
-use lib::car::PublicCar;
+
 
 #[test]
 fn test_public_car() {
-    let car = PublicCar {
+    let car = lib::car::PublicCar {
         owner: "Ylvis Stonehenge".to_string(),
         license: "ABC123".to_string(),
         model: "Civic".to_string(),

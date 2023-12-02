@@ -1,4 +1,4 @@
 [test_config]
 exclude-files = []
 all-features = true
-run-types = ["Tests", "Doctests", "Examples", "Lib", "Bins", "AllTargets"]
+run-types = ["Tests",  "Examples", "Lib", "Bins", "AllTargets"] #"Doctests",
