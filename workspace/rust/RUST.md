@@ -1,3 +1,11 @@
+[![codecov](https://codecov.io/gh/arman2develop/rust-all-in-one/graph/badge.svg?token=OXWKHZI4FP)](https://codecov.io/gh/arman2develop/rust-all-in-one)
+
+<!--
+https://codecov.io/gh/arman2develop/rust-all-in-one/graphs/tree.svg?token=OXWKHZI4FP
+-->
+
+---
+
 # Rust
 
 <details>
