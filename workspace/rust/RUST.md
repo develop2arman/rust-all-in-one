@@ -134,6 +134,7 @@ fn _start() {
   // ...
 }
 ```
+
 ## Method & Func
 
  Methods are functions that are coupled to some object. From a syntactic point of view, these are just functions that don’t need to specify one of their arguments. Rather than calling open() and passing a File object in as an argument (read(f, buffer)), methods allow the main object to be implicit in the function call (f.read(buffer)) using the dot operator.1

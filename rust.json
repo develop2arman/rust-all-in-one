@@ -898,6 +898,30 @@
         ],
         "description": ".iter() Returns an iterator over the slice. into_iter() Creates an iterator from a value."
     },
+    "Map handler": {
+        "prefix": "mb.map.handler",
+        "body": [
+            "let handles: Vec<_> = (0..5).map(|i| {})"
+        ],
+        "description": "It is like a for-each but we can use it in the concurrent code mb.map.thread.handler"
+    },
+    "Map-Thread handler": {
+        "prefix": "mb.map.thread.handler",
+        "body": [
+            "let handles: Vec<_> = (0..5).map(|i|{",
+            "let shared_data = shared_data.clone();", 
+                "thread::spawn(move || {",
+                    "//let local_sum: i32 = shared_data.iter().sum();",
+                    "println!(“Thread {} Sum: {}”, i, local_sum);",
+                  "})",
+                "}).collect();",
+                "for handle in handles {",
+                  "handle.join().unwrap();",
+                "}",
+            "}"
+        ],
+        "description": "It is like a for-each but we can use it in the concurrent code mb.map.thread.handler"
+    },
     "HashMap": {
         "prefix": "ms.hashmap",
         "body": [
@@ -920,8 +944,7 @@
             "*map.entry(key).or_insert(10)+=2;"
         ],
         "description": "3 Ways for modified a key"
-    },
-
+    },    
     "Match as kind of option": {
         "prefix": "ms.match.option",
         "body": [

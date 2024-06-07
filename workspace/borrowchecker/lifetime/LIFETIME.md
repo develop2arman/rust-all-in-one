@@ -97,6 +97,11 @@ fn main() {
 // Output: The longest common prefix is: ab
 ```
 
+If we remove lifetimes we'll be encounter an error:
+
+`doesn't have a size known at compile-time`
+`help: function arguments must have a statically known size, borrowed types always have a known size`
+
 ---
 
 When we pass concrete references to longest, the concrete lifetime that is substituted for 'a is the part of the scope of x that overlaps with the scope of y. In other words, the generic lifetime 'a will get the concrete lifetime that is equal to the smaller of the lifetimes of x and y. Because we’ve annotated the returned reference with the same lifetime parameter 'a, the returned reference will also be valid for the length of the smaller of the lifetimes of x and y.

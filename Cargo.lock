@@ -2558,6 +2558,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "ultimate-dangle_bin"
+version = "0.1.0"
+
+[[package]]
 name = "ultimate-garbage-collector_bin"
 version = "0.1.0"
 

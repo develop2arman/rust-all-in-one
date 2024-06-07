@@ -64,6 +64,7 @@ members = [
    "workspace/borrowchecker/lifetime/dangling/educative",
    "workspace/borrowchecker/lifetime/dangling/rust-doc",
    "workspace/borrowchecker/lifetime/dangling/rust-egg",
+   "workspace/borrowchecker/lifetime/dangling/ultimate",
    "workspace/borrowchecker/lifetime/dangling/rust-in-action",
    "workspace/borrowchecker/lifetime/generic/master-rust",
    "workspace/borrowchecker/lifetime/generic/rust-doc",

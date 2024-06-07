@@ -32,7 +32,7 @@
 /// If the reference returned does not refer to one of the parameters, it must refer to a value created within this function, which would be a dangling reference because the value will go out of scope at the end of the function.
 ///
 /// ```rust,no_run
-/// fn longest<'a>(x: &'a str, y: &str) -> &'a str {
+/// fn longest<'a>(x:  str, y: &str) ->  str {
 ///    x
 ///}
 ///```
@@ -43,7 +43,7 @@
 /// > no relation between params lifetime and return, so we won't need any lifetime generic.
 ///
 /// ```rust,no_run,ignore
-/// fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+/// fn longest<'a>(x:  str, y:  str) ->  str {
 ///     let result = String::from("really long string");
 ///     result
 /// }
@@ -68,7 +68,7 @@ fn main() {
     println!("The longest string is {}", string1);
 }
 
-fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+fn longest(x:  str, y:  str) ->  str {
     if x.len() > y.len() {
         x
     } else {
