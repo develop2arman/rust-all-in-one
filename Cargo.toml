@@ -83,6 +83,7 @@ members = [
 #    "workspace/thread/sync-thread/rust-egg",
 #    "workspace/thread/sync-thread/packtpub",   
 #    "workspace/thread/sharestate/rust-doc",
+     "workspace/thread/sync/arc/ultimate",
 
    "workspace/types/var/educative",
    "workspace/types/compound/array/educative",
@@ -99,6 +100,7 @@ members = [
    "workspace/types/compound/enum/rust-in-action",
    "workspace/types/compound/enum/rust-doc",
    "workspace/types/compound/enum/master-rust",
+   "workspace/types/compound/enum/ultimate",
    "workspace/types/compound/struct/master-rust",
    "workspace/types/compound/struct/rust-doc",
    "workspace/types/compound/struct/rust-egg",
@@ -210,10 +212,13 @@ members = [
    "workspace/duplication/copy-clone/rust-doc",
    "workspace/duplication/rc/rust-in-action",
 
-#    "workspace/memory/size/master-rust",
-#    "workspace/memory/piston/rust-in-action",
-#    "workspace/memory/winapi/rust-in-action",
-#    "workspace/memory/allocator/code-like-pro",
+   # "workspace/memory/size/master-rust",
+   # "workspace/memory/piston/rust-in-action",
+   # "workspace/memory/winapi/rust-in-action",
+   # "workspace/memory/allocator/code-like-pro",
+
+   "workspace/memory/overflow/ultimate/",   
+   "workspace/memory/garbage-collector/ultimate/",      
 
    "workspace/pointers/smartpointer/ops/easy-rust",
    "workspace/pointers/smartpointer/ops/rust-doc",

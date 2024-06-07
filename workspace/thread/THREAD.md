@@ -45,10 +45,51 @@
 ## Thread•Strategies
 
 **Priority Performance:**
-**Stealing_Join:**
-> calling join() is similar to spawning two threads.
-> execute code in parallel when there are idle CPUs to handle it.
-> When join is called from outside the thread pool, the calling thread will block while the closures execute in the pool. When join is called within the pool, the calling thread still actively participates in the thread pool. It will begin by executing closure A (on the current thread). While it is doing that, it will advertise closure B as being available for other threads to execute. Once closure A has completed, the current thread will try to execute closure B; if however closure B has been stolen, then it will look for other work while waiting for the thief to fully execute closure B. (This is the typical work-stealing strategy).
+**Stealing Join:**
+
+Calling join() is similar to spawning two threads.
+Execute code in parallel when there are idle CPUs to handle it.
+
+![Stealing Join mechanism](../rust/assets/images/thread-pool.png)
+
+In the complex world of concurrent programming, the concept of “Stealing Join” emerges as a **distinctive strategy**, adding a touch of finesse to the **orchestration of threads**. The notion revolves around the efficient coordination of threads in a way that complements Rust’s ownership system. threads are processing elements from the data vector concurrently, the “Stealing Join” strategy ensures a synchronized and efficient attribution to their individual tasks. This approach aligns with Rust’s philosophy of ownership transfer, **allowing threads to gracefully finish their operations before joining the main thread.**
+
+```rust
+use std::thread;
+fn main() {
+let data = vec![1, 2, 3, 4, 5]; // ①
+let mut handles = vec![]; // ②
+for &item in &data { // ③
+handles.push(thread::spawn(move || { // ④
+println!("Processed: {}", item * 2); // ⑤
+}));
+}
+for handle in handles { // ⑥
+handle.join().unwrap(); // ⑦
+}
+}
+// $ rustc thread.rs && ./thread
+// Output:
+// Processed: 2
+// Processed: 6
+// Processed: 4
+// Processed: 8
+// Processed: 10
+```
+
+In this illustrative example:
+① We initialize a vector named data containing integers from 1 to 5.
+② We create a mutable vector named handles to store thread handles.
+③ Through iteration, we traverse the elements of the data vector using a reference.
+④ We spawn a new thread using the thread::spawn function, ensuring that each thread takes ownership of the captured variable item.
+⑤ Inside the thread, we print the processed result of doubling the item.
+⑥ We iterate through the thread handles.
+⑦ We employ the join method **to ensure synchronization by waiting for each thread to complete**.
+In this code snippet, the concept of “move” takes center stage as threads are spawned to concurrently process elements from the data vector. The crucial use of the **move keyword within the thread::spawn closure signifies the transfer of ownership for each iteration’s item**. This elegant mechanism **ensures that each thread exclusively possesses and operates on its own copy of the data**, *mitigating the risk of data races and conflicts.* In other words, **“move” in Rust orchestrates** a ballet of ownership transfer, enabling a seamless and *safe parallel execution* where each thread *holds a distinct piece of the environment*, contributing to the overall performance without compromising data integrity.
+
+When join is called from outside the thread pool, **the calling thread will block while the closures execute in the pool.** 
+
+> When join is called within the pool, the calling thread still actively participates in the thread pool. It will begin by executing closure A (on the current thread). While it is doing that, it will advertise closure B as being available for other threads to execute. Once closure A has completed, the current thread will try to execute closure B; if however closure B has been stolen, then it will look for other work while waiting for the thief to fully execute closure B. (This is the typical work-stealing strategy).
 > Send is require because we have jump from quick func(thread a) to part func(thread b) frequently
 
 **Atomic:**
