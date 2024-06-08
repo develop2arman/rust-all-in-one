@@ -63,6 +63,9 @@ https://codecov.io/gh/arman2develop/rust-all-in-one/graphs/tree.svg?token=OXWKHZ
 
 4. **Iterator invalidation**—An issue caused by something that is iterated over after being <u_altered midway_ through</u 
 
+## Foreign Function Interface (FFI)
+Rust’s Foreign Function Interface (FFI) capabilities enable seamless integration with existing C and C++ codebases. This feature is crucial for system development, as it allows Rust code to interact with libraries written in other languages. Rust’s *FFI guarantees safety, preventing issues like null pointer de-referencing that often occur in large C/C++ interactions.*
+
 ## Memory model
 
 ### RAII

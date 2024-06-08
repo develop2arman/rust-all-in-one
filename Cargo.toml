@@ -299,6 +299,7 @@ members = [
 
 #    "workspace/libc/code-like-pro",
 
+#     "workspace/unsafe/extern-ffi/ultimate",
 #    "workspace/unsafe/extern-ffi/rust-doc",
 #    "workspace/unsafe/safe-abstraction/rust-doc",
 #    "workspace/unsafe/safe-static-mut/rust-doc",
