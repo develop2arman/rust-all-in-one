@@ -46,6 +46,7 @@ fn main() {
     // `stdin` has type `Option<ChildStdin>`, but since we know this instance
     // must have one, we can directly `unwrap` it.
     match process.stdin.unwrap().write_all(PANGRAM.as_bytes()) {
+        //println!("{b:}",PANGRAM.as_bytes())
         Err(why) => panic!("couldn't write to wc stdin: {}", why),
         Ok(_) => println!("sent pangram to wc"),
     }

@@ -38,7 +38,6 @@ enum Weapon {
     Poison(PoisonType),
     None
 }
-
 struct SeaCreature {
     species: Species,
     name: String,
@@ -46,7 +45,6 @@ struct SeaCreature {
     legs: i32,
     weapon: Weapon,
 }
-
 fn main() {
     // SeaCreature's data is on stack
     let ferris = SeaCreature {
@@ -58,7 +56,6 @@ fn main() {
         legs: 4,
         weapon: Weapon::Claw(2, Size::Small),
     };
-
     match ferris.species {
         Species::Crab => {
             match ferris.weapon {

@@ -31,16 +31,13 @@ where
         println!("{:?}",&reverse);
     &reverse == v
 }
-
 fn reversed_vec<T>(v: &[T])
 where
     T: Eq + Clone + Debug,
 {
     let mut reverse = v.into_iter().rev().collect::<Vec<_>>();
         println!("{:?}",&reverse);
-
 }
-
 fn main() {
     println!("{}", is_reversed(&[1, 2, 3]));
     println!("{}", is_reversed(&[1, 2, 1]));

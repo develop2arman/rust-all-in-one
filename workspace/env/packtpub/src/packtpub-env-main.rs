@@ -12,6 +12,8 @@ static mut ERROR: isize = 0;
 /// ## Commands
 ///
 /// ```RUST_BACKTRACE=full cargo test -q -p packtpub-env_bin --bin packtpub-env-main```
+/// 
+///```RUST_BACKTRACE=full cargo test -q -p packtpub-env_bin --bin packtpub-env-main -- - ROAD Route66```
 ///
 /// ```cargo doc  --package packtpub-env_bin  --message-format short --no-deps --open --color always```
 ///
@@ -60,7 +62,7 @@ mod tests {
         //let e = var("HELLO").unwrap();
         //assert_eq!(&e,"WORLD");
 
-        set_var("ROAD", "Route66");
+        set_var("ROAD", "Route66");//can be commented
         let e = road_len();
         assert_eq!(e,7);
 

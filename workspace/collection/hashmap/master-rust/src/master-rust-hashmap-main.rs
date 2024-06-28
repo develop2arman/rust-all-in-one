@@ -40,7 +40,6 @@ fn main() {
     for (k, v) in &fruits {
         println!("I got {} {}", v, k);
     }
-
     fruits.remove("orange");
     let old_avocado = fruits["avocado"];
     fruits.insert("avocado", old_avocado + 5);

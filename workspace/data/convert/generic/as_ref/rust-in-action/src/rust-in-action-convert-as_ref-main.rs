@@ -30,9 +30,7 @@
 fn is_strong<T: AsRef<str>>(password: T) -> bool {
     password.as_ref().len() > 5
 }
-
 fn main(){
-    let pw = "justok";
-    //let pw = String::from("justok");
-    let is_strong = is_strong(pw);
+    let pw = String::from("justok");
+    println!("{}", is_strong(pw))
 }

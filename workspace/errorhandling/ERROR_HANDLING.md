@@ -137,6 +137,30 @@ In line 7, the method get will return an Option type. We need to convert it to a
 
 Finally, in line 8, we get a different error.
 
+## Difference between println! vs eprintln!
+
+Macro std::eprintln
+
+```rust
+macro_rules! eprintln {
+    () => { ... };
+    ($fmt:expr) => { ... };
+    ($fmt:expr, $($arg:tt)*) => { ... };
+}
+```
+
+Macro for printing to the standard error, with a newline.
+Equivalent to the println! macro, except that output goes to **io::stderr instead of io::stdout**. See println! for example usage.
+Use eprintln! only for error and progress messages. Use println! instead for the primary output of your program.
+Panics
+
+`Panics if writing to io::stderr fails.`
+
+Examples:
+
+```rust
+eprintln!("Error: Could not complete task");
+```
 
 ---
 

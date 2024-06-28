@@ -35,5 +35,5 @@ password.into().len() > 5
 fn main(){
     let pw = "justok";
     //let pw = String::from("justok");
-    let is_strong = is_strong(pw);
+   println!("{}",is_strong(pw));
 }

@@ -43,16 +43,12 @@ struct Person<Name, Age> {
     name: Name,
     age: Age,
 }
-
-
-
 fn main() {
     let alice: Person<String, u32> = Person {
         name: "Alice".to_owned(),
         age: 30_u32,
     };
     greet(&alice);
-
     let bob = Person {
         name: "Bob".to_owned(),
         age: 35_u64,

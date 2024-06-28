@@ -3,8 +3,8 @@ name = "rust-all-in-one"
 version = "0.1.0"
 edition = "2021"
 
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[build]
+rustc-wrapper = "$HOME/.cargo/bin/sccache"
 
 [workspace]
 
@@ -13,19 +13,20 @@ members = [
 
    "workspace/shared",
 
-#  "workspace/algorithm/graph/clique",
+   "workspace/algorithm/graph/clique",
 
    "workspace/documentation/knoldus/knoldus_bin",
    "workspace/documentation/knoldus/knoldus_lib",
 
-   # "workspace/feature/rust-doc/draw/mod_draw_bin",
-   # "workspace/feature/rust-doc/draw/mod_draw_lib",
-   #"workspace/feature/code-like-pro/dryoc_bin",
-   #"workspace/feature/other/rust-features-language_bin/",
-   "workspace/feature/rust-doc/rd_macro_bin/",
-   "workspace/feature/rust-doc/rd_carg_metadata",
+    "workspace/feature/rust-doc/draw/mod_draw_bin",
+    "workspace/feature/rust-doc/draw/mod_draw_lib",
+    "workspace/feature/code-like-pro/dryoc_bin",
+    "workspace/feature/other/rust-features-language_bin/",
+    "workspace/feature/rust-doc/rd_macro_bin/",
+    "workspace/feature/rust-doc/rd_carg_metadata",
 
    "workspace/data/serde/candle_dev",
+   "workspace/data/serde/other",
    "workspace/data/operator/master-rust",
    "workspace/data/rust-in-action/csv_bin",
    "workspace/data/regex/rust-in-action",
@@ -41,9 +42,12 @@ members = [
    "workspace/data/convert/as/rust-doc",
    "workspace/data/convert/trait/as/rust-doc",
    "workspace/data/convert/trait/from/rust-egg",
+   "workspace/data/convert/try_from/other",
    "workspace/data/convert/try_from/rust-egg",
    "workspace/data/convert/try_from/rust-egg",
+   "workspace/data/convert/try_from/rust-doc",
    "workspace/data/convert/to_string_in_fmt/rust-doc",
+   "workspace/data/convert/into/other",
    "workspace/data/convert/from/rust-doc",
    "workspace/data/convert/parse/rust-doc",
    "workspace/data/average/rust-egg",
@@ -69,21 +73,21 @@ members = [
    "workspace/borrowchecker/lifetime/generic/master-rust",
    "workspace/borrowchecker/lifetime/generic/rust-doc",
 
-#    "workspace/stdmisc/rust-doc",   
-#    "workspace/thread/threadpool/packtpub",
-#    "workspace/thread/unsafe/rust-in-action",
-#    "workspace/thread/rayon/rust-doc",
-#    "workspace/thread/rayon/packtpub",
-#    "workspace/thread/time/rust-in-action",
-#    "workspace/thread/time/packtpub",
-#    "workspace/thread/race/rust-in-action",
-#    "workspace/thread/mpsc/rust-in-action",
-#    "workspace/thread/mpsc/pnkfx",
-#    "workspace/thread/mpsc/rust-doc",
-#    "workspace/thread/mpsc/packtpub",
-#    "workspace/thread/sync-thread/rust-egg",
-#    "workspace/thread/sync-thread/packtpub",   
-#    "workspace/thread/sharestate/rust-doc",
+    "workspace/stdmisc/rust-doc",   
+    "workspace/thread/threadpool/packtpub",
+    "workspace/thread/unsafe/rust-in-action",
+    "workspace/thread/rayon/rust-doc",
+    "workspace/thread/rayon/packtpub",
+    "workspace/thread/time/rust-in-action",
+    "workspace/thread/time/packtpub",
+    "workspace/thread/race/rust-in-action",
+    "workspace/thread/mpsc/rust-in-action",
+    "workspace/thread/mpsc/pnkfx",
+    "workspace/thread/mpsc/rust-doc",
+    "workspace/thread/mpsc/packtpub",
+    "workspace/thread/sync-thread/rust-egg",
+    "workspace/thread/sync-thread/packtpub",   
+    "workspace/thread/sharestate/rust-doc",
      "workspace/thread/sync/arc/ultimate",
 
    "workspace/types/var/educative",
@@ -115,6 +119,7 @@ members = [
    "workspace/types/generic/pnkfx",
    "workspace/types/generic/rust-doc",
    "workspace/types/generic/educative",
+   "workspace/types/generic/ultimate",
    "workspace/types/generic/master-rust",
    "workspace/types/generic/rust-egg",
    "workspace/types/static/master-rust",
@@ -182,6 +187,7 @@ members = [
    "workspace/collection/iterator/rust-doc",
    "workspace/collection/iterator/master-rust",
    "workspace/collection/vec/educative",
+   "workspace/collection/vec/other",
    "workspace/collection/vec/rust-in-action",
    "workspace/collection/hashmap/educative",
    "workspace/collection/hashmap/master-rust",
@@ -213,10 +219,10 @@ members = [
    "workspace/duplication/copy-clone/rust-doc",
    "workspace/duplication/rc/rust-in-action",
 
-   # "workspace/memory/size/master-rust",
-   # "workspace/memory/piston/rust-in-action",
-   # "workspace/memory/winapi/rust-in-action",
-   # "workspace/memory/allocator/code-like-pro",
+    "workspace/memory/size/master-rust",
+    "workspace/memory/piston/rust-in-action",
+    "workspace/memory/winapi/rust-in-action",
+    "workspace/memory/allocator/code-like-pro",
 
    "workspace/memory/overflow/ultimate/",   
    "workspace/memory/garbage-collector/ultimate/",      
@@ -269,46 +275,49 @@ members = [
    "workspace/macro/rust-in-action",
 
 
-#   "workspace/module/rust-egg",
+   "workspace/module/rust-egg",
 
 
    "workspace/data/io/io/buffer/rust-in-action",
    "workspace/data/io/process/rust-egg",
+   "workspace/data/io/process/other",
    "workspace/data/io/io/pipe/packtpub",
    "workspace/data/parser/rust-in-action",
+   "workspace/data/parser/rust-doc",
+   "workspace/data/parser/other",
    "workspace/data/operator/rust-in-action",
    "workspace/data/operator/rust-doc",
    "workspace/data/arithmetic/code-like-pro",
    "workspace/data/arithmetic/educative",
    "workspace/data/arithmetic/master-rust",
 
-#    "workspace/grammer/dtolnay",
+    "workspace/grammer/dtolnay",
 
-#    "workspace/time/counter/rust-in-action",
-
-
+    "workspace/time/counter/rust-in-action",
 
 
-#    "workspace/process/command/packtpub",
 
 
-#    "workspace/cpu/rust-in-action",
-#    "workspace/cpu/rust-doc",
+    "workspace/process/command/packtpub",
 
-#    "workspace/env/packtpub",
 
-#    "workspace/libc/code-like-pro",
+    "workspace/cpu/rust-in-action",
+    "workspace/cpu/rust-doc",
 
-#     "workspace/unsafe/extern-ffi/ultimate",
-#    "workspace/unsafe/extern-ffi/rust-doc",
-#    "workspace/unsafe/safe-abstraction/rust-doc",
-#    "workspace/unsafe/safe-static-mut/rust-doc",
+    "workspace/env/packtpub",
 
-#    "workspace/oop/design_patterns/behavioral/state-pattern/rust-doc",
-#    "workspace/oop/design_patterns/behavioral/lpxxn",
-#    "workspace/oop/design_patterns/creational/lpxxn",
-#    "workspace/oop/design_patterns/structural/lpxxn",
-#    "workspace/oop/design_patterns/behavioral/process/rust-egg",
+    "workspace/libc/code-like-pro",
+
+     "workspace/unsafe/extern-ffi/ultimate",
+    "workspace/unsafe/extern-ffi/rust-doc",
+    "workspace/unsafe/safe-abstraction/rust-doc",
+    "workspace/unsafe/safe-static-mut/rust-doc",
+
+    "workspace/oop/design_patterns/behavioral/state-pattern/rust-doc",
+    "workspace/oop/design_patterns/behavioral/lpxxn",
+    "workspace/oop/design_patterns/creational/lpxxn",
+    "workspace/oop/design_patterns/structural/lpxxn",
+    "workspace/oop/design_patterns/behavioral/process/rust-egg",
 
    "workspace/idioms/fizz_buzz",
    "workspace/idioms/factorial/educative",
@@ -322,6 +331,6 @@ members = [
     "workspace/tests/test_structures/test_independent",    
     "workspace/tests/test_structures/test_dependent",    
     "workspace/tests/test_structures/test_fixture",    
-    "workspace/tests/test_structures/test_integration",    
+#    "workspace/tests/test_structures/test_integration",    
     "workspace/tests/tests_samples/test_binary", 
 ]

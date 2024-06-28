@@ -34,16 +34,13 @@ use std::usize;
 struct Counter {
     count: u32,
 }
-
 impl Counter {
     fn new() -> Counter {
         Counter { count: 0 }
     }
 }
-
 impl Iterator for Counter {
     type Item = u32;
-
     fn next(&mut self) -> Option<Self::Item> {
         if self.count < 5 {
             self.count += 1;
@@ -53,7 +50,6 @@ impl Iterator for Counter {
         }
     }
 }
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -75,6 +71,7 @@ mod tests {
         let sum: u32 = Counter::new()
             .zip(Counter::new().skip(1))
             .map(|(a, b)| a * b)
+            .inspect(|v| println!("  iteration is seeing {:?}", v))
             .filter(|x| x % 3 == 0)
             .sum();
         assert_eq!(18, sum);
@@ -83,5 +80,12 @@ mod tests {
 
 
 fn main(){
-    unimplemented!();
+    let sum: u32 = Counter::new()
+    .zip(Counter::new().skip(1))
+    .map(|(a, b)| a * b)
+    .inspect(|v| println!("  iteration is seeing mul a*b: {:?}", v))
+    .filter(|x| x % 3 == 0)
+    .inspect(|v| println!("  iteration is seeing mod 3: {:?}", v))
+    .sum();    
+    assert_eq!(18, sum);
 }

@@ -8,7 +8,7 @@
 /// 
 /// ## Commands
 ///
-/// ```cargo run -q -p rust_doc_std_bin  --bin rust-doc-std-filesystem-ex-10 -- 1 2 3```
+/// ```v```
 ///
 /// ```cargo doc  --package rust_doc_std_bin --message-format short --no-deps --open --color always```
 ///

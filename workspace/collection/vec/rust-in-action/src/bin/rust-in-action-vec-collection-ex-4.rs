@@ -25,8 +25,7 @@
 fn main() {
     let mut vec = vec!["hello"];
     vec.resize(3, "world");
-    assert_eq!(vec, ["hello", "world", "world"]);
-    
+    assert_eq!(vec, ["hello", "world", "world"]);    
     let mut vec = vec![1, 2, 3, 4];
     vec.resize(2, 0);
     assert_eq!(vec, [1, 2]);

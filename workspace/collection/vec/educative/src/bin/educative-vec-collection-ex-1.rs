@@ -24,14 +24,13 @@
 ///
 fn main(){
   let mut vec = vec![1, 2, 3, 4, 5];
-assert_eq!(vec.len(), 5);
+  assert_eq!(vec.len(), 5);
+  vec.reserve(2);
 
-vec.reserve(2);
+  assert_eq!(vec.len(), 5);
+  assert!(vec.capacity() >= 7 );
 
-assert_eq!(vec.len(), 5);//However, notice how the length of the vector is still 5. We have just reserved space on the heap.
-assert!(vec.capacity() >= 7 );
-
-vec.shrink_to_fit();
-assert_eq!(vec.len(), 5);
-assert!(vec.capacity() == 5 );
+  vec.shrink_to_fit();
+  assert_eq!(vec.len(), 5);
+  assert!(vec.capacity() == 5 );
 }

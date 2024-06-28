@@ -34,6 +34,5 @@ enum Cell {
 let row = vec![
     Cell::Text("Hello, world!".into()), Cell::Int(789), Cell::Float(78.9),
 ];
-
 println!("{:?}", row);
 }

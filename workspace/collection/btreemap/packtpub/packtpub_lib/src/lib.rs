@@ -61,7 +61,6 @@ impl <T:PartialOrd> Tree<T>{
         }
     }
 }
-
 impl <T:Clone> Tree<T> {
     pub fn lt_d_rt(&self)->Vec<T>{
         match self {
@@ -75,7 +74,6 @@ impl <T:Clone> Tree<T> {
         }
     }
 }
-
 
 #[cfg(test)]
 mod tests {

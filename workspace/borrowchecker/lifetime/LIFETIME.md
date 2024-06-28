@@ -200,9 +200,9 @@ To provide a custom destructor for a type, we implement Drop. This typically is 
 
 ## Syntax
 
-syntax <'a, 'bdeclares two lifetime variables, 'a and 'b, within the scope of
-    j: &'b i32 binds the lifetime variable 'b to the lifetime of j. The syntax reads as “parameter j is a reference to an i32 with lifetime b.”
-    Although every parameter has a lifetime, these checks are typically invisible as the compiler can infer most lifetimes by itself.
+syntax <'a, 'b> declares two lifetime variables, 'a and 'b, within the scope of
+j: &'b i32 binds the lifetime variable 'b to the lifetime of j. The syntax reads as “parameter j is a reference to an i32 with lifetime b.”
+Although every parameter has a lifetime, these checks are typically invisible as the compiler can infer most lifetimes by itself.
 
 ---
 

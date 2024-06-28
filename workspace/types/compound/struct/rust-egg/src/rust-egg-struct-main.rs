@@ -37,7 +37,6 @@ struct Order {
     item_number: u32,
     count: u32,
 }
-
 fn create_order_template() -> Order {
     Order {
         name: String::from("Bob"),
@@ -49,11 +48,9 @@ fn create_order_template() -> Order {
         count: 0,
     }
 }
-
 #[cfg(test)]
 mod tests {
     use super::*;
-
     #[test]
     fn your_order() {
         let order_template = create_order_template();

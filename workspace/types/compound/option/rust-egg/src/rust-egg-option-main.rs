@@ -32,7 +32,6 @@
 fn print_number(maybe_number: Option<u16>) {
     println!("printing: {}", maybe_number.unwrap());
 }
-
 fn main() {
     print_number(Some(13));
     print_number(Some(99));
@@ -42,7 +41,6 @@ fn main() {
         let number_to_add: u16 = { ((iter * 5) + 2) / (4 * 16) };
         println!("Printed:{}",iter as usize);
         numbers[iter as usize] = Some(number_to_add);// TO_REPORT_BUG:g slice indices are of type `usize` or ranges of `usize` *BecauseOf(-):iter as usize
-
     }
     println!("Printed:{:?}",numbers);
 

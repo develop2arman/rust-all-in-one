@@ -38,8 +38,6 @@ fn main() {
             println!("found a number 3 to 9 inclusively");
         }
         // we can bind the matched number to a variable
-
-
         matched_num @ 10..=100 => {
             println!("found {} number between 10 to 100!", matched_num);
         }

@@ -15,10 +15,10 @@
 /// ```cargo test --doc  --package rust_doc_std_bin ```
 ///
 /// ## What
-/// `Arg command line`
+/// `Arg command line` #ffi
 ///
 /// ## How
-/// Rust provides a Foreign Function Interface (FFI) to C libraries. Foreign functions must be declared inside an extern block annotated with a #[link] attribute containing the name of the foreign library.
+/// Rust provides a Foreign Function Interface (#FFI) to C libraries. Foreign functions must be declared inside an extern block annotated with a #[link] attribute containing the name of the foreign library.
 ///
 /// # Arguments
 ///

@@ -40,26 +40,21 @@ enum Request<X> {
     LookAtStars,
     EatLunch,
 }
-
 #[derive(Debug)]
 enum Answer<X> {
     Yes(X),
     No(X),
     Maybe,
 }
-
 struct Parent;
-//     ^~~~~~~ whoa.  (zero-sized!)
 
 fn main() {
     let parent = Parent;
-
     let requests : [Request<String>; 3] = [Request::GoSwimming,
                                            Request::LookAtStars,
                                            Request::EatLunch];
     for request in requests.iter() {
         match parent.can_i(request) {
-
             Answer::Yes(_) => {
                 println!("Hooray!");
                 return;
@@ -73,33 +68,25 @@ fn main() {
         }
     }
 }
-
-
 fn print_it( input: impl std::fmt::Debug + 'static ) {
     println!( "'static value passed in is: {:?}", input );
 }
-
-
 impl<X> Answer<X> {
     fn map<Y, F>(self, f: F) -> Answer<Y> where F: Fn(X) -> Y {
         unimplemented!();
     }
 }
-
 impl Parent {
     fn can_i<X>(&self, r: &Request<X>) -> Answer<&str> //Answer<String>  
     {
         let answer = match r {
             Request::LookAtStars => Answer::Maybe,
-
             Request::GoSwimming |
             Request::PlayOutsideWith(_) => Answer::No("we live in on Mars"),
-
             Request::EatLunch => Answer::Yes("it is close to noon"),
         };
 
         answer
-        //answer.map(|string_literal| string_literal.to_string())
     }
 }
 

@@ -21,8 +21,7 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `23`
-///
+/// 
 /// ## Example
 /// //```rust,compile_fail,ignore
 

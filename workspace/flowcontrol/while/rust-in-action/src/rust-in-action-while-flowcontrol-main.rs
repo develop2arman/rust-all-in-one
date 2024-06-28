@@ -29,7 +29,8 @@ use std::time::{Duration, Instant};
 
  fn main() {
     let mut count = 0;
-    let time_limit = Duration::new(1,0);
+    let time_limit = Duration::new(3,0);
+    println!("{:?}", time_limit);
     let start = Instant::now();
 
     while (Instant::now() - start) < time_limit {

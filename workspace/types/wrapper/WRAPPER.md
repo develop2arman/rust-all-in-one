@@ -6,10 +6,25 @@ The tuple struct will have one field and be a thin wrapper around the type we wa
 As an example, let’s say we want to implement Display on Vec<T>, which the **orphan rule** prevents us from doing directly because the Display trait and the Vec<T> type are defined outside our crate. We can make a Wrapper struct that holds an instance of Vec<T>; then we can implement Display on Wrapper and use the Vec<T> value
 
 > `Newtype pattern =  wrapper type = NewPattern = Thin Wrapper` :
-> Thin wrapping of an existing type in another struct.we specify impl Add<Meters> to set the value of the Rhs type parameter instead of using the default of Self.
+
+Thin wrapping of an existing type in another struct.we specify impl Add<Meters> to set the value of the Rhs type parameter instead of using the default of Self.
 
 ```rust
-impl Add<Meters> for Millimeters {type Output = Millimeters;fn add(self, other: Meters) -> Millimeters {}}
+use std::ops::Add;
+struct Millimeters(u32);
+struct Meters(u32);
+trait Add<Rhs=Self> {
+    type Output;
+
+    fn add(self, rhs: Rhs) -> Self::Output;
+}
+impl Add<Meters> for Millimeters {
+    type Output = Millimeters;
+
+    fn add(self, other: Meters) -> Millimeters {
+        Millimeters(self.0 + (other.0 * 1000))
+    }
+}
 ```
 
 ### Wrapper Type Vs Deref Trait

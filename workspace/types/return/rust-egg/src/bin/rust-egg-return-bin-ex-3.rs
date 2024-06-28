@@ -39,7 +39,7 @@ fn main() {
     print_number(Some(99));
 
     let mut numbers: [Option<u16>; 5] = [None; 5];
-    for iter in 0..5 {
+    for iter in 0..5 { // replacement of iter would be i
         let number_to_add: u16 = { ((iter * 5) + 2) / (4 * 16) };
         println!("Printed:{}",iter as usize);
         numbers[iter as usize] = Some(number_to_add);// TO_REPORT_BUG:g slice indices are of type `usize` or ranges of `usize` *BecauseOf(-):iter as usize

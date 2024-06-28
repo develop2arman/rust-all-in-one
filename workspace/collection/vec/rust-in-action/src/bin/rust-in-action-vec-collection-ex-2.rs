@@ -43,9 +43,9 @@ fn main() { // <1> Executable projects require a main() function
             .map(|field| field.trim()) // <4> As well as for loops, Rust programmers can use higher-order programmers when they prefer. This line trims the whitespace from every field.
             .collect();       // <5> Rust will "collect" the results of an iterator into a vector.
   
-        if cfg!(debug_assertions) { // <6> When debugging is enabled, include this code block. The exclamation mark (!) indicates a macro invocation. 
-            eprintln!("debug: {:?} -> {:?}", record, fields); // <7> eprintln! prints to standard error. The {:?} syntax requests Rust print out the default debugging representation for the two types.
-        }
+       //if cfg!(debug_assertions) { // <6> When debugging is enabled, include this code block. The exclamation mark (!) indicates a macro invocation. 
+            println!("debug: {:?} -> {:?}", record, fields); // <7> eprintln! prints to standard error. The {:?} syntax requests Rust print out the default debugging representation for the two types.
+       // }
   
         let name = fields[0]; // <8> Rust supports indexing collections with integers
    

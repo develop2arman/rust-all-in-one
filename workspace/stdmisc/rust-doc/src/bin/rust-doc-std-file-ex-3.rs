@@ -33,14 +33,9 @@
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
-
 fn main() {
-    // Create a path to the desired file
     let path = Path::new("hello.txt");
-    
-    
     let display = path.display();
-
     println!("path is {:?}", &display);
     // Open the path in read-only mode, returns `io::Result<File>`
     let mut file = match File::open(&path) {

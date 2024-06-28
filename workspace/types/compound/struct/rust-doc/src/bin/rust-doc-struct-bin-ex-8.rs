@@ -36,7 +36,6 @@ struct SparseMatrix<V> {
 
 
 fn main () {
-  let val = Value(0, 1, 12.078);
-
-  println!("{:?}", val);
+  let val = Value(0, 1, 12.078);//SparseMatrix{values: Value{vec![0, 1, 12.078]}};
+  println!("{:?}", val.values);
 }

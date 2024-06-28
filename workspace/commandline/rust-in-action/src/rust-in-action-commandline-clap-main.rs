@@ -3,8 +3,10 @@
 /// Main
 ///
 /// ## Commands
+/// USAGE:
+/// ```grep-lite <pattern>```
 ///
-/// ```cargo run -q -p rust-in-action-commandline-clap_bin --bin rust-in-action-commandline-clap-main --picture```
+/// ```RUST_BACKTRACE=1 cargo run -q -p rust-in-action-commandline-clap_bin --bin rust-in-action-commandline-clap-main -- pattern -picture```
 ///
 /// ```cargo run --picture```
 /// 

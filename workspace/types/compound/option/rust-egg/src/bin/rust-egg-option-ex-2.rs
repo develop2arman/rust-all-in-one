@@ -38,5 +38,4 @@ fn main(){
         res+=x;
     }*/
     println!("Printed:{}",res);
-
 }

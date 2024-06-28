@@ -51,7 +51,7 @@ pub fn main() {
 
     println!("second call");
     print_contents(&v);
-
+    println!("");
     fourth_exercise();
 }
 

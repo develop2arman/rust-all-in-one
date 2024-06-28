@@ -8,7 +8,7 @@ use std::usize;
 ///
 /// ## Commands
 ///
-/// ```cargo test -q -p pnkfx-iterator_bin --bin pnkfx-iterator-main```
+/// ```cargo run -q -p pnkfx-iterator_bin --bin pnkfx-iterator-main```
 ///
 /// ```cargo doc  --package pnkfx-iterator_bin  --message-format short --no-deps --open --color always```
 ///
@@ -34,18 +34,15 @@ use std::usize;
 // Example 10: Iterators!
 
 use std::iter;
-
 pub fn main() {
     println!("We've seen this before");
     for i in 0u32..10 {
         println!("i: {}", i);
     }
-
     println!("But how about this:");
     for j in (0u32..100).filter(|k| k % 15 == 1) {
         println!("j: {}", j);
     }
-
     println!("Or this:");
     let v : Vec<Vec<usize>> = (1..6)
                               .map(|i| iter::repeat(i).take(i).collect())
@@ -53,8 +50,7 @@ pub fn main() {
                               .collect();
 
     for (i, elem_a) in v.iter().enumerate() {
-        println!("I didn't take elem[{}] == {:?}", i, elem_a);
-        //                           exercise 1 below ^~~~~~
+        println!("I didn't take elem[{}] == {:?}", i, elem_a);        
     }
 
     for (i, elem_b) in v.into_iter().enumerate().filter(|&(j, _)| j % 2 == 0) {

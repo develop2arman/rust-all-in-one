@@ -31,16 +31,13 @@
 enum UsState {
     Alabama,
     Alaska,
-    // --snip--
 }
-
 enum Coin {
     Penny,
     Nickel,
     Dime,
     Quarter(UsState),
 }
-
 fn main() {
     let coin = Coin::Quarter(UsState::Alaska);
     let mut count = 0;

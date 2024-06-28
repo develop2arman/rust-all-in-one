@@ -231,3 +231,12 @@ pub mod server;
     );
 }
 ```
+## debug_assertions
+
+```rust, no_run, compile_fail
+// When debugging is enabled, include this code block. The exclamation mark (!) indicates a macro invocation. 
+        if cfg!(debug_assertions) { 
+            eprintln!("debug: {:?} -> {:?}", record, fields); 
+// eprintln! prints to standard error. The {:?} syntax requests Rust print out the default debugging representation for the two types.
+        }
+```

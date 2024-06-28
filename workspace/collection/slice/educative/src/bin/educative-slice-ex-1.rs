@@ -29,15 +29,14 @@
 ///
 /// //rust,compile_fail,no_run,ignore
 
-fn main() {
-// careful: it will not compile!
-let magic_choice = [0, 1, 2];
-let magic_answer = ["first", "second", "third"];
+fn main() {  
+  let magic_choice = [0, 1, 2];
+  let magic_answer = ["first", "second", "third"];
 
-for i in magic_choice {
-  println!("{}", magic_answer[i]);
-}
-for i in magic_choice.iter() {
-  println!("{}", magic_answer[*i as usize]);
-}
+  for i in magic_choice {
+    println!("{}", magic_answer[i]);
+  }
+  for i in magic_choice.iter() {
+    println!("{}", magic_answer[*i as usize]);
+  }
 }

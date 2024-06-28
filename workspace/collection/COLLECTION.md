@@ -37,3 +37,8 @@
 > Performance—Indexing values with the collection[index] syntax incurs run-time costs for bounds checking. That is, Rust checks that index currently exists within collection as valid data. Those checks are not necessary when iterating directly over collection. The compiler can use compile-time analysis to prove that illegal access is impossible.
 
 > Safety—Periodically accessing collection over time introduces the possibility that it has changed. Using a for loop over collection directly allows Rust to guarantee that the collection remains untouched by other parts of the program.
+
+```rust
+let a = [1, 2, 3];
+assert_eq!(a.iter().nth(1), Some(&2));
+```

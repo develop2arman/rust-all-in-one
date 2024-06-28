@@ -106,9 +106,13 @@ fn main() {
 > Any implementation where a type appears uncovered. impl<T> Foo for T, impl<T> Bar<T> for T, impl<T> Bar<Vec<T>> for T, and impl<T> Bar<T> for Vec<T> are considered blanket impls. However, impl<T> Bar<Vec<T>> for Vec<T> is not a blanket impl, as all instances of T which appear in this impl are covered by Vec.
 
 `Bound`:
-> Bounds are constraints on a type or trait. For example, if a bound is placed on the argument a function takes, types passed to that function must abide by that constraint.
+Bounds are constraints on a type or trait. For example, if a bound is placed on the argument a function takes, types passed to that function must abide by that constraint.
 
-> We can also conditionally implement a trait for any type that implements another trait. Implementations of a trait on any type that satisfies the trait bounds are called blanket implementations and are extensively used in the Rust standard library. For example, the standard library implements the ToString trait on any type that implements the Display trait. The impl block in the standard library looks similar to this code:
+Trait bounds allow us to specify that a generic function should accept any type that implements a particular trait. In doing so, we focus on the expected behavior of the type rather than its concrete identity. This approach enhances code flexibility and reusability, as functions become adaptable to different data structures that adhere to the same interface.
+
+Trait bounds are pivotal in creating functions and structures that accommodate diverse types, minimizing redundancy and ensuring code safety.
+
+We can also conditionally implement a trait for any type that implements another trait. Implementations of a trait on any type that satisfies the trait bounds are called blanket implementations and are extensively used in the Rust standard library. For example, the standard library implements the ToString trait on any type that implements the Display trait. The impl block in the standard library looks similar to this code:
 
 ```rust,no_run
 impl<T: Display> ToString for T {

@@ -20,13 +20,16 @@ for food in grocery_list {
 ```
 
 [1.1] favorite foods does not need to be mutable.
+
 [1.2] healthy foods does not need to be mutable.
+
 [1.3] favorite foods is already mutable.
+
 **[1.4]** favorite foods is mutably borrowed twice.
 
 ---
 
-[2] You're writing a function that returns the first word of a sentence. But the compiler returns an error. Some lifetimes can be elided, and others must be specified. What lifetimes need to be specified in the function below?
+**[2]** You're writing a function that returns the first word of a sentence. But the compiler returns an error. Some lifetimes can be elided, and others must be specified. What lifetimes need to be specified in the function below?
 
 **[2.1]**
 ```rust 
@@ -38,14 +41,14 @@ fn first_word<'a>(sentence: &'a str, separator: &'a str) -> &'a str {
                             .unwrap();
     word
 }
-
 println!("{}",first_word("arman riazi"," "));
-
 # }
 ```
+
 [2.2]
+
 ```rust 
-#  fn main(){
+fn main(){
 fn first_word(sentence: &str, separator: &str) -> &str {
     let word: &'a str = sentence
                             .split(separator)
@@ -55,10 +58,11 @@ fn first_word(sentence: &str, separator: &str) -> &str {
 }
 
 println!("{}",first_word("arman riazi"," "));
-
-# }
+}
 ```
+
 [2.3]
+
 ```rust 
 #  fn main(){
     fn first_word<'a>(sentence: &str, separator:  &str) -> &'a str {
@@ -71,7 +75,9 @@ println!("{}",first_word("arman riazi"," "));
     println!("{}",first_word("arman riazi"," "));
 # }
 ```
+
 [2.4]
+
 ```rust 
 #  fn main(){
     fn first_word<'a>(sentence: &'a str, separator:  &'a str) -> &str {
@@ -87,11 +93,11 @@ println!("{}",first_word("arman riazi"," "));
 
 ---
 
-[3] You want to count the letters in a word. Choose the best option?
+**[3]** You want to count the letters in a word. Choose the best option?
 
 **[3.1]**
 ```rust 
-#  fn main(){
+fn main(){
     use std::collections::HashMap;
     let word = "internationalization";
     let mut letter_count = HashMap::new();
@@ -104,7 +110,7 @@ println!("{}",first_word("arman riazi"," "));
     for (letter, count) in &letter_count {
         println!("{}: {}", letter, count);
     }
-# }
+}
 ```
 [3.2]
 ```rust 
@@ -191,29 +197,39 @@ let handle = std::thread::spawn( move || {
 [5] What does the following program do?
 
 ```rust 
-#  fn main(){
-use std::process::Stdio;
-use std::{io::ErrorKind, error::Error};
-//unimplemented!();
+use std::error::Error;
+use std::io::{self, Write};
+use std::process::{Command, Stdio};
 
-let mut echo=std::process::Command::new("echo")
-    .arg("one two three")
-    .stdout(Stdio::piped())
-    .spawn()?;
+fn go_wc() -> Result<(), Box<dyn Error>> {
+    // Spawn the 'echo' command and capture its output
+    let mut echo = Command::new("echo")
+       .arg("one two three")
+       .stdout(Stdio::piped())
+       .spawn()?;
 
-let wc = std::process::Command::new("wc")
-    .arg("-w")
-    .stdin(Stdio::piped())
-    .stdout(Stdio::inherit())
-    .spawn()?;
+    // Capture the stdout of 'echo' command
+    let mut echo_output = echo.stdout.take().expect("Failed to take stdout");
 
-let mut wc_in= true;
-let echo_out=&mut wc.stdin.ok_or_else(|| Error::from(ErrorKind::BrokenPipe))?;
+    // Spawn the 'wc' command, piping its stdin from the 'echo' command's stdout
+    let mut wc = Command::new("wc")
+       .arg("-w") // Count words
+       .stdin(Stdio::piped())
+       .stdout(Stdio::inherit()) // Inherit stdout so we can see the output
+       .spawn()?;
 
-echo.stdout.as_mut().ok_or_else(|| Error::from(ErrorKind::BrokenPipe))?;
+    // Write the output of 'echo' to the stdin of 'wc'
+    io::copy(&mut echo_output, &mut wc.stdin.take().expect("Failed to take stdin"))?;
 
-std::io::copy(echo_out, &mut wc_in)?;
-# }
+    Ok(())
+}
+
+fn main() {
+    match go_wc() {
+        Ok(_) => println!("Success"),
+        Err(e) => eprintln!("Error: {}", e),
+    }
+}
 ```
 
 > **[5.1]**
@@ -239,7 +255,7 @@ std::io::copy(echo_out, &mut wc_in)?;
 
 ---
 
-[6] Which of the following snippetes sets result to the number 12?
+**[6]** Which of the following snippetes sets result to the number 12?
 
 [6.1]
 ```rust 
@@ -294,7 +310,7 @@ assert_eq!(result,12);
 ---
 
 
-[7] How can you pass a string to these functions?
+**[7]** How can you pass a string to these functions?
 
 [7.1]
 ```rust 
@@ -396,9 +412,10 @@ fn communicate<T>(thing: &T){
 
 ---
 
-[9] How can you modify as item in Vec inside a loop?
+* [9] How can you modify as item in Vec inside a loop?
 
 [9.1]
+
 ```rust 
 # #[derive(Debug)]
 # struct Items{
@@ -413,7 +430,9 @@ fn communicate<T>(thing: &T){
     }
 # }
 ```
+
 [9.2]
+
 ```rust 
 # #[derive(Debug)]
 # struct Items{
@@ -428,20 +447,22 @@ fn communicate<T>(thing: &T){
     }
 # }
 ```
+
 **[9.3]**
+
 ```rust 
-# #[derive(Debug)]
-# struct Items{
-#    is_ordered:bool
-# }
-# fn main(){
-#    let it1= Items{is_ordered:true};
-#    let it2= Items{is_ordered:true};
-#    let items: Vec<Items>= vec![it1,it2];
-    for mut item in items{
-        item.is_ordered = true;
-    }
-# }
+ #[derive(Debug)]
+ struct Items{
+    is_ordered:bool
+ }
+ fn main(){
+    let it1= Items{is_ordered:true};
+    let it2= Items{is_ordered:true};
+    let items: Vec<Items>= vec![it1,it2];
+   for mut item in items{
+       item.is_ordered = true;
+   }
+ }
 ```
 [9.4]
 ```rust 
@@ -497,7 +518,7 @@ fn communicate<T>(thing: &T){
 ```
 **[10.4]**
 ```rust 
-# #[derive(Debug)]
+#[derive(Debug)]
 struct Employee{
     boss: Staff
 }
@@ -603,7 +624,7 @@ for (i, number) in &hash_map {
 
 ---
 
-[12] What is the output this puzzle?
+**[12]** What is the output this puzzle?
 
 ```rust 
 # fn main(){
@@ -631,7 +652,7 @@ d
 
 ---
 
-[13] There is a logging function called log that takes a message: &str argument. You need to use this function to print "123". Which of the following methods work?
+**[13]** There is a logging function called log that takes a message: &str argument. You need to use this function to print "123". Which of the following methods work?
 
 [13.1]
 ```rust 
@@ -669,7 +690,7 @@ let numbers = "1234";
 log(&numbers[..3]);
 # }
 ```
-**[13.4]**
+[13.4]
 ```rust 
 # fn main(){
 
@@ -683,7 +704,7 @@ log(&numbers[1..4]);
 ```
 ---
 
-[14] You want to print the status of a request in the following format:
+**[14]** You want to print the status of a request in the following format:
 
 > `success: true, errors: 0, message: success`
 
@@ -717,12 +738,13 @@ println! ("success: {}, errors: {}, message: {}", result.0, result.1, result.2);
 let result = [true, 0, "success"];
 println! ("success: {}, errors: {}, message: {}", result[0], result[1], result[2]);
 # }
-```
+```         
 
 ---
 
-[15] went on vacation, and the lead developer is not happy with the work they delivered below. The lead says the code "crashes all over the place, hides the issue from the calling function, and panics unrecoverably. They needed an expert so they called you in to fix it. Which function will you deliver?
+**[15]** went on vacation, and the lead developer is not happy with the work they delivered below. The lead says the code "crashes all over the place, hides the issue from the calling function, and panics unrecoverably. They needed an expert so they called you in to fix it. Which function will you deliver?
 
+[15.1]
 ```rust 
 # fn main(){
 fn export_todo (filename: &str, todo_list: &[&str], done_list: &[&str]) {
@@ -749,7 +771,7 @@ fn export_todo (filename: &str, todo_list: &[&str], done_list: &[&str]) {
 
 # }
 ```
-**[15.x]**
+**[15.2]**
 ```rust  
 # fn main(){
     use std::io::Write;
@@ -782,7 +804,6 @@ struct Rental {
     days: u32,
     half_off: bool,
 }
-
 impl Rental {
  fn subtotal(&self) -> u32 {
     let subtotal = self.rate * self.days;
@@ -792,16 +813,15 @@ impl Rental {
   subtotal
  }
 }
-
 fn main(){
-let days = 10;
-let saw = Rental{days, rate: 15, half_off: false };
-let drill = Rental{rate:10, ..saw};
-let trailer = Rental{ half_off: true, ..drill};
-let mut grand_total=0;
-for rental in [saw, drill, trailer].iter() {
-    grand_total += rental.subtotal();
-}
+    let days = 10;
+    let saw = Rental{days, rate: 15, half_off: false };
+    let drill = Rental{rate:10, ..saw};
+    let trailer = Rental{ half_off: true, ..drill};
+    let mut grand_total=0;
+    for rental in [saw, drill, trailer].iter() {
+        grand_total += rental.subtotal();
+    }
 println! ("grand total: ${}", grand_total);
 }
 ```

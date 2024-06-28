@@ -24,8 +24,6 @@
 fn main(){
 let students = vec!["Robert", "Jason", "Marie"];
 let scores = vec![7, 6, 8];
-
 let pos = students.iter().position(|&x| x == "Jason").unwrap();
-
 println!("Jason's score {}", scores[pos]);
 }

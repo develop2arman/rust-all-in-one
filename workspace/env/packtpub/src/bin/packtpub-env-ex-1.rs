@@ -6,7 +6,7 @@ use rand::prelude::*;                      // <1>
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p packtpub-env_bin --bin  packtpub-env-ex-1```
+/// ```cargo run -q -p packtpub-env_bin --bin  packtpub-env-ex-1 -- -WRust```
 ///
 /// ## What
 /// `Error Handling`
@@ -24,7 +24,6 @@ use rand::prelude::*;                      // <1>
 /// ## Example
 /// //```rust,no_run,compile_fail,ignore
 use std::env::args;
-
 fn main() {
     for a in args(){
         if let Some(c) = a.chars().next() {

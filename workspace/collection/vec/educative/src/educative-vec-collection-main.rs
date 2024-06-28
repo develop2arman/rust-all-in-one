@@ -44,8 +44,8 @@
 /// ## Trace
 /// [educative-vec-collection-doc-main](../rust_in_action_vec_collection_trace1/index.html)
 
-fn main() {
- fn print_elements(elements: Vec<&str>) {
+
+fn print_elements(elements: Vec<&str>) {
   match elements.as_slice(){
     [] => println!("No elements"),
     [element] => println!("One element only: {}", element),
@@ -53,14 +53,13 @@ fn main() {
     _ => println!("More than one element present"),
   }
 }
-
-let empty = vec![];
-let one = vec!["one"];
-let two = vec!["one", "two"];
-let three = vec!["one", "two", "three"];
-
-print_elements(empty);
-print_elements(one);
-print_elements(three);
-print_elements(two);
+fn main() {
+  let empty = vec![];
+  let one = vec!["one"];
+  let two = vec!["one", "two"];
+  let three = vec!["one", "two", "three"];
+  print_elements(empty);
+  print_elements(one);
+  print_elements(three);
+  print_elements(two);
 }

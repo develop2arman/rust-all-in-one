@@ -31,7 +31,6 @@ union Metric {
     rounded: u32,
     precise: f32,
 }
-
 fn main() {
     let mut a = Metric { rounded: 323 };
     unsafe {
