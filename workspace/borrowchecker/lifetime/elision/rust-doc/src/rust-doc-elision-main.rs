@@ -36,7 +36,6 @@ fn main() {
     }
     println!("The longest string is {}", string1);
 }
-
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x

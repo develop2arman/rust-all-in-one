@@ -56,7 +56,6 @@ fn get_high_cost<'a>(product1: &'a Product, product2: &'a Product) -> &'a Produc
         product2
     }
 }
-
 fn main() {
     let product1 = Product{name: "shoes".to_string(), cost: 100.0};
     let product2 = Product{name: "hat".to_string(), cost: 90.0};

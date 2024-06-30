@@ -47,15 +47,12 @@ struct Product {
     name: String,
     cost: f64
 }
-
 fn price(product: &Product) -> f64 {
     product.cost * 1.30
 }
-
 fn discount(product: &Product) -> f64 {
     price(product) / 1.10
 }
-
 fn main() {
     let hat = Product {name: "Hat".to_string(), cost: 100.0};
     println!("The price of product: {}, is {:.2}", &hat.name, price(&hat));

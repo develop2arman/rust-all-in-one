@@ -31,13 +31,12 @@ fn use_value(_val: Demo) {
 }
 #[derive(Debug,Copy, Clone)]
 struct Demo {
-a: i32,
+ a: i32,
 }
-
 fn main() {
-let demo = Demo { a: 123 }; // ---- move occurs because `demo` has type `Demo`, which does not implement the `Copy` trait
- use_value(demo); // ---- value moved here
- println!("{}", demo.a); //  ^^^^^^ value borrowed here after move
+let demo = Demo { a: 123 }; 
+ use_value(demo); 
+ println!("{:?}", demo); 
 }
 
 
