@@ -38,7 +38,7 @@
 
 In addition, the following tools can also be handy in certain situations:
 - Deeply interlinked data structures can benefit from **std::rc::Weak and std::arc::Weak** for single and multi-threaded programs, respectively. These allow access to data within an **Rc/Arc without incrementing its reference count**. This can prevent never-ending cycles of pointers.
-- The **alloc::raw_vec::RawVec** type underlies Vec<T> and **VecDeq<T>.** An expandable, double-ended queue that hasn’t appeared in the book so far, it understands how **to allocate and deallocate memory in a smart way** for any given type.
+- The **alloc::raw_vec::RawVec** type underlies Vec<T> and **VecDeq<T>.** An expandable, double-ended queue that hasn’t appeared in the book so far, it understands how **to allocate and deallocate memory in a smart way** for any given type. #VecDeque #Vec
 - **The std::cell::UnsafeCell** type sits behind both Cell<T> and RefCell<T>. If you would like to provide interior mutability to your types, its implementation is worth investigating.
 
 ---
@@ -73,6 +73,13 @@ In addition, the following tools can also be handy in certain situations:
 - Are allowed to be **null**
 - **Don’t implement any automatic cleanup**
 
+You can create pointers safely from any integral value. An i32 is not a Vec<String>, but Rust is quite comfortable .ignoring that here.
+
+```rust
+let ptr = 42 as *const Vec<String>;
+```
+
+
 ### Raw Pointer Rules
 
 > we can't cast a &T to a *mut T, as it would violate the borrowing rules that allow only one mutable borrow. so at the first we need as ` *const u8` and then ` as *mut u8`
@@ -103,18 +110,11 @@ let address = 0x012345usize;
 let r = address as *const i32;
 unsafe {        
     std::ptr::write(r as *mut usize, 0usize); //Memory overwrite to a address
-    println!("r1 is: {}", *r);
+    println!("r3 is: {}", *r);
 }
 ```
 
 
----
-
-You can create pointers safely from any integral value. An i32 is not a Vec<String>, but Rust is quite comfortable .ignoring that here.
-
-```rust
-let ptr = 42 as *const Vec<String>;
-```
 
 ## Data Race
 

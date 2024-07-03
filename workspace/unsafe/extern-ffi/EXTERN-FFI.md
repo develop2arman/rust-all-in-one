@@ -12,13 +12,33 @@
 extern "C" {
     fn abs(input: i32) -> i32;
 }
-
 fn main() {
     unsafe {
         println!("Absolute value of -3 according to C: {}", abs(-3));
     }
 }
 ```
+
+## No Mangle
+
+The `#[no_mangle]` attribute in Rust is used to instruct the compiler not to mangle the name of the function or item it is applied to. Name mangling is a common technique used by compilers to generate unique names for functions, variables, and other identifiers when they are compiled into machine code. This process helps avoid naming conflicts between different parts of a program or between programs.
+
+By default, Rust applies name mangling to all items (functions, structs, enums, etc.) to ensure that each has a unique identifier in the compiled output. However, there are cases where you might want to control this behavior, especially when interfacing with C libraries or when you need to expose certain Rust functions to be called directly from C code without mangling.
+
+Here's how you can use `#[no_mangle]`:
+
+```rust
+#[no_mangle]
+pub extern "C" fn my_function() {
+    // Function body here
+}
+```
+
+In this example, `my_function` will not have its name mangled, making it possible to call this function directly from C code. The `extern "C"` part specifies that the function uses the C calling convention, which is necessary for interoperability with C code.
+
+It's important to note that using `#[no_mangle]` should be done judiciously, as it can lead to name clashes if not managed carefully. Additionally, since Rust's name mangling scheme is designed to produce unique names, manually specifying names can potentially introduce conflicts within large projects or across different crates.
+
+For more complex scenarios involving external libraries or specific requirements for ABI compatibility, consider using Rust's Foreign Function Interface (FFI) features along with `#[no_mangle]`. These tools allow Rust to interoperate with code written in other languages, facilitating the integration of Rust into existing systems or applications.
 
 
 ##  Using extern Functions to Call External Code
