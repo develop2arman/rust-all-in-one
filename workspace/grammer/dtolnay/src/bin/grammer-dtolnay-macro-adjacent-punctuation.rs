@@ -2,7 +2,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-adjacent-punctuation```
+/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-macro-adjacent-punctuation```
 ///
 /// ```cargo doc  --package grammer-dtolnay_bin --message-format short --no-deps --open --color always```
 ///

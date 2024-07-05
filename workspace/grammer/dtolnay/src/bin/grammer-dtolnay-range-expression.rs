@@ -19,18 +19,18 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// ``
+/// `54`
 ///
 /// ## Example
 /// `TODO`
 /// //```rust,no_run,ignore,compile_fail
-///
+///** */
 fn main() {
     let (.., x, y) = (0, 1, ..);
     print!("{}", b"066"[y][x]);
 }
 /*
-54
+
 This question demonstrates two different meanings of ...
 
 In expression position, .. is the syntax for constructing various types of ranges. Here the expression (0, 1, ..) is a tuple with three elements, the third one having type RangeFull.

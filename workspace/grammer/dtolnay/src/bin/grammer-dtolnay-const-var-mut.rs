@@ -19,26 +19,23 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// ``
+/// `32`
 ///
 /// ## Example
 /// `TODO`
 /// //```rust,no_run,ignore,compile_fail
-///
+///** */
 struct S {
     x: i32,
 }
-
-const S: S = S { x: 2 };
-
+const cs: S = S { x: 2 };
 fn main() {
-    let v = &mut S;
+    let v = &mut cs;
     v.x += 1;
-    S.x += 1;
-    print!("{}{}", v.x, S.x);
+    cs.x += 1;
+    print!("{}{}", v.x, cs.x);
 }
 /*
-32
 The semantics of const is that any mention of the const by name in expression position is substituted with the value of the const initializer. In this quiz code the behavior is equivalent to:
 
 struct S {

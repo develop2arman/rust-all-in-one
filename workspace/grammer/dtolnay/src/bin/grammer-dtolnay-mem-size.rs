@@ -24,14 +24,11 @@
 /// ## Example
 /// `TODO`
 /// //```rust,no_run,ignore,compile_fail
-/// 
+/// **
 use std::mem;
-
 fn main() {
     let a;
     let a = a = true;
-
-
     print!("{}", mem::size_of_val(&a));
 }
 /*

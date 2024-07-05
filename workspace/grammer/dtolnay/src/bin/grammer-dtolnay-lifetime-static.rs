@@ -24,15 +24,14 @@
 /// ## Example
 /// `TODO`
 /// //```rust,no_run,ignore,compile_fail
-/// 
-fn f<'a>() {}
-fn g<'a: 'a>() {}
+/// **
+fn f() {}
+fn g() {}
 
 fn main() {
-    // let pf = f::<'static> as fn();
-    // let pg = g::<'static> as fn();
-    // print!("{}", pf == pg);
-    unimplemented!();
+    let pf = f as fn();
+    let pg = g as fn();
+    print!("{}", pf == pg);  
 }
 
 

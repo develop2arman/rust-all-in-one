@@ -19,22 +19,22 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// ``
+/// `123`
 ///
 /// ## Example
 /// `TODO`
 /// //```rust,no_run,ignore,compile_fail
-///
+///** */
+use std::ops::BitAnd;
+#[derive(Debug)]
 struct S(i32);
-
 impl std::ops::BitAnd<S> for () {
     type Output = ();
 
     fn bitand(self, rhs: S) {
-        print!("{}", rhs.0);
+        println!("{:?}", rhs.0);
     }
 }
-
 fn main() {
     let f = || ( () & S(1) );
     let g = || { () & S(2) };
@@ -46,7 +46,7 @@ fn main() {
     i();
 }
 /*
-123
+
 The closures f, g, and h are all of type impl Fn(). The closure bodies are parsed as an invocation of the user-defined bitwise-AND operator defined above by the BitAnd trait impl. When the closures are invoked, the bitwise-AND implementation prints the content of the S from the right-hand side and evaluates to ().
 
 The closure i is different. Formatting the code with rustfmt makes it clearer how i is parsed.

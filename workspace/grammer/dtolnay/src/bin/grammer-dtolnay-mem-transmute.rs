@@ -24,27 +24,21 @@
 /// ## Example
 /// `TODO`
 /// //```rust,no_run,ignore,compile_fail
-/// 
+/// **
 
 #[repr(u8)]
 enum Enum {
     First, //0u8
     Second,//1u8
 }
-
 impl Enum {
     fn p(self) {
         match self {
             Enum::First => print!("1"),
             Enum::Second => print!("2"),
-            /*
-            First => print!("1"),
-            Second => print!("2"),
-            */
         }
     }
 }
-
 fn main() {
     Enum::p(unsafe {
         std::mem::transmute(1u8)

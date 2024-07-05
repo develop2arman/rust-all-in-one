@@ -24,10 +24,9 @@
 /// ## Example
 /// `TODO`
 /// ```rust,no_run,ignore,compile_fail
-/// 
+/// **
 fn main() {
     let input = vec![1, 2, 3];
-
     let parity = input
         .iter()
         .map(|x| {

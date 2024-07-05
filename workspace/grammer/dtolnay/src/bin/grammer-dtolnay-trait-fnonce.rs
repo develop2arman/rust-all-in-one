@@ -19,7 +19,7 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `21`
+/// `221111`
 ///
 /// ## Example
 /// `TODO`
@@ -42,8 +42,8 @@ impl Trait for () {
 }
 
 fn main() {
-    unimplemented!();
-    /*
+    //unimplemented!();
+    
     let x = || { (return) || true; };
     x().f();
 
@@ -60,7 +60,7 @@ fn main() {
     x().f();
 
     let x = loop { break || true; };
-    x.f();*/
+    x.f();
 }
 /*
 We want to know whether each possible parenthesization of return || true; and break || true; evaluates to the closure || true or to the unit value ().

@@ -2,7 +2,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-ops-rangefull```
+/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-trait-ops-rangefull```
 ///
 /// ```cargo doc  --package grammer-dtolnay_bin --message-format short --no-deps --open --color always```
 ///
@@ -26,25 +26,21 @@
 /// ```rust,no_run,ignore,compile_fail
 /// 
 use std::ops::RangeFull;
-
 trait Trait {
     fn method(&self) -> fn();
 }
-
 impl Trait for RangeFull {
     fn method(&self) -> fn() {
         print!("1");
         || print!("3")
     }
 }
-
 impl<F: FnOnce() -> T, T> Trait for F {
     fn method(&self) -> fn() {
         print!("2");
         || print!("4")
     }
 }
-
 fn main() {
     (|| .. .method())();
 }

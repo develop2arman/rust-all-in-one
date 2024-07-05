@@ -19,7 +19,7 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// ``
+/// `112`
 ///
 /// ## Example
 /// `TODO`
@@ -32,7 +32,6 @@ macro_rules! m {
         )<<*
     };
 }
-
 fn main() {
     print!(
         "{}{}{}",
@@ -42,7 +41,7 @@ fn main() {
     );
 }
 /*
-112
+
 This question revolves around where the Rust grammar places statement boundaries.
 
 The input rule of the macro m! is $($s:stmt)* which matches zero or more Rust statements. The $(...)* part of the rule is a repetition which matches the contents of the repetition zero or more times, and the $s:stmt is a fragment specifier that matches a Rust statement (stmt) conforming to the rules of the Rust grammar. The matched statements are available within the expanded code as the fragment variable $s.

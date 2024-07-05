@@ -25,16 +25,7 @@
 /// `TODO`
 /// ```rust,no_run,ignore,compile_fail
 /// 
-fn return1() {
-    if (return { print!("1") }) {
-    }
-}
-
-fn return2() {
-    if return { print!("2") } {
-    }
-}
-
+/// 
 /*
 fn break1() {
     loop { //error: this loop never actually loops
@@ -50,15 +41,20 @@ fn break2() {
     }
 }
 */
+
+fn return1() {
+    if (return { print!("1") }) {
+    }
+}
+fn return2() {
+    if return { print!("2") } {
+    }
+}
 fn main() {
     return1();
     return2();
-  //  break1();
-    //break2();
 }
 /*
-121
-Let's work through the functions one at a time.
 
 fn return1
 

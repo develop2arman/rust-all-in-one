@@ -24,12 +24,11 @@
 /// ## Example
 /// `TODO`
 /// ```rust,no_run,ignore,compile_fail
-/// 
+/// **
 fn check(x: i32) -> bool {
     print!("{}", x);
     false
 }
-
 fn main() {
     match (1, 2) {
         (x, _) | (_, x) if check(x) => {

@@ -2,7 +2,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-struct-trailing-refs```
+/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-trait-struct-trailing-refs```
 ///
 /// ```cargo doc  --package grammer-dtolnay_bin --message-format short --no-deps --open --color always```
 ///
@@ -28,7 +28,6 @@
 trait Or {
     fn f(self);
 }
-
 struct T;
 
 impl Or for &T {
