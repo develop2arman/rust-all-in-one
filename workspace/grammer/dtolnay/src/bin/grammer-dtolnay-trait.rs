@@ -1,3 +1,30 @@
+/// grammer-dtolnay
+///
+/// ## Commands
+///
+/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-trait```
+///
+/// ```cargo doc  --package grammer-dtolnay_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package grammer-dtolnay_bin```
+///
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `TODO`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `12`
+///
+/// ## Example
+/// `TODO`
+/// ```rust,no_run,ignore,compile_fail
+/// 
 trait Trait {
     fn f(&self);
     fn g(&self);
@@ -31,7 +58,6 @@ fn main() {
 }
 
 /*
-12
 S.f() calls the inherent method f. If an inherent method and a trait method have the same name and receiver type, plain method call syntax will always prefer the inherent method. The caller would need to write Trait::f(&S) or <S as Trait>::f(&S) in order to call the trait method.
 
 It is important for macro authors to be aware of this. Macro-generated code typically should not use method call syntax to invoke trait methods on types defined by the user. Those calls could get unintentially hijacked by inherent methods having the same name as the trait method.

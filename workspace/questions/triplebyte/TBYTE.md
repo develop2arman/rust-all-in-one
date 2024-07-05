@@ -1,8 +1,8 @@
-[1] resolve the problem?
+**[1]** resolve the problem?
 
 [1.x]
 ```rust 
-#  fn main(){
+fn main(){
 let mut favorite_foods = vec! ["potato", "tomato"];
 let mut healthy_foods = &mut favorite_foods;
 healthy_foods.push("carrot");
@@ -16,7 +16,7 @@ println! ("Grocery List:");
 for food in grocery_list {
     println!("{}", food);
 }
-# }
+}
 ```
 
 [1.1] favorite foods does not need to be mutable.
@@ -194,7 +194,7 @@ let handle = std::thread::spawn( move || {
 
 ---
 
-[5] What does the following program do?
+**[5]** What does the following program do?
 
 ```rust 
 use std::error::Error;
@@ -412,7 +412,7 @@ fn communicate<T>(thing: &T){
 
 ---
 
-* [9] How can you modify as item in Vec inside a loop?
+**[9]** How can you modify as item in Vec inside a loop?
 
 [9.1]
 
@@ -482,7 +482,7 @@ fn communicate<T>(thing: &T){
 
 ---
 
-[10] Which code snippet works?
+**[10]** Which code snippet works?
 
 [10.1]
 ```rust 
@@ -796,7 +796,7 @@ fn export_todo (filename: &str, todo_list: &[&str], done_list: &[&str]) {
 ```
 ---
 
-[16] Your friend that runs a tool rental company needs a program to calculate customer orders. What is the grand total printed by this program?
+**[16]** Your friend that runs a tool rental company needs a program to calculate customer orders. What is the grand total printed by this program?
 
 ```rust
 struct Rental {

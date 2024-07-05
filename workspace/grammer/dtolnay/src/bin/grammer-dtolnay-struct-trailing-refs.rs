@@ -1,3 +1,30 @@
+/// grammer-dtolnay
+///
+/// ## Commands
+///
+/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-struct-trailing-refs```
+///
+/// ```cargo doc  --package grammer-dtolnay_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package grammer-dtolnay_bin```
+///
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `TODO`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `111222`
+///
+/// ## Example
+/// `TODO`
+/// ```rust,no_run,ignore,compile_fail
+/// 
 trait Or {
     fn f(self);
 }
@@ -31,8 +58,6 @@ fn main() {
     wwwwwt.f();
 }
 /*
-111222
-
 The Reference describes Rust's method lookup order. The relevant paragraph is:
 
 Obtain [the candidate receiver type] by repeatedly dereferencing the receiver expression's type, adding each type encountered to the list, then finally attempting an unsized coercion at the end, and adding the result type if that is successful. Then, for each candidate T, add &T and &mut T to the list immediately after T.

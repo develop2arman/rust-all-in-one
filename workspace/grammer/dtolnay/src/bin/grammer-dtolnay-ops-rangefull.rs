@@ -1,3 +1,30 @@
+/// grammer-dtolnay
+///
+/// ## Commands
+///
+/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-ops-rangefull```
+///
+/// ```cargo doc  --package grammer-dtolnay_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package grammer-dtolnay_bin```
+///
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `TODO`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `24`
+///
+/// ## Example
+/// `TODO`
+/// ```rust,no_run,ignore,compile_fail
+/// 
 use std::ops::RangeFull;
 
 trait Trait {
@@ -23,7 +50,6 @@ fn main() {
 }
 
 /*
-24
 The two rational possibilities are 1 or 24, depending on how the precedence of || .. .method() is disambiguated.
 
 As || ((..).method()), which is a closure whose body invokes our impl of Trait on RangeFull. In this case main would print 1. It would not print 13 because the fn() returned from (..).method() is never invoked by main.

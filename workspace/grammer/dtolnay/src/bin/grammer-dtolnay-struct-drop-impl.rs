@@ -1,3 +1,30 @@
+/// grammer-dtolnay
+///
+/// ## Commands
+///
+/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-struct-drop-impl```
+///
+/// ```cargo doc  --package grammer-dtolnay_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package grammer-dtolnay_bin```
+///
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `TODO`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `1234`
+///
+/// ## Example
+/// `TODO`
+/// ```rust,no_run,ignore,compile_fail
+/// 
 struct D(u8);
 
 impl Drop for D {
@@ -25,7 +52,6 @@ fn main() {
     print!("{}", x);
 }
 /*
-1243
 This question involves drop-placement. Where does D get dropped?
 
 In the first let-binding, we destructure a value of type S into its field x of type u8 as well as .. which represents "the rest of S". The part that is the rest of S is dropped immediately at that point because it no longer has an owner.

@@ -61,9 +61,6 @@ fn isCoPrime(a:i32, b:i32)-> i32{
     }
     0
 }
-
-/// Feel free to change value of a and b
-
 fn main(){
 let a = 18;
 let b = 5;

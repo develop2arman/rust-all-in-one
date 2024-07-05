@@ -1,3 +1,30 @@
+/// grammer-dtolnay
+///
+/// ## Commands
+///
+/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-macro-var```
+///
+/// ```cargo doc  --package grammer-dtolnay_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package grammer-dtolnay_bin```
+///
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `TODO`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `14`
+///
+/// ## Example
+/// `TODO`
+/// ```rust,no_run,ignore,compile_fail
+/// 
 fn main() {
     let x: u8 = 1;
     const K: u8 = 2;
@@ -16,7 +43,7 @@ fn main() {
     }
 }
 /*
-14
+
 This program prints 14 because hygiene in macro_rules! only applies to local variables.
 
 You can imagine hygiene as a way of assigning a color to each mention of the name of a local variable, allowing for there to be multiple distinguishable local variables in scope simultaneously with the same name.

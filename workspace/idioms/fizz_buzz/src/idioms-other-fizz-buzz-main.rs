@@ -24,7 +24,6 @@ use std::io::BufRead;
 ///```rust
 
 struct Solution;
-
 impl Solution {
     pub fn fizz_buzz(n: i32) -> Vec<String> {
         (1..=n)
@@ -38,15 +37,10 @@ impl Solution {
             .collect()
     }
 }
-
-
 fn main(){
     let stdin = io::stdin();
     let mut stdin_iterator = stdin.lock().lines();
-
     let n = stdin_iterator.next().unwrap().unwrap().trim().parse::<i32>().unwrap();
-
     let result= Solution::fizz_buzz(n);
     println!("{:?}",result);
-    //unimplemented!();
 }

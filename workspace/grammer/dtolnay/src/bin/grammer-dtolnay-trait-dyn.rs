@@ -1,3 +1,30 @@
+/// grammer-dtolnay
+///
+/// ## Commands
+///
+/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-trait-dyn```
+///
+/// ```cargo doc  --package grammer-dtolnay_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package grammer-dtolnay_bin```
+///
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `TODO`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `22222`
+///
+/// ## Example
+/// `TODO`
+/// //```rust,no_run,ignore,compile_fail
+/// 
 trait Trait {
     fn f(&self);
 }
@@ -13,7 +40,6 @@ impl Trait for bool {
         print!("2");
     }
 }
-
 fn main() {
     Trait::f(&true);
     Trait::f(&true as &dyn Trait);
@@ -22,7 +48,6 @@ fn main() {
     <bool as Trait>::f(&true);
 }
 /*
-22222
 This question contains a trait method Trait::f as well as an inherent method f on the trait object type dyn Trait.
 
 As far as I know, given that these names shadow each other, the inherent method is literally uncallable. There is currently no syntax in Rust for calling the inherent f on dyn Trait.

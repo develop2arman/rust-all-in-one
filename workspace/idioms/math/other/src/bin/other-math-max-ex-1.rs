@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p other-math-max_bin --bin other-math-max-main```
+/// ```cargo run -q -p other-math-max_bin --bin other-math-max-ex-1```
 ///
 /// ## What
 /// `loop int`
@@ -23,8 +23,9 @@
 ///```rust
 
 /// Find maximum within an array
+//let arr:[i64;5] = [1,2,23,4,5];
 fn maximum(_numbers: &[i64]) -> i64 {
-   //let arr:[i64;5] = [1,2,23,4,5];
+
    let mut large:i64 = 0;
    let mut i:usize = 0;
 
@@ -38,7 +39,6 @@ fn maximum(_numbers: &[i64]) -> i64 {
    }
   large
 }
-
 fn main(){
   println!("{:?}",maximum(&[5,10,1,4,90]));
 }

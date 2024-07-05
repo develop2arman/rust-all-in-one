@@ -291,18 +291,14 @@ members = [
    "workspace/data/arithmetic/educative",
    "workspace/data/arithmetic/master-rust",
 
-    "workspace/grammer/dtolnay",
+   "workspace/grammer/dtolnay",
 
-    "workspace/time/counter/rust-in-action",
+   "workspace/time/counter/rust-in-action",
 
+   "workspace/process/command/packtpub",
 
-
-
-    "workspace/process/command/packtpub",
-
-
-    "workspace/cpu/rust-in-action",
-    "workspace/cpu/rust-doc",
+   "workspace/cpu/rust-in-action",
+   "workspace/cpu/rust-doc",
 
     "workspace/env/packtpub",
 

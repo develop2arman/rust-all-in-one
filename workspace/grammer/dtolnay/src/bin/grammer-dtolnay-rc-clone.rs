@@ -1,3 +1,30 @@
+/// grammer-dtolnay
+///
+/// ## Commands
+///
+/// ```cargo run -q -p grammer-dtolnay_bin --bin grammer-dtolnay-rc-clone```
+///
+/// ```cargo doc  --package grammer-dtolnay_bin --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package grammer-dtolnay_bin```
+///
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `TODO`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `111011`
+///
+/// ## Example
+/// `TODO`
+/// ```rust,no_run,ignore,compile_fail
+/// 
 use std::rc::Rc;
 
 
@@ -25,8 +52,6 @@ fn main() {
     p(c.clone());
 }
 /*
-111011
-Correct!
 
 Both of our non-reference types, () and A, are zero-sized types (ZST). The function p<X> will print 0 if it is passed a value of type X = () or X = A, and it will print 1 if passed a reference X = &() or X = &A regardless of exactly how big pointers happen to be.
 
