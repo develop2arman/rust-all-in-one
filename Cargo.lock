@@ -3281,6 +3281,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust-doc-unsafe-send-sync_bin"
+version = "0.1.0"
+
+[[package]]
 name = "rust-doc-wrapper_bin"
 version = "0.1.0"
 

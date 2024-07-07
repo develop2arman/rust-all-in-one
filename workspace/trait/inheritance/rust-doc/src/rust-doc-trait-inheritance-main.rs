@@ -27,13 +27,9 @@
 ///  `TODO`
 ///
 ///
-
 trait Person {
     fn name(&self) -> String;
 }
-
-// Person is a supertrait of Student.
-// Implementing Student requires you to also impl Person.
 trait Student: Person {
     fn university(&self) -> String;
 }
@@ -41,13 +37,9 @@ trait Student: Person {
 trait Programmer {
     fn fav_language(&self) -> String;
 }
-
-// CompSciStudent (computer science student) is a subtrait of both Programmer
-// and Student. Implementing CompSciStudent requires you to impl both supertraits.
 trait CompSciStudent: Programmer + Student {
     fn git_username(&self) -> String;
 }
-
 fn comp_sci_student_greeting(student: &dyn CompSciStudent) -> String {
     format!(
         "My name is {} and I attend {}. My favorite language is {}. My Git username is {}",
@@ -57,8 +49,38 @@ fn comp_sci_student_greeting(student: &dyn CompSciStudent) -> String {
         student.git_username()
     )
 }
-
+struct ComputerScienceStudent {
+    name: String,
+    university: String,
+    fav_language: String,
+    git_username: String,
+}
+impl Person for ComputerScienceStudent {
+    fn name(&self) -> String {
+        self.name.clone()
+    }
+}
+impl Student for ComputerScienceStudent {
+    fn university(&self) -> String {
+        self.university.clone()
+    }
+}
+impl Programmer for ComputerScienceStudent {
+    fn fav_language(&self) -> String {
+        self.fav_language.clone()
+    }
+}
+impl CompSciStudent for ComputerScienceStudent {
+    fn git_username(&self) -> String {
+        self.git_username.clone()
+    }
+}
 fn main() {
-
-    unimplemented!();
+    let cs_student = ComputerScienceStudent {
+        name: "John Doe".to_string(),
+        university: "Example University".to_string(),
+        fav_language: "Rust".to_string(),
+        git_username: "johndoe123".to_string(),
+    };
+    println!("{}", comp_sci_student_greeting(&cs_student));
 }

@@ -211,7 +211,7 @@ impl<T, U> GenericStruct<U> where (U, isize): HasAssocType<Ty = T> { /* ... */ }
 
 ### Non-Constraits
  
- The rest of these are errors, since they have type or const parameters that do not constrain.
+The rest of these are errors, since they have type or const parameters that do not constrain.
  `T` does not constrain since it does not appear at all.
 
 ```rust,no_run,compile_fail

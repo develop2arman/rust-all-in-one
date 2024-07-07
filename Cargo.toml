@@ -308,6 +308,7 @@ members = [
     "workspace/unsafe/extern-ffi/rust-doc",
     "workspace/unsafe/safe-abstraction/rust-doc",
     "workspace/unsafe/safe-static-mut/rust-doc",
+    "workspace/unsafe/unsafe-send-sync/rust-doc",
 
     "workspace/oop/design_patterns/behavioral/state-pattern/rust-doc",
     "workspace/oop/design_patterns/behavioral/lpxxn",
