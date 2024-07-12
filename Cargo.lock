@@ -2118,6 +2118,10 @@ name = "other-math-max_bin"
 version = "0.1.0"
 
 [[package]]
+name = "other-mem_bin"
+version = "0.1.0"
+
+[[package]]
 name = "other-option_bin"
 version = "0.1.0"
 

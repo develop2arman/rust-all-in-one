@@ -28,13 +28,11 @@
 trait Trait {
     fn f(&self);
 }
-
 impl<'a> dyn Trait + 'a {
     fn f(&self) {
         print!("1");
     }
 }
-
 impl Trait for bool {
     fn f(&self) {
         print!("2");

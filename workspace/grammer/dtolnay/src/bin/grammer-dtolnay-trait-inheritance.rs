@@ -19,7 +19,7 @@
 /// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
 ///
 /// # Return
-/// `11`
+/// `1122`
 ///
 /// ## Example
 /// `TODO`
@@ -30,33 +30,26 @@ trait Base {
         print!("1");
     }
 }
-
 trait Derived: Base {
     fn method(&self) {
         print!("2");
     }
 }
-
 struct BothTraits;
 impl Base for BothTraits {}
 impl Derived for BothTraits {}
-
 fn dynamic_dispatch(x: &dyn Base) {
     x.method();
 }
-
 fn static_dispatch<T: Base>(x: T) {
     x.method();
 }
-
 fn dynamic_dispatch_derived(y: &dyn Derived) {
-   // y.method();
+    Derived::method(y);
 }
-
 fn static_dispatch_derived<T: Derived>(y: T) {
-   // y.method();
+    Derived::method(&y);
 }
-
 fn main() {
     dynamic_dispatch(&BothTraits);
     static_dispatch(BothTraits);

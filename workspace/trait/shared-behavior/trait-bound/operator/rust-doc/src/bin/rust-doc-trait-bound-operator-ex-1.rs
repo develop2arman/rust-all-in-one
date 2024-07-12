@@ -52,12 +52,21 @@ impl Add for Point {
 
 
 //#![allow(unused)]
-fn main() {
+use std::ops::Add;
+struct Millimeters(u32);
+struct Meters(u32);
 trait Add<Rhs=Self> {
     type Output;
-
+ 
     fn add(self, rhs: Rhs) -> Self::Output;
 }
-}
+impl Add<Meters> for Millimeters {
+     type Output = Millimeters;
+  
+     fn add(self, other: Meters) -> Millimeters {
+         Millimeters(self.0 + (other.0 * 1000))
+     }
+ }
+
 
 

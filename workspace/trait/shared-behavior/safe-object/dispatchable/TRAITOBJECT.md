@@ -61,7 +61,6 @@ fn main() {
 use std::rc::Rc;
 use std::sync::Arc;
 use std::pin::Pin;
-
 trait TraitMethods {
     fn by_ref(self: &Self) {}
     fn by_ref_mut(self: &mut Self) {}

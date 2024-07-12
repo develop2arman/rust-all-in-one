@@ -220,6 +220,7 @@ members = [
    "workspace/duplication/rc/rust-in-action",
 
     "workspace/memory/size/master-rust",
+    "workspace/memory/other",
     "workspace/memory/piston/rust-in-action",
     "workspace/memory/winapi/rust-in-action",
     "workspace/memory/allocator/code-like-pro",
@@ -304,7 +305,7 @@ members = [
 
     "workspace/libc/code-like-pro",
 
-     "workspace/unsafe/extern-ffi/ultimate",
+    "workspace/unsafe/extern-ffi/ultimate",
     "workspace/unsafe/extern-ffi/rust-doc",
     "workspace/unsafe/safe-abstraction/rust-doc",
     "workspace/unsafe/safe-static-mut/rust-doc",

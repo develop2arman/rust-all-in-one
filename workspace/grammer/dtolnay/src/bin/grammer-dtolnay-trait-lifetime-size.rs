@@ -38,7 +38,6 @@ fn main() {
         true => print!("1"),
         false => print!("0"),
     }
-
     match '?'.is_reference() {
         true => print!("1"),
         false => {

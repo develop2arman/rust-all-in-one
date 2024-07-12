@@ -24,12 +24,10 @@ use std::arch::asm;
 /// //```rust,compile_fail,ignore
 
 
-
 extern "C" fn foo(arg: i32) -> i32 {
     println!("arg = {}", arg);
     arg * 2
 }
-
 fn call_foo(arg: i32) -> i32 {
     unsafe {
         let result;
@@ -48,7 +46,6 @@ fn call_foo(arg: i32) -> i32 {
         result
     }
 }
-
 fn main(){
     println!("{}",call_foo(2));
 }

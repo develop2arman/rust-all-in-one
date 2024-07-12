@@ -169,7 +169,7 @@ fn main(){
 ```
 
 
-[4] You have a program to show the best vacation spots. It has multiple threads so eventually the API team will update the list separately from the UX team. How does move help us write better code in this code snippet?
+**[4]** You have a program to show the best vacation spots. It has multiple threads so eventually the API team will update the list separately from the UX team. How does move help us write better code in this code snippet?
 
 ```rust 
 #  fn main(){
@@ -371,7 +371,7 @@ fn show_schedule(name:String){
 
 ---
 
-[8] Which of the following is **NOT equvalent**  to the trait bounds below?
+**[8]** Which of the following is **NOT equvalent**  to the trait bounds below?
 
 
 ```rust 
@@ -533,7 +533,7 @@ struct Employee{
 
 ---
 
-[11] You have some data that needs to be processed multi-threaded. However when trying to save the data into a HashMap the compiler throws an error saying hash_map was moved. How do you synchronize and get data out of threads?
+**[11]** You have some data that needs to be processed multi-threaded. However when trying to save the data into a HashMap the compiler throws an error saying hash_map was moved. How do you synchronize and get data out of threads?
 
 ```rust 
 # fn main(){
