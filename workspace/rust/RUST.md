@@ -30,11 +30,8 @@ https://codecov.io/gh/arman2develop/rust-all-in-one/graphs/tree.svg?token=OXWKHZ
  Hostile environments: In situations where **safety** is of utmost concern, Rust’s guarantees are a perfect fit.
 
 - [x] Concurrent
-
 - [x] Safe programming
-
 - [x] Processing
-
 - [x] Replacing legacy C or C++
 
  npm chose Rust to handle CPU-bound bottlenecks.

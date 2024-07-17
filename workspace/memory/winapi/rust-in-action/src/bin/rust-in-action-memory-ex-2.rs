@@ -5,7 +5,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-memory-bin --bin  rust-in-action-memory-ex-2```
+/// ```cargo run -q -p rust-in-action-memory-winapi_bin --bin  rust-in-action-memory-ex-2```
 ///
 /// ## What
 /// `Memory Scan 2`
@@ -23,17 +23,31 @@
 /// ## Example
 /// //``rust,no_run,compile_fail,ignore
 ///
-fn main() {
-    let mut n_nonzero = 0;
+/// Wrong
+// fn main() {
+//     let mut n_nonzero = 0;
+//     for i in 1..100 {    
+//         let ptr = i as *const u8;
+//         let byte_at_addr = unsafe { *ptr };
 
-    for i in 1..10000 {    // <1>
-        let ptr = i as *const u8;
-        let byte_at_addr = unsafe { *ptr };
-
-        if byte_at_addr != 0 {
-            n_nonzero += 1;
+//         if byte_at_addr != 0 {
+//             n_nonzero += 1;
+//         }
+//     }
+//     println!("non-zero bytes in memory: {}", n_nonzero);
+// }
+// error: Segmentation fault
+//Correct
+ fn main() {
+         let mut n_nonzero = 0;
+        let data: Vec<u8> = (1..100).map(|i| i as u8).collect();
+        for &byte in &data {
+            if byte != 0 {
+                n_nonzero += 1;
+            }
         }
-    }
-
-    println!("non-zero bytes in memory: {}", n_nonzero);
+     
+        println!("non-zero bytes in memory: {}", n_nonzero);
 }
+     //Output: non-zero bytes in memory: 99
+   

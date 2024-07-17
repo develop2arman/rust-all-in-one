@@ -1,7 +1,4 @@
 #![allow(dead_code, unused_variables)]
-
-
-
 /// code-like-pro-allocator-ex-2
 ///
 /// ## Commands

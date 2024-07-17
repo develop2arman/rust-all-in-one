@@ -5,7 +5,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-memory-bin --bin  rust-in-action-memory-ex-1```
+/// ```cargo run -q -p rust-in-action-memory-winapi_bin --bin  rust-in-action-memory-ex-1```
 ///
 /// ## What
 /// `Memory Scan 1`
@@ -27,20 +27,17 @@
 ///
 /// ## Example
 /// //``rust,no_run,compile_fail,ignore
-static GLOBAL: i32 = 1000;             // <1>
-
+static GLOBAL: i32 = 1000;             
 fn noop() -> *const i32 {
-    let noop_local = 12345;            // <2>
-    &noop_local as *const i32          // <3>
+    let noop_local = 12345;            
+    &noop_local as *const i32         
 }
-
 fn main() {
-    let local_str = "a";               // <4>
-    let local_int = 123;               // <4>
-    let boxed_str = Box::new('b');     // <4>
-    let boxed_int = Box::new(789);     // <4>
-    let fn_int = noop();               // <4>
-
+    let local_str = "a";              
+    let local_int = 123;              
+    let boxed_str = Box::new('b');    
+    let boxed_int = Box::new(789);    
+    let fn_int = noop();              
     println!("GLOBAL:    {:p}", &GLOBAL as *const i32);
     println!("local_str: {:p}", local_str as *const str);
     println!("local_int: {:p}", &local_int as *const i32);
