@@ -35,8 +35,6 @@ use std::thread::{JoinHandle,spawn,sleep};
 use std::sync::mpsc::{channel,Sender,Receiver};
 use std::sync::{Arc,Mutex};
 use std::time::{Duration};
-
-
 trait FnBox {
     fn call_box(self:Box<Self>);
 }
@@ -46,17 +44,11 @@ impl<F:FnOnce()> FnBox for F{
         self();
     }
 }
-
-
-
 type Job = Box<dyn FnBox + 'static + Send>;
-
-
 pub struct ThreadPool{
     handles:Vec<JoinHandle<()>>,
     ch:Sender<Job>,
 }
-
 impl ThreadPool{
     pub fn new(n:usize)->Self{
         let (cs,cr ) = channel::<Job>();
@@ -74,13 +66,11 @@ impl ThreadPool{
                 }
             }));
         }
-
         ThreadPool {
             handles:handles,
             ch:cs,
         }
     }
-
     pub fn add<F:FnOnce() +'static + Send>(&self,f:F){
         self.ch.send(Box::new(f)).unwrap();
     }
@@ -93,21 +83,16 @@ impl ThreadPool{
     }
 }
 
-
-
 fn main() {
     let p = ThreadPool::new(10);
 
-    for i in 0 ..100 {
+    for i in 0 ..44 {
         let j = i;
         p.add(move||{
             sleep(Duration::from_millis(500));
             println!("J = {}",j);
         })
     }
-
     p.end();
     println!("DONE");
-
-
 }

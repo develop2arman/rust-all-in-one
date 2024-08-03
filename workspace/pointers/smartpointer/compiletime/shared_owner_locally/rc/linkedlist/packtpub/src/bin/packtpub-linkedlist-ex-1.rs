@@ -34,22 +34,17 @@ pub enum LinkedList<T>{
     Tail,
     Head(T,Box<LinkedList<T>>),
 }
-
 use self::LinkedList::*;
-
 impl<T> LinkedList<T>{
     pub fn empty()->Self{
         Tail
     }
-
     pub fn new(t:T)->Self{
         Head(t,Box::new(Tail))
     }
-
     pub fn push(self,t:T)->Self {
         Head(t,Box::new(self))
     }
-
     pub fn push_back(&mut self, t:T){
         match self {
             Tail => {
@@ -60,10 +55,7 @@ impl<T> LinkedList<T>{
             }
         }
     }
-
 }
-
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -73,9 +65,7 @@ mod tests {
         l = l.push(4);
         assert_eq!(l,Head(4,Box::new(Head(3,Box::new(Tail)))));
         l.push_back(2);
-
         assert_eq!(l,Head(4,Box::new(Head(3,Box::new(Head(2,Box::new(Tail)))))));
-
     }
 }
 fn main(){

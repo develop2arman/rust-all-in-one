@@ -30,18 +30,12 @@
 ///  `TODO`
 ///
 use std::rc::Rc;
-
 fn main(){
     let five = Rc::new(5);
-
     let weak_five = Rc::downgrade(&five);
-
     let strong_five: Option<Rc<_>> = weak_five.upgrade();
     assert!(strong_five.is_some());
     assert!(weak_five.upgrade().is_none());
-
-    // Destroy all strong pointers.
     drop(strong_five);
     drop(five);
-
 }

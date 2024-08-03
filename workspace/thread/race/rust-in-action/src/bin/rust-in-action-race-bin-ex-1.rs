@@ -23,7 +23,7 @@
 ///
 /// ```rust,compile_fail,no_run,ignore
 ///fn main() {
-///let reference_to_nothing = dangle();
+///    let reference_to_nothing = dangle();
 ///}
 ///
 ///fn dangle() -> &String {

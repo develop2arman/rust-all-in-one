@@ -33,7 +33,6 @@ use std::thread;
 
 fn main(){
 let val = Arc::new(AtomicUsize::new(5));
-
 for _ in 0..10 {
     let val = Arc::clone(&val);
 

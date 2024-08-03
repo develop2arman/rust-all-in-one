@@ -29,13 +29,7 @@
 /// //rust,compile_fail,no_run,ignore
 ///  `TODO`
 ///
-enum List {
-    Cons(i32, Rc<List>),
-    Nil,
-}
 
-use crate::List::{Cons, Nil};
-use std::rc::Rc;
 /*
 fn main() {
     let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
@@ -54,7 +48,13 @@ he implementation of the Drop trait decreases the reference count automatically 
 
 
 */
+enum List {
+    Cons(i32, Rc<List>),
+    Nil,
+}
 
+use crate::List::{Cons, Nil};
+use std::rc::Rc;
 fn main() {
     let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
     let da=Rc::downgrade(&a);
@@ -65,7 +65,6 @@ fn main() {
     {   let da=Rc::downgrade(&a);
         let c = Cons(4, Rc::clone(&a));
         println!("count after creating c = {}", Rc::weak_count(&a));
-         //
     }
     println!("count after c goes out of scope = {}", Rc::weak_count(&a));
      let da=Rc::downgrade(&a);

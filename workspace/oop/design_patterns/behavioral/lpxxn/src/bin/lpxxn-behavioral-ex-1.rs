@@ -35,7 +35,6 @@ trait Handler<'a> {
     fn set_next(&mut self, next: &'a dyn Handler<'a>) -> &mut dyn Handler<'a>;
     fn handle(&self, request: &str);
 }
-
 struct AHandler<'a> {
     name: String,
     next: Option<&'a dyn Handler<'a>>,
@@ -57,7 +56,6 @@ impl<'a> Handler<'a> for AHandler<'a> {
         }
     }
 }
-
 struct BHandler<'a> {
     next: Option<&'a dyn Handler<'a>>,
 }
@@ -78,25 +76,19 @@ impl<'a> Handler<'a> for BHandler<'a> {
         }
     }
 }
-
 struct Client;
 impl<'a> Client {
     fn handle<T: Handler<'a>>(h: &T) {
         h.handle("do something...")
     }
 }
-
 fn main() {
     let a1 = AHandler::new("dog".to_string());
     Client::handle(&a1);
-
     println!();
     let mut b = BHandler::new();
     let mut a2 = AHandler::new("cat".to_string());
     b.set_next(&a1);
-    // or
-    // let h = b.set_next(&a1);
-    //a2.set_next(h);
     a2.set_next(&b);
     Client::handle(&a2);
 }

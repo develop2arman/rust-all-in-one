@@ -31,7 +31,6 @@ struct Node<T> where T: Sized + Clone {
     value: T,
     next: Link<T>,
 }
-
 impl<T> Node<T> where T: Sized + Clone {
     fn new(value: T) -> Rc<RefCell<Node<T>>> {
         Rc::new(RefCell::new(Node {
@@ -40,22 +39,17 @@ impl<T> Node<T> where T: Sized + Clone {
         }))
     }
 }
-
 type Link<T> = Option<Rc<RefCell<Node<T>>>>;
-
-
 #[derive(Clone)]
 pub struct List<T> where T: Sized + Clone {
     head: Link<T>,
     tail: Link<T>,
     pub length: usize,
 }
-
 impl<T> List<T> where T: Sized + Clone {
     pub fn new_empty() -> List<T> {
         List { head: None, tail: None, length: 0 }
     }
-
     pub fn append(&mut self, value: T) {
         let new = Node::new(value);
         match self.tail.take() {
@@ -65,7 +59,6 @@ impl<T> List<T> where T: Sized + Clone {
         self.length += 1;
         self.tail = Some(new);
     }
-
     pub fn pop(&mut self) -> Option<T> {
         self.head.take().map(|head| {
             if let Some(next) = head.borrow_mut().next.take() {
@@ -82,14 +75,11 @@ impl<T> List<T> where T: Sized + Clone {
         })
     }
 }
-
-
 #[cfg(test)]
 mod tests {
     use super::*;
     extern crate test;
     use test::Bencher;
-
     #[bench]
     fn bench_list_append(b: &mut Bencher) {
         let mut list = List::new_empty();
@@ -103,7 +93,6 @@ mod tests {
         assert_eq!(list.length, 0);
         assert_eq!(list.pop(), None);
     } 
-
     #[test]
     fn test_list_append() {
         let mut list = List::new_empty();
@@ -114,8 +103,6 @@ mod tests {
         list.append(1);
         assert_eq!(list.length, 5);
     }
-
-
     #[test]
     fn test_list_pop() {
         let mut list = List::new_empty();

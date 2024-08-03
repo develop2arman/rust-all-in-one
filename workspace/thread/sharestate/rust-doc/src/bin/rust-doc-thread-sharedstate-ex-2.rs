@@ -26,43 +26,22 @@
 /// `nothig`
 ///
 /// ## Example
-/// In this example, we’ve specified a lifetime parameter 'a for the parameter x and the return type, but not for the parameter y, because the lifetime of y does not have any relationship with the lifetime of x or the return value.
+///
 ///
 /// ```compile_fail,ignore
-use std::sync::Mutex;
+use std::sync::{Arc, Mutex};
 use std::thread;
-use std::rc::Rc;
 
 fn main() {
-    let counter = Mutex::new(0);
-    //let mut handles = vec![];
-
-    // for _ in 0..10 {
-    //     let handle = thread::spawn(move || {
-    //         let mut num = counter.lock().unwrap();
-
-    //         *num += 1;
-    //     });
-    //     handles.push(handle);
-    // }
-
-    // for handle in handles {
-    //     handle.join().unwrap();
-    // }
-
-    // println!("Result: {}", *counter.lock().unwrap());
-}
-/* Posibility multithread by rc:  Attempting to use Rc<T> to allow multiple threads to own the Mutex<T>
-
-fn main() {
-    let counter = Rc::new(Mutex::new(0));
+    // Wrap the Mutex in an Arc to allow sharing across threads
+    let counter = Arc::new(Mutex::new(0));
     let mut handles = vec![];
 
     for _ in 0..10 {
-        let counter = Rc::clone(&counter);
+        // Clone the Arc to increase the reference count but not duplicate the data
+        let counter = Arc::clone(&counter);
         let handle = thread::spawn(move || {
             let mut num = counter.lock().unwrap();
-
             *num += 1;
         });
         handles.push(handle);
@@ -74,5 +53,3 @@ fn main() {
 
     println!("Result: {}", *counter.lock().unwrap());
 }
-
-*/

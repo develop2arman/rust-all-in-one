@@ -26,20 +26,16 @@
 /// `100`
 ///
 /// ## Example
-/// In this example, we’ve specified a lifetime parameter 'a for the parameter x and the return type, but not for the parameter y, because the lifetime of y does not have any relationship with the lifetime of x or the return value.
 ///
 /// ```compile_fail,ignore
 
 use std::{thread, time};
-
  fn main() {
    let start = time::Instant::now();
-
    let handler_1 = thread::spawn(move || {
      let pause = time::Duration::from_millis(300);
        thread::sleep(pause.clone());
    });
-
    let handler_2 = thread::spawn(move || {
      let pause = time::Duration::from_millis(300);
        thread::sleep(pause.clone());
@@ -51,8 +47,19 @@ use std::{thread, time};
    handler_1.join().unwrap();
    handler_2.join().unwrap();
    handler_3.join().unwrap();
-
    let finish = time::Instant::now();
-
    println!("{:?}", finish.duration_since(start));
  }
+/*
+
+    The program starts by recording the current instant in time (start) using time::Instant::now().
+
+    Three threads are spawned, each sleeping for 300 milliseconds. These threads are represented by handler_1, handler_2, and handler_3.
+
+    The main thread waits for each of the spawned threads to complete their execution using join(). This ensures that the main thread will only proceed after all threads have finished.
+
+    Once all threads have completed, the program records another instant in time (finish) and calculates the duration since the start of the program using finish.duration_since(start).
+
+    Finally, the program prints the calculated duration, showing the total time taken for all threads to complete their execution.
+
+*/

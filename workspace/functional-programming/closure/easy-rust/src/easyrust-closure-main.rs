@@ -32,7 +32,6 @@ struct City {
     years: Vec<u32>,
     populations: Vec<u32>,
 }
-
 impl City {
     fn new(name: &str, years: Vec<u32>, populations: Vec<u32>) -> Self {
 
@@ -42,9 +41,7 @@ impl City {
             populations,
         }
     }
-
     fn city_data<F>(&mut self, mut f: F) // We bring in self, but only f is generic F. f is the closure
-
     where
         F: FnMut(&mut Vec<u32>, &mut Vec<u32>), // The closure takes mutable vectors of u32
                                                 // which are the year and population data
@@ -54,7 +51,6 @@ impl City {
                                                   // We can do whatever we want with the closure
     }
 }
-
 fn main() {
     let years = vec![
         1372, 1834, 1851, 1881, 1897, 1925, 1959, 1989, 2000, 2005, 2010, 2020,
@@ -65,9 +61,7 @@ fn main() {
     ];
     // Now we can create our city
     let mut tallinn = City::new("Tallinn", years, populations);
-
     // Now we have a .city_data() method that has a closure. We can do anything we want.
-
     // First let's put the data for 5 years together and print it.
     tallinn.city_data(|city_years, city_populations| { // We can call the input anything we want
         let new_vec = city_years
@@ -77,13 +71,11 @@ fn main() {
             .collect::<Vec<(_, _)>>(); // Tell Rust to decide the type inside the tuple
         println!("{:?}", new_vec);
     });
-
     // Now let's add some data for the year 2030
     tallinn.city_data(|x, y| { // This time we just call the input x and y
         x.push(2030);
         y.push(500_000);
     });
-
     // We don't want the 1834 data anymore
     tallinn.city_data(|x, y| {
         let position_option = x.iter().position(|x| *x == 1834);
@@ -96,7 +88,6 @@ fn main() {
             y.remove(position);
         }
     });
-
     println!(
         "Years left are {:?}\nPopulations left are {:?}",
         tallinn.years, tallinn.populations

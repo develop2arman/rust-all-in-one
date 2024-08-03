@@ -40,7 +40,6 @@ fn main() {
       println!("Thread {} Sum: {}", i, local_sum);
     })
 }).collect();
-
   for handle in handles {
     handle.join().unwrap();
   }

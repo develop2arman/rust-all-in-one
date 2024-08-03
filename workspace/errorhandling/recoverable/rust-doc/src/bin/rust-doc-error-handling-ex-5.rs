@@ -43,24 +43,42 @@
 //     .chain_err(|| ErrorKind::RandomResponseError(body))
 // }
 
-// fn run() -> Result<()> {
-//   let url =
-//     format!("https://www.random.org/integers/?num=1&min=0&max=10&col=1&base=10&format=plain");
-//   let response = reqwest::blocking::get(&url)?;
-//   let random_value: u32 = parse_response(response)?;
-//   println!("a random number between 0 and 10: {}", random_value);
-//   Ok(())
-// }
-
+use std::io;
+use reqwest::{Client, Error as ReqwestError};
+use std::convert::Infallible;
+// Implementing parse_response to parse the response body as a u32
+async fn parse_response(response: reqwest::Response) -> Result<u32, Box<dyn std::error::Error>> {
+    let body = response.text().await?;
+    // Assuming the response body contains a single integer value
+    let random_value: u32 = body.trim().parse()?;
+    Ok(random_value)
+}
+#[derive(Debug)]
+enum RandomResponseError {
+    CustomError,
+}
+impl std::fmt::Display for RandomResponseError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "Custom error")
+    }
+}
+impl std::error::Error for RandomResponseError {}
 fn main() {
-    unimplemented!()
-//   if let Err(error) = run() {
-//     match *error.kind() {
-//       ErrorKind::Io(_) => println!("Standard IO error: {:?}", error),
-//       ErrorKind::Reqwest(_) => println!("Reqwest error: {:?}", error),
-//       ErrorKind::ParseIntError(_) => println!("Standard parse int error: {:?}", error),
-//       ErrorKind::RandomResponseError(_) => println!("User defined error: {:?}", error),
-//       _ => println!("Other error: {:?}", error),
-//     }
-//   }
+    // Assuming async runtime setup is done elsewhere
+    tokio::runtime::Runtime::new().unwrap().block_on(async {
+        if let Err(error) = run().await {
+            match error.downcast::<ReqwestError>() {
+                Ok(ReqwestError::StatusCode(status_code)) => println!("HTTP Status Code Error: {:?}", status_code),
+                _ => println!("Other error: {:?}", error),
+            }
+        }
+    });
+}
+async fn run() -> Result<(), Box<dyn std::error::Error>> {
+    let client = Client::new();
+    let url = format!("https://www.random.org/integers/?num=1&min=0&max=10&col=1&base=10&format=plain");
+    let response = client.get(&url).send().await?;
+    let random_value: u32 = parse_response(response).await?;
+    println!("A random number between 0 and 10: {}", random_value);
+    Ok(())
 }

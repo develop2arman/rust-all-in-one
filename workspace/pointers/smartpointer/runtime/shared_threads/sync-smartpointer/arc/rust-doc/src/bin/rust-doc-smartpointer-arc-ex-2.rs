@@ -27,30 +27,41 @@ use std::sync::{Arc, Weak};
 /// ## Example
 /// `TODO`
 
+use std::thread;
 
-fn main(){
+fn main() {
+    // Create a new Gadget instance.
+    let gadget = Gadget::new();
 
+    // Demonstrate sharing the Gadget across threads.
+    let mut handles = vec![];
 
+    for _ in 0..10 {
+        let gadget_clone = gadget.clone();
+        let handle = thread::spawn(move || {
+            println!("Thread: {:?}", gadget_clone.me());
+        });
+        handles.push(handle);
+    }
+    // Wait for all threads to finish.
+    for handle in handles {
+        handle.join().unwrap();
+    }
+}
 
+#[derive(Debug)]
 struct Gadget {
     me: Weak<Gadget>,
 }
-
 impl Gadget {
     /// Construct a reference counted Gadget.
     fn new() -> Arc<Self> {
-        // `me` is a `Weak<Gadget>` pointing at the new allocation of the
-        // `Arc` we're constructing.
         Arc::new_cyclic(|me| {
-            // Create the actual struct here.
             Gadget { me: me.clone() }
         })
     }
-
     /// Return a reference counted pointer to Self.
     fn me(&self) -> Arc<Self> {
         self.me.upgrade().unwrap()
     }
-}
-
 }

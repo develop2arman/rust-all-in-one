@@ -22,7 +22,6 @@
 /// ## Example
 /// //``rust,no_run,compile_fail,ignore
 use std::panic;
-
 fn main() {
     panic::catch_unwind(|| {
         panic!("Panicking!");

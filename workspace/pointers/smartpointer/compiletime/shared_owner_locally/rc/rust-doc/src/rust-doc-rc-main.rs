@@ -26,10 +26,8 @@ use std::rc::Rc;
 
 #[derive(Debug)]
 struct GroundStation {}
-
 fn main() {
-  let base = Rc::new(GroundStation {});   // <2>
-
-  println!("{:?}", base);                 // <3>
-  println!("{:?}", base);                 // <3>
+  let base = Rc::new(GroundStation {});   
+  println!("{:?}", base);                
+  println!("{:?}", base);                 
 }

@@ -1,9 +1,5 @@
 #![allow(dead_code, unused_variables)]
-use std::error::Error;
-use std::fmt;
-use std::convert::From;
-use std::io::Error as IoError;
-use std::str::Utf8Error;
+
 /// rip-error-handling-ex-2
 ///
 /// ## Commands
@@ -25,7 +21,12 @@ use std::str::Utf8Error;
 ///
 /// ## Example
 /// //```rust,no_run,compile_fail,ignore
-
+use std::error::Error;
+use std::fmt;
+use std::convert::From;
+use std::io::Error as IoError;
+use std::str::Utf8Error;
+use std::str;
  /// Allow the use of "{:?}" format specifier
 #[derive(Debug)]
 enum CustomError {
@@ -78,6 +79,18 @@ impl From<Utf8Error> for CustomError {
     }
 }
 fn main(){
+   // Simulate an I/O error
+   let io_error = IoError::new(std::io::ErrorKind::NotFound, "File not found");
+   let custom_io_error = CustomError::from(io_error);
+   println!("Handling I/O error: {:?}", custom_io_error);
 
-unimplemented!();
+//    // Simulate a UTF-8 decoding error
+//    let bytes = b"\xFF"; // Example byte sequence
+//    let utf8_error = Utf8Error::invalid_utf8_sequence(bytes, std::str::Utf8Encoding::UTF_8);
+//    let custom_utf8_error = CustomError::from(utf8_error);
+//    println!("Handling UTF-8 error: {:?}", custom_utf8_error);
+
+   // Handling an unknown error
+   let custom_other_error = CustomError::Other;
+   println!("Handling other error: {:?}", custom_other_error);
 }

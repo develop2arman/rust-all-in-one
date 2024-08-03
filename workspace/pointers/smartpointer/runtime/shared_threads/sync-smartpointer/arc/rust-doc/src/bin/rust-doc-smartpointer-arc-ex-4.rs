@@ -31,12 +31,19 @@
 //#![feature(new_uninit)]
 //use std::sync::Arc;
 
-fn main(){
-
-unimplemented!();
 ////let mut zero = Arc::<u32>::new_uninit();
 //let zero = Arc::<u32>::try_new_zeroed().unwrap();
 //let  zero = unsafe {zero.assume_init() };
 
 //assert_eq!(zero, 0)
-}
+//}
+// #![feature(new_uninit, allocator_api)]
+
+// use std::sync::Arc;
+
+// fn main(){
+// let zero = Arc::<u32>::try_new_zeroed()?;
+// let zero = unsafe { zero.assume_init() };
+
+// assert_eq!(*zero, 0);
+// }

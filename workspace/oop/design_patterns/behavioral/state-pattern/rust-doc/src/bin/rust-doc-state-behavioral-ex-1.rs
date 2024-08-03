@@ -4,11 +4,11 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-pointers_bin --bin rust-doc-state-behaviora-ex-1```
+/// ```cargo run -q -p rust-doc-state-behavioral_bin --bin rust-doc-state-behavioral-ex-1```
 ///
-/// ```cargo doc  --package rust-doc-pointers_bin --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-doc-state-behavioral_bin --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-doc-pointers_bin```
+/// ```cargo test --doc  --package rust-doc-state-behavioral_bin```
 ///
 /// ## What
 ///If we were to create an alternative implementation that didn’t use the state pattern, we might instead use match expressions in the methods on Post or even in the main code that checks the state of the post and changes behavior in those places. That would mean we would have to look in several places to understand all the implications of a post being in the published state! This would only increase the more states we added: each of those match expressions would need another arm.

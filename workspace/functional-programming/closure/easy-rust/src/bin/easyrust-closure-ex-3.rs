@@ -31,8 +31,6 @@ where
 {
     f();
 }
-
-
 fn main() {
     let some_vec = vec![9, 8, 10];
     do_something(|| {

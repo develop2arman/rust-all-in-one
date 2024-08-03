@@ -31,7 +31,6 @@
 struct Product {
     parts: Vec<String>,
 }
-
 impl Product {
     fn new() -> Product {
         Product { parts: Vec::new() }
@@ -45,7 +44,6 @@ impl Product {
         println!("{0}{1}{0}", "*".repeat(10), "*".repeat(parts_list.len()));
     }
 }
-
 /**
  * The Builder trait specifies methods for creating the different parts of
  * the Product objects.

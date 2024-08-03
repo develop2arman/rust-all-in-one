@@ -11,7 +11,6 @@ For example, you can't create a HashMap as a static value because it requires a 
 
 ```rust
 use std::sync::Mutex;
-
 lazy_static! {
     static ref ITEMS: Mutex<Vec<u64>> = {
         let mut v = vec![];

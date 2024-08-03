@@ -1,7 +1,5 @@
 #![allow(dead_code, unused_variables)]
-use std::error;
-use std::fmt;
-use std::io;//::{self,BufRead};
+
 
 /// rust-egg-error-handling-ex-1
 ///
@@ -26,6 +24,27 @@ use std::io;//::{self,BufRead};
 /// //``rust,no_run,compile_fail,ignore
 
 
+use std::error;
+use std::fmt;
+use std::io;//::{self,BufRead};
+#[derive(PartialEq, Debug)]
+enum CreationError {
+    Negative,
+    Zero,
+}
+impl fmt::Display for CreationError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        f.write_str((self as &dyn error::Error).description())
+    }
+}
+impl error::Error for CreationError {
+    fn description(&self) -> &str {
+        match *self {
+            CreationError::Negative => "Negative",
+            CreationError::Zero => "Zero",
+        }
+    }
+}
 // PositiveNonzeroInteger is a struct defined below the tests.
 fn read_and_validate(
     b: &mut dyn io::BufRead,
@@ -35,9 +54,28 @@ fn read_and_validate(
     let num: i64 = line.trim().parse()?;
     let answer = PositiveNonzeroInteger::new(num)?;
     Ok(answer)
-
 }
-
+// This is a test helper function that turns a &str into a BufReader.
+fn test_with_str(s: &str) -> Result<PositiveNonzeroInteger, Box<dyn error::Error>> {
+    let mut b = io::BufReader::new(s.as_bytes());//encode
+    read_and_validate(&mut b)
+}
+fn test_success() {
+    let x = test_with_str("42\n");
+    //Ok(PositiveNonzeroInteger(42))
+    assert_eq!(PositiveNonzeroInteger(42), x.unwrap());
+}
+fn test_not_num() {
+    let x = test_with_str("eleven billion\n");
+    //:Err(ParseIntError { kind: InvalidDigit })
+    //println!("Printed:{:?}",x);
+    assert!(x.is_err());
+}
+fn test_non_positive() {
+    let x = test_with_str("-40\n");
+    //:Err(ParseIntError { kind: InvalidDigit })
+    assert!(x.is_err());
+}
 // fn read_numbers_from_file(
 //     file: &mut dyn io::BufRead,
 // ) -> Result<Vec<i64>, io::Error> {
@@ -49,37 +87,8 @@ fn read_and_validate(
 //     Ok(numbers)
 // }
 
-// This is a test helper function that turns a &str into a BufReader.
-fn test_with_str(s: &str) -> Result<PositiveNonzeroInteger, Box<dyn error::Error>> {
-    let mut b = io::BufReader::new(s.as_bytes());//encode
-    read_and_validate(&mut b)
-}
-
-fn test_success() {
-    let x = test_with_str("42\n");
-    //Ok(PositiveNonzeroInteger(42))
-    assert_eq!(PositiveNonzeroInteger(42), x.unwrap());
-}
-
-
-fn test_not_num() {
-    let x = test_with_str("eleven billion\n");
-    //:Err(ParseIntError { kind: InvalidDigit })
-    //println!("Printed:{:?}",x);
-
-    assert!(x.is_err());
-}
-
-
-fn test_non_positive() {
-    let x = test_with_str("-40\n");
-    //:Err(ParseIntError { kind: InvalidDigit })
-    assert!(x.is_err());
-}
-
 #[derive(PartialEq, Debug)]
 struct PositiveNonzeroInteger(u64);
-
 impl PositiveNonzeroInteger {
     fn new(value: i64) -> Result<PositiveNonzeroInteger, CreationError> {
         if value == 0 {
@@ -90,10 +99,7 @@ impl PositiveNonzeroInteger {
             Ok(PositiveNonzeroInteger(value as u64))
         }
     }
-
 }
-
-
 fn test_positive_nonzero_integer_creation() {
     assert!(PositiveNonzeroInteger::new(10).is_ok());
     assert_eq!(
@@ -102,35 +108,11 @@ fn test_positive_nonzero_integer_creation() {
     );
     assert_eq!(Err(CreationError::Zero), PositiveNonzeroInteger::new(0));
 }
-
-#[derive(PartialEq, Debug)]
-enum CreationError {
-    Negative,
-    Zero,
-}
-
-impl fmt::Display for CreationError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        f.write_str((self as &dyn error::Error).description())
-    }
-
-}
-
-impl error::Error for CreationError {
-    fn description(&self) -> &str {
-        match *self {
-            CreationError::Negative => "Negative",
-            CreationError::Zero => "Zero",
-        }
-    }
-}
-
-fn main() {//-> Result<(), ParseIntError>
+fn main() {
    //let item=func()?;
    test_success();
    test_not_num();
    test_not_num();
    test_positive_nonzero_integer_creation();
    test_non_positive();
-   //ok(())
 }

@@ -26,33 +26,21 @@
 ///
 /// ## Example
 ///
-/// //```compile_fail,ignore
-
+/// ```compile_fail,ignore
 
 // #![feature(thread_id)]
 
-// use std::time;
-// use std::thread;
-
-// fn child_main() {
-//    let thread_id = thread::current().id() as u64;
-//    let delay_ms = 100 - (10 * thread_id);
-//    let delay = time::Duration::from_millis(delay_ms);
-//    std::thread::sleep(delay);
-
-//    println!("hello from {:?}", thread_id);
-// }
-
+use std::thread;
+use std::time::Duration;
+fn print_hello_with_delay(thread_id: u64) {
+    let delay_ms = if thread_id == 0 { 100 } else { 90 + (10 * thread_id) };
+    let delay = Duration::from_millis(delay_ms);
+    thread::sleep(delay);
+    println!("Hello from thread {}", thread_id);
+}
 fn main() {
-    // let mut child_threads = vec![];
-
-    // for _ in ..5 {
-    //     let child_thread = thread::spawn(child_main);
-    //     child_threads.push(child_thread);
-    // }
-
-    // for child_thread in child_threads {
-    //     child_thread.join();
-    // }
-    print!("done");
+    for i in 0..5 {
+        let thread_id = i; // Directly use the loop variable
+        thread::spawn(move || print_hello_with_delay(thread_id));
+    }
 }

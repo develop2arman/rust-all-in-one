@@ -30,13 +30,11 @@
 ///  `TODO`
 ///
 use std::rc::Rc;
-
 struct Crab {
     name: String,
     age: u32,
-    parent: Option<Rc<Crab>>, // <- cyclic data structure here
+    parent: Option<Rc<Crab>>, 
 }
-
 fn main() {
     // Create two crabs
     let ferris = Rc::new(Crab {
@@ -47,12 +45,10 @@ fn main() {
     let cerris = Rc::new(Crab {
         name: "Cerris".to_string(),
         age: 2,
-        parent: Some(ferris.clone()), // Reference to `Ferris`
+        parent: Some(ferris.clone()), 
     });
-    // Print their names and ages
     println!("{} is {} years old", ferris.name, ferris.age);
     println!("{} is {} years old", cerris.name, cerris.age);
-    // Print the name of Cerris' parent
     if let Some(parent) = &cerris.parent {
         println!("{}'s parent is {}", cerris.name, parent.name);
     }

@@ -26,12 +26,11 @@
 /// `100`
 ///
 /// ## Example
-/// In this example, we’ve specified a lifetime parameter 'a for the parameter x and the return type, but not for the parameter y, because the lifetime of y does not have any relationship with the lifetime of x or the return value.
+///
 ///
 /// ```compile_fail,ignore
 use std::sync::{Arc, Mutex};
 use std::thread;
-
 fn main() {
     let counter = Arc::new(Mutex::new(0));
     let mut handles = vec![];
@@ -40,16 +39,13 @@ fn main() {
         let counter = Arc::clone(&counter);
         let handle = thread::spawn(move || {
             let mut num = counter.lock().unwrap();
-
             *num += 1;
         });
         handles.push(handle);
     }
-
     for handle in handles {
         handle.join().unwrap();
     }
-
     println!("Result: {}", *counter.lock().unwrap());
 }
 

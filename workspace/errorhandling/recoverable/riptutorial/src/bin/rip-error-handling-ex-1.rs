@@ -70,13 +70,11 @@ fn main() {
         Err(e) => println!("Error: {}", e),
     }
 }
-
 fn get_local_config_path() -> String {
     let user_config_prefix = "/home/user/.config";
     // code to get the user config directory
     format!("{}/my_app.rc", user_config_prefix)
 }
-
 fn get_global_config_path() -> String {
     let global_config_prefix = "/etc";
     // code to get the global config directory

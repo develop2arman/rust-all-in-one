@@ -31,13 +31,11 @@
 trait IObserver {
     fn update(&self);
 }
-
 trait ISubject<'a, T: IObserver> {
     fn attach(&mut self, observer: &'a T);
     fn detach(&mut self, observer: &'a T);
     fn notify_observers(&self);
 }
-
 struct Subject<'a, T: IObserver> {
     observers: Vec<&'a T>,
 }
@@ -64,7 +62,6 @@ impl<'a, T: IObserver + PartialEq> ISubject<'a, T> for Subject<'a, T> {
         }
     }
 }
-
 #[derive(PartialEq)]
 struct ConcreteObserver {
     id: i32,
@@ -74,16 +71,13 @@ impl IObserver for ConcreteObserver {
         println!("Observer id:{} received event!", self.id);
     }
 }
-
 fn main() {
     let mut subject = Subject::new();
     let observer_a = ConcreteObserver { id: 1 };
     let observer_b = ConcreteObserver { id: 2 };
-
     subject.attach(&observer_a);
     subject.attach(&observer_b);
     subject.notify_observers();
-
     subject.detach(&observer_b);
     subject.notify_observers();
 }

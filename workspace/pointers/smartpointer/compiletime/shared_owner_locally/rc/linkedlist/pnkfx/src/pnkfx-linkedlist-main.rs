@@ -38,93 +38,86 @@
 ///  `TODO`
 ///
 /// ```rust,compile_fail,no_run,ignore
-/// extern crate arena;
+// extern crate arena;
+// use arena::{TypedArena, Arena};
 
-/// type A<'a, X> = &'a arena::TypedArena<X>;
-///
-/// pub struct HsNode<'a, X:'a> {
-///     arena: A<'a, HeavyStack<'a, X>>,
-///     value: X,
-///     next: &'a HeavyStack<'a, X>,
-/// }
-///
-/// pub struct HsLeaf<'a, X:'a> {
-///     arena: A<'a, HeavyStack<'a, X>>
-/// }
-///
-/// pub enum HeavyStack<'a, X:'a> {
-///     Cons(HsNode<'a,X>),
-///     Null(HsLeaf<'a,X>),
-/// }
-///
-/// trait StackMaker<'a,X> {
-///     fn make_null(&'a self) -> HS<X>;
-///     fn make_cons(&'a self, h: X, t: HS<'a, X>) -> HS<X>;
-/// }
-///
-/// impl<'a,X> StackMaker<'a,X> for arena::TypedArena<HeavyStack<'a,X>> {
-///     fn make_null(&'a self) -> HS<X> {
-///         self.alloc(HeavyStack::Null(HsLeaf{ arena: self }))
-///     }
-///     fn make_cons(&'a self, x: X, n: HS<'a,X>) -> HS<X> {
-///         self.alloc(HeavyStack::Cons(HsNode { arena: self, value: x, next: n }))
-///     }
-/// }
-///
-/// pub type HSV<'a,X> = HeavyStack<'a, X>;
-/// pub type HA<'a,X> = A<'a, HSV<'a,X>>;
-/// pub type HS<'a,X> = &'a HSV<'a,X>;
-///
-/// impl<'a, X> HeavyStack<'a,X> {
-///     pub fn is_empty(&self) -> bool {
-///         match *self {
-///             HeavyStack::Cons(_) => false,
-///             HeavyStack::Null(_) => true,
-///         }
-///     }
-///
-///     pub fn arena(&self) -> HA<'a,X> {
-///         match *self {
-///             HeavyStack::Cons(ref node) => node.arena,
-///             HeavyStack::Null(ref leaf) => leaf.arena,
-///         }
-///     }
-///
-///     pub fn empty(arena: HA<'a,X>) -> HS<'a,X> {
-///         arena.make_null()
-///     }
-///
-///     pub fn cons(&'a self, x: X) -> HS<'a,X> {
-///         self.arena().make_cons(x, self)
-///     }
-///
-///     pub fn tail(&'a self) -> Option<HS<X>> {
-///         match self {
-///             &HeavyStack::Null(_) => None,
-///             &HeavyStack::Cons(ref n) => Some(n.next),
-///         }
-///     }
-///
-///     pub fn head(&'a self) -> Option<X> {
-///         match self {
-///             &HeavyStack::Null(_) => None,
-///             &HeavyStack::Cons(n) => Some(n.value),
-///         }
-///     }
-/// }
-///
-/// pub fn main() {
-///     let r = arena::TypedArena::<HSV<i32>>::new();
-///     let r1 = &r;
-///     let s0a = HeavyStack::empty(r1);            // ()
-///     assert!(s0a.is_empty());
-///
-///     let s1b = s0a.cons(1);       // (1)
-///     assert!(s1b.head().unwrap() == 1);
-///     println!("s1b.head: {:?}", s1b.head());
-/// }
-///```
+// #[derive(Clone,Debug)]
+// pub struct HsNode {
+//     arena: TypedArena<HeavyStack>,
+//     value: i32, // Assuming X is i32 for simplicity; adjust as needed
+//     next: HeavyStack,
+// }
+// #[derive(Clone,Debug)]
+// pub struct HsLeaf {
+//     arena: TypedArena<HeavyStack>,
+// }
+// #[derive(Clone,Debug)]
+// pub enum HeavyStack {
+//     Cons(HsNode),
+//     Null(HsLeaf),
+// }
 
-fn main(){
-    unimplemented!()
+// trait StackMaker {
+//     fn make_null(&self) -> &HeavyStack;
+//     fn make_cons(&self, x: i32, t: &HeavyStack) -> &HeavyStack;
+// }
+
+// impl StackMaker for TypedArena<HeavyStack> {
+//     fn make_null(&self) -> &HeavyStack {
+//         self.alloc(HeavyStack::Null(HsLeaf { arena: self.clone() }))
+//     }
+
+//     fn make_cons(&self, x: i32, t: &HeavyStack) -> &HeavyStack {
+//         self.alloc(HeavyStack::Cons(HsNode { arena: self.clone(), value: x, next: t.clone() }))
+//     }
+// }
+
+// pub type HS = &HeavyStack;
+
+// impl HeavyStack {
+//     pub fn is_empty(&self) -> bool {
+//         matches!(*self, HeavyStack::Null(_))
+//     }
+
+//     pub fn arena(&self) -> &TypedArena<HeavyStack> {
+//         match *self {
+//             HeavyStack::Cons(ref node) => &node.arena,
+//             HeavyStack::Null(ref leaf) => &leaf.arena,
+//         }
+//     }
+
+//     pub fn empty(arena: &TypedArena<HeavyStack>) -> HS {
+//         arena.make_null()
+//     }
+
+//     pub fn cons(&self, x: i32) -> HS {
+//         self.arena().make_cons(x, self)
+//     }
+
+//     pub fn tail(&self) -> Option<&HeavyStack> {
+//         match self {
+//             &HeavyStack::Null(_) => None,
+//             &HeavyStack::Cons(ref n) => Some(&n.next),
+//         }
+//     }
+
+//     pub fn head(&self) -> Option<i32> {
+//         match self {
+//             &HeavyStack::Null(_) => None,
+//             &HeavyStack::Cons(n) => Some(n.value),
+//         }
+//     }
+// }
+
+// fn main() {
+//     let r = TypedArena::<HeavyStack>::new();
+//     let s0a = HeavyStack::empty(&r); // ()
+//     assert!(s0a.is_empty());
+
+//     let s1b = s0a.cons(1); // (1)
+//     assert_eq!(s1b.head(), Some(1));
+//     println!("s1b.head: {:?}", s1b.head());
+// }
+fn main() {
+    unimplemented!();
 }

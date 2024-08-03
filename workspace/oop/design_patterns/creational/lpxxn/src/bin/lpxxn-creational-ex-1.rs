@@ -31,7 +31,6 @@ trait GUIFactory {
     fn create_button(&self) -> Box<dyn Button>;
     fn create_checkbox(&self) -> Box<dyn Checkbox>;
 }
-
 struct WinFactory;
 impl GUIFactory for WinFactory {
     fn create_button(&self) -> Box<dyn Button> {
@@ -41,7 +40,6 @@ impl GUIFactory for WinFactory {
         Box::new(WinCheckbox {})
     }
 }
-
 struct MacFactory;
 impl GUIFactory for MacFactory {
     fn create_button(&self) -> Box<dyn Button> {
@@ -51,43 +49,36 @@ impl GUIFactory for MacFactory {
         Box::new(MacCheckbox {})
     }
 }
-
 trait Button {
     fn paint(&self);
 }
-
 struct WinButton;
 impl Button for WinButton {
     fn paint(&self) {
         println!("windows os button");
     }
 }
-
 struct MacButton;
 impl Button for MacButton {
     fn paint(&self) {
         println!("mac os button");
     }
 }
-
 trait Checkbox {
     fn paint(&self);
 }
-
 struct WinCheckbox;
 impl Checkbox for WinCheckbox {
     fn paint(&self) {
         println!("windows os checkbox");
     }
 }
-
 struct MacCheckbox;
 impl Checkbox for MacCheckbox {
     fn paint(&self) {
         println!("mac os checkbox");
     }
 }
-
 struct Application;
 impl Application {
     fn new_gui_factory(os: &str) -> Box<dyn GUIFactory> {
@@ -98,7 +89,6 @@ impl Application {
         }
     }
 }
-
 fn main() {
     let mac_app = Application::new_gui_factory("mac");
     let btn = mac_app.create_button();

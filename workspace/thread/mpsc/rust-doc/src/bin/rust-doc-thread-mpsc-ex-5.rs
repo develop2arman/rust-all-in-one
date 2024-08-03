@@ -6,7 +6,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-thread-mpsc_bin --bin rust-doc-thread-mpsc-ex-4```
+/// ```cargo run -q -p rust-doc-thread-mpsc_bin --bin rust-doc-thread-mpsc-ex-5```
 ///
 /// ```cargo doc  --package rust-doc-thread-mpsc_bin--message-format short --no-deps --open --color always```
 ///
@@ -32,10 +32,8 @@
 use std::sync::mpsc;
 use std::thread;
 use std::time::Duration;
-
 fn main() {
     let (tx, rx) = mpsc::channel();
-
     thread::spawn(move || {
         let vals = vec![
             String::from("hi"),
@@ -43,13 +41,11 @@ fn main() {
             String::from("the"),
             String::from("thread"),
         ];
-
         for val in vals {
             tx.send(val).unwrap();
             thread::sleep(Duration::from_secs(1));
         }
     });
-
     for received in rx {
         println!("Got: {}", received);
     }

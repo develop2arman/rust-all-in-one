@@ -31,9 +31,7 @@
 //#![feature(get_mut_unchecked)]
 //use std::sync::Arc;
 
-fn main(){
-
-unimplemented!();
+//fn main(){
     //let mut five = Arc::<u32>::new_uninit();
 
     //// Deferred initialization:
@@ -42,4 +40,21 @@ unimplemented!();
     //let five = unsafe { five.assume_init() };
 
     //assert_eq!(*five, 5)
+//}
+
+use std::sync::Arc;
+use std::cell::RefCell;
+fn main() {
+    // Directly initialize an Arc<u32> with a value of 5
+    let five = Arc::new(RefCell::new(5));
+
+    // Safely access and modify the value inside the RefCell
+    *five.borrow_mut() = 10; // Change the value to 10
+
+    // Deref to get the inner value
+    let inner_value = *five.borrow();
+    println!("The new value is {}", inner_value);
+
+    // Assert that the value has been changed
+    assert_eq!(inner_value, 10);
 }

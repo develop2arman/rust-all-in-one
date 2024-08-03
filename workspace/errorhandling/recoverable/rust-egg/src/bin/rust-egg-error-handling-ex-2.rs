@@ -38,9 +38,7 @@ fn read_and_validate(
     Ok(answer)
 }
 
-fn main(){
-unimplemented!()
-}
+
 // fn read_numbers_from_file(
 //     file: &mut dyn io::BufRead,
 // ) -> Result<Vec<i64>, io::Error> {
@@ -144,3 +142,7 @@ impl error::Error for CreationError {
         }*/
     }
 }
+
+fn main(){
+    unimplemented!()
+    }

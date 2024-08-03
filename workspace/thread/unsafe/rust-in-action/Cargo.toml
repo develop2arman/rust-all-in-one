@@ -4,8 +4,9 @@ version = "0.1.0"
 edition = "2021"
 autobins = true
 
-[dependencies]
-rand="0.7.0"
+# [dependencies.rand]
+# version = "0.8" # Adjust the version according to your needs
+# features = ["stdrng"]
 
 [[bin]]
 doc = true

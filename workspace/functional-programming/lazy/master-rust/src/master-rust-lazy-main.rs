@@ -32,12 +32,10 @@ fn main() {
     let value = 5;
     let twice = doubler(value);
     println!("{} doubled is {}", value, twice);
-
     let big_lazy = |b, c| {
         let z = b + c;
         z * twice
     };
-
     let some_number = big_lazy(1, 2);
     println!("Result from lazy: {}", some_number);
 }

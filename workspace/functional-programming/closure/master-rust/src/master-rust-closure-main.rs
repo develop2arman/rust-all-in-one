@@ -37,7 +37,6 @@ fn main() {
         let z = b + c;
         z * twice
     };
-
     let some_number = big_closure(1, 2);
     println!("Result from closure: {}", some_number);
 }

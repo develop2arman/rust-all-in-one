@@ -1,3 +1,32 @@
+#![allow(dead_code, unused_variables)]
+
+/// Main
+///
+/// ## Commands
+///
+/// ```cargo run -q -p rust-doc-oop-trait --bin trait-fn-main```
+///
+/// ```cargo doc  --package rust-doc-oop-trait  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package rust-doc-oop-trait```
+///
+/// ## What
+/// `TODO`
+///
+/// ## How
+/// `This works as you would expect, and the only added cost is that you have to write a bit more. The additional runtime cost is zero, though, and the references to the mutable things remain immutable.`
+///
+/// # Arguments
+///
+/// * `Arg1` - This is the [your type] to [your verb] the [your struct/func name]
+///
+/// # Return
+/// `nothing`
+///
+/// ## Example
+///  `TODO`
+///
+/// //```rust,compile_fail,no_run,ignore
 trait Trait {
     fn p(self);
 }

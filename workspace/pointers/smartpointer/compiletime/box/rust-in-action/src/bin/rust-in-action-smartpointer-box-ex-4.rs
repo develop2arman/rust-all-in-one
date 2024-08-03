@@ -5,7 +5,7 @@ use std::mem::drop;
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-in-action-smartpointer-box-main --bin  rust-in-action-smartpointer-box-ex-4.rs```
+/// ```cargo run -q -p rust-in-action-smartpointer-box_bin --bin  rust-in-action-smartpointer-box-ex-4```
 ///
 /// ## What
 /// `TODO`
@@ -29,9 +29,7 @@ use std::mem::drop;
     let a = Box::new(1);
     let b = Box::new(1);
     let c = Box::new(1);
-
     let result1 = *a + *b + *c;
-
     drop(a);
     let d = Box::new(1);
     let result2 = *b + *c + *d;

@@ -25,9 +25,9 @@ use std::io::ErrorKind;
 /// //``rust,no_run,compile_fail,ignore
 
 fn main() {
-    let f = File::open("/mnt/home/rust-all-in-one/workspace/errorhandling/rust-doc/src/hello.txt").unwrap_or_else(|error| {
+    let f = File::open("./hello.txt").unwrap_or_else(|error| {
         if error.kind() == ErrorKind::NotFound {
-            File::create("/mnt/home/rust-all-in-one/workspace/errorhandling/rust-doc/src/hello.txt").unwrap_or_else(|error| {
+            File::create("./hello.txt").unwrap_or_else(|error| {
                 panic!("Problem creating the file: {:?}", error);
             })
         } else {

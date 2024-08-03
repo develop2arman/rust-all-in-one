@@ -30,16 +30,14 @@
 ///  `TODO`
 use std::borrow::Cow;
 use std::fmt::Display;
-
 #[derive(Clone)]
 struct ListItem<T>
 where
     T: Clone,
 {
     data: Box<T>,
-    next: Option<Box<ListItem<T>>>,// is the next node reachable or not?
+    next: Option<Box<ListItem<T>>>,
 }
-
 #[derive(Clone)]
 struct SinglyLinkedList<'a, T>
 where
@@ -47,7 +45,6 @@ where
 {
     head: Cow<'a, ListItem<T>>,
 }
-
 impl<T> ListItem<T>
 where
     T: Clone,
@@ -76,7 +73,6 @@ where
         self.data.as_ref()
     }
 }
-
 impl<'a, T> SinglyLinkedList<'a, T>
 where
     T: Clone,
@@ -96,7 +92,6 @@ where
         &self.head
     }
 }
-
 fn print_list<T>(list: &SinglyLinkedList<T>)
 where
     T: Clone,
@@ -113,7 +108,6 @@ where
     }
     println!("");
 }
-
 fn main() {
     let list = SinglyLinkedList::new("head");
     print_list(&list);

@@ -34,7 +34,7 @@ struct File;
 
 #[allow(unused_variables)]
 fn read(f: &File, save_to: &mut Vec<u8>) -> usize {
-    if random() && random() && random() { //Returns true one out of eight times this function is called
+    if random() && random() && random() { 
         unsafe {
             ERROR = 1;
         }

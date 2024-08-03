@@ -36,7 +36,6 @@ fn sum_numbers(numbers: [&str; 3]) -> Result<i32, String> {
         Err(error) => Err(error.to_string())
     }
 }
-
 fn main() {
     println!("The sum of three items is: {:#?}", sum_numbers(["4", "5", "6"]));
 }

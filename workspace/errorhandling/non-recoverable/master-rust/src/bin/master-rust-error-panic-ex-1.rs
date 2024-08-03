@@ -28,15 +28,12 @@ fn alice() -> thread::JoinHandle<()> {
         bob();
     })
 }
-
 fn bob() {
     malice();
 }
-
 fn malice() {
     panic!("malice is panicking!");
 }
-
 fn main() {
     let child = alice();
     let _ = child.join();

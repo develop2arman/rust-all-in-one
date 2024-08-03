@@ -36,50 +36,40 @@
 ///     let a = Node { data: 33, next: None };
 /// }
 /// ```
-/// `Output` error recursive type has infinite size
+/// `Output`:
+/// You got the first error!
+/// You got the second error!
+/// Looks fine to me
 ///
 
 use std::error::Error;
 use std::fmt;
-
 #[derive(Debug)]
 struct ErrorOne;
-
-impl Error for ErrorOne {} // Now it is an error type with Debug. Time for Display:
-
+impl Error for ErrorOne {} 
 impl fmt::Display for ErrorOne {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "You got the first error!") // All it does is write this message
+        write!(f, "You got the first error!") 
     }
 }
-
-
-#[derive(Debug)] // Do the same thing with ErrorTwo
+#[derive(Debug)] 
 struct ErrorTwo;
-
 impl Error for ErrorTwo {}
-
 impl fmt::Display for ErrorTwo {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "You got the second error!")
     }
 }
 
-// Make a function that just returns a String or an error
-fn returns_errors(input: u8) -> Result<String, Box<dyn Error>> { // With Box<dyn Error> you can return anything that has the Error trait
-
+fn returns_errors(input: u8) -> Result<String, Box<dyn Error>> {
     match input {
-        0 => Err(Box::new(ErrorOne)), // Don't forget to put it in a box
+        0 => Err(Box::new(ErrorOne)),
         1 => Err(Box::new(ErrorTwo)),
-        _ => Ok("Looks fine to me".to_string()), // This is the success type
+        _ => Ok("Looks fine to me".to_string()), 
     }
-
 }
-
 fn main() {
-
-    let vec_of_u8s = vec![0_u8, 1, 80]; // Three numbers to try out
-
+    let vec_of_u8s = vec![0_u8, 1, 80]; 
     for number in vec_of_u8s {
         match returns_errors(number) {
             Ok(input) => println!("{}", input),

@@ -35,7 +35,6 @@ fn main(){
     quick_sort(&mut v);
     assert_eq!(v, vec![0, 1, 5, 8, 22, 44]);
 }
-
 fn quick_sort<T:PartialOrd+Send>(v: &mut [T]) {
    if v.len() > 1 {
        let mid = partition(v);

@@ -112,12 +112,13 @@ With that change, the code compiles without warnings. However, you should handle
 
 
 ```rust,no_run,compile_fail
-use anyhow::{anyhow, Result};
-use serde_json::Value;
+
 
 // This is the same function we've seen in the lesson, but we are 
 // serializing a json object, taking the value and sum it with the argument.
 // Without anyhow this code would have a lot of more lines of code.
+use anyhow::{anyhow, Result};
+use serde_json::Value;
 fn sum_numbers(number: &str) -> Result<i32> {
     let num = number.parse::<i32>()?;
     let num_json: Value = serde_json::from_str("{\"one\": 12}")?;
@@ -125,7 +126,6 @@ fn sum_numbers(number: &str) -> Result<i32> {
     let num2: i32 = serde_json::from_value(get_number.clone())?;
     Ok(num + num2)
 }
-
 fn main() {
     println!("sum two numbers: {:#?}", sum_numbers("567"));
 }

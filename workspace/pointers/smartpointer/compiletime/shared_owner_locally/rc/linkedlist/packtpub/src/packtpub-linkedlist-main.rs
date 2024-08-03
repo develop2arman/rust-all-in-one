@@ -31,11 +31,9 @@ struct ListItem<T> {
     data: Box<T>,
     next: Option<Box<ListItem<T>>>,
 }
-
 struct SinglyLinkedList<T> {
     head: ListItem<T>,
 }
-
 impl<T> ListItem<T> {
     fn new(data: T) -> Self {
         ListItem {
@@ -62,7 +60,6 @@ impl<T> ListItem<T> {
         //&self.data;
     }
 }
-
 impl<T> SinglyLinkedList<T> {
     fn new(data: T) -> Self {
         SinglyLinkedList {
@@ -77,7 +74,6 @@ impl<T> SinglyLinkedList<T> {
         &self.head
     }
 }
-
 fn main() {
     let mut list = SinglyLinkedList::new("head");
     list.append("middle");

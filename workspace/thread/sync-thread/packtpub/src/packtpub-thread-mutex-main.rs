@@ -26,20 +26,14 @@
 /// `100`
 ///
 /// ## Example
-/// In this example, we’ve specified a lifetime parameter 'a for the parameter x and the return type, but not for the parameter y, because the lifetime of y does not have any relationship with the lifetime of x or the return value.
 ///
 /// ```compile_fail,ignore
 
 use std::sync::{Mutex,Arc};
 use std::thread::spawn;
-
-
-
 fn main() {
     println!("Hello, world!");
-
     let m = Arc::new(Mutex::new(32));
-
     let mut handles = Vec::with_capacity(10);
     for i in 0..10 {
         let am= m.clone();
@@ -50,10 +44,8 @@ fn main() {
             println!("j = {} , p = {}" ,j,*p);
         }));
     }
-
     for h in handles {
         h.join().unwrap();
     }
-
     println!("Done");
 }

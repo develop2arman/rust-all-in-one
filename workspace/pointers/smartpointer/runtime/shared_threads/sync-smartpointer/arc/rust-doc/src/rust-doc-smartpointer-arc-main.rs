@@ -39,7 +39,6 @@ use std::thread;
 fn main() {
     // This variable declaration is where its value is specified.
     let apple = Arc::new("the same apple");
-
     for _ in 0..10 {
         // Here there is no value specification as it is a pointer to a
         // reference in the memory heap.
@@ -51,7 +50,6 @@ fn main() {
             println!("{:?}", apple);
         });
     }
-
     // Make sure all Arc instances are printed from spawned threads.
     thread::sleep(Duration::from_secs(1));
 }

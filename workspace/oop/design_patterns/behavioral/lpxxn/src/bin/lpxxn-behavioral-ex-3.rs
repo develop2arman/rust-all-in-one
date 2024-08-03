@@ -34,22 +34,18 @@ trait Iterator<T> {
     fn has_next(&self) -> bool;
     fn reset(&mut self);
 }
-
 struct Container<T> {
     data: Vec<T>,
 }
-
 struct ConcreteIterator<'a, T> {
     idx: usize,
     container: &'a Container<T>,
 }
-
 impl<'a, T: Clone> ConcreteIterator<'a, T> {
     fn new(container: &'a Container<T>) -> ConcreteIterator<T> {
         ConcreteIterator { idx: 0, container }
     }
 }
-
 impl<'a, T: Clone> Iterator<T> for ConcreteIterator<'a, T> {
     fn next(&mut self) -> Option<T> {
         let item = self.container.data.get(self.idx).cloned();
@@ -66,7 +62,6 @@ impl<'a, T: Clone> Iterator<T> for ConcreteIterator<'a, T> {
         self.idx = 0;
     }
 }
-
 impl<T: Clone> Container<T> {
     fn new() -> Container<T> {
         Container { data: Vec::new() }
@@ -78,13 +73,11 @@ impl<T: Clone> Container<T> {
         ConcreteIterator::new(self)
     }
 }
-
 fn main() {
     let mut c = Container::new();
     c.add_item(1);
     c.add_item(2);
     c.add_item(3);
-
     let mut iter = c.iter();
     let has_next = iter.has_next();
     assert_eq!(has_next, true);

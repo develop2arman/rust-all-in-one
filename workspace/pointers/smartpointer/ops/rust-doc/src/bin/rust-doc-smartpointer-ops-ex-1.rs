@@ -4,7 +4,7 @@ use std::ops::Deref;
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-smartpointer-ops_bin --bin rust-doc-smartpointer-ops-ex-1.rs```
+/// ```cargo run -q -p rust-doc-smartpointer-ops_bin --bin rust-doc-smartpointer-ops-ex-1```
 ///
 /// ```cargo doc  --package rust-doc-smartpointer-ops_bin  --message-format short --no-deps --open --color always```
 ///
@@ -28,8 +28,6 @@ use std::ops::Deref;
 ///
 /// //```rust,compile_fail,no_run,ignore
 struct MyBox<T>(T);
-
-
 impl<T> MyBox<T> {
     fn new(x: T) -> MyBox<T> {
         MyBox(x)
@@ -46,17 +44,13 @@ impl<T> Deref for MyBox<T> {
 fn hello(name: &str) {
     println!("Hello, {name}!");
 }
-///When we entered *y in Listing 15-9, behind the scenes Rust actually ran this code:
-///*(y.deref())
 fn main() {
     let x = 5;
     let y = MyBox::new(x);
-
     assert_eq!(5, x);
     assert_eq!(5, *y);
     assert_eq!(5,*(y.deref()));
     assert_eq!(5, *y);
-
     let m = MyBox::new(String::from("Rust"));
     hello(&m);
     hello(&(*m)[..]);

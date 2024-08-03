@@ -41,12 +41,10 @@
 /// }
 /// ```
 use std::cell::Cell;
-
 #[derive(Debug)]
 struct Bag {
     item: Box<u32>
 }
-
 fn main() {
     let bag = Cell::new(Bag { item: Box::new(1) });
     let hand1 = &bag;

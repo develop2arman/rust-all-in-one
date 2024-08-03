@@ -30,28 +30,22 @@
 trait Shape {
     fn draw(&self);
 }
-
 enum ShapeType {
     Rectangle,
     Circle,
 }
-
 struct Rectangle {}
-
 impl Shape for Rectangle {
     fn draw(&self) {
         println!("draw a rectangle!");
     }
 }
-
 struct Circle {}
-
 impl Shape for Circle {
     fn draw(&self) {
         println!("draw a circle!");
     }
 }
-
 struct ShapeFactory;
 impl ShapeFactory {
     fn new_shape(s: &ShapeType) -> Box<dyn Shape> {
@@ -61,11 +55,9 @@ impl ShapeFactory {
         }
     }
 }
-
 fn main() {
     let shape = ShapeFactory::new_shape(&ShapeType::Circle);
     shape.draw(); // output: draw a circle!
-
     let shape = ShapeFactory::new_shape(&ShapeType::Rectangle);
     shape.draw(); // output: draw a rectangle!
 }

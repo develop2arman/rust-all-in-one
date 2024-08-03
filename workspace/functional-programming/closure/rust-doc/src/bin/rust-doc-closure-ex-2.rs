@@ -25,18 +25,21 @@
 /// ## Example
 ///  `TODO`
 ///
-
-// fn returns_closure() -> dyn Fn(i32) -> i32 {
-//     |x| x + 1
-// }
-
-// /*
-// The error references the Sized trait again! Rust doesn’t know how much space it will need to store the closure. We saw a solution to this problem earlier. We can use a trait object:
-// */
-// fn returns_closure() -> Box<dyn Fn(i32) -> i32> {
-//     Box::new(|x| x + 1)
-// }
-
-fn main(){
-    unimplemented!();
+/* 
+fn returns_closure() -> dyn Fn(i32) -> i32 {
+    |x| x + 1
 }
+
+The error references the Sized trait again! Rust doesn’t know how much space it will need to store the closure. We saw a solution to this problem earlier. We can use a trait object:
+*/
+
+fn returns_closure() -> Box<dyn Fn(i32) -> i32> {
+    Box::new(|x| x + 1)
+}
+fn main() {
+    let increment = returns_closure();
+    let result = increment(5);
+
+    println!("Result: {}", result); // Output: Result: 6
+}
+

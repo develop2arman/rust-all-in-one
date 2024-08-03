@@ -35,13 +35,11 @@ fn main() {
   let blank2: [u8; 3] = [0; 3]; // <4>
 
   let arrays = [one, two, blank1, blank2]; // <5>
-
   for a in &arrays { // <6>
     print!("{:?}: ", a);
     for n in a.iter() { // <7>
       print!("\t{} + 10 = {}", n, n+10);
     }
-
     let mut sum = 0;
     for i in 0..a.len() {
       sum += a[i];

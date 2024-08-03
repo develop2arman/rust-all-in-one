@@ -33,9 +33,7 @@ struct Person {
     age: u32,    // in years
     height: u32, // in centimeters
 }
-
 impl Person {
-    // Price to ride the roller coaster
     fn price(&self) -> Result<u32, CantRide> {
         if self.age < 10 {
             return Err(CantRide::TooYoung(self.name.clone()));
@@ -52,13 +50,11 @@ impl Person {
         })
     }
 }
-
-#[derive(Debug)] // for the output later
+#[derive(Debug)] 
 enum CantRide {
     TooShort(String),
     TooYoung(String),
 }
-
 fn price_people(people: &[Person]) -> Result<u32, CantRide> {
     let mut price = 0;
     for person in people {
@@ -66,7 +62,6 @@ fn price_people(people: &[Person]) -> Result<u32, CantRide> {
     }
     Ok(price)
 }
-
 fn main() {
     let family = [
         Person { name: "Alice".to_owned(), age: 30, height: 160 },
@@ -74,6 +69,5 @@ fn main() {
         Person { name: "Charlie".to_owned(), age: 8, height: 100 },
         Person { name: "David".to_owned(), age: 12, height: 75 },
     ];
-
     println!("{:?}", price_people(&family));
 }

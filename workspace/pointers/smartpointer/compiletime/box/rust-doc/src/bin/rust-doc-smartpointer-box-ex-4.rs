@@ -22,34 +22,26 @@
 ///
 /// ## Example
 /// //``rust,no_run,compile_fail,ignore
-fn modifier2(mut ptr: Box<String>) -> Box<String> {
-    println!("In modifier2...");
+fn modifier1(mut ptr: Box<String>) -> Box<String> {
+    println!("In modifier1...");
     println!("Ptr points to {:p}, and value is {}", ptr, *ptr);
-
     *ptr = ptr.to_uppercase();
-
-    println!("Exit modifier2...");
+    println!("Exit modifier1...");
     ptr
 }
-
-fn modifier3(ptr: &mut Box<String>) {
-    println!("In modifier3...");
+fn modifier2(ptr: &mut Box<String>) {
+    println!("In modifier2...");
     println!("Ptr points to {:p}, and value is {}", ptr, *ptr);
     println!("Ptr points to {:p}, and value is {}", *ptr, **ptr);
-
     **ptr = "another".to_uppercase();
-
-    **ptr = ptr.to_uppercase(); // No error now
-
-    println!("Exit modifier3...");
+    **ptr = ptr.to_uppercase(); 
+    println!("Exit modifier2...");
 }
-
 fn main() {
     let mut answer = Box::new("Hello World".to_string());
-    answer = modifier2(answer);
-    println!("called modifier2(): {} length: {}", answer, answer.len());
-
+    answer = modifier1(answer);
+    println!("called modifier1(): {} length: {}", answer, answer.len());
     let mut answer = Box::new("Hello World".to_string());
-    modifier3(&mut answer);
-    println!("called modifier3(): {} length: {}", answer, answer.len());
+    modifier2(&mut answer);
+    println!("called modifier2(): {} length: {}", answer, answer.len());
 }

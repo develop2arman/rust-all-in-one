@@ -30,41 +30,28 @@
 /// //```compile_fail,ignore
 
 
-// use std::thread::spawn;
-// pub use std::sync::mutex;
-
-
+use std::thread;
+use std::sync::mpsc;
 
 fn main() {
-    unimplemented!();
-    // let (cs,cr) = mutex::channel::<i32>();
-    // let h = spawn(move||{
-    //     loop {
-    //         match cr.recv() {
-    //             Ok(v) => {
-    //                 println!("Value {}",v);
-    //             },
-    //             Err(e) =>{
-    //                 println!("Err = {:?}",e);
-    //                 return;
-    //             }
-    //         }
-    //     }
-    // });
+    // Create a channel using mpsc::channel
+    let (tx, rx) = mpsc::channel::<i32>();
 
-    // let cs2 = cs.clone();
+    // Spawn a new thread that receives values from the channel
+    let receiver_handle = thread::spawn(move || {
+        for value in rx {
+            println!("Received value: {}", value);
+        }
+    });
 
-    // spawn(move|| {
-    //     for j in 10 ..20 {
-    //         cs2.send(j).unwrap();
-    //     }
-    // });
+    // Send values to the channel
+    for i in 0..10 {
+        tx.send(i).expect("Failed to send value");
+    }
 
-    // for i in 0..10{
-    //     cs.send(i).expect("Reciever dropped early");
-    // }
+    // Close the sender side of the channel to allow the receiver to exit
+    drop(tx);
 
-    // drop(cs);
-
-    // h.join();
+    // Wait for the receiver thread to finish
+    receiver_handle.join().expect("Receiver thread panicked");
 }

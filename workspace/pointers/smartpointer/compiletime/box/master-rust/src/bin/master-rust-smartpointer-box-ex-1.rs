@@ -22,15 +22,15 @@
 ///
 /// ## Example
 /// //``rust,no_run,compile_fail,ignore
-fn box_ref<T>(b: T) -> Box<T> {
-    let a = b;
+fn box_ref<T: std::fmt::Debug>(b: T) -> Box<T> {
+    let a = b;    
     Box::new(a)
 }
-
+#[derive(Debug)]
 struct Foo;
 
 fn main() {
     let boxed_one = Box::new(Foo);
-    let unboxed_one = *boxed_one;
-    box_ref(unboxed_one);
+    let unboxed_one = *boxed_one;    
+    println!("{:?}", box_ref(unboxed_one));
 }

@@ -11,7 +11,7 @@
 /// ```cargo test --doc  --package lpxxn-creational_bin ```
 ///
 /// ## What
-/// `TODO`
+/// `Factory`
 ///
 /// ## How
 /// # Arguments
@@ -26,6 +26,40 @@
 ///
 /// //```rust,compile_fail,no_run,ignore
 ///
-fn main(){
-    unimplemented!();
+pub trait Shape {
+fn area(&self) -> f64;
+}
+struct Circle {
+    radius: f64,
+}
+impl Shape for Circle {
+    fn area(&self) -> f64 {
+        std::f64::consts::PI * self.radius.powi(2)
+    }
+}
+struct Rectangle {
+    width: f64,
+    height: f64,
+}
+impl Shape for Rectangle {
+    fn area(&self) -> f64 {
+        self.width * self.height
+    }
+}
+pub struct ShapeFactory;
+impl ShapeFactory {
+    pub fn get_shape(shape_type: &str) -> Box<dyn Shape> {
+        match shape_type {
+            "circle" => Box::new(Circle { radius: 5.0 }),
+            "rectangle" => Box::new(Rectangle { width: 10.0, height: 20.0 }),
+            _ => panic!("Invalid shape"),
+        }
+    }
+}
+fn main() {
+    let circle = ShapeFactory::get_shape("circle");
+    println!("The area of the circle is {}", circle.area());
+
+    let rectangle = ShapeFactory::get_shape("rectangle");
+    println!("The area of the rectangle is {}", rectangle.area());
 }

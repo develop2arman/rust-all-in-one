@@ -26,13 +26,11 @@
 /// `nothig`
 ///
 /// ## Example
-/// In this example, we’ve specified a lifetime parameter 'a for the parameter x and the return type, but not for the parameter y, because the lifetime of y does not have any relationship with the lifetime of x or the return value.
 ///
 /// ```compile_fail,ignore
 use std::{thread, time};
-
 fn main() {
-  for n in 1..1001 {
+  for n in 1..101 {
     let mut handlers: Vec<thread::JoinHandle<()>> = Vec::with_capacity(n);
 
     let start = time::Instant::now();
@@ -43,16 +41,6 @@ fn main() {
       });
       handlers.push(handle);
     }
- /*
- A for loop does not permit modifications to the data being iterated over. Instead, the while loop allows us to repeatedly gain mutable access when calling handlers.pop().
- 19 for handle in handlers {
-20   handle.join();
-21 }
- */
-      // while let Some(handle) = handlers.pop() {
-      //     handle.join();
-      // }
-
     let finish = time::Instant::now();
     println!("{}\t{:02?}", n, finish.duration_since(start));
   }

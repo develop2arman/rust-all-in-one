@@ -30,7 +30,6 @@ fn str_upper_concise(str: Vec<u8>) -> Result<String, FromUtf8Error> {
     println!("Conversion succeeded: {}", ret);
     Ok(ret)
 }
-
 fn main() {
     let valid_str = str_upper_concise(vec![121, 97, 89]);
     println!("{:?}", valid_str);

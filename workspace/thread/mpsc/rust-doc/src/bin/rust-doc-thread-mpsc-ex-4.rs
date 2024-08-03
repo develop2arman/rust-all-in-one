@@ -30,11 +30,8 @@
 /// //```compile_fail,ignore
 
 use std::thread;
-
 fn main() {
-    
    let (tx, rx) = std::sync::mpsc::channel();
-
     thread::spawn(move || {
         let val = String::from("hi");
         tx.send(val).unwrap();

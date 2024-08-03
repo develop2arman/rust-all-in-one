@@ -27,13 +27,11 @@
 /// ## Example
 /// //```rust,no_run,compile_fail,ignore
 use std::cell::Cell;
-
 struct Point {
     x: u8,
     y: u8,
     cached_sum: Cell<Option<u8>>
 }
-
 impl Point {
     fn sum(&self) -> u8 {
         
@@ -51,7 +49,6 @@ impl Point {
         }
     }
 }
-
 fn main() {
     let p = Point { x: 8, y: 9, cached_sum: Cell::new(None) };
     println!("Summed result: {}", p.sum());

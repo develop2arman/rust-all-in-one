@@ -36,7 +36,6 @@ enum DateError {
     InvalidDay(u8),
     InvalidMonth(u8),
 }
-
 impl fmt::Display for DateError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
@@ -45,7 +44,6 @@ impl fmt::Display for DateError {
         }
     }
 }
-
 impl Error for DateError {
     fn description(&self) -> &str {
         match self {
@@ -53,15 +51,12 @@ impl Error for DateError {
             &DateError::InvalidMonth(_) => "Month is outside range!",
         }
     }
-
-    // cause method returns None by default
 }
 struct Date {
     day: u8,
     month: u8,
     year: i16,
 }
-
 fn validate(date: &Date) -> Result<(), DateError> {
     if date.month < 1 || date.month > 12 {
         Err(DateError::InvalidMonth(date.month))
@@ -71,13 +66,11 @@ fn validate(date: &Date) -> Result<(), DateError> {
         Ok(())
     }
 }
-
 fn add_days(date: Date, days: i32) -> Result<Date, DateError> {
     validate(&date)?; // notice `?` -- returns early on error
     // the date logic ...
     Ok(date)
 }
-
 fn main(){
     let date=Date{day:4,month:1,year:2023};
     let _= add_days(date,365);

@@ -26,14 +26,16 @@ use rand::prelude::*;                      // <1>
 
 /// thread_rng() creates a thread-local random number generator; gen_ratio(n, m) returns a Boolean value with an n/m probability.
 /// Helper function that triggers sporadic errors
-fn one_in(denominator: u32) -> bool {      // <2>
-  thread_rng().gen_ratio(1, denominator)   // <3>
-}
+
 
 #[derive(Debug)]
 struct File {
   name: String,
   data: Vec<u8>,
+}
+
+fn one_in(denominator: u32) -> bool {      // <2>
+  thread_rng().gen_ratio(1, denominator)   // <3>
 }
 
 impl File {
@@ -81,15 +83,11 @@ fn close(f: File) -> Result<File, String> {
 fn main() {
   let f4_data: Vec<u8> = vec![114, 117, 115, 116, 33];
   let mut f4 = File::new_with_data("4.txt", &f4_data);
-
   let mut buffer: Vec<u8> = vec![];
-
   f4 = open(f4).unwrap();                          // <9>
   let f4_length = f4.read(&mut buffer).unwrap();   // <9>
   f4 = close(f4).unwrap();                         // <9>
-
   let text = String::from_utf8_lossy(&buffer);
-
   println!("{:?}", f4);
   println!("{} is {} bytes long", &f4.name, f4_length);
   println!("{}", text);

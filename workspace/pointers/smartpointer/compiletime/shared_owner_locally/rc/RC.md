@@ -62,7 +62,7 @@ With [[interior_mutability]], you may want to provide an argument to a method th
 
 ## Rc VS Arc [[code-like-pro]]
 
-> Unlike [Rc<T>], Arc<T> uses atomic operations for its reference counting. This means that it is thread-safe. The disadvantage is that **atomic operations are more expensive** than ordinary memory accesses. 
+> Rc is not threadsafe in spite of [[Arc]], and Unlike [Rc<T>], Arc<T> uses atomic operations for its reference counting. This means that it is thread-safe. The disadvantage is that **atomic operations are more expensive** than ordinary memory accesses. 
 > 
 >If you are not sharing reference-counted allocations between threads, consider using **[Rc<T>] for lower overhead**.
 >
@@ -94,7 +94,7 @@ With [[interior_mutability]], you may want to provide an argument to a method th
 
 ## Week
 
-Weak is a version of Rc that **holds a non-owning reference** to the managed allocation. The allocation is accessed by calling upgrade on the Weak pointer, which returns an Option<Rc<T>>.
+Week is a version of Rc that **holds a non-owning reference** to the managed allocation. The allocation is accessed by calling upgrade on the Weak pointer, which returns an Option<Rc<T>>.
 
 Since a Weak reference does not count towards ownership, it will not prevent the value stored in the allocation from being dropped, and Weak itself makes no guarantees about the value still being present. Thus it may return None when upgraded. Note however that a Weak reference does prevent the allocation itself (the backing store) from being deallocated.
 

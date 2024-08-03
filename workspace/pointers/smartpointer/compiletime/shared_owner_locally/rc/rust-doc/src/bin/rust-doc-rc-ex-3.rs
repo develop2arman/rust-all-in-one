@@ -4,7 +4,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-4```
+/// ```cargo run -q -p rust-doc-rc_bin --bin rust-doc-rc-ex-3```
 ///
 /// ```cargo doc  --package rust-doc-rc_bin  --message-format short --no-deps --open --color always```
 ///
@@ -31,7 +31,6 @@
 ///
 use std::rc::Rc;
 use std::ptr;
-
 fn main(){
     let strong = Rc::new("hello".to_owned());
     let weak = Rc::downgrade(&strong);
@@ -39,9 +38,9 @@ fn main(){
     assert!(ptr::eq(&*strong, weak.as_ptr()));
     // The strong here keeps it alive, so we can still access the object.
     assert_eq!("hello", unsafe { &*weak.as_ptr() });
-
     drop(strong);
     // But not any more. We can do weak.as_ptr(), but accessing the pointer would lead to
     // undefined behaviour.
+    // assert!(ptr::eq(&*strong, weak.as_ptr()));
     // assert_eq!("hello", unsafe { &*weak.as_ptr() });
 }

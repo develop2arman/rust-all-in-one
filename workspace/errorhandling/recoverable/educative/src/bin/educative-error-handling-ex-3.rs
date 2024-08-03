@@ -29,16 +29,14 @@
 ///
 ///
 
-use std::num::ParseIntError;
-
 // This is the same function as above, but easier to read.
+use std::num::ParseIntError;
 fn sum_numbers(numbers: [&str; 3]) -> Result<i32, ParseIntError> {
     let number = numbers[0].parse::<i32>()?;
     let number2 = numbers[1].parse::<i32>()?;
     let number3 = numbers[2].parse::<i32>()?;
     Ok(number + number2 + number3)
 }
-
 fn main() {
     println!("The sum of three items is: {:#?}", sum_numbers(["4", "5", "6"]));
 }

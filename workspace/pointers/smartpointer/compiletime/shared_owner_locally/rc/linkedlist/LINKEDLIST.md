@@ -42,4 +42,5 @@ mod tests {
             list.append(10);
         });
     }
+}
 ```
