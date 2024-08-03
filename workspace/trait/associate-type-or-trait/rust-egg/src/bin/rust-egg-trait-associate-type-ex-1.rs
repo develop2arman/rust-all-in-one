@@ -37,29 +37,24 @@
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
-
 impl AppendBar for String {
     fn append_bar(mut self) -> Self {
         self.push_str("Bar");
         self
     }
 }
-
 fn main() {
     let s = String::from("Foo");
     let s = s.append_bar();
     println!("s: {}", s);
 }
-
 #[cfg(test)]
 mod tests {
     use super::*;
-
     #[test]
     fn is_FooBar() {
         assert_eq!(String::from("Foo").append_bar(), String::from("FooBar"));
     }
-
     #[test]
     fn is_BarBar() {
         assert_eq!(

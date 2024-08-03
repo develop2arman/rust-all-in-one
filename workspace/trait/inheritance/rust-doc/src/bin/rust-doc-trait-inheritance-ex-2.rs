@@ -52,13 +52,31 @@
 // }
 // }
 
-
-fn main() {
-trait Shape { fn area(&self) -> f64; }
-trait Circle : Shape { fn radius(&self) -> f64; }
+trait Shape {
+    fn area(&self) -> f64;
+}
+trait Circle: Shape {
+    fn radius(&self) -> f64;
+}
+struct MyCircle {
+    radius: f64,
+}
+impl Shape for MyCircle {
+    fn area(&self) -> f64 {
+        std::f64::consts::PI * self.radius.powi(2)
+    }
+}
+impl Circle for MyCircle {
+    fn radius(&self) -> f64 {
+        self.radius
+    }
+}
 fn print_area_and_radius<C: Circle>(c: C) {
-    // Here we call the area method from the supertrait `Shape` of `Circle`.
     println!("Area: {}", c.area());
     println!("Radius: {}", c.radius());
 }
+fn main() {
+    let my_circle = MyCircle { radius: 5.0 };
+    print_area_and_radius(my_circle);
 }
+

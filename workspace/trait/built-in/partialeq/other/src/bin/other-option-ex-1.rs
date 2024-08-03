@@ -32,7 +32,6 @@ use std::fmt::{Display};
 ///  // ```rust,compile_fail,ignore
 #[derive(Debug)]
 #[allow(dead_code)]
-
 enum Comparison {
     Equal,
     Sublist,
@@ -55,16 +54,10 @@ impl PartialEq<AB> for AB {
         false
     }
 }
-
-
 struct AB{
   ab: Box<[i64]>
 }
-
-
 fn category(a:&AB, b:&AB) -> Option<Comparison> {
-
-
         if a.eq(&b) {
             return Some(Comparison::Equal);
         }
@@ -80,11 +73,8 @@ fn category(a:&AB, b:&AB) -> Option<Comparison> {
             return Some(Comparison::Unequal);
             }
         }
-
     None
 }
-
-
 fn main() {
         let a=AB{ab:Box::<[i64;5]>::new([1,2,3,4,5])};
         let b=AB{ab:Box::<[i64;5]>::new([1,2,3,4,5])};
@@ -106,25 +96,16 @@ fn main() {
         let b=AB{ab:Box::<[i64;3]>::new([1,2,3])};
         println!("{:?}", category(&a,&b));
 }
-
-
 #[cfg(test)]
 mod tests {
 use super::*;
-
     #[test]
     fn comparasion(){
-
         let a=AB{ab:Box::<[i64;5]>::new([1,2,3,4,5])};
         let b=AB{ab:Box::<[i64;5]>::new([1,2,3,4,5])};
-
         assert!(true,"{}", a.eq(&b));
-
         let a2=AB{ab:Box::<[i64;5]>::new([1,2,3,4,0])};
         let b2=AB{ab:Box::<[i64;5]>::new([1,2,3,4,5])};
-
         assert!(true,"{}", a2.ne(&b2));
-
-
     }
 }

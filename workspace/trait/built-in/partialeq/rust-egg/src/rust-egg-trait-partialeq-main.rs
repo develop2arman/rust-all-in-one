@@ -28,22 +28,15 @@ enum BookFormat {
     Hardback,
     Ebook,
 }
-
 struct Book {
     isbn: i32,
     format: BookFormat,
 }
-
 impl PartialEq for Book {
     fn eq(&self, other: &Self) -> bool {
         self.isbn == other.isbn
     }
 }
-
-fn main(){
-    unimplemented!();
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;

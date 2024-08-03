@@ -17,11 +17,31 @@
 ## Borrow & AsRef
 These are special traits that carry the notion of able to construct a out of any type.
 
+```rust
+use std::borrow::Borrow;
+fn main() {
+    let s = "hello";
+    let t: &str = s.borrow();
+    println!("{}", t); // Prints "hello"
+}
+```
 
 ## To Owned
 
 This trait is meant to be implemented for types that can be converted in to an owned version. For example, the &str type has this trait implemented for String. This means the **&str type has a method called to_owned() on it that can convert it in to a String type**, which is an owned type.
 
+```rust
+use std::convert::AsRef;
+
+fn print_length<T: AsRef<[u8]>>(data: T) {
+    println!("Length: {}", data.as_ref().len());
+}
+
+fn main() {
+    let my_string = "Hello, world!";
+    print_length(my_string); // Uses AsRef to treat the string as a byte slice
+}
+```
 
 ## From & Into
 
