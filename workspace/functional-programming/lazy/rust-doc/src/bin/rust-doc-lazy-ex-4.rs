@@ -25,19 +25,19 @@
 /// ## Example
 ///  `TODO`
 ///
-use std::sync::{Arc, Mutex};
-use std::thread;
+// use std::sync::{Arc, Mutex};
+// use std::thread;
 
-// Define the lazy static Mutex
-lazy_static! {
-    static ref ITEMS: Mutex<Vec<u64>> = {
-        let mut v = Vec::new();
-        v.push(9);
-        v.push(2);
-        v.push(1);
-        Mutex::new(v)
-    };
-}
+// // Define the lazy static Mutex
+// lazy_static! {
+//     static ref ITEMS: Mutex<Vec<u64>> = {
+//         let mut v = Vec::new();
+//         v.push(9);
+//         v.push(2);
+//         v.push(1);
+//         Mutex::new(v)
+//     };
+// }
 
 fn main() {
     unimplemented!();

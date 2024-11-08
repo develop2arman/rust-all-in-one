@@ -23,7 +23,8 @@ struct Block {
     next: *mut Block,
 }
 
-unsafe impl Drop for Block {
+//unsafe 
+impl Drop for Block {
     fn drop(&mut self) {
         unsafe { ptr::drop_in_place(self); }
     }

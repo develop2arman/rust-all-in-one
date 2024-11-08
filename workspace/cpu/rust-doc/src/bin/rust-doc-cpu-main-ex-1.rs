@@ -1,11 +1,15 @@
 #![allow(dead_code, unused_variables)]
 
 
-/// rust-doc-duplication-ex-1
+/// rust-doc-cpu-main-ex-1
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-duplication_bin --bin  rust-doc-duplication-ex-1```
+/// ```RUST_BACKTRACE=full cargo run -q -p rust-doc-cpu_bin --bin rust-doc-cpu-main-ex-1```
+///
+/// ```cargo doc  --package rust-doc-cpu_bin  --message-format short --no-deps --open --color always```
+///
+/// ```cargo test --doc  --package rust-doc-cpu_bin ```
 ///
 /// ## What
 /// `Multi Impl`

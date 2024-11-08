@@ -4,11 +4,11 @@
 ///
 /// ## Commands
 ///
-/// ```RUST_BACKTRACE=full cargo run -q -p rust-doc-duplication_bin --bin rust-doc-duplication-main```
+/// ```RUST_BACKTRACE=full cargo run -q -p rust-doc-duplication_d_bin --bin rust-doc-duplication-main```
 ///
-/// ```cargo doc  --package rust-doc-duplication_bin  --message-format short --no-deps --open --color always```
+/// ```cargo doc  --package rust-doc-duplication_d_bin  --message-format short --no-deps --open --color always```
 ///
-/// ```cargo test --doc  --package rust-doc-duplication_bin ```
+/// ```cargo test --doc  --package rust-doc-duplication_d_bin ```
 ///
 /// ## What
 /// `TODO`

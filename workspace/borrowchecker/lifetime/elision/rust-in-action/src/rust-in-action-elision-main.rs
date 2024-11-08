@@ -28,13 +28,15 @@
 ///   *i + *j
  ///}```
 
-fn add_with_lifetimes<'a, 'b, 'c>(i: &'a i32, j: &'b i32) -> &'c i32 {
-   *i + *j
- }
+// fn add_with_lifetimes<'a, 'b, 'c>(i: &'a i32, j: &'b i32) -> &'c i32 {
+//    &(*i + *j)
+//  }
  fn main() {
-   let a = 10;
-   let b = 20;
-   let & 'c res = add_with_lifetimes(&a, &b);
 
-   println!("{}", res);
+  unimplemented!();
+  //  let a = 10;
+  //  let b = 20;
+  //  let & 'c res = add_with_lifetimes(&a, &b);
+
+  //  println!("{}", res);
  }

@@ -121,7 +121,7 @@ use std::num;
 // //     }
 // // }
 fn main() {
-    unimplement!();
+    unimplemented!();
     // let input = "123abc"; // A string that should be parsable to an integer
 
     // // Attempt to parse the integer using the `parse()` method,

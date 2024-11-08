@@ -400,14 +400,6 @@ name = "code-like-a-pro-types-string_bin"
 version = "0.1.0"
 
 [[package]]
-name = "code-like-pro-allocator_bin"
-version = "0.1.0"
-dependencies = [
- "lazy_static",
- "libc",
-]
-
-[[package]]
 name = "code-like-pro-arithmetic_bin"
 version = "0.1.0"
 
@@ -2152,22 +2144,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "mod_draw_bin"
-version = "0.1.0"
-dependencies = [
- "mod_draw_lib",
- "rgb",
-]
-
-[[package]]
-name = "mod_draw_lib"
-version = "0.1.0"
-dependencies = [
- "rgb",
- "serde",
-]
-
-[[package]]
 name = "native-tls"
 version = "0.2.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3492,16 +3468,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "rgb"
-version = "0.8.45"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ade4539f42266ded9e755c605bdddf546242b2c961b03b06a7375260788a0523"
-dependencies = [
- "bytemuck",
- "serde",
-]
-
-[[package]]
 name = "rip-error-handling_bin"
 version = "0.1.0"
 dependencies = [
@@ -3634,7 +3600,7 @@ name = "rust-doc-dangle_bin"
 version = "0.1.0"
 
 [[package]]
-name = "rust-doc-duplication_bin"
+name = "rust-doc-duplication_d_bin"
 version = "0.1.0"
 
 [[package]]

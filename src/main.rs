@@ -86,7 +86,6 @@ fn finish() -> impl std::process::Termination {
 
 fn main(){
      
-unimplemented!();
-
+    greet_world();
 }
 

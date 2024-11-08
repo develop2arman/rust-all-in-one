@@ -25,7 +25,7 @@
 /// `unimplemented`
 ///
 /// ## Example
-/// `TODO`
+
 
 //#![feature(collections)]
 //#![feature(new_uninit)]
@@ -41,9 +41,10 @@
 
 // use std::sync::Arc;
 
-// fn main(){
+ fn main(){
+    unimplemented!();
 // let zero = Arc::<u32>::try_new_zeroed()?;
 // let zero = unsafe { zero.assume_init() };
 
 // assert_eq!(*zero, 0);
-// }
+ }

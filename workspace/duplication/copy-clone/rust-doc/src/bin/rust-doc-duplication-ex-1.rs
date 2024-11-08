@@ -5,7 +5,7 @@
 ///
 /// ## Commands
 ///
-/// ```cargo run -q -p rust-doc-duplication_bin --bin  rust-doc-duplication-ex-1```
+/// ```cargo run -q -p rust-doc-duplication_d_bin --bin  rust-doc-duplication-ex-1```
 ///
 /// ## What
 /// `Multi Impl`
